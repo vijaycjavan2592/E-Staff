@@ -26,19 +26,18 @@ public class HomePageTest extends TestBase{
 	
 	@Test
 	public void logoutTest() {
+		test = extent.createTest("Verify the application logout functionality Test");
 		
 		homePage.logout();		
 	}
 	
 	@Test
 	public void verifyUserNameLableTest() {
+		test = extent.createTest("verify the User-Name Lable once logged-in");
 		homePage.verifyCorrectUserName();
 	}
 	
 	
-	@AfterMethod
-	public void tearDown() {
-		driver.close();
-	}
+
 
 }

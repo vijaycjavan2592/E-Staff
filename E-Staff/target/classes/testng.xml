@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="E-Staff Test Automation Test Suite">
+
+<listeners>
+	<!-- 	<listener class-name="com.qa.ExtentRepoterListener.ExtentReport" /> -->
+	</listeners>
+
+
   <test thread-count="5" name="E-Staff App Test Cases">
     <classes>
       <class name="com.staff.qa.testcases.HomePageTest"/>
-      <class name="com.staff.qa.testcases.LoginPageTest"/>
-      <class name="com.staff.qa.testcases.CompaniesPageTest"/>    
+       <class name="com.staff.qa.testcases.LoginPageTest"/>  
+       <class name="com.staff.qa.testcases.CompaniesPageTest"/>  
       
     </classes>
   </test> <!-- Test -->

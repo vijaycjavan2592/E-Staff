@@ -3,12 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.CompaniesPageTest">
+      <class name="com.staff.qa.testcases.LoginPageTest">
         <methods>
-          <include name="CompaniesPageURLTest"/>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
+          <include name="loginTest"/>
+          <include name="endReport"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.CompaniesPageTest -->
+      </class> <!-- com.staff.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

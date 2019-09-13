@@ -5,11 +5,34 @@
     <classes>
       <class name="com.staff.qa.testcases.CompaniesPageTest">
         <methods>
-          <include name="tearDown"/>
           <include name="CompaniesPageURLTest"/>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
           <include name="setUp"/>
+          <include name="endReport"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.CompaniesPageTest -->
+      <class name="com.staff.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
+          <include name="loginTest"/>
+          <include name="loginPageTitleTest"/>
+          <include name="validateLoginFunctionality"/>
+          <include name="endReport"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.LoginPageTest -->
+      <class name="com.staff.qa.testcases.HomePageTest">
+        <methods>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
+          <include name="endReport"/>
+          <include name="setUp"/>
+          <include name="verifyUserNameLableTest"/>
+          <include name="logoutTest"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.HomePageTest -->
     </classes>
   </test> <!-- E-Staff App Test Cases(failed) -->
 </suite> <!-- Failed suite [E-Staff Test Automation Test Suite] -->

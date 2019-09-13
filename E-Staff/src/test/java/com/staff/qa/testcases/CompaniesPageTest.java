@@ -38,6 +38,8 @@ public class CompaniesPageTest extends TestBase {
 	
 	@Test
 	public void CompaniesPageURLTest() throws InterruptedException {
+		test = extent.createTest("Verify the Companies-Page URL Test");
+		
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		wait.until(ExpectedConditions.titleIs("Xor E-Staff"));
 		
@@ -49,9 +51,6 @@ public class CompaniesPageTest extends TestBase {
 	}
 	
 	
-	@AfterMethod
-	public void tearDown() {
-		driver.close();
-	}
+	
 
 }
