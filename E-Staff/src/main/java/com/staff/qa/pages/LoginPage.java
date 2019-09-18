@@ -19,21 +19,31 @@ public class LoginPage extends TestBase {
 	}
 	
 	@FindBy(name = "username")
-	@CacheLookup
 	WebElement username;
 	
 	@FindBy(name = "password")
-	@CacheLookup
 	WebElement password;
 	
 	@FindBy(xpath = "//div[@class='btn btn-primary login-button']")
-	@CacheLookup
 	WebElement loginBtn;
+	
+	@FindBy(xpath = "//div[@class='ng-star-inserted']")
+	WebElement userNameValidationMessage;
+	
+	@FindBy(xpath = "//div[@class='text-left text-danger validation-error ng-star-inserted']")
+	WebElement passwordValidationMessage;
+	
+	public String userNameValidationMessage() {
+		return userNameValidationMessage.getText();
+	}
+	
+	public String passwordValidationMessage() {
+		return passwordValidationMessage.getText();
+	}
 	
 	public String validateLoginPageTitle() {
 		return driver.getTitle();
-	}
-	
+	}	
 	
 	public HomePage login(String un , String pwd) {
 		username.sendKeys(un);

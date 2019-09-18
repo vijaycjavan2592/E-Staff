@@ -5,10 +5,12 @@
     <classes>
       <class name="com.staff.qa.testcases.LoginPageTest">
         <methods>
+          <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
+          <include name="validatePasswordMessageForIncorrectPassword"/>
           <include name="getResult"/>
-          <include name="loginTest"/>
           <include name="endReport"/>
+          <include name="setupAfterSuite"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.LoginPageTest -->
