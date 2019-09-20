@@ -9,7 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.OutputType;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -22,13 +24,19 @@ import org.apache.poi.ss.usermodel.Row;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.utils.FileUtil;
+import com.google.common.base.Function;
 import com.staff.qa.base.TestBase;
 
-public class TestUtil {
+public class TestUtil extends TestBase {
 	
 	
 	
@@ -38,8 +46,15 @@ public class TestUtil {
 	static HSSFWorkbook wbook;
 	static HSSFSheet sheet;
 	static HSSFRow row;
-
 	
+	
+	public static void sendInput(WebElement ele, String text){
+			ele.sendKeys(text);
+		}
+	
+	public static void click(WebElement ele){
+		ele.click();
+	}
 
 	public static Object[][] getData(String sheetName) throws IOException{
 		
@@ -107,7 +122,7 @@ public class TestUtil {
 	
 	//---------------------------------------------------------------------
 			
-			public static void wirte(String TCResult1) throws IOException {
+	/*		public static void wirte(String TCResult1) throws IOException {
 				//TestUtil.getData(" ");
 			row = sheet.getRow(1);
      	   
@@ -128,9 +143,9 @@ public class TestUtil {
         }
 
 		
-		
+		*/
 
-	
+	/*
 	
 	public static void writeDataInExcel(int p) throws IOException {
 
@@ -363,7 +378,7 @@ public class TestUtil {
 		    }
 
 
-	
+	*/
 
 	
 

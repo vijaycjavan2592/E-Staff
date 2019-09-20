@@ -72,7 +72,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 	
 	public void afterFindBy(By by, WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
-		System.out.println("Found Element By : "+element.toString());	
+		//System.out.println("Found Element By : "+element.toString());	
 	}
 	
 	public void onException(Throwable error, WebDriver driver) {

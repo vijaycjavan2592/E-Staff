@@ -146,7 +146,7 @@ public class TestBase {
 			//TestUtil.writeDataInExcel(result.getStatus());
 		}
 		
-		if(result.getStatus() == ITestResult.FAILURE){
+		else if(result.getStatus() == ITestResult.FAILURE){
 			//logger.log(Status.FAIL, "Test Case Failed is "+result.getName());
 			//MarkupHelper is used to display the output in different colors
 			String screenShotPath = takeScreenShot(driver, result.getName());
@@ -163,7 +163,7 @@ public class TestBase {
 		}
 		
 		System.out.println("Browser close");
-		driver.close();
+		//driver.close();
 		
 	}
 	
@@ -172,8 +172,7 @@ public class TestBase {
 	public void endReport() {
 		
 		//extent.close();
-		extent.flush();		
-		
+		extent.flush();				
 	}
 	
 	

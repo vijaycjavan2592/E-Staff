@@ -22,11 +22,18 @@ public class HomePage extends TestBase{
 	@FindBy(xpath = "//span[@class='custom-user']")
 	WebElement userNameLabel;
 	
+	//Click on Menu button
 	@FindBy(xpath = "//div[@id='hamburgerMenuIcon']")
 	WebElement clickOnMenuButton;
 	
+	//Click on Companies menu
 	@FindBy(xpath = "//div[@class='nav-item companies']")
 	WebElement clickCompaniesOption;
+	
+	//Click on Consultant menu
+	@FindBy(xpath = "//div[@class='nav-item consultants']")
+	WebElement clickConsultantOption;
+		
 	
 	public boolean verifyCorrectUserName() {
 		//System.out.println(userNameLabel.getText());
@@ -36,8 +43,15 @@ public class HomePage extends TestBase{
 	public CompaniesPage clickOnCompaniesOption() {
 		clickOnMenuButton.click();
 		clickCompaniesOption.click();
-		return new CompaniesPage();
-		
+		return new CompaniesPage();		
+	}
+	
+	
+	public ConsultantPage clickOnConsultantOption() throws InterruptedException {
+		clickOnMenuButton.click();
+		Thread.sleep(1000);
+		clickConsultantOption.click();
+		return new ConsultantPage();		
 	}
 	
 	/*public void clickOnMenuButton() {

@@ -9,9 +9,9 @@
 
   <test thread-count="5" name="E-Staff App Test Cases">
     <classes>
-      <class name="com.staff.qa.testcases.HomePageTest"/>
+   <!--   <class name="com.staff.qa.testcases.HomePageTest"/>-->
        <class name="com.staff.qa.testcases.LoginPageTest"/>  
-       <class name="com.staff.qa.testcases.CompaniesPageTest"/>  
+    <!--   <class name="com.staff.qa.testcases.CompaniesPageTest"/>  -->
       
     </classes>
   </test> <!-- Test -->
