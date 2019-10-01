@@ -2,6 +2,7 @@ package com.staff.qa.testcases;
 
 import java.io.IOException;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -24,9 +25,10 @@ public class LoginPageTest extends TestBase {
 	HomePage homepage;
 
 	String sheetName = "LoginData";
+	public static String resultSheetName = "LoginTCResult";
 
 	public LoginPageTest() {
-		super();
+		super();		
 	}
 
 	@BeforeMethod
@@ -35,7 +37,7 @@ public class LoginPageTest extends TestBase {
 		loginpage = new LoginPage();
 	}
 
-//	 @Test
+	 @Test
 	public void loginPageTitleTest() {
 		test = extent.createTest("Verify the login Page Title Test");
 		String title = loginpage.validateLoginPageTitle();
@@ -54,7 +56,7 @@ public class LoginPageTest extends TestBase {
 
 	}
 
-//	 @Test
+	 @Test
 	public void loginTest() throws InterruptedException {
 		test = extent.createTest("To Check The Login Functionality with Valid Username and Valid Password");
 		homepage = loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
@@ -88,7 +90,7 @@ public class LoginPageTest extends TestBase {
 		return data;
 	}
 
-	// @Test(dataProvider = "getEStaffData")
+	//@Test(dataProvider = "getEStaffData")
 	public void validateLoginFunctionality(String username, String password) throws InterruptedException, IOException {
 		test = extent.createTest("Verify the Login functionality for incorrect Username or Passwords");
 
@@ -104,7 +106,7 @@ public class LoginPageTest extends TestBase {
 
 	}
 
-//	 @Test
+	 @Test
 	public void validateUsernameMessageForBalankUsername() throws InterruptedException {
 
 		String abc = "To Check The Login Functionality with Blank Username and Valid Password";
@@ -133,7 +135,7 @@ public class LoginPageTest extends TestBase {
 
 	}
 
-//	 @Test
+	 @Test
 	public void validateUsernameMessageForIncorrectUsername() throws InterruptedException {
 		String abc = "fhjjgwejg";
 		test = extent.createTest("To Check The Login Functionality with Incorrect Username and Valid Password");
@@ -186,7 +188,7 @@ public class LoginPageTest extends TestBase {
 		}
 	}
 
-//	@Test
+	@Test
 	public void validatePasswordMessageForIncorrectPassword() throws InterruptedException {
 		test = extent.createTest("To Check The Login Functionality with Valid Username and Incorrect Password");
 		homepage = loginpage.login(prop.getProperty("username"), prop.getProperty("password_incorrect"));
@@ -209,7 +211,7 @@ public class LoginPageTest extends TestBase {
 		}
 	}
 
-//	@Test
+	@Test
 	public void validateLoginFunctionalityForIncorrectUserNamePassword() throws InterruptedException {
 		test = extent.createTest("To Check The Login Functionality with Incorrect Username and Incorrect Password");
 		homepage = loginpage.login(prop.getProperty("username_incorrect"), prop.getProperty("password_incorrect"));
@@ -236,7 +238,7 @@ public class LoginPageTest extends TestBase {
 	}
 	
 	
-//	@Test
+	@Test
 	public void validateMessageForBlankPasswordIncorrectUsername() throws InterruptedException {
 		test = extent.createTest("To Check The Login Functionality with Invalid Username and Blank Password ");
 		homepage = loginpage.login(prop.getProperty("username_incorrect"), prop.getProperty("password_blank"));
@@ -264,7 +266,7 @@ public class LoginPageTest extends TestBase {
 	}
 	
 	
-//	@Test
+	@Test
 	public void validateMessageForBlankUsernamePassword() throws InterruptedException {
 		test = extent.createTest("To Check The Login Functionality with Blank Username and Blank Password ");
 		homepage = loginpage.login(prop.getProperty("username_Blank"), prop.getProperty("password_blank"));

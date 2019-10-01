@@ -14,6 +14,22 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.LoginPageTest -->
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
+        <methods>
+          <include name="verifyDownloadResumeFunctionality"/>
+          <include name="verifyLinkRequirementToConsultant"/>
+          <include name="setUp"/>
+          <include name="setupBeforeSuite"/>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
+          <include name="verifyArchiveFunctionality"/>
+          <include name="verifyCancelFunctionalityOfLinkRequirement"/>
+          <include name="verifyLinkRequirementToConsultant_alreadyExists"/>
+          <include name="verifyAddNewConsultant" invocation-numbers="0"/>
+          <include name="endReport"/>
+          <include name="setupAfterSuite"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>
   </test> <!-- E-Staff App Test Cases(failed) -->
 </suite> <!-- Failed suite [E-Staff Test Automation Test Suite] -->

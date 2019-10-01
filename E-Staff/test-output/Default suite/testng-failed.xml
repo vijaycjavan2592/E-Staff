@@ -9,9 +9,9 @@
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
+          <include name="verifyArchiveFunctionality"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
-          <include name="verifyFunctionalityofContinueButton"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>

@@ -59,11 +59,9 @@ public class TestUtil extends TestBase {
 	public static Object[][] getData(String sheetName) throws IOException{
 		
 		try {
-			FileInputStream file = new FileInputStream(
-					"D:\\Personal Docs\\Eclipse\\E-Staff\\src\\main\\java\\com\\staff\\qa\\testdata\\TestData_EStaff_.xls");
+			FileInputStream file = new FileInputStream(prop.getProperty("TestDate_ReadExcelSheet"));
 			
 			wbook = new HSSFWorkbook(file);
-						
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,8 +79,10 @@ public class TestUtil extends TestBase {
 		
 		
 			int rowSize = sheet.getLastRowNum();
+			System.out.println("Last Row Number is : "+rowSize);
 			int colSize = sheet.getRow(0).getLastCellNum();
-		Object[][] input = new Object[rowcount][colcount];
+			System.out.println("Last Col Number is : "+colSize);
+		Object[][] input = new Object[rowSize][colSize];
 		
 		for(int i=0 ; i<rowSize ; i++) {
 			row = sheet.getRow(i + 1);

@@ -62,11 +62,11 @@ public class TestBase {
 	
 	public Map<String, Object[]> testresultdata;
 	
-	HSSFWorkbook workbook;
-	HSSFSheet sheet;
+	public HSSFWorkbook workbook;
+	public HSSFSheet sheet;
 	
 
-	public TestBase() {
+	public TestBase() {	 
 
 		try {
 			prop = new Properties();
@@ -119,7 +119,7 @@ public class TestBase {
 	}
 	
 	@BeforeTest
-	public void setExtentReport() {
+	public void setExtentReport(ITestContext context) {
 		htmlreport = new ExtentHtmlReporter(
 				System.getProperty("user.dir") + "//test-output//Reportsreportextent50.html");
 
@@ -129,7 +129,14 @@ public class TestBase {
 		htmlreport.config().setDocumentTitle("E-Staff Application Automation Report");
 		htmlreport.config().setReportName("Functional Testing");
 		
-		
+	    //create a new work book
+	   //   workbook = new HSSFWorkbook();
+	      //create a new work sheet
+	   //    sheet = workbook.getSheet("Test Result");
+	   //   testresultdata = new LinkedHashMap<String, Object[]>();
+	      //add test result excel file column header
+	      //write the header in the first row
+	    //  testresultdata.put("1", new Object[] {"Test Case Id", "Teat Case description", "Expected Result","Actual Result"});      
 	}
 	
 	
@@ -163,16 +170,8 @@ public class TestBase {
 		}
 		
 		System.out.println("Browser close");
-		//driver.close();
+		driver.close();
 		
-	}
-	
-	
-	@AfterTest
-	public void endReport() {
-		
-		//extent.close();
-		extent.flush();				
 	}
 	
 	
@@ -193,20 +192,26 @@ public class TestBase {
 	}
 	
 	
-	@BeforeClass(alwaysRun = true)
-	  public void setupBeforeSuite(ITestContext context) {
-	    
+	@BeforeClass
+	  public void setupBeforeSuite(ITestContext context) throws IOException {
+		FileInputStream file = new FileInputStream(prop.getProperty("TestCaseResultsInExcelSheet"));
 	     //create a new work book
-	      workbook = new HSSFWorkbook();
+	     workbook = new HSSFWorkbook(file);
 	      //create a new work sheet
-	       sheet = workbook.createSheet("Test Result");
+	      
+	      sheet = workbook.createSheet();
 	      testresultdata = new LinkedHashMap<String, Object[]>();
 	      //add test result excel file column header
 	      //write the header in the first row
-	      testresultdata.put("1", new Object[] {"Test Case Id", "Teat Case description", "Expected Result","Actual Result"});
-	      
+	      testresultdata.put("1", new Object[] {"Test Case Id", "Teat Case description", "Expected Result","Actual Result"});	      
 	}
 	
+	@AfterTest
+	public void endReport() {
+		
+		//extent.close();
+		extent.flush();				
+	}
 	
 	@AfterClass
 	  public void setupAfterSuite() {
@@ -230,7 +235,7 @@ public class TestBase {
 	        }
 	    }
 	    try {
-	        FileOutputStream out =new FileOutputStream("D:\\Personal Docs\\Eclipse\\E-Staff\\src\\main\\java\\com\\staff\\qa\\testdata\\TestData_EStaff_.xls");
+	        FileOutputStream out =new FileOutputStream(prop.getProperty("TestCaseResultsInExcelSheet"));
 	        workbook.write(out);
 	        out.close();
 	        System.out.println("Excel written successfully..");
