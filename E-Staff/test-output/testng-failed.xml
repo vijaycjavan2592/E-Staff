@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [E-Staff Test Automation Test Suite]]">
-  <test thread-count="5" name="E-Staff App Test Cases(failed)(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.LoginPageTest">
+      <class name="com.staff.qa.testcases.RequirementPageTest">
         <methods>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
-          <include name="validatePasswordMessageForIncorrectPassword"/>
           <include name="getResult"/>
-          <include name="endReport"/>
-          <include name="setupAfterSuite"/>
+          <include name="verifyArchivedRequirementFunctionality"/>
           <include name="setUp"/>
-        </methods>
-      </class> <!-- com.staff.qa.testcases.LoginPageTest -->
-      <class name="com.staff.qa.testcases.ConsultantPageTest">
-        <methods>
-          <include name="verifyLinkRequirementToConsultant"/>
-          <include name="setUp"/>
-          <include name="setupBeforeSuite"/>
-          <include name="setExtentReport"/>
-          <include name="getResult"/>
-          <include name="verifyAddNewConsultant" invocation-numbers="0"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
     </classes>
-  </test> <!-- E-Staff App Test Cases(failed)(failed) -->
-</suite> <!-- Failed suite [Failed suite [E-Staff Test Automation Test Suite]] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

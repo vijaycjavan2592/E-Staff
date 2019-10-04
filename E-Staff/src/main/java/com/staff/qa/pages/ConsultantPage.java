@@ -572,8 +572,7 @@ public class ConsultantPage extends TestBase {
 	WebElement searchTextBox;
 	
 	public void setSearchTextBox(String search) throws InterruptedException {	
-		TestUtil.sendInput(searchTextBox, search);
-				
+		TestUtil.sendInput(searchTextBox, search);				
 	}
 	
 	//-------------Edit Consultant--------------------------------------------
@@ -590,7 +589,7 @@ public class ConsultantPage extends TestBase {
 		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
 	    public WebElement apply(WebDriver driver) {
 	    	TestUtil.click(clickOnEditButton);
-		return gridsection;
+		return clickOnEditButton;
 	}		
 		});		
 		

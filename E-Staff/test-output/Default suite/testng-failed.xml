@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.ConsultantPageTest">
+      <class name="com.staff.qa.testcases.RequirementPageTest">
         <methods>
-          <include name="setUp"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
-          <include name="verifyArchiveFunctionality"/>
+          <include name="verifyArchivedRequirementFunctionality"/>
+          <include name="setUp"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

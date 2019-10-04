@@ -11,11 +11,14 @@
     <classes>
    <!--   <class name="com.staff.qa.testcases.HomePageTest"/>-->
    
-    <class name="com.staff.qa.testcases.LoginPageTest">   
+      <class name="com.staff.qa.testcases.LoginPageTest">   
                 
-       </class>
-       
-        <class name="com.staff.qa.testcases.ConsultantPageTest">
+       </class>   
+            
+        <class name="com.staff.qa.testcases.RequirementPageTest">
+         
+       </class> 
+          <class name="com.staff.qa.testcases.ConsultantPageTest">
          
        </class> 
      <!--  <class name="com.staff.qa.testcases.CompaniesPageTest"/>  -->

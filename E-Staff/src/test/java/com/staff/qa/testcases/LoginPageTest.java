@@ -47,9 +47,9 @@ public class LoginPageTest extends TestBase {
 			Assert.assertEquals(title, "Xor E-Staff");
 			test.log(Status.PASS, "Validation of Login page tile suscessfully");
 
-			testresultdata.put("10", new Object[] { 10d, "Verify the login Page Title Test", "Xor E-Staff", "Pass" });
+			testresultdata.put("1", new Object[] { 1d, "Verify the login Page Title Test", "Xor E-Staff", "Pass" });
 		} catch (AssertionError e) {
-			testresultdata.put("10", new Object[] { 10d, "Verify the login Page Title Test", "Xor E-Staff", "Fail" });
+			testresultdata.put("1", new Object[] { 1d, "Verify the login Page Title Test", "Xor E-Staff", "Fail" });
 			e.printStackTrace();
 			Assert.fail();
 		}

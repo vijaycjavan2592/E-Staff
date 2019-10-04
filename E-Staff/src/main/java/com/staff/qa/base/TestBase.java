@@ -11,6 +11,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
 
@@ -141,7 +143,7 @@ public class TestBase {
 	
 	
 	@AfterMethod
-	public static void getResult(ITestResult result) throws IOException{
+	public static void getResult(ITestResult result) throws IOException, InterruptedException{
 		String sheetName = "LoginData";
 		System.out.println("TC Name is : "+result.getName());
 		//test = extent.createTest(result.getMethod().getMethodName());
@@ -170,7 +172,8 @@ public class TestBase {
 		}
 		
 		System.out.println("Browser close");
-		driver.close();
+		Thread.sleep(1000);
+		//driver.close();
 		
 	}
 	
@@ -192,7 +195,7 @@ public class TestBase {
 	}
 	
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	  public void setupBeforeSuite(ITestContext context) throws IOException {
 		FileInputStream file = new FileInputStream(prop.getProperty("TestCaseResultsInExcelSheet"));
 	     //create a new work book
@@ -200,10 +203,10 @@ public class TestBase {
 	      //create a new work sheet
 	      
 	      sheet = workbook.createSheet();
-	      testresultdata = new LinkedHashMap<String, Object[]>();
+	      testresultdata = new TreeMap<String, Object[]>();
 	      //add test result excel file column header
 	      //write the header in the first row
-	      testresultdata.put("1", new Object[] {"Test Case Id", "Teat Case description", "Expected Result","Actual Result"});	      
+	      testresultdata.put("0", new Object[] {"Test Case Id", "Teat Case description", "Expected Result","Actual Result"});	
 	}
 	
 	@AfterTest

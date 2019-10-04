@@ -33,6 +33,10 @@ public class HomePage extends TestBase{
 	//Click on Consultant menu
 	@FindBy(xpath = "//div[@class='nav-item consultants']")
 	WebElement clickConsultantOption;
+	
+	//Click on Requirement menu
+	@FindBy(xpath = "//div[@class='nav-item requirements']")
+	WebElement clickRequirementOption;
 		
 	
 	public boolean verifyCorrectUserName() {
@@ -52,6 +56,13 @@ public class HomePage extends TestBase{
 		Thread.sleep(1000);
 		clickConsultantOption.click();
 		return new ConsultantPage();		
+	}
+	
+	public RequirementPage clickOnRequirementOption() throws InterruptedException {
+		clickOnMenuButton.click();
+		Thread.sleep(1000);
+		clickRequirementOption.click();
+		return new RequirementPage();		
 	}
 	
 	/*public void clickOnMenuButton() {

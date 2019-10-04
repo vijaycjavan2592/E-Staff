@@ -100,7 +100,9 @@ public class TestUtil extends TestBase {
 				}
 				else if(cell.getCellType() == CellType.NUMERIC)
 				{
-					data = cell.getNumericCellValue();
+					data = String.valueOf(cell);
+					//data = new Integer(cell.getStringCellValue()).toString();
+					//data = cell.getNumericCellValue();
 					
 				}
 				else if(cell.getCellType() == CellType.BLANK)
