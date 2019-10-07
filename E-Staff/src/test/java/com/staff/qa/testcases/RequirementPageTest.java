@@ -548,36 +548,185 @@ public class RequirementPageTest extends TestBase{
 		}	
 	}
 	
-	
-	@Test
+//	@Test
 	public void verifyArchivedRequirementFunctionality() {
 		String TestCaseName = "Verify that user can Archive the requirement";
 		test = extent.createTest(TestCaseName);
-		
-	       String searchRequirement = "Req-264587-6";		
-			
-	        try {
+
+		String searchRequirement = "Req-264587-6";
+
+		try {
+			requirementPage.setClickOnAllTag();
 			Thread.sleep(3000);
 			requirementPage.setSearchTextBox(searchRequirement);
-			Thread.sleep(5000);
-			
+			Thread.sleep(7000);
+
 			requirementPage.setClickArchiveOption();
 			requirementPage.setselectArchiveOption("Yes");
-			
-			
-			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(), "Job Description Updated Successfully");
-			
-			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
-			testresultdata.put("13", new Object[] { 13d, TestCaseName,
-					"User should be able to edit the job description of requirement", "Pass" });
-			} catch (Exception e) {
-				testresultdata.put("13", new Object[] { 13d, TestCaseName,
-						"User should be able to edit the job description of requirement", "Fail" });
-				e.printStackTrace();
-				Assert.fail();
-			}	
+			Thread.sleep(2000);
+			requirementPage.setClickClosureDate();
+			Thread.sleep(2000);
+			requirementPage.selectStartYear_ClosureDate("2019");
+			Thread.sleep(2000);
+			requirementPage.selectMonth_ClosureDate("Oct");
+			Thread.sleep(2000);
+			requirementPage.setSelectDate_ClosureDate("7");
+			requirementPage.setSelectClosureReason("Duplicate");
+			requirementPage.setClickOnArchiveButton();
 
+			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
+					"Requirement '" + searchRequirement + "' Archived and Closed Successfully");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("14",
+					new Object[] { 14d, TestCaseName, "User should be able to archive the requirement", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("14",
+					new Object[] { 14d, TestCaseName, "User should be able to archive the requirement", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
 	}
 	
+//	@Test
+	public void verifyUnArchivedRequirementFunctionality() {
+		String TestCaseName = "Verify that user can Un-Archive the requirement";
+		test = extent.createTest(TestCaseName);
+
+		String searchRequirement = "Req-264587-6";
+
+		try {
+			requirementPage.setClickOnAllTag();
+			Thread.sleep(3000);
+			requirementPage.setSearchTextBox(searchRequirement);
+			Thread.sleep(7000);
+
+			requirementPage.setClickArchiveOption();
+			requirementPage.setselectArchiveOption("No");
+			Thread.sleep(2000);
+			requirementPage.setClickOnSaveButtonForUnArchived();
+
+			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
+					"Requirement '" + searchRequirement + "' UnArchived Successfully");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("15",
+					new Object[] { 15d, TestCaseName, "User should be able to un-archive the requirement", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("15",
+					new Object[] { 15d, TestCaseName, "User should be able to un-archive the requirement", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
 	
+//	@Test
+	public void verifyValidationMessageForClosuredate() {
+		String TestCaseName = "Verify that user can select closure date select as future date while Archive the requirement";
+		test = extent.createTest(TestCaseName);
+
+		String searchRequirement = "Req-264587-6";
+
+		try {
+			requirementPage.setClickOnAllTag();
+			Thread.sleep(3000);
+			requirementPage.setSearchTextBox(searchRequirement);
+			Thread.sleep(7000);
+
+			requirementPage.setClickArchiveOption();
+			requirementPage.setselectArchiveOption("Yes");
+			Thread.sleep(2000);
+			requirementPage.setClickClosureDate();
+			Thread.sleep(2000);
+			requirementPage.selectStartYear_ClosureDate("2020");
+			Thread.sleep(2000);
+			requirementPage.selectMonth_ClosureDate("Mar");
+			Thread.sleep(2000);
+			requirementPage.setSelectDate_ClosureDate("7");
+						
+			Assert.assertEquals(requirementPage.setClosureDateValidationMessage(),
+					"Closure date cannot be a date in the future");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("16", new Object[] { 16d, TestCaseName,
+					"validation message should be appear 'Closure date cannot be a date in the future'", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("16", new Object[] { 16d, TestCaseName,
+					"validation message should be appear 'Closure date cannot be a date in the future'", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+
+	
+//  @Test
+	public void verifyValidationMessageForClosureReason() {
+		String TestCaseName = "Verify that user can archive the requirement without selecting closure reason";
+		test = extent.createTest(TestCaseName);
+
+		String searchRequirement = "Req-264587-6";
+
+		try {
+			requirementPage.setClickOnAllTag();
+			Thread.sleep(3000);
+			requirementPage.setSearchTextBox(searchRequirement);
+			Thread.sleep(7000);
+
+			requirementPage.setClickArchiveOption();
+			requirementPage.setselectArchiveOption("Yes");
+			Thread.sleep(2000);
+			requirementPage.setClickClosureDate();
+			Thread.sleep(2000);
+			requirementPage.selectStartYear_ClosureDate("2019");
+			Thread.sleep(2000);
+			requirementPage.selectMonth_ClosureDate("Mar");
+			Thread.sleep(2000);
+			requirementPage.setSelectDate_ClosureDate("7");
+			Thread.sleep(2000);
+			requirementPage.setClickOnArchiveButton();
+			
+			Assert.assertEquals(requirementPage.setClosureReasonValidationMessage(),
+					"Please Select Closure Reason");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("17", new Object[] { 17d, TestCaseName,
+					"validation message should be appear 'Please Select Closure Reason'", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("17", new Object[] { 17d, TestCaseName,
+					"validation message should be appear 'Please Select Closure Reason'", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+	
+	@Test
+	public void verifyCancelButtonFunctionalityOfArchiveRequirementPopUp() {
+		String TestCaseName = "Verify the Cancel Button Functionality Of Archive Requirement pop up ";
+		test = extent.createTest(TestCaseName);
+
+		String searchRequirement = "Req-264587-6";
+
+		try {
+			requirementPage.setClickOnAllTag();
+			Thread.sleep(3000);
+			requirementPage.setSearchTextBox(searchRequirement);
+			Thread.sleep(7000);
+
+			requirementPage.setClickArchiveOption();
+			requirementPage.setselectArchiveOption("Yes");
+			Thread.sleep(2000);
+			requirementPage.setClickOnCancelButtonFromArchivedPopUp();
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("18", new Object[] { 18d, TestCaseName,
+					"Archived pop up should be closed once click on Cancel button", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("18", new Object[] { 18d, TestCaseName,
+					"Archived pop up should be closed once click on Cancel button'", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+
+
 }

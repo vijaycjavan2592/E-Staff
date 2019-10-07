@@ -3,20 +3,6 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [E-Staff Test Automation Test Suite]">
   <test thread-count="5" name="E-Staff App Test Cases(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.ConsultantPageTest">
-        <methods>
-          <include name="verifyLinkRequirementToConsultant"/>
-          <include name="setUp"/>
-          <include name="setupBeforeSuite"/>
-          <include name="setExtentReport"/>
-          <include name="getResult"/>
-          <include name="verifyCancelFunctionalityOfLinkRequirement"/>
-          <include name="verifyLinkRequirementToConsultant_alreadyExists"/>
-          <include name="endReport"/>
-          <include name="setupAfterSuite"/>
-          <include name="verifyCancelButtonFunctionalityOfEmail"/>
-        </methods>
-      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
       <class name="com.staff.qa.testcases.LoginPageTest">
         <methods>
           <include name="setupBeforeSuite"/>
@@ -33,8 +19,10 @@
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
+          <include name="verifyArchivedRequirementFunctionality"/>
           <include name="setUp"/>
-          <include name="verifyAddNewRequirementBtnClickable"/>
+          <include name="verifyUploadDocumentAppearInGrid"/>
+          <include name="verifyUploadDocumentFunctionality"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
         </methods>

@@ -5,10 +5,11 @@
     <classes>
       <class name="com.staff.qa.testcases.RequirementPageTest">
         <methods>
+          <include name="verifyValidationMessageForClosuredate"/>
+          <include name="verifyValidationMessageForClosureReason"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
-          <include name="verifyArchivedRequirementFunctionality"/>
           <include name="setUp"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>

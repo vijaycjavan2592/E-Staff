@@ -5,6 +5,8 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -426,10 +428,19 @@ public class RequirementPage extends TestBase {
 		
 		System.out.println("Date is ::-" + alldate.getText());
 		
-		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +date+ "')]"));
+		Date date1 = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd");
+		String strDate= formatter.format(date1);
+		System.out.println(strDate);
 		
+		if(date.equals(strDate)) {
+			driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
+		}
+		else {
+		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +date+ "')]"));		
 		we.click();				
 		}		
+		}
 	}
 	
 	//Click on Continue Button(General)
@@ -723,6 +734,153 @@ public class RequirementPage extends TestBase {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[contains(text(),'"+archiveOption+"')]")).click();		
 	}	
+	
+	//Click on Closure Date
+	@FindBy(xpath = "//div[@class='date-row']//input[@name='requirementReqDueDate']")
+	WebElement clickOnClosureDate;
+
+	public void setClickClosureDate() throws InterruptedException {
+		TestUtil.click(clickOnClosureDate);
+		Thread.sleep(1000);
+		TestUtil.click(clickOnDropButton);
+	}
+	
+
+	@FindBy(xpath = "//span[@class='owl-dt-control-button-arrow']")
+	WebElement clickOnDropButton_ClosureDate;
+
+	@FindBy(xpath = "//tbody[@class='owl-dt-calendar-body']")
+	List<WebElement> selectYear_ClosureDate;
+	
+	//Select Month
+    @FindBy(xpath = "//tbody[@class='owl-dt-calendar-body']")
+	List<WebElement> selectMonth_ClosureDate;
+    
+	//Select Date
+	@FindBy(xpath = "//tbody[@class='owl-dt-calendar-body']")
+	List<WebElement> selectDate_ClosureDate;
+		
+	
+	public void selectStartYear_ClosureDate(String year) throws InterruptedException {		
+		
+		Iterator<WebElement> it = selectYear.iterator();
+		while(it.hasNext()) {
+			WebElement year1 = it.next();
+			System.out.println(year1.getText());		
+			
+	
+			if(year.equals("2019")) {
+				driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today owl-dt-calendar-cell-selected']")).click();
+			}
+			else 
+			{							
+			WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +year+ "')]"));
+			we.click();
+			}
+		
+		}
+	}
+	
+	public void selectMonth_ClosureDate(String month) throws InterruptedException {
+		
+		Iterator<WebElement> it_month = selectMonth.iterator();
+		while(it_month.hasNext()) {
+			WebElement months = it_month.next();
+		
+		System.out.println("Start month is : "+months.getText());
+		
+		Date date1 = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+		String stryear= formatter.format(date1);
+		System.out.println(stryear);
+		
+		if(month.equals("Oct") & stryear.equals("2019")) {
+			driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today owl-dt-calendar-cell-selected']")).click();
+		}
+		else
+		{
+		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +month+ "')]"));
+		we.click();
+		}
+	
+		}
+	}
+	
+	public void setSelectDate_ClosureDate(String date) throws InterruptedException {
+		
+		Iterator<WebElement> it_date = selectDate.iterator();
+		while(it_date.hasNext()) {
+			WebElement alldate = it_date.next();
+		
+		System.out.println("Date is ::-" + alldate.getText());
+		
+		Date date1 = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd");
+		String strDate= formatter.format(date1);
+		System.out.println(strDate);
+		
+		if(date.equals(strDate)) {
+			driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today owl-dt-calendar-cell-selected']")).click();
+		}
+		else {
+		WebElement we = driver.findElement(By.xpath("//tbody[@class='owl-dt-calendar-body']//span[text()='"+date+"']"));		
+		we.click();				
+		}		
+		}
+	}
+	
+	//Select Closure Reason
+	@FindBy(xpath= "//div[@class='col-md-9']//ng-select[@name='requirementClosureReason']")
+	WebElement selectClosureReason;
+	
+	public void setSelectClosureReason(String ClosureReason) throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(selectClosureReason);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'"+ClosureReason+"')]")).click();
+	}
+	
+	//Click on Close and Archive button
+	@FindBy(xpath = "//span[contains(text(),'Close and Archive')]")
+	WebElement clickOnArchiveButton;
+	
+	public void setClickOnArchiveButton() throws InterruptedException {
+		Thread.sleep(1000);
+		TestUtil.click(clickOnArchiveButton);
+	}
+	
+	//click on Save button for un-archived requirement
+	@FindBy(xpath = "//div[@class='action']/span[1]")
+	WebElement clickSaveButton;
+	
+	public void setClickOnSaveButtonForUnArchived() {
+		TestUtil.click(clickSaveButton);
+	}
+	
+	//Validation message for closure date while Archive the requirement
+	@FindBy(xpath = "//div[contains(text(),'Closure date cannot be a date in the future')]")
+	WebElement closureDateValidationMessage;
+	
+	public String setClosureDateValidationMessage() {
+		return closureDateValidationMessage.getText();
+	}
+	
+	//Validation message for closure reason while Archive the requirement
+	@FindBy(xpath = "//p[contains(text(),'Please Select Closure Reason')]")
+	WebElement closureReasonValidationMessage;
+	
+	public String setClosureReasonValidationMessage() {
+		return closureReasonValidationMessage.getText();
+	}
+	
+	//click on Cancel button of archived requirement pop up
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickCancelButton;
+	
+	public void setClickOnCancelButtonFromArchivedPopUp() {
+		TestUtil.click(clickCancelButton);
+	}
+	
 	
 	
 	
