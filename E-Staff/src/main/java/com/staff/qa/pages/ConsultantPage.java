@@ -930,4 +930,268 @@ public class ConsultantPage extends TestBase {
 		TestUtil.click(clickOnUnArchiveButton);	
 	}
 	
+	//Requirement Grid 1st Row data (forRequirement Name)
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
+	WebElement requirementName;
+	
+	public String setRequirementName() {
+		return requirementName.getText();
+	}
+	
+	//----------------------Add Note----------------------
+	//Click on Add Note link
+	@FindBy(xpath = "//span[@class='add-notes-heading']")
+	WebElement clickOnAddNoteLink;
+
+	public void setClickOnAddNoteLink() {
+		TestUtil.click(clickOnAddNoteLink);
+	}
+	
+	//Enter note into textbox
+	@FindBy(xpath = "//textarea[@class='ng-untouched ng-pristine ng-valid']")
+	WebElement enterNoteInTextBox;
+
+	public void setEnterNoteInTextBox(String note) {
+		TestUtil.sendInput(enterNoteInTextBox, note);
+	}
+
+	// Click on Add Note Button
+	@FindBy(xpath = "//button[contains(text(),'Add Note')]")
+	WebElement clickOnAddNoteButton;
+
+	public void setClickOnAddNoteButton() {
+		TestUtil.click(clickOnAddNoteButton);
+	}
+	
+	// Click on Cancel button of Add Note pop up
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelBtnOfAddNote;
+
+	public void setClickOnCancelBtnOfAddNote() {
+		TestUtil.click(clickOnCancelBtnOfAddNote);
+	}
+	
+	//----------------------Schedule Meeting---------------------
+	// Click on Schedule Meeting Button
+	@FindBy(xpath = "//button[@class='blueButton' or contains(text(),'Schedule Meeting')]")
+	WebElement clickOnScheduleMeetingButton;
+
+	public void setClickOnScheduleMeetingButton() {
+		TestUtil.click(clickOnScheduleMeetingButton);
+	}
+	
+	//Schedule Meeting pop up name
+	@FindBy(xpath = "//div[contains(text(),'Schedule Meeting')]")
+	WebElement scheduleMeetingPopupName;
+	
+	public String setScheduleMeetingPopUpName() {
+		return scheduleMeetingPopupName.getText();
+	}
+	
+	//Enter Email id
+	@FindBy(xpath = "//input[@name='meetingSentTo']")
+	WebElement enterEmailId;
+	
+	public void setEnterEmailId(String emailid) {
+		enterEmailId.clear();
+		TestUtil.sendInput(enterEmailId, emailid);
+	}
+	
+	//Appointment-Type Dropdown
+	@FindBy(xpath = "//ng-select[@name='appointmentType']")
+	WebElement clickAppointmentTypeDropdown;
+	
+	@FindBy(xpath = "//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]")	
+	WebElement selectAppointmentType;
+	
+	public void setSelectAppointmentType(String appointmentType) throws InterruptedException {
+		TestUtil.click(clickAppointmentTypeDropdown);
+		Thread.sleep(2000);
+		String AppointmentType = selectAppointmentType.getText();
+		System.out.println("++++++++++++++++"+selectAppointmentType);
+		driver.findElement(By.xpath("//span[contains(text(),'"+appointmentType+"')]")).click();		
+	}	
+		
+	//Sub-Type Dropdown
+	@FindBy(xpath = "//ng-select[@name='appointmentSubType']")
+	WebElement clickSubTypeDropdown;
+	
+	@FindBy(xpath = "//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]")	
+	WebElement selectSubType;
+	
+	public void setSelectSubType(String subType) throws InterruptedException {
+		TestUtil.click(clickSubTypeDropdown);
+		Thread.sleep(2000);
+		String SubType = selectAppointmentType.getText();
+		System.out.println("++++++++++++++++"+ SubType);
+		driver.findElement(By.xpath("//span[contains(text(),'"+subType+"')]")).click();		
+	}	
+	
+	//Start Date _ Schedule Meeting
+	@FindBy(xpath = "//input[@name='startDate']")
+	WebElement clickOnStartDateBox;
+	
+	@FindBy(xpath = "//span[@class='owl-dt-control-button-arrow']")
+	WebElement clickOnDropButton_ScheduleMeeting;
+
+	@FindBy(xpath = "//tbody[@class='owl-dt-calendar-body']")
+	List<WebElement> selectYear_ScheduleMeeting;
+	
+	//Select Month
+    @FindBy(xpath = "//tbody[@class='owl-dt-calendar-body']")
+	List<WebElement> selectMonth_ScheduleMeeting;
+    
+	//Select Date
+	@FindBy(xpath = "//tbody[@class='owl-dt-calendar-body']")
+	List<WebElement> selectDate_ScheduleMeeting;
+	
+	//End Date _ Schedule Meeting
+	@FindBy(xpath = "//input[@name='endDate']")
+	WebElement clickOnEndDateBox;
+		
+	public void clickOnStartDateBox() throws InterruptedException {
+		TestUtil.click(clickOnStartDateBox);
+		Thread.sleep(1000);
+		TestUtil.click(clickOnDropButton_ScheduleMeeting);
+	}
+	
+	public void selectYear_ScheduleMeeting(String year) throws InterruptedException {		
+		Thread.sleep(2000);
+		Iterator<WebElement> it = selectYear.iterator();
+		while(it.hasNext()) {
+			WebElement year1 = it.next();
+			System.out.println(year1.getText());
+	
+			if(year.equals("2019")) {
+				driver.findElement(By.xpath("//span[contains(@class,'owl-dt-calendar-cell-content owl-dt-calendar-cell-today')]")).click();
+			}
+			else 
+			{							
+			WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +year+ "')]"));
+			we.click();
+			}		
+		}
+	}
+	
+	public void selectMonth_ScheduleMeeting(String month) throws InterruptedException {
+		Thread.sleep(2000);
+		Iterator<WebElement> it_month = selectMonth.iterator();
+		while(it_month.hasNext()) {
+			WebElement months = it_month.next();
+		
+		System.out.println("Start month is : "+months.getText());
+		
+		if(month.equals("Sep")) {
+			driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
+		}
+		else
+		{
+		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +month+ "')]"));
+		we.click();
+		}
+	
+		}
+	}
+	
+	public void setSelectDate_ScheduleMeeting(String date) throws InterruptedException {
+		Thread.sleep(2000);
+		Iterator<WebElement> it_date = selectDate.iterator();
+		while(it_date.hasNext()) {
+			WebElement alldate = it_date.next();
+		
+		System.out.println("Date is ::-" + alldate.getText());
+		
+		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +date+ "')]"));
+		
+		we.click();				
+		}		
+	}
+
+		
+	//Select End Date
+	public void clickOnEndDateBox() throws InterruptedException {
+		TestUtil.click(clickOnEndDateBox);
+		Thread.sleep(1000);
+		TestUtil.click(clickOnDropButton_ScheduleMeeting);
+	}
+	
+	//Enter Start Time
+	@FindBy(xpath = "//input[@name='startTime']")
+	WebElement enterStartTime;
+	
+	public void setEnterStartTime(String statTime) {
+		TestUtil.sendInput(enterStartTime, statTime);
+	}
+	
+	//Enter End Time
+	@FindBy(xpath = "//input[@name='endTime']")
+	WebElement enterEndTime;
+	
+	public void setEnterEndTime(String statTime) {
+		TestUtil.sendInput(enterEndTime, statTime);
+	}
+	
+	//Remainder Dropdown
+	@FindBy(xpath = "//ng-select[@name='reminderInterval']")
+	WebElement clickRemainderDropdown;
+	
+	@FindBy(xpath = "//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]")	
+	WebElement selectRemainder;
+	
+	public void setSelectRemainder(String remainder) throws InterruptedException {
+		TestUtil.click(clickRemainderDropdown);
+		Thread.sleep(2000);
+		String RemainderOptions = selectRemainder.getText();
+		System.out.println("++++++++++++++++"+ RemainderOptions);
+		driver.findElement(By.xpath("//span[contains(text(),'"+remainder+"')]")).click();		
+	}	
+	
+	//Auto Follow Up Dropdown
+	@FindBy(xpath = "//ng-select[@name='autoFollowUpValue']")
+	WebElement clickAutoFollowUpDropdown;
+	
+	@FindBy(xpath = "//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]")	
+	WebElement selectAutoFollowUp;
+	
+	public void setSelectAutoFollowUp(String autoFollowUp) throws InterruptedException {
+		TestUtil.click(clickAutoFollowUpDropdown);
+		Thread.sleep(2000);
+		String RemainderOptions = selectAutoFollowUp.getText();
+		System.out.println("++++++++++++++++"+ RemainderOptions);
+		driver.findElement(By.xpath("//span[contains(text(),'"+autoFollowUp+"')]")).click();		
+	}	
+	
+	//Enter Subject
+	@FindBy(xpath = "//input[@name='meetingSubject']")
+	WebElement enterSubject;
+	
+	public void setEnterSubject(String subject) {
+		TestUtil.sendInput(enterSubject, subject);
+	}
+
+	//Click on Schedule button
+	@FindBy(xpath = "//div[@class='text-right col-md-6']//button")
+	WebElement clickOnScheduleButton;
+	
+	public void setClickOnScheduleButton() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnScheduleButton);
+	}
+	
+	//Get Consultant Name
+	@FindBy(xpath = "//input[@name='consultantname']")
+	WebElement consultantName;
+	
+	public String setConsultantName() {
+		return consultantName.getAttribute("ng-reflect-model");
+	}
+	
+	// Click on Cancel button of Schedule Meeting pop up
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelButtonOfScheduleMeetingPopup;
+
+	public void setClickOnCancelButtonOfScheduleMeetingPopup() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnCancelButtonOfScheduleMeetingPopup);
+	}
 }

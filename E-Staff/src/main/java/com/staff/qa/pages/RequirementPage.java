@@ -553,7 +553,7 @@ public class RequirementPage extends TestBase {
 	public void setClickOnFirstRowRequirement_id() {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(60, TimeUnit.SECONDS)
-				.pollingEvery(3, TimeUnit.SECONDS).
+				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
 		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
@@ -598,6 +598,14 @@ public class RequirementPage extends TestBase {
 	
 	public void setClickOnUploadDocumentLink() {
 		TestUtil.click(clickOnUploadDocumentLink);
+	}
+	
+	//Click on Status link
+	@FindBy(xpath = "//label[contains(text(),'Status')]")
+	WebElement clickOnStatusLink;
+	
+	public void setClickOnStatusLink() {
+		TestUtil.click(clickOnStatusLink);
 	}
 	
 	//Enter Document Name
@@ -881,8 +889,237 @@ public class RequirementPage extends TestBase {
 		TestUtil.click(clickCancelButton);
 	}
 	
+	// ----------------Map consultant to the requirement---------------------
+	// Click on Consultant option
+	@FindBy(xpath = "//div[contains(text(), 'Consultants')]")
+	WebElement clickConsultantOption;
+
+	public void setClickOnConsultantOption() {
+		TestUtil.click(clickConsultantOption);
+	}
+
+	// Click on Search Consultant button
+	@FindBy(xpath = "//button[contains(text(), 'Search Consultant')]")
+	WebElement clickOnSearchConsultantButton;
+
+	public void setClickOnSearchConsultantButton() {
+		TestUtil.click(clickOnSearchConsultantButton);
+	}
+	
+	//Search Textbox - Consultant
+	@FindBy(xpath = "//input[@name='searchValue']")
+	WebElement consultantsearchTextBox;
+	
+	public void setConsultantSearchTextBox(String search) throws InterruptedException {	
+		TestUtil.sendInput(consultantsearchTextBox, search);				
+	}
+	
+	//Select the Consultant
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[1]")
+	WebElement selectConsultant;
+	
+	public void setSelectConsultant() {
+		
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class);
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+				
+				TestUtil.click(selectConsultant);
+
+				return selectConsultant;
+			}
+		});		
+	}
+	
+	//Filters --> All Tag - Consultant
+	@FindBy(xpath = "//div[contains(text(),'All')]")
+	WebElement clickOnAllTag_Consultant;
+
+
+	public void setClickOnAllTag_Consultant() {	
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+		TestUtil.click(clickOnAllTag_Consultant);
+		return clickOnAllTag_Consultant;
+	}		
+		});
+	}
+	
+	//Filters --> Archived Tag - Consultant
+	@FindBy(xpath = "//div[contains(text(),'Archived')]")
+	WebElement clickOnArchivedTag_Consultant;
+
+
+	public void setClickOnArchivedTag_Consultant() {	
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+		TestUtil.click(clickOnArchivedTag_Consultant);
+		return clickOnArchivedTag_Consultant;
+	}		
+		});
+	}
+	
+	//Consultant Grid 1st Row data (forConsultant Name)
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
+	WebElement consutantName;
+
+	public String setConsultantName() {
+		return consutantName.getText();
+	}
+	
+	//Consultant name in Requirement (Consultant tab) Grid 1st Row data 
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]")
+	WebElement consutantName_InRequirement;
+
+	public String setConsultantName_InRequirement() {
+		return consutantName_InRequirement.getText();
+	}
+	
+	public void setClickOnConsultantName() {
+		TestUtil.click(consutantName_InRequirement);
+	}
+
+	// Click on Shortlist Consultant option
+	@FindBy(xpath = "//button[contains(text(),'Shortlist Consultant')]")
+	WebElement clickShortlistConsultantButton;
+
+	public void setClickOnShortlistConsultantOptionButton() {
+		TestUtil.click(clickShortlistConsultantButton);
+	}
+	
+	//click on Cancel button from map consultant page
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelButtonFromMapConsultantPage;
+	
+	public void setClickOnCancelButtonFromMapConsultantPage() throws InterruptedException {
+		Thread.sleep(2000);
+		if(clickOnCancelButtonFromMapConsultantPage.isEnabled()) {
+		TestUtil.click(clickOnCancelButtonFromMapConsultantPage);
+		}
+		else {
+			System.out.println("Cancel button is not available");
+		}
+	}
 	
 	
+	//Click on 1st Requirement from grid
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
+	WebElement clickOnRequirementFromGrid;
+
+	public void setClickOnRequirementFromGrid() {
+		TestUtil.click(clickOnRequirementFromGrid);
+	}
+	
+	//Click on 1st archived consultant from grid
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
+	WebElement clickOnArchivedConsultantFromGrid;
+
+	public void setClickOnArchivedConsultantFromGrid() {
+		TestUtil.click(clickOnArchivedConsultantFromGrid);
+	}
+	
+	//----------------------Add Note----------------------
+	//Click on Add Note link
+	@FindBy(xpath = "//span[@class='add-notes-heading']")
+	WebElement clickOnAddNoteLink;
+
+	public void setClickOnAddNoteLink() {
+		TestUtil.click(clickOnAddNoteLink);
+	}
+	
+	//Enter note into textbox
+	@FindBy(xpath = "//textarea[@class='ng-untouched ng-pristine ng-valid']")
+	WebElement enterNoteInTextBox;
+
+	public void setEnterNoteInTextBox(String note) {
+		TestUtil.sendInput(enterNoteInTextBox, note);
+	}
+
+	// Click on Add Note Button
+	@FindBy(xpath = "//button[contains(text(),'Add Note')]")
+	WebElement clickOnAddNoteButton;
+
+	public void setClickOnAddNoteButton() {
+		TestUtil.click(clickOnAddNoteButton);
+	}
+	
+	// Click on Cancel button of Add Note pop up
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelBtnOfAddNote;
+
+	public void setClickOnCancelBtnOfAddNote() {
+		TestUtil.click(clickOnCancelBtnOfAddNote);
+	}
+	
+	//--------------------Status-------------------------
+	//Status pop up title
+	@FindBy(xpath = "//div[@class='col-md-10']//span[contains(text(),'Set Status')]")
+	WebElement statusPopUpTitle;
+	
+	public String setStatusPopUpTitle() {
+		return statusPopUpTitle.getText();
+	}
+	
+	//Select Status
+	@FindBy(xpath = "//div[@class='ng-select-container']")
+	WebElement clickStatusDropdown;
+	
+	@FindBy(xpath = "//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]")	
+	WebElement selectStatus;
+	
+	public void setselectStatus(String status) throws InterruptedException {
+		TestUtil.click(clickStatusDropdown);
+		Thread.sleep(2000);
+		String StatusOption = selectStatus.getText();
+		System.out.println("++++++++++++++++"+StatusOption);
+		driver.findElement(By.xpath("//span[contains(text(),'"+status+"')]")).click();		
+	}
+	
+	//Enter Notes
+	@FindBy(xpath = "//textarea[@placeholder='Enter Notes here']")
+	WebElement enterNotes;
+	
+	public void setEnterNotes(String note) {
+		TestUtil.sendInput(enterNotes, note);
+	}
+	
+	//Click on Set Status button
+	@FindBy(xpath = "//div[@class='status-footer-inner-wrapper']//span[contains(text(),'Set Status')]")
+	WebElement clickOnSetStatus;
+	
+	public void setClickOnSetStatus() {
+		TestUtil.click(clickOnSetStatus);
+	}
+	
+	//Click on Cancel button of Set Status pop up
+	@FindBy(xpath = "//div[@class='status-footer-inner-wrapper']//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelButtonOfSetStatusPopup;
+	
+	public void setClickOnCancelButtonOfSetStatusPopup() {
+		TestUtil.click(clickOnCancelButtonOfSetStatusPopup);
+	}
+	
+	//Click on Delete Recent Status button
+	@FindBy(xpath = "//span[contains(text(),'Delete Recent Status')]")
+	WebElement clickOnDeleteRecentStatus;
+	
+	public void setClickOnDeleteRecentStatus() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnDeleteRecentStatus);
+	}
 	
 	
 }

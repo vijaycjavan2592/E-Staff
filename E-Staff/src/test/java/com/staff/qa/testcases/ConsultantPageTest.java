@@ -50,7 +50,7 @@ public class ConsultantPageTest extends TestBase {
 		consultantPage = homePage.clickOnConsultantOption();
 	}
 
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void verifyUserNavigateToConsultantPage() throws InterruptedException {
 
 		String TestCaseName = "Verify that user can navigate to the Consultant Page";
@@ -71,7 +71,7 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void verifyAddNewConsulatantFormDisplayed() throws InterruptedException {
 		String TestCaseName = "Verify Add New Button is Clickable and it Shows the Add New Consultant Form";
 		test = extent.createTest(TestCaseName);
@@ -106,7 +106,7 @@ public class ConsultantPageTest extends TestBase {
 		return data;
 	}
 	
-	@Test(dataProvider = "getEStaffData",priority = 3)
+//	@Test(dataProvider = "getEStaffData",priority = 3)
 	public void verifyAddNewConsultant(String Firstname, String Lastname, String emailId, String mobileno,String rate,
 			String UOMRate, String Year, String Month, String date, String Availability_Notice, String Can_Relocate_To,
 			String EmploymentType, String CandidateSource, String VisaStatus, String Country, String State, String City,
@@ -204,7 +204,7 @@ public class ConsultantPageTest extends TestBase {
 	}	
 		
 	
-	@Test(dataProvider = "getEStaffData",priority = 5)
+//	@Test(dataProvider = "getEStaffData",priority = 5)
 	public void verifyDuplicateConsultant(String Firstname, String Lastname, String emailId, String mobileno,String rate, 
 			String UOMRate, String Year, String Month, String date, String Availability_Notice, String Can_Relocate_To,
 			String EmploymentType, String CandidateSource, String VisaStatus, String Country, String State, String City,
@@ -283,7 +283,7 @@ public class ConsultantPageTest extends TestBase {
 	}	
 
 	
-	@Test(priority = 6)
+//	@Test(priority = 6)
 	public void verifyFunctionalityOfCancelButton()
 			throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that functionality of Cancel button of Add New Consultant window";
@@ -312,7 +312,7 @@ public class ConsultantPageTest extends TestBase {
 	}	
 
 	
-	@Test(priority = 7)
+//	@Test(priority = 7)
 	public void getAvailableCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Available consultants count in header and grid section";
@@ -334,7 +334,7 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 	
-	@Test(priority = 8)
+//	@Test(priority = 8)
 	public void getAllCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the All consultants count in header and grid section";
@@ -358,7 +358,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 	
-	@Test(priority = 9)
+//	@Test(priority = 9)
 	public void getArchivedCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Archived consultants count in header and grid section";
@@ -382,7 +382,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 
 	
-	@Test(priority = 10)
+//	@Test(priority = 10)
 	public void getQualifiedCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Qualified consultants count in header and grid section";
@@ -413,7 +413,7 @@ public class ConsultantPageTest extends TestBase {
 		return data;
 	}
 	
-	@Test(dataProvider = "getEStaffData_EditConsultant",priority = 11)
+//	@Test(dataProvider = "getEStaffData_EditConsultant",priority = 11)
 	public void verifyEditConsultantFunctionality(String Firstname, String Lastname, String emailId, String mobileno,String rate,
 			String UOMRate, String Year, String Month, String date, String Availability_Notice, String Can_Relocate_To,
 			String EmploymentType, String CandidateSource, String VisaStatus, String Country, String State, String City, 
@@ -506,7 +506,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 	
-	@Test(priority = 12)
+//	@Test(priority = 12)
 	public void verifyUploadDocumentFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can upload the document in to system";
 		test = extent.createTest(TestCaseName);
@@ -554,7 +554,7 @@ public class ConsultantPageTest extends TestBase {
 			}		
 		}
 
-	@Test(priority = 13)
+//	@Test(priority = 13)
 	public void verifyUploadDocumentAppearInGrid() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that upload document can appear in grid";
 		test = extent.createTest(TestCaseName);
@@ -599,7 +599,7 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 
-	@Test(priority = 14)
+//	@Test(priority = 14)
 	public void verifyDownloadUploadedDocument() throws InterruptedException {
 		String TestCaseName = "Verify that user can download the uploaded documents";
 		test = extent.createTest(TestCaseName);
@@ -635,10 +635,10 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 	
-	@Test(priority = 15)
+//	@Test(priority = 15)
 	public void verifyLinkRequirementToConsultant() throws InterruptedException {
 		String TestCaseName = "Verify that user can link the requirement to the consultant";
-		String TestCaseName_duplicate = "Verify that user can link the requirement which is already linked. ";
+		//String TestCaseName_duplicate = "Verify that user can link the requirement which is already linked. ";
 		test = extent.createTest(TestCaseName);
 		
 		String searchConsultant = prop.getProperty("Consultant_id");
@@ -684,7 +684,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 
 	
-	@Test(priority = 16)
+//	@Test(priority = 16)
 	public void verifyLinkRequirementToConsultant_alreadyExists() throws InterruptedException {
 		String TestCaseName = "Verify that user can link the requirement which is already linked. ";
 		test = extent.createTest(TestCaseName);
@@ -730,7 +730,7 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 	
-	@Test(priority = 17)
+//	@Test(priority = 17)
 	public void verifyDownloadResumeFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can download the consultant resume";
 		test = extent.createTest(TestCaseName);
@@ -768,7 +768,7 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 		
-	@Test(priority = 18)
+//	@Test(priority = 18)
 	public void verifyCancelFunctionalityOfLinkRequirement() {
 		String TestCaseName = "Verify the Cancel button functionality of LinkRequirement to the consultant";
 		test = extent.createTest(TestCaseName);
@@ -801,19 +801,19 @@ public class ConsultantPageTest extends TestBase {
 		
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("28", new Object[] { 28d, TestCaseName,
-					"Link Requirement to consultant should be cancel after click on Cancel button'", "Pass" });
+					"Link Requirement to consultant should be cancel after click on Cancel button", "Pass" });
 		} 	
 			
 		catch (Exception e) {
 			testresultdata.put("28", new Object[] { 28d, TestCaseName,
-					"Link Requirement to consultant should be cancel after click on Cancel button'", "Fail" });
+					"Link Requirement to consultant should be cancel after click on Cancel button", "Fail" });
 			e.printStackTrace();
 			Assert.fail();
 		}		
 	}
 
 	
-	@Test(priority = 19)
+//	@Test(priority = 19)
 	public void verifyEmailFunctionality() {
 		String TestCaseName = "Verify that user can send the Email to the Consultant";
 		test = extent.createTest(TestCaseName);
@@ -855,7 +855,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 
-	@Test(priority = 20)
+//	@Test(priority = 20)
 	public void verifyCancelButtonFunctionalityOfEmail() {
 		String TestCaseName = "Verify that user can cancel the composed Email";
 		test = extent.createTest(TestCaseName);
@@ -895,7 +895,7 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 	
-	@Test(priority = 21)
+//	@Test(priority = 21)
 	public void verifyValidationForEmailSubject() {
 		String TestCaseName = "Verify that validation message can appear for email-Subject";
 		test = extent.createTest(TestCaseName);
@@ -932,7 +932,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 
-	@Test(priority = 22)
+//	@Test(priority = 22)
 	public void verifyArchiveFunctionality() {
 		String TestCaseName = "Verify that user can archive the consultant";
 		test = extent.createTest(TestCaseName);
@@ -969,7 +969,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 
 	
-	@Test(priority = 23)
+//	@Test(priority = 23)
 	public void verifyUn_ArchiveFunctionality() {
 		String TestCaseName = "Verify that user can un-archive the consultant";
 		test = extent.createTest(TestCaseName);
@@ -1005,7 +1005,7 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 
-	@Test(priority = 24)
+//	@Test(priority = 24)
 	public void verifyPageLable() {
 		String TestCaseName = "Verify that Available Consultant lable can displayed on Consultant page";
 		test = extent.createTest(TestCaseName);
@@ -1031,5 +1031,289 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}	
 	
+//	@Test(priority = 25)
+	public void verifyArchivedConsultantMapToRequirement() {
+		String TestCaseName = "Verify that archived consultant can map to the requirement";
+		test = extent.createTest(TestCaseName);		
+
+		try {
+		consultantPage.setClickOnAllTag();
+		Thread.sleep(2000);
+		try {
+			consultantPage.setClickOnFirstRowConsultant();
+		} catch (Exception e) {
+			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+			System.out.println(noData.getText());
+		}				
+		consultantPage.setClickOnRequirementOption();
+		
+		consultantPage.setClickOnLinkRequirementLink();
+		consultantPage.setClickOnArchivedTag();
+		Thread.sleep(3000);
+		String requirementName = consultantPage.setRequirementName();
+		consultantPage.setSelectRequirement();	
+		
+		Thread.sleep(2000);
+		consultantPage.setClickOnLinkRequirementButton();
 	
+		
+			Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(),
+					""+requirementName+"- Archived or Closed requirement can not be linked.");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("35", new Object[] { 35d, TestCaseName,
+					"Message should be appear 'Archived consultant can not be shortlisted.","Pass" });
+		} catch (Exception e) {
+			testresultdata.put("35", new Object[] { 35d, TestCaseName,
+					"Message should be appear 'Archived consultant can not be shortlisted.","Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+	
+//	@Test
+	public void verifyAddNoteFunctionality() throws InterruptedException {
+		String TestCaseName = "Verify the Add Note functionality";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			consultantPage.setClickOnAllTag();
+		
+		Thread.sleep(2000);
+		try {
+			consultantPage.setClickOnFirstRowConsultant();
+		} catch (Exception e) {
+			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+			System.out.println(noData.getText());
+		}
+		
+		consultantPage.setClickOnAddNoteLink();
+		Thread.sleep(1000);
+		consultantPage.setEnterNoteInTextBox("Test- Test");
+		Thread.sleep(2000);
+		consultantPage.setClickOnAddNoteButton();
+		
+		Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(), "Note added Successfully");
+		
+		Thread.sleep(2000);
+		test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+		testresultdata.put("36", new Object[] { 36d, TestCaseName,
+				"User should be able to add note in Consultant","Pass" });
+	    } catch (Exception e) {
+	    	testresultdata.put("36", new Object[] { 36d, TestCaseName,
+				"User should be able to add note in Consultant","Fail" });
+	    	e.printStackTrace();
+	    	Assert.fail();
+	    	}
+	    }
+
+//	@Test
+	public void verifyCancelBtnFunOfAddNote() throws InterruptedException {
+		String TestCaseName = "Verify the Cancel button functionality of Add Note";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			consultantPage.setClickOnAllTag();
+		
+		Thread.sleep(2000);
+		try {
+			consultantPage.setClickOnFirstRowConsultant();
+		} catch (Exception e) {
+			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+			System.out.println(noData.getText());
+		}
+		
+		consultantPage.setClickOnAddNoteLink();
+		Thread.sleep(1000);
+		consultantPage.setEnterNoteInTextBox("Test- Test");
+		Thread.sleep(2000);
+		consultantPage.setClickOnCancelBtnOfAddNote();
+		
+		test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+		testresultdata.put("37", new Object[] { 37d, TestCaseName,
+				"Add note window should be disappear once click on Cancel button","Pass" });
+	    } catch (Exception e) {
+	    	testresultdata.put("37", new Object[] { 37d, TestCaseName,
+				"Add note window should be disappear once click on Cancel button","Fail" });
+	    	e.printStackTrace();
+	    	Assert.fail();
+	    	}
+	    }
+	
+//	@Test
+	public void verifyNavigateToScheduleMeetingPopUp() throws InterruptedException {
+		String TestCaseName = "Verify the user can navigate to the Schedule Meeting pop up";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			consultantPage.setClickOnAllTag();
+
+			Thread.sleep(2000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			String consultantName = consultantPage.setConsultantName();
+
+			consultantPage.setClickOnScheduleMeetingButton();
+			
+			Thread.sleep(3000);
+			Assert.assertEquals(consultantPage.setScheduleMeetingPopUpName(), "Schedule Meeting");
+			
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("38", new Object[] { 38d, TestCaseName,
+					"User should be click on Schedule Meeting button and navigate to the Schedule Meeting pop up","Pass" });
+		    } catch (Exception e) {
+		    	testresultdata.put("38", new Object[] { 38d, TestCaseName,
+					"User should be click on Schedule Meeting button and navigate to the Schedule Meeting pop up","Fail" });
+		    	e.printStackTrace();
+		    	Assert.fail();
+		    	}
+		    }		
+	
+//	@Test
+	public void verifyScheduleMeetingFunctionality() throws InterruptedException {
+		String TestCaseName = "Verify the Schedule Meeting functionality";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			consultantPage.setClickOnAllTag();
+
+			Thread.sleep(2000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			Thread.sleep(3000);
+			String consultantName = consultantPage.setConsultantName();
+
+			System.out.println("------------------------"+consultantName +"*****************");
+			consultantPage.setClickOnScheduleMeetingButton();
+			
+			consultantPage.setEnterEmailId("vijay.chavan@xoriant.com");
+
+			consultantPage.setSelectAppointmentType("Event");
+
+			consultantPage.setSelectSubType("Job Fair");
+
+			// Select Start Date
+			consultantPage.clickOnStartDateBox();
+			consultantPage.selectYear_ScheduleMeeting("2019");
+			consultantPage.selectMonth_ScheduleMeeting("Nov");
+			consultantPage.setSelectDate_ScheduleMeeting("25");
+
+			// Enter Start Time
+			consultantPage.setEnterStartTime("1020");
+
+			// Select End Date
+			consultantPage.clickOnEndDateBox();
+			consultantPage.selectYear_ScheduleMeeting("2020");
+			consultantPage.selectMonth_ScheduleMeeting("Nov");
+			consultantPage.setSelectDate_ScheduleMeeting("25");
+
+			// Enter End Time
+			consultantPage.setEnterEndTime("1130");
+			// Select Remainder
+			consultantPage.setSelectRemainder("30 minutes");
+			// Selct Auto Follow Up
+			consultantPage.setSelectAutoFollowUp("2 Weeks");
+			// Enter Subject
+			consultantPage.setEnterSubject("Test");
+			// click on Schedule button
+			consultantPage.setClickOnScheduleButton();
+			Thread.sleep(2000);
+			//Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(),
+			//		"Meeting has been scheduled successfully for Consultant "+""+consultantName+"");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("39",
+					new Object[] { 39d, TestCaseName, "User should be able to creatre schedule meeting", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("39",
+					new Object[] { 39d, TestCaseName, "User should be able to creatre schedule meeting", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+	
+	
+//	@Test
+	public void verifyCancelBtnFunOfScheduleMeetingPopUp() throws InterruptedException {
+		String TestCaseName = "Verify the Cancel button functionality of Schedule Meeting popup";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			consultantPage.setClickOnAllTag();
+
+			Thread.sleep(2000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			consultantPage.setClickOnScheduleMeetingButton();
+			
+			consultantPage.setClickOnCancelButtonOfScheduleMeetingPopup();
+			
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("40",
+					new Object[] { 40d, TestCaseName, "Schedule Meeting pop up should be disappear once click on Cancel button", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("40",
+					new Object[] { 40d, TestCaseName, "Schedule Meeting pop up should be disappear once click on Cancel button", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+
+	@Test
+	public void verifyValidationsInScheduleMeetingPopUp() {
+		String TestCaseName = "Verify that validation message can appear for mandatory fields in Schedule Meeting pop up";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			consultantPage.setClickOnAllTag();
+
+			Thread.sleep(2000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			consultantPage.setClickOnScheduleMeetingButton();
+			// click on Schedule button
+			consultantPage.setClickOnScheduleButton();
+			
+			Assert.assertEquals(
+					driver.findElement(By.xpath("//p[contains(text(),'Please Select Sub-Type')]")).getText(),
+					"Please Select Sub-Type");
+
+			Assert.assertEquals(
+					driver.findElement(By.xpath("//p[contains(text(),'Please enter start time')]")).getText(),
+					"Please enter start time");
+
+			Assert.assertEquals(
+					driver.findElement(By.xpath("//p[contains(text(),'Please enter end time')]")).getText(),
+					"Please enter end time");
+			
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("41", new Object[] { 41d, TestCaseName,
+					"validation message should be appear for mandatory fields", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("41", new Object[] { 41d, TestCaseName,
+					"validation message should be appear for mandatory fields'", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+	
+	
+	
+
 }

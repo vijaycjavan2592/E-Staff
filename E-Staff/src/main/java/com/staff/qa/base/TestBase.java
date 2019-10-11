@@ -120,7 +120,7 @@ public class TestBase {
 		
 	}
 	
-	@BeforeTest
+	@BeforeTest(alwaysRun = true)
 	public void setExtentReport(ITestContext context) {
 		htmlreport = new ExtentHtmlReporter(
 				System.getProperty("user.dir") + "//test-output//Reportsreportextent50.html");
@@ -130,15 +130,6 @@ public class TestBase {
 		htmlreport.config().setTheme(Theme.DARK);
 		htmlreport.config().setDocumentTitle("E-Staff Application Automation Report");
 		htmlreport.config().setReportName("Functional Testing");
-		
-	    //create a new work book
-	   //   workbook = new HSSFWorkbook();
-	      //create a new work sheet
-	   //    sheet = workbook.getSheet("Test Result");
-	   //   testresultdata = new LinkedHashMap<String, Object[]>();
-	      //add test result excel file column header
-	      //write the header in the first row
-	    //  testresultdata.put("1", new Object[] {"Test Case Id", "Teat Case description", "Expected Result","Actual Result"});      
 	}
 	
 	
