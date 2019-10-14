@@ -44,7 +44,7 @@ public class RequirementPageTest extends TestBase {
 		requirementPage = homePage.clickOnRequirementOption();
 	}
 
-	// @Test
+     @Test(priority = 1)
 	public void verifyUserNavigateToConsultantPage() throws InterruptedException {
 
 		String TestCaseName = "Verify that user can navigate to the Requirement Page";
@@ -65,7 +65,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 2)
 	public void getOpenRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Open Requirement count in header and grid section";
@@ -87,7 +87,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 3)
 	public void getAllRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the All Requirement count in header and grid section";
@@ -111,7 +111,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 4)
 	public void getArchivedRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Archived Requirement count in header and grid section";
@@ -135,7 +135,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 5)
 	public void verifyAddNewRequirementBtnClickable() {
 		String TestCaseName = "Verify Add New Button is Clickable and it Shows the Add New Requirement Form";
 		test = extent.createTest(TestCaseName);
@@ -158,7 +158,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 6)
 	public void verifyFunctionalityOfCancelButtonOfAddNewForm() {
 		String TestCaseName = "Verify that functionality of Cancel button of Add New Requirement window";
 		test = extent.createTest(TestCaseName);
@@ -194,7 +194,7 @@ public class RequirementPageTest extends TestBase {
 		return data;
 	}
 
-	// @Test(dataProvider = "getRequirementData")
+	@Test(dataProvider = "getRequirementData", priority = 7)
 	public void verifyAddRequirementFunctionality(String recruiter, String no_Of_Openings, String contact,
 			String accountManger, String jobTitle, String jobType, String year, String month, String date,
 			String businessUnit, String visaStatus, String priority, String communicationSkills, String billRateUOM,
@@ -209,8 +209,9 @@ public class RequirementPageTest extends TestBase {
 			requirementPage.setClickAddNewLink();
 			Thread.sleep(1000);
 			Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("AddNew_Requirement_page_url"));
-
+			Thread.sleep(3000);
 			requirementId = requirementPage.setRequirementId();
+			System.out.println("Requirement id is : "+requirementId);
 			// Select Recruiter
 			requirementPage.setselectRecruiter(recruiter);
 			requirementPage.setEnterRequirementNoOfOpenings(no_Of_Openings);
@@ -274,7 +275,7 @@ public class RequirementPageTest extends TestBase {
 		return data;
 	}
 
-	// @Test(dataProvider = "getRequirementData_edit")
+	@Test(dataProvider = "getRequirementData_edit", priority = 8)
 	public void verifyEditRequirementFunctionality(String recruiter, String no_Of_Openings, String contact,
 			String accountManger, String jobTitle, String jobType, String year, String month, String date,
 			String businessUnit, String visaStatus, String priority, String communicationSkills, String billRateUOM,
@@ -294,7 +295,10 @@ public class RequirementPageTest extends TestBase {
 			Thread.sleep(2000);
 			requirementPage.setClickOnEditButton();
 
+			Thread.sleep(2000);
 			String requirement_id = requirementPage.setRequirementId();
+			String requirementId_Edit = requirementPage.setRequirementId();
+			System.out.println("Edit Requirement id is : "+requirementId_Edit);
 			// Select Recruiter
 			requirementPage.setselectRecruiter(recruiter);
 			requirementPage.setEnterRequirementNoOfOpenings(no_Of_Openings);
@@ -337,6 +341,7 @@ public class RequirementPageTest extends TestBase {
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
 					"Requirement '" + searchRequirement + "' Updated Successfully");
 
+			Thread.sleep(3000);
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("8", new Object[] { 8d, TestCaseName,
 					"User should be able to edit requirement into the system", "Pass" });
@@ -348,12 +353,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 9)
 	public void verifyUploadDocumentFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can upload the document for particular requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			Thread.sleep(3000);
@@ -391,12 +396,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 10)
 	public void verifyUploadDocumentAppearInGrid() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that upload document can appear in grid";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			Thread.sleep(3000);
@@ -435,12 +440,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 11)
 	public void verifyDownloadUploadedDocument_requirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can download the uploaded documents";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			Thread.sleep(3000);
@@ -469,12 +474,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 12)
 	public void verifyCancelBtnFunOfUploadDocPopUp_requirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that cancel button functionality of Upload Document pop-up";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			Thread.sleep(3000);
@@ -503,12 +508,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 13)
 	public void verifyEditJobDescriptionFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can edit the job description of requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			Thread.sleep(3000);
@@ -545,12 +550,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 14)
 	public void verifyArchivedRequirementFunctionality() {
 		String TestCaseName = "Verify that user can Archive the requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264583-6";
+		String searchRequirement = requirementId;
 
 		try {
 			requirementPage.setClickOnAllTag();
@@ -585,12 +590,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 15)
 	public void verifyUnArchivedRequirementFunctionality() {
 		String TestCaseName = "Verify that user can Un-Archive the requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			requirementPage.setClickOnAllTag();
@@ -617,12 +622,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 16)
 	public void verifyValidationMessageForClosuredate() {
 		String TestCaseName = "Verify that user can select closure date select as future date while Archive the requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			requirementPage.setClickOnAllTag();
@@ -655,12 +660,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 17)
 	public void verifyValidationMessageForClosureReason() {
 		String TestCaseName = "Verify that user can archive the requirement without selecting closure reason";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			requirementPage.setClickOnAllTag();
@@ -694,12 +699,12 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test(groups = { "functest" })
+	@Test(priority = 18)
 	public void verifyCancelButtonFunctionalityOfArchiveRequirementPopUp() {
 		String TestCaseName = "Verify the Cancel Button Functionality Of Archive Requirement pop up ";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264587-6";
+		String searchRequirement = requirementId;
 
 		try {
 			requirementPage.setClickOnAllTag();
@@ -723,7 +728,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-	// @Test
+	@Test(priority = 19)
 	public void verifyValidationsForAddNewRequirement() {
 		String TestCaseName = "Verify that validation message can appear for mandatory fields";
 		test = extent.createTest(TestCaseName);
@@ -793,15 +798,15 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-//	@Test
+	@Test(priority = 20)
 	public void verifyConsultantMapToRequirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can map the consultant to the requirement";
 		String TestCaseName1 = "Verify that mapped consultant can appear in Requirement-Consultant grid section";
 		test = extent.createTest(TestCaseName);
 		test = extent.createTest(TestCaseName1);
 
-		String searchRequirement = "Req-264604-6";
-		String searchConsultant = "Cons-667465";
+		String searchRequirement = requirementId;
+		String searchConsultant = "Cons-667481";
 
 		try {
 			Thread.sleep(3000);
@@ -819,8 +824,8 @@ public class RequirementPageTest extends TestBase {
 			requirementPage.setClickOnSearchConsultantButton();
 			Thread.sleep(2000);
 
-		//	requirementPage.setClickOnAllTag_Consultant();
-		//	requirementPage.setConsultantSearchTextBox(searchConsultant);
+			requirementPage.setClickOnAllTag_Consultant();
+			requirementPage.setConsultantSearchTextBox(searchConsultant);
 			Thread.sleep(2000);
 			String consultantName = requirementPage.setConsultantName();
 			requirementPage.setSelectConsultant();
@@ -859,13 +864,13 @@ public class RequirementPageTest extends TestBase {
 
 	}
 
-	// @Test
+	@Test(priority = 22)
 	public void verifyConsultantMapToRequirement_alreadyExists() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can map the consultant to the requirement which is already linked.";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = "Req-264604-6";
-		String searchConsultant = "Cons-667465";
+		String searchRequirement = requirementId;
+		String searchConsultant = "Cons-667481";
 
 		try {
 			Thread.sleep(3000);
@@ -906,7 +911,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 
-//	@Test
+	@Test(priority = 23)
 	public void verifyArchivedConsultantMapToRequirement() {
 		String TestCaseName = "Verify that archived consultant can map to the requirement";
 		test = extent.createTest(TestCaseName);
@@ -947,7 +952,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 	
-//	@Test
+	@Test(priority = 24)
 	public void verifyCancelBtnFunOfMapConsultantWindow() {
 		String TestCaseName = "Verify the Cancel button functionality of map consultant to requirement window";
 		test = extent.createTest(TestCaseName);
@@ -986,7 +991,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 	
-//	@Test
+	@Test(priority = 25)
 	public void verifyAddNoteFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify the Add Note functionality";
 		test = extent.createTest(TestCaseName);
@@ -1022,7 +1027,7 @@ public class RequirementPageTest extends TestBase {
 	    	}
 	    }
 	
-//	@Test
+	@Test(priority = 26)
 	public void verifyCancelBtnFunOfAddNote() throws InterruptedException {
 		String TestCaseName = "Verify the Cancel button functionality of Add Note";
 		test = extent.createTest(TestCaseName);
@@ -1055,7 +1060,7 @@ public class RequirementPageTest extends TestBase {
 	    	}
 	    }
 	
-//	@Test
+	@Test(priority = 27)
 	public void verifyNavigateToStatusPopUp() throws InterruptedException {
 		String TestCaseName = "Verify the user can naviagte to the status pop up";
 		test = extent.createTest(TestCaseName);
@@ -1083,6 +1088,7 @@ public class RequirementPageTest extends TestBase {
 			
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),"Consultants shortlisted successfully.");
 			
+			Thread.sleep(3000);
 			//Select the consultant
 			requirementPage.setSelectConsultant();
 			
@@ -1101,7 +1107,7 @@ public class RequirementPageTest extends TestBase {
 		    	}
 		    }
 			
-//	@Test
+	@Test(priority = 28)
 	public void verifySetTheStatusToConsultant() throws InterruptedException {
 		String TestCaseName = "Verify the user can set the status to the consultant";
 		test = extent.createTest(TestCaseName);
@@ -1148,7 +1154,7 @@ public class RequirementPageTest extends TestBase {
 		}
 	}
 	
-//	@Test
+	@Test(priority = 29)
 	public void verifyCancelButtonFunOfSetStatusPopUp() throws InterruptedException {
 		String TestCaseName = "Verify that functionality of Cancel button functionality of Set-Status pop up";
 		test = extent.createTest(TestCaseName);
@@ -1184,10 +1190,10 @@ public class RequirementPageTest extends TestBase {
 					"Status has been updated successfully for Consultant " + "" + consultantName + "");
 
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
-			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+			testresultdata.put("29", new Object[] { 29d, TestCaseName,
 					"Set-Status pop up should be disappear after clicking Cancel button", "Pass" });
 		} catch (Exception e) {
-			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+			testresultdata.put("29", new Object[] { 29d, TestCaseName,
 					"Set-Status pop up should be disappear after clicking Cancel button", "Fail" });
 			e.printStackTrace();
 			Assert.fail();
@@ -1195,7 +1201,7 @@ public class RequirementPageTest extends TestBase {
 	}
 	
 	
-	@Test
+	@Test(priority = 30)
 	public void verifyDeleteRecentStatusFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can delete recent status of linked consultant";
 		test = extent.createTest(TestCaseName);
@@ -1218,22 +1224,57 @@ public class RequirementPageTest extends TestBase {
 			requirementPage.setClickOnConsultantName();
 			
 			requirementPage.setClickOnDeleteRecentStatus();
+			
+			requirementPage.setClickOnDeleteButton();
 
-			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
-					"Status has been updated successfully for Consultant " + "" + consultantName + "");
+			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),"Status Deleted Successfully");
 
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
-			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+			testresultdata.put("30", new Object[] { 30d, TestCaseName,
 					"User should be able to delete the recent status of linked consultant", "Pass" });
 		} catch (Exception e) {
-			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+			testresultdata.put("30", new Object[] { 30d, TestCaseName,
 					"User should be able to delete the recent status of linked consultant", "Fail" });
 			e.printStackTrace();
-			Assert.fail();
 		}
 	}
 
 
+	@Test(priority = 31)
+	public void verifyViewResumeFunctionality() throws InterruptedException {
+		String TestCaseName = "Verify that user can view(download) CV/Resume of linked consultant";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			//requirementPage.setClickOnAllTag();
+			Thread.sleep(5000);
+			try {
+				requirementPage.setClickOnFirstRowRequirement_id();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			// Click on Consultant option
+			requirementPage.setClickOnConsultantOption();
+			Thread.sleep(2000);
+			String consultantName = requirementPage.setConsultantName_InRequirement();
+			// Select the consultant
+			Thread.sleep(2000);
+			requirementPage.setClickOnConsultantName();
+			//click on View CV/Resume link
+			requirementPage.setClickOnViewResumeLink();
+
+			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),"File downloaded successfully");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("31", new Object[] { 31d, TestCaseName,
+					"User should be able to view(download) the CV/Resume of linked consultant", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("31", new Object[] { 31d, TestCaseName,
+					"User should be able to view(download) the CV/Resume of linked consultant", "Fail" });
+			e.printStackTrace();
+		}
+	}
 	
 	
 }

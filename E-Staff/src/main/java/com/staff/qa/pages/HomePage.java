@@ -38,6 +38,9 @@ public class HomePage extends TestBase{
 	@FindBy(xpath = "//div[@class='nav-item requirements']")
 	WebElement clickRequirementOption;
 		
+	//Click on Placement menu
+	@FindBy(xpath = "//label[contains(text(),'Placements')]")
+	WebElement clickPlacementOption;
 	
 	public boolean verifyCorrectUserName() {
 		//System.out.println(userNameLabel.getText());
@@ -63,6 +66,14 @@ public class HomePage extends TestBase{
 		Thread.sleep(1000);
 		clickRequirementOption.click();
 		return new RequirementPage();		
+	}
+	
+	
+	public PlacementPage clickOnPlacementOption() throws InterruptedException {
+		clickOnMenuButton.click();
+		Thread.sleep(1000);
+		clickPlacementOption.click();
+		return new PlacementPage();		
 	}
 	
 	/*public void clickOnMenuButton() {

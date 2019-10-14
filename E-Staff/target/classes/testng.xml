@@ -22,21 +22,24 @@
       </groups>
       
       
-          <class name="com.staff.qa.testcases.RequirementPageTest"/> -->
+           -->
          
        <classes>
-       <class name="com.staff.qa.testcases.ConsultantPageTest">
-         <methods>
-         <include name = "verifyScheduleMeetingFunctionality"/>         
-         
-         </methods>
-         
-         </class>
-         
-         
-         
-        
-       <!-- <class name="com.staff.qa.testcases.CompaniesPageTest"/>  -->
+       <!--<class name="com.staff.qa.testcases.ConsultantPageTest"/>
+       <class name="com.staff.qa.testcases.CompaniesPageTest"/>  -->
+       <class name="com.staff.qa.testcases.RequirementPageTest">      
+        <methods>
+          <exclude name="verifyFunctionalityOfCancelButtonOfAddNewForm"/>
+          <exclude name="verifyAddNewRequirementBtnClickable"/>
+          <exclude name="getArchivedRequirementCount"/>
+          <exclude name="getAllRequirementCount"/>
+          <exclude name="getOpenRequirementCount"/>
+          <exclude name="verifyUserNavigateToConsultantPage"/>  
+              
+          
+        </methods>
+      
+      </class>
       
     </classes>
   </test> <!-- Test -->

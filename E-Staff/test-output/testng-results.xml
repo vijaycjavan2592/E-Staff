@@ -2,47 +2,51 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32477" started-at="2019-10-11T10:40:59Z" finished-at="2019-10-11T10:41:32Z">
+  <suite name="Default suite" duration-ms="50303" started-at="2019-10-14T13:21:39Z" finished-at="2019-10-14T13:22:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32477" started-at="2019-10-11T10:40:59Z" finished-at="2019-10-11T10:41:32Z">
-      <class name="com.staff.qa.testcases.RequirementPageTest">
-        <test-method status="PASS" signature="setExtentReport(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e]" name="setExtentReport" is-config="true" duration-ms="174" started-at="2019-10-11T10:40:59Z" finished-at="2019-10-11T10:40:59Z">
+    <test name="Default test" duration-ms="50303" started-at="2019-10-14T13:21:39Z" finished-at="2019-10-14T13:22:29Z">
+      <class name="com.staff.qa.testcases.PlacementPageTest">
+        <test-method status="PASS" signature="setExtentReport(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09]" name="setExtentReport" is-config="true" duration-ms="238" started-at="2019-10-14T13:21:39Z" finished-at="2019-10-14T13:21:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@655a5d9c]]>
+                <![CDATA[org.testng.TestRunner@50d68830]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtentReport -->
-        <test-method status="PASS" signature="setupBeforeSuite(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e]" name="setupBeforeSuite" is-config="true" duration-ms="209" started-at="2019-10-11T10:40:59Z" finished-at="2019-10-11T10:41:00Z">
+        <test-method status="PASS" signature="setupBeforeSuite(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09]" name="setupBeforeSuite" is-config="true" duration-ms="232" started-at="2019-10-14T13:21:39Z" finished-at="2019-10-14T13:21:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@655a5d9c]]>
+                <![CDATA[org.testng.TestRunner@50d68830]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBeforeSuite -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e]" name="setUp" is-config="true" duration-ms="7750" started-at="2019-10-11T10:41:00Z" finished-at="2019-10-11T10:41:07Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09]" name="setUp" is-config="true" duration-ms="8079" started-at="2019-10-14T13:21:40Z" finished-at="2019-10-14T13:21:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="verifyDeleteRecentStatusFunctionality()[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e]" name="verifyDeleteRecentStatusFunctionality" duration-ms="22639" started-at="2019-10-11T10:41:07Z" finished-at="2019-10-11T10:41:30Z">
+        <test-method status="FAIL" signature="verifyPlacedConsultantAppearInPlacement_FromRequirement()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09]" name="verifyPlacedConsultantAppearInPlacement_FromRequirement" duration-ms="40009" started-at="2019-10-14T13:21:48Z" finished-at="2019-10-14T13:22:28Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[null]]>
+              <![CDATA[expected [Req-264609-6] but found [Req-233147-6]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: null
+              <![CDATA[java.lang.AssertionError: expected [Req-264609-6] but found [Req-233147-6]
 at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.fail(Assert.java:103)
-at com.staff.qa.testcases.RequirementPageTest.verifyDeleteRecentStatusFunctionality(RequirementPageTest.java:1232)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at com.staff.qa.testcases.PlacementPageTest.verifyPlacedConsultantAppearInPlacement_FromRequirement(PlacementPageTest.java:276)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -73,27 +77,27 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDeleteRecentStatusFunctionality -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e]" name="getResult" is-config="true" duration-ms="1378" started-at="2019-10-11T10:41:30Z" finished-at="2019-10-11T10:41:31Z">
+        </test-method> <!-- verifyPlacedConsultantAppearInPlacement_FromRequirement -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09]" name="getResult" is-config="true" duration-ms="1339" started-at="2019-10-14T13:22:28Z" finished-at="2019-10-14T13:22:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyDeleteRecentStatusFunctionality status=FAILURE method=RequirementPageTest.verifyDeleteRecentStatusFunctionality()[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e] output={null}]]]>
+                <![CDATA[[TestResult name=verifyPlacedConsultantAppearInPlacement_FromRequirement status=FAILURE method=PlacementPageTest.verifyPlacedConsultantAppearInPlacement_FromRequirement()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="setupAfterSuite()[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e]" name="setupAfterSuite" is-config="true" duration-ms="62" started-at="2019-10-11T10:41:31Z" finished-at="2019-10-11T10:41:31Z">
+        <test-method status="PASS" signature="setupAfterSuite()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09]" name="setupAfterSuite" is-config="true" duration-ms="100" started-at="2019-10-14T13:22:29Z" finished-at="2019-10-14T13:22:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupAfterSuite -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.staff.qa.testcases.RequirementPageTest@13deb50e]" name="endReport" is-config="true" duration-ms="223" started-at="2019-10-11T10:41:32Z" finished-at="2019-10-11T10:41:32Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@464bee09]" name="endReport" is-config="true" duration-ms="273" started-at="2019-10-14T13:22:29Z" finished-at="2019-10-14T13:22:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->
-      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
+      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

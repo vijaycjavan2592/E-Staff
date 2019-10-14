@@ -70,7 +70,8 @@ public class RequirementPage extends TestBase {
 	WebElement clickOnAllTag;
 
 
-	public void setClickOnAllTag() {	
+	public void setClickOnAllTag() throws InterruptedException {	
+		Thread.sleep(5000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(30, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
@@ -89,7 +90,8 @@ public class RequirementPage extends TestBase {
 	WebElement clickOnArchivedTag;
 
 
-	public void setClickOnArchivedTag() {	
+	public void setClickOnArchivedTag() throws InterruptedException {	
+		Thread.sleep(5000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(30, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
@@ -138,7 +140,8 @@ public class RequirementPage extends TestBase {
 	@FindBy(xpath = "//input[@name='requirementID']")
 	WebElement requirementID;
 	
-	public String setRequirementId() {
+	public String setRequirementId() throws InterruptedException {
+		Thread.sleep(2000);
 		System.out.println("Requirement id is ::: "+requirementID.getAttribute("ng-reflect-model"));	
 		return requirementID.getAttribute("ng-reflect-model");
 	}
@@ -550,7 +553,8 @@ public class RequirementPage extends TestBase {
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
 	WebElement requirementId_gridsection;
 	
-	public void setClickOnFirstRowRequirement_id() {
+	public void setClickOnFirstRowRequirement_id() throws InterruptedException {
+		Thread.sleep(6000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(60, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
@@ -918,7 +922,8 @@ public class RequirementPage extends TestBase {
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[1]")
 	WebElement selectConsultant;
 	
-	public void setSelectConsultant() {
+	public void setSelectConsultant() throws InterruptedException {
+		Thread.sleep(5000);
 		
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(30, TimeUnit.SECONDS)
@@ -1108,7 +1113,8 @@ public class RequirementPage extends TestBase {
 	@FindBy(xpath = "//div[@class='status-footer-inner-wrapper']//a[contains(text(),'Cancel')]")
 	WebElement clickOnCancelButtonOfSetStatusPopup;
 	
-	public void setClickOnCancelButtonOfSetStatusPopup() {
+	public void setClickOnCancelButtonOfSetStatusPopup() throws InterruptedException {
+		Thread.sleep(2000);
 		TestUtil.click(clickOnCancelButtonOfSetStatusPopup);
 	}
 	
@@ -1121,5 +1127,22 @@ public class RequirementPage extends TestBase {
 		TestUtil.click(clickOnDeleteRecentStatus);
 	}
 	
+	//Click on Delete Button 
+	@FindBy(xpath = "//button[@class='btn btn-primary']")
+	WebElement clickOnDeleteButton;
+	
+	public void setClickOnDeleteButton() throws InterruptedException {
+		Thread.sleep(3000);
+		TestUtil.click(clickOnDeleteButton);
+	}
+	
+	//Click on View CV/Resume link
+	@FindBy(xpath = "//span[contains(text(),'View CV/Resume')]")
+	WebElement clickOnViewResumeLink;
+	
+	public void setClickOnViewResumeLink() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnViewResumeLink);
+	}
 	
 }

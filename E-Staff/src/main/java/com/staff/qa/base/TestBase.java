@@ -164,7 +164,7 @@ public class TestBase {
 		
 		System.out.println("Browser close");
 		Thread.sleep(1000);
-		//driver.close();
+	//	driver.close();
 		
 	}
 	

@@ -3,17 +3,32 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [E-Staff Test Automation Test Suite]]">
   <test thread-count="5" name="E-Staff App Test Cases(failed)(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.LoginPageTest">
+      <class name="com.staff.qa.testcases.RequirementPageTest">
         <methods>
+          <include name="verifyConsultantMapToRequirement"/>
+          <include name="setUp"/>
+          <include name="verifyUploadDocumentFunctionality"/>
+          <include name="verifyConsultantMapToRequirement_alreadyExists"/>
+          <include name="verifyNavigateToStatusPopUp"/>
+          <include name="endReport"/>
+          <include name="verifyCancelBtnFunOfMapConsultantWindow"/>
+          <include name="verifyUnArchivedRequirementFunctionality"/>
+          <include name="verifyValidationMessageForClosuredate"/>
+          <include name="verifyEditJobDescriptionFunctionality"/>
+          <include name="verifyValidationMessageForClosureReason"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
-          <include name="validatePasswordMessageForIncorrectPassword"/>
           <include name="getResult"/>
-          <include name="endReport"/>
+          <include name="verifyCancelButtonFunctionalityOfArchiveRequirementPopUp"/>
+          <include name="verifyArchivedRequirementFunctionality"/>
+          <include name="verifyCancelBtnFunOfUploadDocPopUp_requirement"/>
+          <include name="verifyCancelButtonFunOfSetStatusPopUp"/>
+          <include name="verifyUploadDocumentAppearInGrid"/>
+          <include name="verifyDownloadUploadedDocument_requirement"/>
           <include name="setupAfterSuite"/>
-          <include name="setUp"/>
+          <include name="verifyArchivedConsultantMapToRequirement"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.LoginPageTest -->
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
     </classes>
   </test> <!-- E-Staff App Test Cases(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [E-Staff Test Automation Test Suite]] -->
