@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -556,12 +557,14 @@ public class RequirementPage extends TestBase {
 	public void setClickOnFirstRowRequirement_id() throws InterruptedException {
 		Thread.sleep(6000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(60, TimeUnit.SECONDS)
-				.pollingEvery(2, TimeUnit.SECONDS).
-				ignoring(ElementClickInterceptedException.class);
+				withTimeout(1200, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class);
 		
 		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
 	    public WebElement apply(WebDriver driver) {
+	    	System.out.println("---Searching data------------");
 	    	TestUtil.click(requirementId_gridsection);	    	
 		return requirementId_gridsection;
 	}		
@@ -928,13 +931,35 @@ public class RequirementPage extends TestBase {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(30, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS)
-				.ignoring(ElementClickInterceptedException.class);
+				.ignoring(ElementClickInterceptedException.class)
+		        .ignoring(StaleElementReferenceException.class);
 		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
 			public WebElement apply(WebDriver driver) {
 				
 				TestUtil.click(selectConsultant);
 
 				return selectConsultant;
+			}
+		});		
+	}
+	
+	//Select the Consultant
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[2]/div[1]")
+	WebElement selectConsultant_2ndRow;
+	
+	public void setSelectConsultant_2ndRow() throws InterruptedException {
+		Thread.sleep(5000);
+		
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class);
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+				
+				TestUtil.click(selectConsultant_2ndRow);
+
+				return selectConsultant_2ndRow;
 			}
 		});		
 	}

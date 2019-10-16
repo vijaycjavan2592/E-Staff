@@ -202,7 +202,7 @@ public class PlacementPageTest extends TestBase {
 //	@Test(priority = 8)
 	public void VerifyCandidateEndedPlacementCountInHeaderAndGrid() throws InterruptedException {
 
-		String TestCaseName = "Verify the Candidate Ended Placement count in header and grid section";
+		String TestCaseName = "Verify the 'Candidate Ended' Placement count in header and grid section";
 		test = extent.createTest(TestCaseName);
 		try {
 			Thread.sleep(10000);
@@ -227,15 +227,16 @@ public class PlacementPageTest extends TestBase {
 	@Test
 	public void verifyPlacedConsultantAppearInPlacement_FromRequirement() throws InterruptedException {
 		
-		String testCaseName = "Verify";
+		String testCaseName = "To Check the Gridview of Placements after Placing the Consultant from Requirements Module";
 		test = extent.createTest(testCaseName);
 		
 		String searchRequirement = "Req-264609-6";     //RequirementPageTest.requirementId;
 		
 		try {	
+		//click on Requirement option	
 		homePage.clickOnRequirementOption();
-		Thread.sleep(5000);
-		requirementPage.setSearchTextBox(searchRequirement);
+		//Thread.sleep(5000);
+	//	requirementPage.setSearchTextBox(searchRequirement);
 		
 		Thread.sleep(5000);
 		try {
@@ -244,22 +245,43 @@ public class PlacementPageTest extends TestBase {
 			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
 			System.out.println(noData.getText());
 		}
-		
+		//Get the Requirement Id
 		String requirement_ID = requirementPage.setRequirementId();
-		System.out.println("Requirement id is : "+requirement_ID);
-		// Click on Consultant option
+		System.out.println("Requirement id is : "+requirement_ID);	
+		
+		Thread.sleep(2000);
+		//Click on Search Consultant Button
+		requirementPage.setClickOnSearchConsultantButton();
+		Thread.sleep(2000);
+        //Get the Consultant Name
+		String consultantName1 = requirementPage.setConsultantName();
+		//Select the First consultant (select the checkbox)
+		requirementPage.setSelectConsultant();
+		//Click on Shortlisted Consultant button
+		requirementPage.setClickOnShortlistConsultantOptionButton();
+		
+		String message = "Duplicate status can not be set as Shortlisted status already exists.";
+		if(requirementPage.setRequirementConfirmationMessage().equalsIgnoreCase(message)) {
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+			requirementPage.setSelectConsultant_2ndRow();
+			Thread.sleep(2000);
+			//Click on Shortlisted Consultant button
+			requirementPage.setClickOnShortlistConsultantOptionButton();
+		}
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		//Click on Consultant option
 		requirementPage.setClickOnConsultantOption();
-		Thread.sleep(2000);
-		String consultantName = requirementPage.setConsultantName_InRequirement();
+		//String consultantName = requirementPage.setConsultantName_InRequirement();
 		// Select the consultant
-		Thread.sleep(2000);
 		requirementPage.setSelectConsultant();
 
 		requirementPage.setClickOnStatusLink();
 
 		Assert.assertEquals(requirementPage.setStatusPopUpTitle(), "Set Status");
 
-		requirementPage.setselectStatus("Coding Test");
+		requirementPage.setselectStatus("Placed");
 		Thread.sleep(2000);
 		requirementPage.setEnterNotes("Test");
 
@@ -267,22 +289,39 @@ public class PlacementPageTest extends TestBase {
 
 		//Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
 		//		"Status has been updated successfully for Consultant " + "" + consultantName + "");
-		
+		driver.navigate().refresh();
 		Thread.sleep(3000);
 		homePage.clickOnPlacementOption();
+		Thread.sleep(5000);
 		
+		placementPage.setAllPlacementsearchTextBox(requirement_ID);
 		System.out.println(placementPage.setRequirementID_PlacementGrid());
+		Thread.sleep(5000);
+		String requirementId_InPlacementPage = "";
+		try {
+			requirementId_InPlacementPage = placementPage.setRequirementID_PlacementGrid();
+		} catch (Exception e) {
+			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+			System.out.println(noData.getText());
+		}
+		//Verifying that placed requirement appear in Placement grid
+		Assert.assertEquals(requirementId_InPlacementPage, requirement_ID);
 		
-		Assert.assertEquals(placementPage.setRequirementID_PlacementGrid(), requirement_ID);
+		test.log(Status.PASS, testCaseName + " is sucessfully pass");
+		testresultdata.put("9", new Object[] { 9d, testCaseName,
+				"Placed Record Should be displayed In gridview", "Pass" });
+		
 	} catch (Exception e) {
-		testresultdata.put("8", new Object[] { 8d, testCaseName,
-				" CandidateEnded Placement count in header and grid section should be same", "Fail" });
+		testresultdata.put("9", new Object[] { 9d, testCaseName,
+				"Placed Record Should be displayed In gridview", "Fail" });
 		e.printStackTrace();
 		Assert.fail();
-	}
+	}		
 		
 	}
 
+	
+	
 	
 	
 	

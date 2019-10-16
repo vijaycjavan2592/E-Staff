@@ -1,8 +1,10 @@
 package com.staff.qa.pages;
 
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,7 +57,8 @@ public class PlacementPage extends TestBase {
 	WebElement clickOnOpenTag_Placement;
 
 
-	public void setClickOnOpenTag_Placement() {	
+	public void setClickOnOpenTag_Placement() throws InterruptedException {
+		Thread.sleep(2000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(30, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
@@ -169,8 +172,30 @@ public class PlacementPage extends TestBase {
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]")
 	WebElement requirementId;
 	
-	public String setRequirementID_PlacementGrid() {
+	public String setRequirementID_PlacementGrid() throws InterruptedException {
+		Thread.sleep(5000);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class)
+				.ignoring(NoSuchElementException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    requirementId.getText();
+		return requirementId;
+	    }   
+	});
 		return requirementId.getText();
+		}
+	
+	//Search Textbox - Consultant
+	@FindBy(xpath = "//input[@name='searchValue']")
+	WebElement allPlacementsearchTextBox;
+	
+	public void setAllPlacementsearchTextBox(String search) throws InterruptedException {	
+		TestUtil.sendInput(allPlacementsearchTextBox, search);				
 	}
 	
 }

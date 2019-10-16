@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Default suite]]">
   <test thread-count="5" name="Default test(failed)(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.ConsultantPageTest">
+      <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
-          <include name="verifyLinkRequirementToConsultant"/>
-          <include name="setUp"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
+          <include name="setUp"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
+      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
     </classes>
   </test> <!-- Default test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Default suite]] -->
