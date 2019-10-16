@@ -6,7 +6,6 @@
       <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
           <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
-          <include name="VerifyOpenPlacementCountInHeaderAndGrid"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
