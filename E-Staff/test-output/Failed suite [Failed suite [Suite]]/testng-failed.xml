@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Suite]]]">
+  <test thread-count="5" name="Test(failed)(failed)(failed)">
+    <classes>
+      <class name="com.staff.qa.testcases.RequirementPageTest">
+        <methods>
+          <include name="setupBeforeSuite"/>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
+          <include name="setUp"/>
+          <include name="verifyNavigateToStatusPopUp"/>
+          <include name="endReport"/>
+          <include name="setupAfterSuite"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
+    </classes>
+  </test> <!-- Test(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [Suite]]] -->

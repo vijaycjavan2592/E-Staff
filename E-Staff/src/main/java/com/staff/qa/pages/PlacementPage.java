@@ -3,6 +3,7 @@ package com.staff.qa.pages;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -198,4 +199,110 @@ public class PlacementPage extends TestBase {
 		TestUtil.sendInput(allPlacementsearchTextBox, search);				
 	}
 	
+	//Click On Requirement Id in grid
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]")
+	WebElement clickOnRequirementId;
+	
+	public void setClickOnRequirementID_PlacementGrid() throws InterruptedException {
+		Thread.sleep(5000);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class)
+				.ignoring(NoSuchElementException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    TestUtil.click(clickOnRequirementId);
+		return clickOnRequirementId;
+	    }   
+	});
+		
+		}
+	
+	//Click on Edit button
+	@FindBy(xpath = "//button[@class='ng-tns-c9-9' or contains(text(),'Edit')]")
+	WebElement clickOnEditButton;
+	
+	public void setClickOnEditButton() throws InterruptedException {
+		Thread.sleep(5000);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class)
+				.ignoring(NoSuchElementException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    TestUtil.click(clickOnEditButton);
+		return clickOnEditButton;
+	    }   
+	});
+		
+		}
+	
+	//Select the 'Did Not Start Reason' Radio Button
+	@FindBy(xpath = "//label[@class='radio-container'][contains(text(),'Did Not Start Reason')]")
+	WebElement selectDiDNotStartRadioBtn;
+	
+	
+	public void setSelectDiDNotStartRadioBtn() {		
+		TestUtil.click(selectDiDNotStartRadioBtn);		
+	}
+	
+	//Select 'Did Not Start Reason' option from dropdown
+	@FindBy(xpath = "//ng-select[@name='didNotStartReason']")
+	WebElement clickDidNotStartDropdown;
+	
+	@FindBy(xpath = "//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]")	
+	WebElement selectDidNotStart;
+	
+	public void setselectRecruiter(String DidNotStart) throws InterruptedException {
+		TestUtil.click(clickDidNotStartDropdown);
+		Thread.sleep(2000);
+		String DidNotStartrOption = selectDidNotStart.getText();
+		System.out.println("++++++++++++++++"+DidNotStartrOption);
+		driver.findElement(By.xpath("//span[contains(text(),'"+DidNotStart+"')]")).click();		
+	}	
+	
+	//click on Save Button 
+	@FindBy(xpath = "//button[@class='plcmnt-edit-submit-btn']")
+	WebElement clickOnSaveButton;
+	
+	public void setClickOnSaveButton() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnSaveButton);
+	}
+	
+	//Get Consultant Name
+	@FindBy(xpath = "//div[@class='content-heading col-md-4']//span")
+	WebElement consultantName;
+	
+	public String getConsultantName() throws InterruptedException {
+		Thread.sleep(2000);
+		System.out.println("Name is :???? "+consultantName.getAttribute("title"));
+		return consultantName.getAttribute("title");
+	}
+	
+	//Confirmation message
+	@FindBy(xpath = "//div[@class='col-md-10 msg-content']")
+	WebElement placementConfirmationMessage;
+
+	public String setPlacementConfirmationMessage() {
+		System.out.println(placementConfirmationMessage.getText());
+		return placementConfirmationMessage.getText();
+	}
+	
+	//Click on Cancel button of edit placement form
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelButton_EditPlacementForm;
+	
+	public void getClickOnCancelButton() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnCancelButton_EditPlacementForm);
+	}
 }
+
+

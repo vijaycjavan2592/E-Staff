@@ -12,8 +12,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -451,10 +453,11 @@ public class ConsultantPage extends TestBase {
 	}
 	
 	//Consultant Id
-	@FindBy(xpath = "//input[@name='consultantID']")
+	@FindBy(xpath = "//input[@name='consultantId']")
 	WebElement consultantID;
 	
-	public String setConsultantId() {
+	public String setConsultantId() throws InterruptedException {
+		Thread.sleep(3000);
 		System.out.println("Consultant id is ::: "+consultantID.getAttribute("ng-reflect-model"));	
 		return consultantID.getAttribute("ng-reflect-model");
 	}
@@ -464,7 +467,8 @@ public class ConsultantPage extends TestBase {
 	@FindBy(xpath = "//div[@class='col-md-10 msg-content']")
 	WebElement consultantConfirmationMessage;
 	
-	public String setconsultantConfirmationMessage() {
+	public String setconsultantConfirmationMessage() throws InterruptedException {
+		Thread.sleep(2000);
 		System.out.println(consultantConfirmationMessage.getText());
 		return consultantConfirmationMessage.getText();
 	}
@@ -722,7 +726,8 @@ public class ConsultantPage extends TestBase {
 	@FindBy(xpath = "//div[contains(text(),'Requirements')]")
     WebElement clickRequirementOption;
 	
-	public void setClickOnRequirementOption() {
+	public void setClickOnRequirementOption() throws InterruptedException {
+		Thread.sleep(2000);
 		TestUtil.click(clickRequirementOption);
 	} 
 	
@@ -734,7 +739,7 @@ public class ConsultantPage extends TestBase {
 		TestUtil.click(clickOnLinkRequirementLink);
 	}
 	
-	//Get test of Requirement Id
+	//Get text of Requirement Id
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]")
 	WebElement alreadyLinkedRequirementId;
 		
@@ -747,11 +752,12 @@ public class ConsultantPage extends TestBase {
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[1]")
 	WebElement selectRequirement;
 	
-	public void setSelectRequirement() {
-		
+	public void setSelectRequirement() throws InterruptedException {
+		Thread.sleep(2000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
 				withTimeout(30, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(StaleElementReferenceException.class)
 				.ignoring(ElementClickInterceptedException.class);
 		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
 			public WebElement apply(WebDriver driver) {
@@ -764,18 +770,43 @@ public class ConsultantPage extends TestBase {
 		
 	}
 	
+	//Select the Requirement from 2nd row
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[2]/div[1]")
+	WebElement selectRequirement_2ndRow;
+	
+	public void setSelectRequirement_2ndRow() {
+		
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class);
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+				
+				TestUtil.click(selectRequirement_2ndRow);
+
+				return selectRequirement_2ndRow;
+			}
+		});
+		
+	}
+	
 	//Click on Link Requirement Button
 	@FindBy(xpath = "//button[contains(text(),'Link Requirement')]")
 	WebElement clickOnLinkRequirementButton;
 	
 	public void setClickOnLinkRequirementButton() throws InterruptedException {
-		Thread.sleep(2000);
-		if(clickOnLinkRequirementButton.isEnabled()) {
+		Thread.sleep(1000);
+		Actions ac = new Actions(driver);
+		Thread.sleep(1000);
+		ac.moveToElement(clickOnLinkRequirementButton).click().build().perform();
+		
+	/*	if(clickOnLinkRequirementButton.isEnabled()) {
 		TestUtil.click(clickOnLinkRequirementButton);
 		}
 		else {
 			System.out.println("Link Requirement is not clickable");
-		}
+		}*/
 	}
 	
 	//click on Cancel button from Link Requirement page
@@ -811,10 +842,11 @@ public class ConsultantPage extends TestBase {
 	
 	//------------------Email-------------------------
 	//Click on Email-link
-	@FindBy(xpath = "//label[@class='action-text ng-tns-c17-3 ng-star-inserted'][contains(text(),'Email')]")
+	@FindBy(xpath = "//label[contains(text(),'Email')]")
 	WebElement clickOnConsultantEmailLink;
 	
-	public void setClickOnConsultantEmailLink() {
+	public void setClickOnConsultantEmailLink() throws InterruptedException {
+		Thread.sleep(2000);
 		TestUtil.click(clickOnConsultantEmailLink);
 	}
 	
@@ -1193,5 +1225,85 @@ public class ConsultantPage extends TestBase {
 	public void setClickOnCancelButtonOfScheduleMeetingPopup() throws InterruptedException {
 		Thread.sleep(2000);
 		TestUtil.click(clickOnCancelButtonOfScheduleMeetingPopup);
+	}
+	
+	//-----------------Status-------------------
+	//Status pop up title
+	@FindBy(xpath = "//div[@class='col-md-10']//span[contains(text(),'Set Status')]")
+	WebElement statusPopUpTitle;
+	
+	public String setStatusPopUpTitle() {
+		return statusPopUpTitle.getText();
+	}
+	
+	// Select the Radio button of Requirement
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[1]")
+	WebElement selectRadioButtonOfRequirement;
+
+	public void setSelectRadioButtonOfRequirement() throws InterruptedException {
+		Thread.sleep(3000);
+
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class);
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+
+				TestUtil.click(selectRadioButtonOfRequirement);
+
+				return selectRadioButtonOfRequirement;
+			}
+		});
+	}
+	
+	//Click on Status link
+	@FindBy(xpath = "//label[contains(text(),'Status')]")
+	WebElement clickOnStatusLink;
+	
+	public void setClickOnStatusLink_ConsultantPage() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnStatusLink);
+	}
+	
+	//Select Status
+	@FindBy(xpath = "//div[@class='ng-select-container']")
+	WebElement clickStatusDropdown;
+	
+	@FindBy(xpath = "//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]")	
+	WebElement selectStatus;
+	
+	public void setselectStatus(String status) throws InterruptedException {
+		TestUtil.click(clickStatusDropdown);
+		Thread.sleep(2000);
+		String StatusOption = selectStatus.getText();
+		System.out.println("++++++++++++++++"+StatusOption);
+		driver.findElement(By.xpath("//span[contains(text(),'"+status+"')]")).click();		
+	}
+	
+	//Enter Notes
+	@FindBy(xpath = "//textarea[@placeholder='Enter Notes here']")
+	WebElement enterNotes;
+	
+	public void setEnterNotes(String note) {
+		TestUtil.sendInput(enterNotes, note);
+	}
+	
+	//Click on Set Status button
+	@FindBy(xpath = "//div[@class='status-footer-inner-wrapper']//span[contains(text(),'Set Status')]")
+	WebElement clickOnSetStatus;
+	
+	public void setClickOnSetStatus() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnSetStatus);
+	}
+	
+	//Get Requirement Id
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
+	WebElement requirementId;
+	
+	public String getRequirementId() throws InterruptedException {
+		Thread.sleep(3000);
+		return requirementId.getText();
 	}
 }

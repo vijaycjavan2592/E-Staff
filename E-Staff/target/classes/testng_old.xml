@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="E-Staff Test Automation Test Suite">
+
+<listeners>
+	<!-- 	<listener class-name="com.qa.ExtentRepoterListener.ExtentReport" /> -->
+	</listeners>
+
+
+  <test thread-count="5" name="E-Staff App Test Cases">
+    
+   <!--   <class name="com.staff.qa.testcases.HomePageTest"/>
+   
+      <class name="com.staff.qa.testcases.LoginPageTest"/>   -->
+                
+        
+     <!--       
+        <groups>
+         <run>
+            <include name = "functest"/>
+         </run>
+      </groups>
+      
+      
+           -->
+         
+    <classes>
+     <!--  <class name="com.staff.qa.testcases.LoginPageTest">
+       </class>  -->
+       
+       <class name="com.staff.qa.testcases.ConsultantPageTest">
+       </class>
+       
+       <class name="com.staff.qa.testcases.RequirementPageTest">
+       </class> 
+           
+       <class name="com.staff.qa.testcases.PlacementPageTest">
+       </class>          
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -17,7 +17,6 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 import com.staff.qa.base.TestBase;
-import com.staff.qa.pages.CompaniesPage;
 import com.staff.qa.pages.ConsultantPage;
 import com.staff.qa.pages.HomePage;
 import com.staff.qa.pages.LoginPage;
@@ -40,7 +39,7 @@ public class ConsultantPageTest extends TestBase {
 		super();		
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void setUp() throws InterruptedException {
 		initialization();
 		consultantPage = new ConsultantPage();
@@ -50,7 +49,7 @@ public class ConsultantPageTest extends TestBase {
 		consultantPage = homePage.clickOnConsultantOption();
 	}
 
-//	@Test(priority = 1)
+	@Test(priority = 1,groups = {"regression"})
 	public void verifyUserNavigateToConsultantPage() throws InterruptedException {
 
 		String TestCaseName = "Verify that user can navigate to the Consultant Page";
@@ -71,7 +70,7 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 
-//	@Test(priority = 2)
+	@Test(priority = 2,groups = {"regression"})
 	public void verifyAddNewConsulatantFormDisplayed() throws InterruptedException {
 		String TestCaseName = "Verify Add New Button is Clickable and it Shows the Add New Consultant Form";
 		test = extent.createTest(TestCaseName);
@@ -106,7 +105,7 @@ public class ConsultantPageTest extends TestBase {
 		return data;
 	}
 	
-//	@Test(dataProvider = "getEStaffData",priority = 3)
+	@Test(dataProvider = "getEStaffData",priority = 3,groups = {"regression"})
 	public void verifyAddNewConsultant(String Firstname, String Lastname, String emailId, String mobileno,String rate,
 			String UOMRate, String Year, String Month, String date, String Availability_Notice, String Can_Relocate_To,
 			String EmploymentType, String CandidateSource, String VisaStatus, String Country, String State, String City,
@@ -204,7 +203,7 @@ public class ConsultantPageTest extends TestBase {
 	}	
 		
 	
-//	@Test(dataProvider = "getEStaffData",priority = 5)
+	@Test(dataProvider = "getEStaffData",priority = 5,groups = {"regression"})
 	public void verifyDuplicateConsultant(String Firstname, String Lastname, String emailId, String mobileno,String rate, 
 			String UOMRate, String Year, String Month, String date, String Availability_Notice, String Can_Relocate_To,
 			String EmploymentType, String CandidateSource, String VisaStatus, String Country, String State, String City,
@@ -283,7 +282,7 @@ public class ConsultantPageTest extends TestBase {
 	}	
 
 	
-//	@Test(priority = 6)
+	@Test(priority = 6,groups = {"regression"})
 	public void verifyFunctionalityOfCancelButton()
 			throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that functionality of Cancel button of Add New Consultant window";
@@ -312,7 +311,7 @@ public class ConsultantPageTest extends TestBase {
 	}	
 
 	
-//	@Test(priority = 7)
+	@Test(priority = 7,groups = {"regression"})
 	public void getAvailableCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Available consultants count in header and grid section";
@@ -334,7 +333,7 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 	
-//	@Test(priority = 8)
+	@Test(priority = 8,groups = {"regression"})
 	public void getAllCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the All consultants count in header and grid section";
@@ -358,7 +357,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 	
-//	@Test(priority = 9)
+	@Test(priority = 9,groups = {"regression"})
 	public void getArchivedCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Archived consultants count in header and grid section";
@@ -382,7 +381,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 
 	
-//	@Test(priority = 10)
+	@Test(priority = 10,groups = {"regression"})
 	public void getQualifiedCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Qualified consultants count in header and grid section";
@@ -413,7 +412,7 @@ public class ConsultantPageTest extends TestBase {
 		return data;
 	}
 	
-//	@Test(dataProvider = "getEStaffData_EditConsultant",priority = 11)
+	@Test(dataProvider = "getEStaffData_EditConsultant",priority = 11,groups = {"regression"},dependsOnMethods = { "verifyAddNewConsultant" })
 	public void verifyEditConsultantFunctionality(String Firstname, String Lastname, String emailId, String mobileno,String rate,
 			String UOMRate, String Year, String Month, String date, String Availability_Notice, String Can_Relocate_To,
 			String EmploymentType, String CandidateSource, String VisaStatus, String Country, String State, String City, 
@@ -425,6 +424,7 @@ public class ConsultantPageTest extends TestBase {
 		String searchConsultant = consultantID;
 		
 		try {
+		//Navigate to All Tag filter	
 		consultantPage.setClickOnAllTag();
 		consultantPage.setSearchTextBox(searchConsultant);
 		
@@ -506,16 +506,16 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 	
-//	@Test(priority = 12)
+	@Test(priority = 12,groups = {"regression"})
 	public void verifyUploadDocumentFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can upload the document in to system";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
+		//String searchConsultant = prop.getProperty("Consultant_id");
 		
 		try {
-		consultantPage.setClickOnAllTag();
-		consultantPage.setSearchTextBox(searchConsultant);
+		/*consultantPage.setClickOnAllTag();
+		consultantPage.setSearchTextBox(searchConsultant);*/
 		
 		Thread.sleep(2000);
 		try {
@@ -554,15 +554,15 @@ public class ConsultantPageTest extends TestBase {
 			}		
 		}
 
-//	@Test(priority = 13)
+	@Test(priority = 13,groups = {"regression"})
 	public void verifyUploadDocumentAppearInGrid() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that upload document can appear in grid";
 		test = extent.createTest(TestCaseName);
 
-		String searchConsultant = prop.getProperty("Consultant_id");
+		//String searchConsultant = prop.getProperty("Consultant_id");
 		try {
-			consultantPage.setClickOnAllTag();
-			consultantPage.setSearchTextBox(searchConsultant);
+			/*consultantPage.setClickOnAllTag();
+			consultantPage.setSearchTextBox(searchConsultant);*/
 
 			Thread.sleep(2000);
 			try {
@@ -599,16 +599,16 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 
-//	@Test(priority = 14)
+	@Test(priority = 14,groups = {"regression"})
 	public void verifyDownloadUploadedDocument() throws InterruptedException {
 		String TestCaseName = "Verify that user can download the uploaded documents";
 		test = extent.createTest(TestCaseName);
 
-		String searchConsultant = prop.getProperty("Consultant_id");
+		//String searchConsultant = prop.getProperty("Consultant_id");
 		
 		try {
-		consultantPage.setClickOnAllTag();
-		consultantPage.setSearchTextBox(searchConsultant);
+		/*consultantPage.setClickOnAllTag();
+		consultantPage.setSearchTextBox(searchConsultant);*/
 
 		Thread.sleep(2000);
 		try {
@@ -635,19 +635,18 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 	
-//	@Test(priority = 15)
+	@Test(priority = 15,groups = {"regression"})
 	public void verifyLinkRequirementToConsultant() throws InterruptedException {
 		String TestCaseName = "Verify that user can link the requirement to the consultant";
 		//String TestCaseName_duplicate = "Verify that user can link the requirement which is already linked. ";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
-		String searchRequirement = prop.getProperty("Requirement_id");
+		//String searchConsultant = prop.getProperty("Consultant_id");
+		//String searchRequirement = prop.getProperty("Requirement_id");
 		
 		try {
-		consultantPage.setClickOnAllTag();
-		consultantPage.setSearchTextBox(searchConsultant);
-
+	/*	consultantPage.setClickOnAllTag();
+		consultantPage.setSearchTextBox(searchConsultant);*/
 		Thread.sleep(2000);
 		try {
 			consultantPage.setClickOnFirstRowConsultant();
@@ -659,7 +658,7 @@ public class ConsultantPageTest extends TestBase {
 		
 		consultantPage.setClickOnLinkRequirementLink();
 		
-		consultantPage.setSearchTextBox(searchRequirement);
+		//consultantPage.setSearchTextBox(searchRequirement);
 		
 		Thread.sleep(3000);
 		consultantPage.setSelectRequirement();	
@@ -684,17 +683,17 @@ public class ConsultantPageTest extends TestBase {
 	}
 
 	
-//	@Test(priority = 16)
+	@Test(priority = 16,groups = {"regression"})
 	public void verifyLinkRequirementToConsultant_alreadyExists() throws InterruptedException {
 		String TestCaseName = "Verify that user can link the requirement which is already linked. ";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
-		String searchRequirement = prop.getProperty("Requirement_id");
+		/*String searchConsultant = prop.getProperty("Consultant_id");
+		String searchRequirement = prop.getProperty("Requirement_id");*/
 
 		try {
 		consultantPage.setClickOnAllTag();
-		consultantPage.setSearchTextBox(searchConsultant);
+		//consultantPage.setSearchTextBox(searchConsultant);
 
 		Thread.sleep(2000);
 		try {
@@ -707,7 +706,7 @@ public class ConsultantPageTest extends TestBase {
 		
 		consultantPage.setClickOnLinkRequirementLink();
 		Thread.sleep(2000);
-		consultantPage.setSearchTextBox(searchRequirement);
+	//	consultantPage.setSearchTextBox(searchRequirement);
 		
 		Thread.sleep(3000);
 		consultantPage.setSelectRequirement();		
@@ -730,16 +729,16 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 	
-//	@Test(priority = 17)
+	@Test(priority = 17,groups = {"regression"})
 	public void verifyDownloadResumeFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can download the consultant resume";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
+	//	String searchConsultant = prop.getProperty("Consultant_id");
 
 		try {
-		consultantPage.setClickOnAllTag();
-		consultantPage.setSearchTextBox(searchConsultant);
+		/*consultantPage.setClickOnAllTag();
+		consultantPage.setSearchTextBox(searchConsultant);*/
 
 		Thread.sleep(2000);
 		try {
@@ -768,17 +767,17 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 		
-//	@Test(priority = 18)
+	@Test(priority = 18,groups = {"regression"})
 	public void verifyCancelFunctionalityOfLinkRequirement() {
 		String TestCaseName = "Verify the Cancel button functionality of LinkRequirement to the consultant";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
-		String searchRequirement = prop.getProperty("Requirement_id");
+		/*String searchConsultant = prop.getProperty("Consultant_id");
+		String searchRequirement = prop.getProperty("Requirement_id");*/
 
 		try {
-		consultantPage.setClickOnAllTag();
-		consultantPage.setSearchTextBox(searchConsultant);
+		/*consultantPage.setClickOnAllTag();
+		consultantPage.setSearchTextBox(searchConsultant);*/
 
 		Thread.sleep(2000);
 		try {
@@ -791,7 +790,7 @@ public class ConsultantPageTest extends TestBase {
 		
 		consultantPage.setClickOnLinkRequirementLink();
 		Thread.sleep(2000);
-		consultantPage.setSearchTextBox(searchRequirement);
+		//consultantPage.setSearchTextBox(searchRequirement);
 		
 		Thread.sleep(2000);
 		//consultantPage.setSelectRequirement();		
@@ -813,7 +812,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 
 	
-//	@Test(priority = 19)
+	@Test(priority = 19,groups = {"regression"})
 	public void verifyEmailFunctionality() {
 		String TestCaseName = "Verify that user can send the Email to the Consultant";
 		test = extent.createTest(TestCaseName);
@@ -855,16 +854,16 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 
-//	@Test(priority = 20)
+	@Test(priority = 20,groups = {"regression"})
 	public void verifyCancelButtonFunctionalityOfEmail() {
 		String TestCaseName = "Verify that user can cancel the composed Email";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
+		//String searchConsultant = prop.getProperty("Consultant_id");
 		
 		try {
-			consultantPage.setClickOnAllTag();
-			consultantPage.setSearchTextBox(searchConsultant);
+			/*consultantPage.setClickOnAllTag();
+			consultantPage.setSearchTextBox(searchConsultant);*/
 
 			Thread.sleep(2000);
 			try {
@@ -895,7 +894,7 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 	
-//	@Test(priority = 21)
+	@Test(priority = 21)
 	public void verifyValidationForEmailSubject() {
 		String TestCaseName = "Verify that validation message can appear for email-Subject";
 		test = extent.createTest(TestCaseName);
@@ -932,16 +931,16 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 
-//	@Test(priority = 22)
+	@Test(priority = 22,groups = {"regression"})
 	public void verifyArchiveFunctionality() {
 		String TestCaseName = "Verify that user can archive the consultant";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
+		//String searchConsultant = prop.getProperty("Consultant_id");
 		
 		try {
 			//consultantPage.setClickOnAllTag();
-			consultantPage.setSearchTextBox(searchConsultant);
+			//consultantPage.setSearchTextBox(searchConsultant);
 
 			Thread.sleep(2000);
 			try {
@@ -969,16 +968,16 @@ public class ConsultantPageTest extends TestBase {
 	}
 
 	
-//	@Test(priority = 23)
+	@Test(priority = 23,groups = {"regression"})
 	public void verifyUn_ArchiveFunctionality() {
 		String TestCaseName = "Verify that user can un-archive the consultant";
 		test = extent.createTest(TestCaseName);
 		
-		String searchConsultant = prop.getProperty("Consultant_id");
+		//String searchConsultant = prop.getProperty("Consultant_id");
 		
 		try {
 			consultantPage.setClickOnArchivedTag();
-			consultantPage.setSearchTextBox(searchConsultant);
+			//consultantPage.setSearchTextBox(searchConsultant);
 
 			Thread.sleep(2000);
 			try {
@@ -1005,7 +1004,7 @@ public class ConsultantPageTest extends TestBase {
 		}		
 	}
 
-//	@Test(priority = 24)
+	@Test(priority = 24,groups = {"regression"})
 	public void verifyPageLable() {
 		String TestCaseName = "Verify that Available Consultant lable can displayed on Consultant page";
 		test = extent.createTest(TestCaseName);
@@ -1031,13 +1030,13 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}	
 	
-//	@Test(priority = 25)
+	@Test(priority = 25,groups = {"regression"})
 	public void verifyArchivedConsultantMapToRequirement() {
-		String TestCaseName = "Verify that archived consultant can map to the requirement";
+		String TestCaseName = "Verify that consultant can map/shorlist the archived requirement";
 		test = extent.createTest(TestCaseName);		
 
 		try {
-		consultantPage.setClickOnAllTag();
+	//	consultantPage.setClickOnAllTag();
 		Thread.sleep(2000);
 		try {
 			consultantPage.setClickOnFirstRowConsultant();
@@ -1071,13 +1070,13 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 	
-//	@Test
+	@Test(priority = 26,groups = {"regression"})
 	public void verifyAddNoteFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify the Add Note functionality";
 		test = extent.createTest(TestCaseName);
 
 		try {
-			consultantPage.setClickOnAllTag();
+		//	consultantPage.setClickOnAllTag();
 		
 		Thread.sleep(2000);
 		try {
@@ -1107,13 +1106,13 @@ public class ConsultantPageTest extends TestBase {
 	    	}
 	    }
 
-//	@Test
+	@Test(priority = 27,groups = {"regression"})
 	public void verifyCancelBtnFunOfAddNote() throws InterruptedException {
 		String TestCaseName = "Verify the Cancel button functionality of Add Note";
 		test = extent.createTest(TestCaseName);
 
 		try {
-			consultantPage.setClickOnAllTag();
+		//	consultantPage.setClickOnAllTag();
 		
 		Thread.sleep(2000);
 		try {
@@ -1140,13 +1139,13 @@ public class ConsultantPageTest extends TestBase {
 	    	}
 	    }
 	
-//	@Test
+	@Test(priority = 28,groups = {"regression"})
 	public void verifyNavigateToScheduleMeetingPopUp() throws InterruptedException {
 		String TestCaseName = "Verify the user can navigate to the Schedule Meeting pop up";
 		test = extent.createTest(TestCaseName);
 
 		try {
-			consultantPage.setClickOnAllTag();
+		//	consultantPage.setClickOnAllTag();
 
 			Thread.sleep(2000);
 			try {
@@ -1173,13 +1172,13 @@ public class ConsultantPageTest extends TestBase {
 		    	}
 		    }		
 	
-//	@Test
+	@Test(priority = 29,groups = {"regression"})
 	public void verifyScheduleMeetingFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify the Schedule Meeting functionality";
 		test = extent.createTest(TestCaseName);
 
 		try {
-			consultantPage.setClickOnAllTag();
+		//	consultantPage.setClickOnAllTag();
 
 			Thread.sleep(2000);
 			try {
@@ -1241,13 +1240,13 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 	
-//	@Test
+	@Test(priority = 30,groups = {"regression"})
 	public void verifyCancelBtnFunOfScheduleMeetingPopUp() throws InterruptedException {
 		String TestCaseName = "Verify the Cancel button functionality of Schedule Meeting popup";
 		test = extent.createTest(TestCaseName);
 
 		try {
-			consultantPage.setClickOnAllTag();
+			//consultantPage.setClickOnAllTag();
 
 			Thread.sleep(2000);
 			try {
@@ -1271,13 +1270,13 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 
-	@Test
+	@Test(priority = 31,groups = {"regression"})
 	public void verifyValidationsInScheduleMeetingPopUp() {
 		String TestCaseName = "Verify that validation message can appear for mandatory fields in Schedule Meeting pop up";
 		test = extent.createTest(TestCaseName);
 
 		try {
-			consultantPage.setClickOnAllTag();
+		//	consultantPage.setClickOnAllTag();
 
 			Thread.sleep(2000);
 			try {
@@ -1313,6 +1312,81 @@ public class ConsultantPageTest extends TestBase {
 		}
 	}
 	
+	
+	@Test(priority = 28)
+	public void verifySetTheStatusToConsultant() throws InterruptedException {
+		String TestCaseName = "Verify the user can set the status to the consultant";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			// requirementPage.setClickOnAllTag();
+
+			Thread.sleep(5000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			// Click on Requiement option
+			consultantPage.setClickOnRequirementOption();
+			Thread.sleep(2000);
+			
+			//Click on Link Requirement link
+			consultantPage.setClickOnLinkRequirementLink();
+			
+			String requirementId = consultantPage.getRequirementId();
+			
+			//Select the Requirement
+			Thread.sleep(2000);
+			consultantPage.setSelectRequirement();
+			
+			//Click on Link Requirement Button
+			consultantPage.setClickOnLinkRequirementButton();
+		
+			//click on Requirement option
+			consultantPage.setClickOnRequirementOption();
+		
+			Thread.sleep(2000);
+			driver.navigate().refresh();
+			
+			//click on Requirement option
+			consultantPage.setClickOnRequirementOption();
+			
+			//Select the radio button of Requirement
+			consultantPage.setSelectRadioButtonOfRequirement();
+			
+			//Click on Status link 
+			consultantPage.setClickOnStatusLink_ConsultantPage();
+			
+			Assert.assertEquals(consultantPage.setStatusPopUpTitle(), "Set Status");
+			
+			//Select the option from Status dropdown
+			consultantPage.setselectStatus("Coding Test");
+			
+			//Enter the Note
+			consultantPage.setEnterNotes("Test");
+			
+			//Click on Set Status button
+			consultantPage.setClickOnSetStatus();
+			
+			Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(),
+					"Status has been updated successfully for Consultant " + "" + requirementId + "");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+					"User should be allow to set the status to the consultant", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+					"User should be allow to set the status to the consultant", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
+	
+	
+	
+
 	
 	
 

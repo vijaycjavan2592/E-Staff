@@ -571,6 +571,26 @@ public class RequirementPage extends TestBase {
 		});		
 	}
 	
+	//Get the requirement id from grid
+	public String getTextOfRequirement_id() throws InterruptedException {
+		Thread.sleep(6000);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(1200, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    	System.out.println("---Searching data------------");
+	    	requirementId_gridsection.getText();	    	
+		return requirementId_gridsection;
+	}		
+		});		
+		return requirementId_gridsection.getText();
+	}
+	
+	
 	//Click on Edit button
 	@FindBy(xpath = "//button[text()='Edit']")
 	WebElement clickOnEditButton;
@@ -736,8 +756,17 @@ public class RequirementPage extends TestBase {
 	WebElement clickOnArchiveOption;
 
 	public void setClickArchiveOption() throws InterruptedException {
-		TestUtil.click(clickOnArchiveOption);
-		Thread.sleep(2000);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(90, TimeUnit.SECONDS)
+				.pollingEvery(3, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    	TestUtil.click(clickOnArchiveOption);
+		return clickOnArchiveOption;
+	}		
+		});		
 	}
 	
 	//Select archive option  
@@ -1006,7 +1035,8 @@ public class RequirementPage extends TestBase {
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
 	WebElement consutantName;
 
-	public String setConsultantName() {
+	public String setConsultantName() throws InterruptedException {
+		Thread.sleep(2000);
 		return consutantName.getText();
 	}
 	

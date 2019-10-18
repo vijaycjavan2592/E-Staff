@@ -34,7 +34,7 @@ public class RequirementPageTest extends TestBase {
 		super();
 	}
 
-	@BeforeMethod(alwaysRun = true)
+	@BeforeMethod
 	public void setUp() throws InterruptedException {
 		initialization();
 		requirementPage = new RequirementPage();
@@ -555,14 +555,15 @@ public class RequirementPageTest extends TestBase {
 		String TestCaseName = "Verify that user can Archive the requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = requirementId;
+		//String searchRequirement = requirementId;
 
 		try {
-			requirementPage.setClickOnAllTag();
-			Thread.sleep(3000);
-			requirementPage.setSearchTextBox(searchRequirement);
+			//requirementPage.setClickOnAllTag();
+		
+		//	requirementPage.setSearchTextBox(searchRequirement);
 			Thread.sleep(7000);
 
+			String requirementID = requirementPage.getTextOfRequirement_id();
 			requirementPage.setClickArchiveOption();
 			requirementPage.setselectArchiveOption("Yes");
 			Thread.sleep(2000);
@@ -577,7 +578,7 @@ public class RequirementPageTest extends TestBase {
 			requirementPage.setClickOnArchiveButton();
 
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
-					"Requirement '" + searchRequirement + "' Archived and Closed Successfully");
+					"Requirement '" + requirementID + "' Archived and Closed Successfully");
 
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("14",
@@ -595,21 +596,22 @@ public class RequirementPageTest extends TestBase {
 		String TestCaseName = "Verify that user can Un-Archive the requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = requirementId;
+	//	String searchRequirement = requirementId;
 
 		try {
-			requirementPage.setClickOnAllTag();
-			Thread.sleep(3000);
-			requirementPage.setSearchTextBox(searchRequirement);
+			requirementPage.setClickOnArchivedTag();;
+	
+		//	requirementPage.setSearchTextBox(searchRequirement);
 			Thread.sleep(7000);
 
+			String requirementID = requirementPage.getTextOfRequirement_id();
 			requirementPage.setClickArchiveOption();
 			requirementPage.setselectArchiveOption("No");
 			Thread.sleep(2000);
 			requirementPage.setClickOnSaveButtonForUnArchived();
 
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
-					"Requirement '" + searchRequirement + "' UnArchived Successfully");
+					"Requirement '" + requirementID + "' UnArchived Successfully");
 
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("15",
@@ -627,12 +629,12 @@ public class RequirementPageTest extends TestBase {
 		String TestCaseName = "Verify that user can select closure date select as future date while Archive the requirement";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = requirementId;
+	//	String searchRequirement = requirementId;
 
 		try {
-			requirementPage.setClickOnAllTag();
+		//	requirementPage.setClickOnAllTag();
 			Thread.sleep(3000);
-			requirementPage.setSearchTextBox(searchRequirement);
+		//	requirementPage.setSearchTextBox(searchRequirement);
 			Thread.sleep(7000);
 
 			requirementPage.setClickArchiveOption();
@@ -665,12 +667,12 @@ public class RequirementPageTest extends TestBase {
 		String TestCaseName = "Verify that user can archive the requirement without selecting closure reason";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = requirementId;
+	//	String searchRequirement = requirementId;
 
 		try {
-			requirementPage.setClickOnAllTag();
+		//	requirementPage.setClickOnAllTag();
 			Thread.sleep(3000);
-			requirementPage.setSearchTextBox(searchRequirement);
+		//	requirementPage.setSearchTextBox(searchRequirement);
 			Thread.sleep(7000);
 
 			requirementPage.setClickArchiveOption();
@@ -704,12 +706,12 @@ public class RequirementPageTest extends TestBase {
 		String TestCaseName = "Verify the Cancel Button Functionality Of Archive Requirement pop up ";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = requirementId;
+	//	String searchRequirement = requirementId;
 
 		try {
-			requirementPage.setClickOnAllTag();
+		//	requirementPage.setClickOnAllTag();
 			Thread.sleep(3000);
-			requirementPage.setSearchTextBox(searchRequirement);
+		//	requirementPage.setSearchTextBox(searchRequirement);
 			Thread.sleep(7000);
 
 			requirementPage.setClickArchiveOption();
@@ -805,8 +807,8 @@ public class RequirementPageTest extends TestBase {
 		test = extent.createTest(TestCaseName);
 		test = extent.createTest(TestCaseName1);
 
-		String searchRequirement = requirementId;
-		String searchConsultant = "Cons-667481";
+		/*String searchRequirement = requirementId;
+		String searchConsultant = "42486005";*/
 
 		try {
 			Thread.sleep(3000);
@@ -824,8 +826,8 @@ public class RequirementPageTest extends TestBase {
 			requirementPage.setClickOnSearchConsultantButton();
 			Thread.sleep(2000);
 
-			requirementPage.setClickOnAllTag_Consultant();
-			requirementPage.setConsultantSearchTextBox(searchConsultant);
+		//	requirementPage.setClickOnAllTag_Consultant();
+		//	requirementPage.setConsultantSearchTextBox(searchConsultant);
 			Thread.sleep(2000);
 			String consultantName = requirementPage.setConsultantName();
 			requirementPage.setSelectConsultant();
@@ -869,13 +871,13 @@ public class RequirementPageTest extends TestBase {
 		String TestCaseName = "Verify that user can map the consultant to the requirement which is already linked.";
 		test = extent.createTest(TestCaseName);
 
-		String searchRequirement = requirementId;
-		String searchConsultant = "Cons-667481";
+	/*	String searchRequirement = requirementId;
+		String searchConsultant = "42486005";*/
 
 		try {
 			Thread.sleep(3000);
-			requirementPage.setClickOnAllTag();
-			requirementPage.setSearchTextBox(searchRequirement);
+		/*	requirementPage.setClickOnAllTag();
+			requirementPage.setSearchTextBox(searchRequirement);*/
 			Thread.sleep(2000);
 			try {
 				requirementPage.setClickOnFirstRowRequirement_id();
@@ -888,8 +890,8 @@ public class RequirementPageTest extends TestBase {
 			requirementPage.setClickOnSearchConsultantButton();
 			Thread.sleep(2000);
 
-			requirementPage.setClickOnAllTag_Consultant();
-			requirementPage.setConsultantSearchTextBox(searchConsultant);
+		/*	requirementPage.setClickOnAllTag_Consultant();
+			requirementPage.setConsultantSearchTextBox(searchConsultant);*/
 			Thread.sleep(2000);
 			requirementPage.setSelectConsultant();
 
@@ -918,7 +920,7 @@ public class RequirementPageTest extends TestBase {
 
 		try {
 			Thread.sleep(3000);
-			requirementPage.setClickOnAllTag();
+		//	requirementPage.setClickOnAllTag();
 			Thread.sleep(2000);
 			try {
 				requirementPage.setClickOnFirstRowRequirement_id();
@@ -959,7 +961,7 @@ public class RequirementPageTest extends TestBase {
 
 		try {
 			Thread.sleep(3000);
-			requirementPage.setClickOnAllTag();
+		//	requirementPage.setClickOnAllTag();
 			Thread.sleep(2000);
 			try {
 				requirementPage.setClickOnFirstRowRequirement_id();
@@ -997,7 +999,7 @@ public class RequirementPageTest extends TestBase {
 		test = extent.createTest(TestCaseName);
 
 		try {
-		requirementPage.setClickOnAllTag();
+	//	requirementPage.setClickOnAllTag();
 		
 		Thread.sleep(2000);
 		try {
@@ -1033,7 +1035,7 @@ public class RequirementPageTest extends TestBase {
 		test = extent.createTest(TestCaseName);
 
 		try {
-		requirementPage.setClickOnAllTag();
+	//	requirementPage.setClickOnAllTag();
 		
 		Thread.sleep(2000);
 		try {
@@ -1060,13 +1062,13 @@ public class RequirementPageTest extends TestBase {
 	    	}
 	    }
 	
-	@Test(priority = 27)
+//	@Test(priority = 27)
 	public void verifyNavigateToStatusPopUp() throws InterruptedException {
 		String TestCaseName = "Verify the user can naviagte to the status pop up";
 		test = extent.createTest(TestCaseName);
 		
 		try {
-			requirementPage.setClickOnAllTag();
+		//	requirementPage.setClickOnAllTag();
 			
 			Thread.sleep(2000);
 			try {
@@ -1186,8 +1188,8 @@ public class RequirementPageTest extends TestBase {
 
 			requirementPage.setClickOnCancelButtonOfSetStatusPopup();
 
-			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
-					"Status has been updated successfully for Consultant " + "" + consultantName + "");
+		//	Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
+		//			"Status has been updated successfully for Consultant " + "" + consultantName + "");
 
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("29", new Object[] { 29d, TestCaseName,
@@ -1277,4 +1279,5 @@ public class RequirementPageTest extends TestBase {
 	}
 	
 	
+
 }

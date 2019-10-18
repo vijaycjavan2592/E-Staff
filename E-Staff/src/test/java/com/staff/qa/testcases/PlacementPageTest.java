@@ -13,6 +13,7 @@ import com.staff.qa.pages.HomePage;
 import com.staff.qa.pages.LoginPage;
 import com.staff.qa.pages.PlacementPage;
 import com.staff.qa.pages.RequirementPage;
+import com.staff.qa.util.TestUtil;
 
 public class PlacementPageTest extends TestBase {
 
@@ -20,6 +21,7 @@ public class PlacementPageTest extends TestBase {
 	HomePage homePage;
 	PlacementPage placementPage;
 	RequirementPage requirementPage;
+	ConsultantPage consultantPage;
 
 	public PlacementPageTest() {
 		super();
@@ -29,6 +31,7 @@ public class PlacementPageTest extends TestBase {
 	public void setUp() throws InterruptedException {
 		initialization();
 		placementPage = new PlacementPage();
+		consultantPage = new ConsultantPage();
 		requirementPage = new RequirementPage();
 		loginPage = new LoginPage();
 		homePage = new HomePage();
@@ -224,13 +227,13 @@ public class PlacementPageTest extends TestBase {
 		}
 	}
 	
-	@Test
+//	@Test(priority = 9)
 	public void verifyPlacedConsultantAppearInPlacement_FromRequirement() throws InterruptedException {
 		
 		String testCaseName = "To Check the Gridview of Placements after Placing the Consultant from Requirements Module";
 		test = extent.createTest(testCaseName);
 		
-		String searchRequirement = "Req-264609-6";     //RequirementPageTest.requirementId;
+		String searchRequirement = RequirementPageTest.requirementId;
 		
 		try {	
 		//click on Requirement option	
@@ -289,6 +292,7 @@ public class PlacementPageTest extends TestBase {
 
 		//Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
 		//		"Status has been updated successfully for Consultant " + "" + consultantName + "");
+		Thread.sleep(3000);
 		driver.navigate().refresh();
 		Thread.sleep(3000);
 		homePage.clickOnPlacementOption();
@@ -321,10 +325,138 @@ public class PlacementPageTest extends TestBase {
 	}
 	
 
-//	@Test
-	public void demo() {
+	@Test(priority = 10)
+	public void verifyPlacedConsultantAppearInPlacement_FromConsultant() throws InterruptedException {
+		
+		String testCaseName = "To Check the Gridview of Placements after Placing the Consultant from Consultant Module";
+		test = extent.createTest(testCaseName);
+		
+	//	String searchRequirement = RequirementPageTest.requirementId;
+		
+		try {	
+		//click on Consultant option	
+		homePage.clickOnConsultantOption();		
+		Thread.sleep(5000);
+		try {
+			consultantPage.setClickOnFirstRowConsultant();
+		} catch (Exception e) {
+			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+			System.out.println(noData.getText());
+		}
+		//Get the Consultant Id
+		String consultant_ID = consultantPage.setConsultantId();
+		System.out.println("Consultant id is : "+consultant_ID);			
+		
+		//Click on Search Consultant Button
+		consultantPage.setClickOnLinkRequirementLink();
+		
+        //Get the Requirement ID
+		String requirementID = consultantPage.setAlreadyLinkedRequirementId();
+		
+		//Select the First Requirement (select the checkbox)
+		consultantPage.setSelectRequirement();
+		
+		//Click on Link-Requirement button
+		consultantPage.setClickOnLinkRequirementButton();
+		
+		String message = "Duplicate status can not be set as Shortlisted status already exists.";
+		if(consultantPage.setconsultantConfirmationMessage().equalsIgnoreCase(message)) {
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+			consultantPage.setSelectRequirement_2ndRow();
+			Thread.sleep(2000);
+			//Click on Shortlisted Consultant button
+			consultantPage.setClickOnLinkRequirementButton();
+		}
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+	
+		//Click on Consultant option
+		consultantPage.setClickOnRequirementOption();
+	
+		// Select the consultant
+		requirementPage.setSelectConsultant();
+
+		requirementPage.setClickOnStatusLink();
+
+		Assert.assertEquals(requirementPage.setStatusPopUpTitle(), "Set Status");
+
+		requirementPage.setselectStatus("Placed");
+		Thread.sleep(2000);
+		requirementPage.setEnterNotes("Test");
+
+		requirementPage.setClickOnSetStatus();
+
+		//Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
+		//		"Status has been updated successfully for Consultant " + "" + consultantName + "");
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+		homePage.clickOnPlacementOption();
+		Thread.sleep(5000);
+		
+		placementPage.setAllPlacementsearchTextBox(consultant_ID);
+		
+		System.out.println(placementPage.setRequirementID_PlacementGrid());
+		
+		Thread.sleep(5000);
+		String requirementId_InPlacementPage = "";
+		try {
+			requirementId_InPlacementPage = placementPage.setRequirementID_PlacementGrid();
+		} catch (Exception e) {
+			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+			System.out.println(noData.getText());
+		}
+		//Verifying that placed requirement appear in Placement grid
+		Assert.assertEquals(requirementId_InPlacementPage, consultant_ID);
+		
+		test.log(Status.PASS, testCaseName + " is sucessfully pass");
+		testresultdata.put("9", new Object[] { 9d, testCaseName,
+				"Placed Record Should be displayed In gridview", "Pass" });
+		
+	} catch (Exception e) {
+		testresultdata.put("9", new Object[] { 9d, testCaseName,
+				"Placed Record Should be displayed In gridview", "Fail" });
+		e.printStackTrace();
+		Assert.fail();
+	}		
 		
 	}
+	
+//	@Test(priority = 11)
+	public void verifyBackedOutConsultantFunctionality() throws InterruptedException {
+		String TestCaseName = "To Check the Gridview of Placements after Backed Out the Consultant";
+		test = extent.createTest(TestCaseName);
+		
+		//Click on Open Tab
+		placementPage.setClickOnOpenTag_Placement();
+		//Click On Requirement Id in grid
+		placementPage.setClickOnRequirementID_PlacementGrid();		
+		//Click on Edit button
+		placementPage.setClickOnEditButton();
+		//get the consultant name
+		String consultantName = placementPage.getConsultantName();	
+		
+		String str = driver.findElement(By.xpath("//label[@class='radio-container'][contains(text(),'Did Not Start Reason')]//input")).getAttribute("ng-reflect-is-disabled");
+		System.out.println(":::::::::::"+str);
+		if(str.equalsIgnoreCase("true")) {
+			System.out.println("'Did Not Start Reason' Radio Button is already selected");
+			placementPage.getClickOnCancelButton();
+			driver.navigate().back();
+			
+		}else {		
+		//Select the 'Did Not Start Reason' Radio Button	
+		placementPage.setSelectDiDNotStartRadioBtn();		
+		//Select 'Did Not Start Reason' option from dropdown
+		placementPage.setselectRecruiter("Candidate Backed Out");		
+		//click onSave button
+		placementPage.setClickOnSaveButton();
+				
+		Assert.assertEquals(placementPage.setPlacementConfirmationMessage(), "Placement Details of Client/Assignment data section for' "+consultantName+"' Updated Successfully");
+		}				
+	}
+	
+	
 
 	
 	

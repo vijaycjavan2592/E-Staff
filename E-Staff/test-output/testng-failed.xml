@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.PlacementPageTest">
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
-          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
+          <include name="setUp"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
-          <include name="setUp"/>
+          <include name="verifySetTheStatusToConsultant"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

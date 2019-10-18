@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [My suite]" parallel="classes">
+  <test thread-count="5" name="Test(failed)" parallel="classes">
+    <classes>
+      <class name="com.staff.qa.testcases.PlacementPageTest">
+        <methods>
+          <include name="setupBeforeSuite"/>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
+          <include name="setUp"/>
+          <include name="verifyBackedOutConsultantFunctionality"/>
+          <include name="endReport"/>
+          <include name="setupAfterSuite"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
+        <methods>
+          <include name="verifyLinkRequirementToConsultant"/>
+          <include name="verifyAddNoteFunctionality"/>
+          <include name="verifyNavigateToScheduleMeetingPopUp"/>
+          <include name="verifyUploadDocumentFunctionality"/>
+          <include name="getArchivedCount"/>
+          <include name="verifyUserNavigateToConsultantPage"/>
+          <include name="verifyValidationForEmailSubject"/>
+          <include name="verifyFunctionalityOfCancelButton"/>
+          <include name="endReport"/>
+          <include name="verifyCancelButtonFunctionalityOfEmail"/>
+          <include name="verifyUploadDocumentAppearInGrid"/>
+          <include name="setupBeforeSuite"/>
+          <include name="verifyCancelBtnFunOfScheduleMeetingPopUp"/>
+          <include name="setExtentReport"/>
+          <include name="verifyArchivedConsultantMapToRequirement"/>
+          <include name="verifyDuplicateConsultant"/>
+          <include name="getAvailableCount"/>
+          <include name="verifyEditConsultantFunctionality"/>
+          <include name="setupAfterSuite"/>
+          <include name="getAllCount"/>
+          <include name="verifyUn_ArchiveFunctionality"/>
+          <include name="verifyEmailFunctionality"/>
+          <include name="verifyCancelBtnFunOfAddNote"/>
+          <include name="setUp"/>
+          <include name="verifyArchiveFunctionality"/>
+          <include name="verifyValidationsInScheduleMeetingPopUp"/>
+          <include name="verifyDownloadResumeFunctionality"/>
+          <include name="verifyAddNewConsulatantFormDisplayed"/>
+          <include name="verifyScheduleMeetingFunctionality"/>
+          <include name="getResult"/>
+          <include name="verifyDownloadUploadedDocument"/>
+          <include name="getQualifiedCount"/>
+          <include name="verifyCancelFunctionalityOfLinkRequirement"/>
+          <include name="verifyLinkRequirementToConsultant_alreadyExists"/>
+          <include name="verifyAddNewConsultant"/>
+          <include name="verifyPageLable"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
+      <class name="com.staff.qa.testcases.RequirementPageTest">
+        <methods>
+          <include name="verifyFunctionalityOfCancelButtonOfAddNewForm"/>
+          <include name="verifyAddRequirementFunctionality"/>
+          <include name="verifyCancelBtnFunOfAddNote"/>
+          <include name="setUp"/>
+          <include name="verifyDeleteRecentStatusFunctionality"/>
+          <include name="verifyConsultantMapToRequirement_alreadyExists"/>
+          <include name="verifyNavigateToStatusPopUp"/>
+          <include name="endReport"/>
+          <include name="verifyValidationMessageForClosureReason"/>
+          <include name="setupBeforeSuite"/>
+          <include name="verifyViewResumeFunctionality"/>
+          <include name="setExtentReport"/>
+          <include name="verifyCancelButtonFunctionalityOfArchiveRequirementPopUp"/>
+          <include name="verifyValidationsForAddNewRequirement"/>
+          <include name="verifyArchivedRequirementFunctionality"/>
+          <include name="verifyCancelButtonFunOfSetStatusPopUp"/>
+          <include name="setupAfterSuite"/>
+          <include name="verifyUserNavigateToConsultantPage"/>
+          <include name="verifyConsultantMapToRequirement"/>
+          <include name="verifyEditRequirementFunctionality"/>
+          <include name="verifyAddNoteFunctionality"/>
+          <include name="verifyUploadDocumentFunctionality"/>
+          <include name="verifyAddNewRequirementBtnClickable"/>
+          <include name="verifyCancelBtnFunOfMapConsultantWindow"/>
+          <include name="verifyUnArchivedRequirementFunctionality"/>
+          <include name="verifyValidationMessageForClosuredate"/>
+          <include name="verifyEditJobDescriptionFunctionality"/>
+          <include name="getArchivedRequirementCount"/>
+          <include name="getAllRequirementCount"/>
+          <include name="getOpenRequirementCount"/>
+          <include name="getResult"/>
+          <include name="verifySetTheStatusToConsultant"/>
+          <include name="verifyCancelBtnFunOfUploadDocPopUp_requirement"/>
+          <include name="verifyUploadDocumentAppearInGrid"/>
+          <include name="verifyDownloadUploadedDocument_requirement"/>
+          <include name="verifyArchivedConsultantMapToRequirement"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
+      <class name="com.staff.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="setupBeforeSuite"/>
+          <include name="setExtentReport"/>
+          <include name="validatePasswordMessageForIncorrectPassword"/>
+          <include name="getResult"/>
+          <include name="endReport"/>
+          <include name="setupAfterSuite"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.LoginPageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [My suite] -->

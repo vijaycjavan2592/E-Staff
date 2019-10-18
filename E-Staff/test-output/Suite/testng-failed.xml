@@ -3,13 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.CompaniesPageTest">
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="CompaniesPageURLTest"/>
           <include name="setUp"/>
+          <include name="setupBeforeSuite"/>
+          <include name="setExtentReport"/>
+          <include name="getResult"/>
+          <include name="verifySetTheStatusToConsultant"/>
+          <include name="endReport"/>
+          <include name="setupAfterSuite"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.CompaniesPageTest -->
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

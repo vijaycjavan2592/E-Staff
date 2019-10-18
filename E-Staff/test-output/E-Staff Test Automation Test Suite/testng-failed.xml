@@ -3,19 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [E-Staff Test Automation Test Suite]">
   <test thread-count="5" name="E-Staff App Test Cases(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.RequirementPageTest">
+      <class name="com.staff.qa.testcases.LoginPageTest">
         <methods>
-          <include name="verifyConsultantMapToRequirement"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
+          <include name="validatePasswordMessageForIncorrectPassword"/>
           <include name="getResult"/>
-          <include name="setUp"/>
-          <include name="verifyCancelButtonFunOfSetStatusPopUp"/>
-          <include name="verifyNavigateToStatusPopUp"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
+      </class> <!-- com.staff.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- E-Staff App Test Cases(failed) -->
 </suite> <!-- Failed suite [E-Staff Test Automation Test Suite] -->
