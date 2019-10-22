@@ -13,7 +13,7 @@ import com.staff.qa.pages.HomePage;
 import com.staff.qa.pages.LoginPage;
 import com.staff.qa.pages.PlacementPage;
 import com.staff.qa.pages.RequirementPage;
-import com.staff.qa.util.TestUtil;
+
 
 public class PlacementPageTest extends TestBase {
 
@@ -355,7 +355,7 @@ public class PlacementPageTest extends TestBase {
 		
 		//Select the First Requirement (select the checkbox)
 		consultantPage.setSelectRequirement();
-		
+				
 		//Click on Link-Requirement button
 		consultantPage.setClickOnLinkRequirementButton();
 		
@@ -373,6 +373,8 @@ public class PlacementPageTest extends TestBase {
 	
 		//Click on Consultant option
 		consultantPage.setClickOnRequirementOption();
+		
+		String requirementId = consultantPage.setRequirementId_InConsultant();
 	
 		// Select the consultant
 		requirementPage.setSelectConsultant();
@@ -389,7 +391,7 @@ public class PlacementPageTest extends TestBase {
 
 		//Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
 		//		"Status has been updated successfully for Consultant " + "" + consultantName + "");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.navigate().refresh();
 		Thread.sleep(3000);
 		homePage.clickOnPlacementOption();
@@ -408,12 +410,12 @@ public class PlacementPageTest extends TestBase {
 			System.out.println(noData.getText());
 		}
 		//Verifying that placed requirement appear in Placement grid
-		Assert.assertEquals(requirementId_InPlacementPage, consultant_ID);
+		Assert.assertEquals(requirementId_InPlacementPage, requirementId);
 		
 		test.log(Status.PASS, testCaseName + " is sucessfully pass");
 		testresultdata.put("9", new Object[] { 9d, testCaseName,
 				"Placed Record Should be displayed In gridview", "Pass" });
-		
+	
 	} catch (Exception e) {
 		testresultdata.put("9", new Object[] { 9d, testCaseName,
 				"Placed Record Should be displayed In gridview", "Fail" });
@@ -450,7 +452,7 @@ public class PlacementPageTest extends TestBase {
 		//Select 'Did Not Start Reason' option from dropdown
 		placementPage.setselectRecruiter("Candidate Backed Out");		
 		//click onSave button
-		placementPage.setClickOnSaveButton();
+	//	placementPage.setClickOnSaveButton();
 				
 		Assert.assertEquals(placementPage.setPlacementConfirmationMessage(), "Placement Details of Client/Assignment data section for' "+consultantName+"' Updated Successfully");
 		}				

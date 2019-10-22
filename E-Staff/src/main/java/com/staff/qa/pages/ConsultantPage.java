@@ -766,8 +766,10 @@ public class ConsultantPage extends TestBase {
 
 				return selectRequirement;
 			}
-		});
-		
+		});	
+		if(!clickOnLinkRequirementButton.isDisplayed()) {
+			TestUtil.click(selectRequirement);
+		}
 	}
 	
 	//Select the Requirement from 2nd row
@@ -795,7 +797,7 @@ public class ConsultantPage extends TestBase {
 	@FindBy(xpath = "//button[contains(text(),'Link Requirement')]")
 	WebElement clickOnLinkRequirementButton;
 	
-	public void setClickOnLinkRequirementButton() throws InterruptedException {
+	public void setClickOnLinkRequirementButton() throws InterruptedException {		
 		Thread.sleep(1000);
 		Actions ac = new Actions(driver);
 		Thread.sleep(1000);
@@ -1298,6 +1300,15 @@ public class ConsultantPage extends TestBase {
 		TestUtil.click(clickOnSetStatus);
 	}
 	
+	//Click on Cancel button of Set Status pop up
+	@FindBy(xpath = "//div[@class='status-footer-inner-wrapper']//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelButtonOfSetStatusPopup;
+	
+	public void setClickOnCancelButtonOfSetStatusPopup() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnCancelButtonOfSetStatusPopup);
+	}
+	
 	//Get Requirement Id
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
 	WebElement requirementId;
@@ -1305,5 +1316,52 @@ public class ConsultantPage extends TestBase {
 	public String getRequirementId() throws InterruptedException {
 		Thread.sleep(3000);
 		return requirementId.getText();
+	}
+	
+	//Consultant name in Requirement (Consultant tab) Grid 1st Row data 
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]")
+	WebElement requirementId_InConsultant;
+
+	public String setRequirementId_InConsultant() {
+		return requirementId_InConsultant.getText();
+	}
+	
+	public void setClickOnRequirementId() {
+		TestUtil.click(requirementId_InConsultant);
+	}
+	
+	//Click on Delete Recent Status button
+	@FindBy(xpath = "//span[contains(text(),'Delete Recent Status')]")
+	WebElement clickOnDeleteRecentStatus;
+	
+	public void setClickOnDeleteRecentStatus() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnDeleteRecentStatus);
+	}
+	
+	//Click on Delete Button 
+	@FindBy(xpath = "//button[@class='btn btn-primary']")
+	WebElement clickOnDeleteButton;
+	
+	public void setClickOnDeleteButton() throws InterruptedException {
+		Thread.sleep(3000);
+		TestUtil.click(clickOnDeleteButton);
+	}
+	
+	//Click on View Job Description link
+	@FindBy(xpath = "//span[contains(text(),'View Job Description')]")
+	WebElement clickOnJobDescriptionLink;
+	
+	public void setClickOnJobDescriptionLink() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnJobDescriptionLink);
+	}
+	
+	//View Job Description pop up title
+	@FindBy(xpath = "//div[@class='col-md-11']/label")
+	WebElement jobDescriptionpopuptitle;
+	
+	public String getTextOfJobDescriptionpopuptitle() {
+		return jobDescriptionpopuptitle.getText();
 	}
 }

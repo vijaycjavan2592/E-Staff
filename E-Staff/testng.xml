@@ -8,11 +8,14 @@
        
        
        <classes>
+   <!--     <class name="com.staff.qa.testcases.ConsultantPageTest"> -->
        <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
-        <include name="verifySetTheStatusToConsultant" />
+        <exclude name="verifyCancelButtonFunOfSetStatusPopUp" />
+        <include name="verifySetTheStatusToConsultant" />        
       </methods>
        </class>
+      
     </classes>
       
       

@@ -1313,7 +1313,7 @@ public class ConsultantPageTest extends TestBase {
 	}
 	
 	
-	@Test(priority = 28)
+	@Test(priority = 32)
 	public void verifySetTheStatusToConsultant() throws InterruptedException {
 		String TestCaseName = "Verify the user can set the status to the consultant";
 		test = extent.createTest(TestCaseName);
@@ -1343,9 +1343,19 @@ public class ConsultantPageTest extends TestBase {
 			
 			//Click on Link Requirement Button
 			consultantPage.setClickOnLinkRequirementButton();
+			
+			String message = "Duplicate status can not be set as Shortlisted status already exists.";
+			if(consultantPage.setconsultantConfirmationMessage().equalsIgnoreCase(message)) {
+				driver.navigate().refresh();
+				Thread.sleep(3000);
+				consultantPage.setSelectRequirement_2ndRow();
+				Thread.sleep(2000);
+				//Click on Shortlisted Consultant button
+				consultantPage.setClickOnLinkRequirementButton();
+			}
 		
 			//click on Requirement option
-			consultantPage.setClickOnRequirementOption();
+		//	consultantPage.setClickOnRequirementOption();
 		
 			Thread.sleep(2000);
 			driver.navigate().refresh();
@@ -1359,6 +1369,32 @@ public class ConsultantPageTest extends TestBase {
 			//Click on Status link 
 			consultantPage.setClickOnStatusLink_ConsultantPage();
 			
+			String message1 = "All the mandatory fields of the Consultant are not filled";
+			
+			if(consultantPage.setconsultantConfirmationMessage().equalsIgnoreCase(message1)) {
+				
+				//Click on Link Requirement link
+				consultantPage.setClickOnLinkRequirementLink();
+				Thread.sleep(2000);
+				//Select the requirement from 2nd row
+				consultantPage.setSelectRequirement_2ndRow();
+				Thread.sleep(2000);
+				//Click on Shortlisted Consultant button
+				consultantPage.setClickOnLinkRequirementButton();
+				
+				Thread.sleep(3000);
+				driver.navigate().refresh();
+				
+				//click on Requirement option
+				consultantPage.setClickOnRequirementOption();
+				
+				//Select the radio button of Requirement
+				consultantPage.setSelectRadioButtonOfRequirement();
+				
+				//Click on Status link 
+				consultantPage.setClickOnStatusLink_ConsultantPage();
+			}
+			
 			Assert.assertEquals(consultantPage.setStatusPopUpTitle(), "Set Status");
 			
 			//Select the option from Status dropdown
@@ -1371,21 +1407,145 @@ public class ConsultantPageTest extends TestBase {
 			consultantPage.setClickOnSetStatus();
 			
 			Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(),
-					"Status has been updated successfully for Consultant " + "" + requirementId + "");
+					"Status has been updated successfully for Requirement " + "" + requirementId + "");
 
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
-			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+			testresultdata.put("42", new Object[] { 42d, TestCaseName,
 					"User should be allow to set the status to the consultant", "Pass" });
 		} catch (Exception e) {
-			testresultdata.put("28", new Object[] { 28d, TestCaseName,
+			testresultdata.put("42", new Object[] { 42d, TestCaseName,
 					"User should be allow to set the status to the consultant", "Fail" });
 			e.printStackTrace();
 			Assert.fail();
 		}
 	}
 	
+	@Test(priority = 33)
+	public void verifyCancelButtonFunOfSetStatusPopUp() throws InterruptedException {
+		String TestCaseName = "Verify that functionality of Cancel button functionality of Set-Status pop up";
+		test = extent.createTest(TestCaseName);
+		
+		try {
+			// requirementPage.setClickOnAllTag();
+
+			Thread.sleep(5000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+		
+		//click on Requirement option
+		consultantPage.setClickOnRequirementOption();
+		
+		//Select the radio button of Requirement
+		consultantPage.setSelectRadioButtonOfRequirement();
+		
+		//Click on Status link 
+		consultantPage.setClickOnStatusLink_ConsultantPage();
+		
+		Assert.assertEquals(consultantPage.setStatusPopUpTitle(), "Set Status");
+		
+		//Select the option from Status dropdown
+		consultantPage.setselectStatus("Coding Test");
+		
+		//Enter the Note
+		consultantPage.setEnterNotes("Test");
+		
+		//Click on Cancel button
+		consultantPage.setClickOnCancelButtonOfSetStatusPopup();
+
+		test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+		testresultdata.put("43", new Object[] { 43d, TestCaseName,
+				"Set-Status pop up should be disappear after clicking Cancel button", "Pass" });
+	} catch (Exception e) {
+		testresultdata.put("43", new Object[] { 43d, TestCaseName,
+				"Set-Status pop up should be disappear after clicking Cancel button", "Fail" });
+		e.printStackTrace();
+		Assert.fail();
+	}
+
+	}
+	
+	@Test(priority = 34)
+	public void verifyDeleteRecentStatusFunctionality() throws InterruptedException {
+		String TestCaseName = "Verify that user can delete recent status of linked consultant";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			// requirementPage.setClickOnAllTag();
+			try {
+			Thread.sleep(5000);
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+		
+		//click on Requirement option
+		consultantPage.setClickOnRequirementOption();
+		
+		//Click on Requirement id
+		Thread.sleep(2000);
+		consultantPage.setClickOnRequirementId();
+					
+		//Click on Delete Recent Status link
+		consultantPage.setClickOnDeleteRecentStatus();
+					
+		//Click on Delete button of pop up
+		consultantPage.setClickOnDeleteButton();
+
+		Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(),"Status Deleted Successfully");
+
+		test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+		testresultdata.put("44", new Object[] { 44d, TestCaseName,
+						"User should be able to delete the recent status of linked consultant", "Pass" });
+		} catch (Exception e) {
+			testresultdata.put("44", new Object[] { 44d, TestCaseName,
+						"User should be able to delete the recent status of linked consultant", "Fail" });
+			e.printStackTrace();
+		}
+    }
 	
 	
+	@Test(priority = 35)
+	public void verifyViewResumeFunctionality() throws InterruptedException {
+		String TestCaseName = "Verify that user can view Job Description";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			// requirementPage.setClickOnAllTag();
+			try {
+			Thread.sleep(5000);
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+		
+		//click on Requirement option
+		consultantPage.setClickOnRequirementOption();
+		
+		//Click on Requirement id
+		Thread.sleep(2000);
+		consultantPage.setClickOnRequirementId();
+		
+		//click on View Job Description link
+		consultantPage.setClickOnJobDescriptionLink();
+		
+		Assert.assertEquals(consultantPage.getTextOfJobDescriptionpopuptitle(), "Job Description");
+		
+		test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+		testresultdata.put("45", new Object[] { 45d, TestCaseName,
+				"User should be able to view Job Description", "Pass" });
+	} catch (Exception e) {
+		testresultdata.put("45", new Object[] { 45d, TestCaseName,
+				"User should be able to view Job Description", "Fail" });
+		e.printStackTrace();
+	}
+		
+	}
 
 	
 	

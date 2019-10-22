@@ -1225,8 +1225,10 @@ public class RequirementPageTest extends TestBase {
 			Thread.sleep(2000);
 			requirementPage.setClickOnConsultantName();
 			
+			//Click on Delete Recent Status link
 			requirementPage.setClickOnDeleteRecentStatus();
 			
+			//Click on Delete button of pop up
 			requirementPage.setClickOnDeleteButton();
 
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),"Status Deleted Successfully");
