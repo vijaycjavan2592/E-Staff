@@ -34,9 +34,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.utils.FileUtil;
 import com.google.common.base.Function;
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 
-public class TestUtil extends TestBase {
+public class TestUtil extends BaseClass {
 	
 	
 	

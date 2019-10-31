@@ -14,12 +14,12 @@ import org.testng.log4testng.Logger;
 
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 import com.staff.qa.pages.HomePage;
 import com.staff.qa.pages.LoginPage;
 import com.staff.qa.util.TestUtil;
 
-public class LoginPageTest extends TestBase {
+public class LoginPageTest extends BaseClass {
 
 	LoginPage loginpage;
 	HomePage homepage;

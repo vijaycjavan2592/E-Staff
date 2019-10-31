@@ -9,7 +9,7 @@
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
-          <include name="verifySetTheStatusToConsultant"/>
+          <include name="verifyAddNewConsultant" invocation-numbers="0"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
         </methods>

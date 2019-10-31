@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 
-public class WebEventListener extends TestBase implements WebDriverEventListener {
+public class WebEventListener extends BaseClass implements WebDriverEventListener {
 	
 	public void beforeNavigateTo(String url, WebDriver driver) {
 		// TODO Auto-generated method stub

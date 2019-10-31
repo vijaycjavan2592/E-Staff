@@ -11,14 +11,14 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 import com.staff.qa.pages.ConsultantPage;
 import com.staff.qa.pages.HomePage;
 import com.staff.qa.pages.LoginPage;
 import com.staff.qa.pages.RequirementPage;
 import com.staff.qa.util.TestUtil;
 
-public class RequirementPageTest extends TestBase {
+public class RequirementPageTest extends BaseClass {
 
 	RequirementPage requirementPage;
 	LoginPage loginPage;

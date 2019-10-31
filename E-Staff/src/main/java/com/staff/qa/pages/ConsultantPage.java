@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -25,10 +26,10 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 import com.staff.qa.util.TestUtil;
 
-public class ConsultantPage extends TestBase {
+public class ConsultantPage extends BaseClass {
 
 	public ConsultantPage() {
 		PageFactory.initElements(driver, this);
@@ -95,6 +96,16 @@ public class ConsultantPage extends TestBase {
 	//Consultant Rate
 	@FindBy(xpath = "//input[@name='consultantRate']")
 	WebElement enterconsultantRate;
+	
+	public void setRate(String rate) throws InterruptedException {
+		Thread.sleep(1000);
+		enterconsultantRate.sendKeys(Keys.BACK_SPACE);
+		enterconsultantRate.sendKeys(Keys.BACK_SPACE);
+		enterconsultantRate.sendKeys(Keys.BACK_SPACE);
+		enterconsultantRate.sendKeys(Keys.BACK_SPACE);
+		TestUtil.sendInput(enterconsultantRate, rate);
+		Thread.sleep(1000);
+	}
 		
 	
 	public void fillAddNewConsultantForm(String firstName, String lastName, String emailId, String mobileNo) throws InterruptedException {		
@@ -108,7 +119,7 @@ public class ConsultantPage extends TestBase {
 		TestUtil.sendInput(enterconsultantMobileNumber, mobileNo);	
 		enterconsultantRate.clear();
 		
-		//TestUtil.sendInput(enterconsultantRate, rate);
+	//	TestUtil.sendInput(enterconsultantRate, rate);
 	}	
 	
 	//Rate UOM Dropdown
@@ -124,7 +135,11 @@ public class ConsultantPage extends TestBase {
 		Thread.sleep(2000);
 		String AllUOM = selectUOMRate.getText();
 		System.out.println("++++++++++++++++"+AllUOM);
+		if(!UOM.isEmpty()) {
 		driver.findElement(By.xpath("//span[contains(text(),'"+UOM+"')]")).click();				
+		}else {
+			System.out.println("???????????????????? UOM is not available");
+		}
 	}
 	
 	//Availability Notice Dropdown
@@ -139,7 +154,11 @@ public class ConsultantPage extends TestBase {
 		Thread.sleep(2000);
 		String AvailabilityNotice = selectAvailabilityNotice.getText();
 		System.out.println("++++++++++++++++"+AvailabilityNotice);
-		driver.findElement(By.xpath("//span[contains(text(),'"+availability+"')]")).click();		
+		if(!availability.isEmpty()) {
+		driver.findElement(By.xpath("//span[contains(text(),'"+availability+"')]")).click();	
+		}else {
+			System.out.println("???????????????????? availability is not available");
+		}
 	}	
 		
 	//Can Relocate To Dropdown
@@ -292,20 +311,32 @@ public class ConsultantPage extends TestBase {
 		Thread.sleep(1000);
 		TestUtil.click(clickOnDropButton);
 	}
-	
-	public void selectAvailabilityDate(String year) throws InterruptedException {		
 		
+	public void selectAvailabilityDate(String year) throws InterruptedException {		
+		Thread.sleep(1000);
 		Iterator<WebElement> it = selectYear.iterator();
 		while(it.hasNext()) {
 			WebElement year1 = it.next();
 			System.out.println(year1.getText());
-	
+			
+			Thread.sleep(1000);
+			String backyear = "2016";
+			int yb = Integer.parseInt(backyear);
+			int y = Integer.parseInt(year);
 			if(year.equals("2019")) {
 				driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
 			}
+			if(y<yb) {
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//button[@class='owl-dt-control-button owl-dt-control-arrow-button']")).click();
+				Thread.sleep(2000);
+				WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'\"+year+\"')]"));
+				we.click();
+			}
+			
 			else 
 			{							
-			WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +year+ "')]"));
+			WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'"+year+"')]"));
 			we.click();
 			}
 		
@@ -325,7 +356,7 @@ public class ConsultantPage extends TestBase {
 		}
 		else
 		{
-		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +month+ "')]"));
+		WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'"+month+"')]"));
 		we.click();
 		}
 	
@@ -340,7 +371,7 @@ public class ConsultantPage extends TestBase {
 		
 		System.out.println("Date is ::-" + alldate.getText());
 		
-		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +date+ "')]"));
+		WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'"+date+"')]"));
 		
 		we.click();				
 		}		
@@ -457,7 +488,7 @@ public class ConsultantPage extends TestBase {
 	WebElement consultantID;
 	
 	public String setConsultantId() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		System.out.println("Consultant id is ::: "+consultantID.getAttribute("ng-reflect-model"));	
 		return consultantID.getAttribute("ng-reflect-model");
 	}

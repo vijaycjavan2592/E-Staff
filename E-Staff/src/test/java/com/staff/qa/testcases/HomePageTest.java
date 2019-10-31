@@ -6,11 +6,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 import com.staff.qa.pages.HomePage;
 import com.staff.qa.pages.LoginPage;
 
-public class HomePageTest extends TestBase{
+public class HomePageTest extends BaseClass{
 	
 	LoginPage loginPage;
 	HomePage homePage;

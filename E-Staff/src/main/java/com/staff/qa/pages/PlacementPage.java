@@ -1,23 +1,29 @@
 package com.staff.qa.pages;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Coordinates;
+import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 import com.google.common.base.Function;
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 import com.staff.qa.util.TestUtil;
 
-public class PlacementPage extends TestBase {
+public class PlacementPage extends BaseClass {
 	
 	public PlacementPage() {
 		PageFactory.initElements(this.driver, this);
@@ -303,6 +309,89 @@ public class PlacementPage extends TestBase {
 		Thread.sleep(2000);
 		TestUtil.click(clickOnCancelButton_EditPlacementForm);
 	}
+	
+	//Select Sales Person from dropdown
+	@FindBy(xpath = "//ng-select[@name='salesPerson']")
+	WebElement clickOnSalesPersonDropDown;
+	
+	public void setSelectSalesPerson(String SalesPerson) throws InterruptedException {  		
+		TestUtil.click(clickOnSalesPersonDropDown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+SalesPerson+"')]")).click();				
+	}
+	
+	//Select Recruiter from dropdown
+	@FindBy(xpath = "//ng-select[@name='recruiter']")
+	WebElement clickOnRecruiterDropDown;
+	
+	public void setSelectRecruiter(String Recruiter) throws InterruptedException {  		
+		TestUtil.click(clickOnRecruiterDropDown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+Recruiter+"')]")).click();				
+	}
+	
+	//Enter the Manager Email
+	@FindBy(xpath = "//input[@name='managerEmail']")
+	WebElement enterManagerEmail;
+	
+	public void setEnterManagerEmail() {
+		enterManagerEmail.clear();
+		TestUtil.sendInput(enterManagerEmail, "");
+	}
+	
+	
+	//Click on Status column filter
+	@FindBy(xpath = "//div[@class='customHeaderLabel ng-star-inserted'][contains(text(),'Status')]")
+	WebElement clickOnStatusColumnFilter;
+	
+	public void setClickOnStatusColumnFilter() {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class)
+				.ignoring(NoSuchElementException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    	TestUtil.click(clickOnStatusColumnFilter);
+		return clickOnStatusColumnFilter;
+	    }   
+	});		
+	}
+	
+	//Status rows 
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']//div[9]")
+	WebElement statusCloumn;
+	
+	public String verifyStatus() throws InterruptedException {		
+	
+		/*Actions ac = new Actions(driver);
+		ac.moveToElement(driver.findElement(By.xpath("//div[@class='placements-list-container col-md-10']//ats-data-table")));
+		ac.sendKeys(Keys.PAGE_DOWN).build().perform();
+		Thread.sleep(3000);*/
+		
+		//get the count
+		int size = driver.findElements(By.xpath("//div[@class='ag-body-container ag-layout-normal']//div[9]")).size();
+		System.out.println("<<<<<<<<<"+size);	
+		
+		WebElement actualStatus = null ;
+		
+		for(int i=1 ; i<size ; i++) {
+			actualStatus = driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div["+i+"]/div[9]"));			
+		/*	if(s12.getText().equalsIgnoreCase(expectedStatus)) {
+				System.out.println("Found other status : "+s12.getText());*/			
+			
+			}
+		return actualStatus.getText();
+		}			
+	
+	
+	
+	
+	
+	
+	
 }
 
 

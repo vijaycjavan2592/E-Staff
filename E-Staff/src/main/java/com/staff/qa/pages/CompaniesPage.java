@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 
-public class CompaniesPage extends TestBase {
+public class CompaniesPage extends BaseClass {
 	
 	public CompaniesPage() {
 		PageFactory.initElements(driver, this);

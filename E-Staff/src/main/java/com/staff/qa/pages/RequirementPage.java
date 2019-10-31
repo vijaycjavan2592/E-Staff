@@ -22,10 +22,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 import com.google.common.base.Function;
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 import com.staff.qa.util.TestUtil;
 
-public class RequirementPage extends TestBase {
+public class RequirementPage extends BaseClass {
 	
 	public RequirementPage() {
 		PageFactory.initElements(driver, this);

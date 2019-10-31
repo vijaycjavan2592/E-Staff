@@ -12,7 +12,7 @@
        <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
         <exclude name="verifyCancelButtonFunOfSetStatusPopUp" />
-        <include name="verifySetTheStatusToConsultant" />        
+        <include name="verifyAddNewConsultant" />        
       </methods>
        </class>
       

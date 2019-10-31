@@ -3,22 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Suite]]">
   <test thread-count="5" name="Test(failed)(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.RequirementPageTest">
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
-          <include name="verifyValidationMessageForClosuredate"/>
-          <include name="verifyValidationMessageForClosureReason"/>
-          <include name="verifyConsultantMapToRequirement"/>
+          <include name="setUp"/>
           <include name="setupBeforeSuite"/>
           <include name="setExtentReport"/>
           <include name="getResult"/>
-          <include name="verifyCancelButtonFunctionalityOfArchiveRequirementPopUp"/>
-          <include name="setUp"/>
-          <include name="verifyNavigateToStatusPopUp"/>
+          <include name="verifyAddNewConsultant" invocation-numbers="0 1 2"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
-          <include name="verifyUnArchivedRequirementFunctionality"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>
   </test> <!-- Test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Suite]] -->

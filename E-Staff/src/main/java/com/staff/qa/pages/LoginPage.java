@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.staff.qa.base.TestBase;
+import com.staff.qa.base.BaseClass;
 
-public class LoginPage extends TestBase {
+public class LoginPage extends BaseClass {
 	
 
 	public LoginPage() {
