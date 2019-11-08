@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="187" started-at="2019-10-31T10:14:59Z" finished-at="2019-10-31T10:14:59Z">
+  <suite name="Default suite" duration-ms="85411" started-at="2019-11-08T06:32:16Z" finished-at="2019-11-08T06:33:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="187" started-at="2019-10-31T10:14:59Z" finished-at="2019-10-31T10:14:59Z">
+    <test name="Default test" duration-ms="85411" started-at="2019-11-08T06:32:16Z" finished-at="2019-11-08T06:33:41Z">
       <class name="com.staff.qa.testcases.PlacementPageTest">
-        <test-method status="PASS" signature="setExtentReport(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57baeedf]" name="setExtentReport" is-config="true" duration-ms="172" started-at="2019-10-31T10:14:59Z" finished-at="2019-10-31T10:14:59Z">
+        <test-method status="PASS" signature="setExtentReport(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="setExtentReport" is-config="true" duration-ms="177" started-at="2019-11-08T06:32:16Z" finished-at="2019-11-08T06:32:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@77e9807f]]>
+                <![CDATA[org.testng.TestRunner@5c41d037]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtentReport -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57baeedf]" name="endReport" is-config="true" duration-ms="0" started-at="2019-10-31T10:14:59Z" finished-at="2019-10-31T10:14:59Z">
+        <test-method status="PASS" signature="setupBeforeSuite(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="setupBeforeSuite" is-config="true" duration-ms="237" started-at="2019-11-08T06:32:16Z" finished-at="2019-11-08T06:32:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5c41d037]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupBeforeSuite -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="setUp" is-config="true" duration-ms="15011" started-at="2019-11-08T06:32:16Z" finished-at="2019-11-08T06:32:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyPlacementDateFilterFunOfPlacementForm()[pri:31, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="verifyPlacementDateFilterFunOfPlacementForm" duration-ms="28007" started-at="2019-11-08T06:32:31Z" finished-at="2019-11-08T06:32:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPlacementDateFilterFunOfPlacementForm -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="getResult" is-config="true" duration-ms="1012" started-at="2019-11-08T06:32:59Z" finished-at="2019-11-08T06:33:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPlacementDateFilterFunOfPlacementForm status=SUCCESS method=PlacementPageTest.verifyPlacementDateFilterFunOfPlacementForm()[pri:31, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="setUp" is-config="true" duration-ms="13078" started-at="2019-11-08T06:33:00Z" finished-at="2019-11-08T06:33:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyPlacementDateFilterFunOfPlacementForm()[pri:31, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="verifyPlacementDateFilterFunOfPlacementForm" duration-ms="26540" started-at="2019-11-08T06:33:13Z" finished-at="2019-11-08T06:33:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPlacementDateFilterFunOfPlacementForm -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="getResult" is-config="true" duration-ms="1001" started-at="2019-11-08T06:33:40Z" finished-at="2019-11-08T06:33:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPlacementDateFilterFunOfPlacementForm status=SUCCESS method=PlacementPageTest.verifyPlacementDateFilterFunOfPlacementForm()[pri:31, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setupAfterSuite()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="setupAfterSuite" is-config="true" duration-ms="91" started-at="2019-11-08T06:33:41Z" finished-at="2019-11-08T06:33:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupAfterSuite -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.staff.qa.testcases.PlacementPageTest@57fffcd7]" name="endReport" is-config="true" duration-ms="244" started-at="2019-11-08T06:33:41Z" finished-at="2019-11-08T06:33:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

@@ -1,5 +1,6 @@
 package com.staff.qa.pages;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -245,8 +246,7 @@ public class PlacementPage extends BaseClass {
 	    TestUtil.click(clickOnEditButton);
 		return clickOnEditButton;
 	    }   
-	});
-		
+	});		
 		}
 	
 	//Select the 'Did Not Start Reason' Radio Button
@@ -274,7 +274,7 @@ public class PlacementPage extends BaseClass {
 	}	
 	
 	//click on Save Button 
-	@FindBy(xpath = "//button[@class='plcmnt-edit-submit-btn']")
+	@FindBy(xpath = "//button[@class='plcmnt-edit-submit-btn'][contains(text(),'Save')]")
 	WebElement clickOnSaveButton;
 	
 	public void setClickOnSaveButton() throws InterruptedException {
@@ -334,9 +334,9 @@ public class PlacementPage extends BaseClass {
 	@FindBy(xpath = "//input[@name='managerEmail']")
 	WebElement enterManagerEmail;
 	
-	public void setEnterManagerEmail() {
+	public void setEnterManagerEmail(String ManagerEmail) {
 		enterManagerEmail.clear();
-		TestUtil.sendInput(enterManagerEmail, "");
+		TestUtil.sendInput(enterManagerEmail, ManagerEmail);
 	}
 	
 	
@@ -386,12 +386,485 @@ public class PlacementPage extends BaseClass {
 		return actualStatus.getText();
 		}			
 	
+	//Click on Download in Ms-Word link
+	@FindBy(xpath = "//label[contains(text(),'Download in Ms-Word')]")
+    WebElement clickDownloadInMsWordLink;
+	
+	public void setClickDownloadInMsWordLink() {
+		TestUtil.click(clickDownloadInMsWordLink);
+	} 
 	
 	
-	
-	
-	
-	
-}
+	//Select Business Unit from dropdown
+	@FindBy(xpath = "//ng-select[@name='buisnessUnit']")
+	WebElement clickOnBusinessUnitDropDown;
 
+	public void setSelectBusinessUnit(String BusinessUnit) throws InterruptedException {
+		TestUtil.click(clickOnBusinessUnitDropDown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + BusinessUnit + "')]")).click();
+	}
+	
+	//Enter Xoriant-Client
+	@FindBy(xpath = "//input[@name='xoriantClient']")
+    WebElement enterXoriantClient;
+	
+	public void setEnterXoriantClient(String XoriantClient) {
+		enterXoriantClient.clear();
+		TestUtil.sendInput(enterXoriantClient, XoriantClient);
+	} 
+	
+	//Enter End Client Name
+	@FindBy(xpath = "//input[@name='endClientName']")
+    WebElement enterEndClientName;
+	
+	public void setEnterEndClientName(String EndClientName) {
+		enterEndClientName.clear();
+		TestUtil.sendInput(enterEndClientName, EndClientName);
+	} 
+	
+	//Enter Client Name in Offer Letter
+	@FindBy(xpath = "//input[@name='clientNameInOffer']")
+    WebElement enterClientNameInOfferLetter;
+	
+	public void setEnterClientNameInOfferLetter(String ClientNameInOfferLetter) {
+		enterClientNameInOfferLetter.clear();
+		TestUtil.sendInput(enterClientNameInOfferLetter, ClientNameInOfferLetter);
+	} 
+	
+	//Enter Manager Name
+	@FindBy(xpath = "//input[@name='managerName']")
+    WebElement enterManagerName;
+	
+	public void setEnterManagerName(String ManagerName) {
+		enterManagerName.clear();
+		TestUtil.sendInput(enterManagerName, ManagerName);
+	} 
+	
+	//Enter Manager Phone
+	@FindBy(xpath = "//input[@name='managerPhone']")
+    WebElement enterManagerPhone;
+	
+	public void setEnterManagerPhone(String ManagerPhone) {
+		enterManagerPhone.clear();
+		TestUtil.sendInput(enterManagerPhone, ManagerPhone);
+	} 
+	
+	//Select Nature Of Assignment from dropdown
+	@FindBy(xpath = "//ng-select[@name='natureOfAssignment']")
+	WebElement clickOnNatureOfAssignmentDropDown;
+
+	public void setSelectNatureOfAssignment(String NatureOfAssignment) throws InterruptedException {
+		TestUtil.click(clickOnNatureOfAssignmentDropDown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + NatureOfAssignment + "')]")).click();
+	}
+
+	//Enter Bill Rate
+	@FindBy(xpath = "//input[@name='billRate']")
+    WebElement enterBillRate;
+	
+	public void setEnterBillRate(String BillRate) {
+		enterBillRate.sendKeys(Keys.BACK_SPACE);
+		enterBillRate.sendKeys(Keys.BACK_SPACE);
+		enterBillRate.sendKeys(Keys.BACK_SPACE);
+		enterBillRate.sendKeys(Keys.BACK_SPACE);
+		TestUtil.sendInput(enterBillRate, BillRate);
+	} 
+	
+	//Select Bill Rate UOM from dropdown
+	@FindBy(xpath = "//ng-select[@name='billRateUOM']")
+	WebElement clickOnBillRateUOMDropDown;
+
+	public void setSelectBillRateUOM(String BillRateUOM) throws InterruptedException {
+		TestUtil.click(clickOnBillRateUOMDropDown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + BillRateUOM + "')]")).click();
+	}
+	
+	//Select Billing Frequency from dropdown
+	@FindBy(xpath = "//ng-select[@name='billingFrequency']")
+	WebElement clickOnBillingFrequencyDropDown;
+
+	public void setSelectBillingFrequency(String BillingFrequency) throws InterruptedException {
+		TestUtil.click(clickOnBillingFrequencyDropDown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + BillingFrequency + "')]")).click();
+	}
+	
+	//Click on Estimated Start Date Box
+	@FindBy(xpath = "//input[@name='estimatedStartDate']")
+	WebElement clickOnEstimatedStartDate;
+	
+	@FindBy(xpath = "//span[@class='owl-dt-control-button-arrow']")
+	WebElement clickOnDropButton;
+	
+	public void clickOnEstimatedStartDateBox() throws InterruptedException {
+		TestUtil.click(clickOnEstimatedStartDate);
+		Thread.sleep(1000);
+		TestUtil.click(clickOnDropButton);
+	}
+	
+	// Click on Estimated End Date Box
+	@FindBy(xpath = "//input[@name='estimatedEndDate']")
+	WebElement clickOnEstimatedEndDate;
+
+	public void clickOnEstimatedEndDateBox() throws InterruptedException {
+		TestUtil.click(clickOnEstimatedEndDate);
+		Thread.sleep(1000);
+		TestUtil.click(clickOnDropButton);
+	}
+
+	//Enter Billing Contact Name 
+	@FindBy(xpath = "//input[@name='billingContactName']")
+	WebElement enterBillingContactName;
+
+	public void setEnterBillingContactName(String BillingContactName) {
+		enterBillingContactName.clear();
+		TestUtil.sendInput(enterBillingContactName, BillingContactName);
+	}
+
+	//Country Dropdown
+	@FindBy(xpath = "//ng-select[@name='assignmentCountry']")
+	WebElement clickCountryDropdown;
+	
+	public void setselectCountry(String Country) throws InterruptedException {
+		TestUtil.click(clickCountryDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][text()='"+Country+"']")).click();		
+	}
+	
+	//State Dropdown
+	@FindBy(xpath = "//ng-select[@name='assignmentState']")
+	WebElement clickStateDropdown;
+	
+	public void setselectState(String State) throws InterruptedException {
+		TestUtil.click(clickStateDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+State+"')]")).click();		
+	}	
+	
+	//City Dropdown
+	@FindBy(xpath = "//ng-select[@name='assignmentCity']")
+	WebElement clickCityDropdown;
+	
+	public void setselectCity(String City) throws InterruptedException {
+		TestUtil.click(clickCityDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+City+"')]")).click();		
+	}
+	
+	//----------------------------Edit the Consultant Details fields
+	//Click on Consultant Details link
+	@FindBy(xpath = "//div[contains(text(),'Consultant Details')]")
+    WebElement clickConsultantDetailsLink;
+	
+	public void setClickConsultantDetailsLink() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickConsultantDetailsLink);
+	} 
+	
+	// Enter the First Name
+	@FindBy(xpath = "//input[@name='ConsultantFName']")
+	WebElement enterConsultantFName;
+
+	public void setEnterConsultantFName(String ConsultantFName) {
+		enterConsultantFName.clear();
+		TestUtil.sendInput(enterConsultantFName, ConsultantFName);
+	}
+
+	// Enter the Last name
+	@FindBy(xpath = "//input[@name='ConsultantLName']")
+	WebElement enterConsultantLName;
+
+	public void setEnterConsultantLastName(String ConsultantLName) {
+		enterConsultantLName.clear();
+		TestUtil.sendInput(enterConsultantLName, ConsultantLName);
+	}
+	
+	//Select Gender from Dropdown
+	@FindBy(xpath = "//ng-select[@name='consultantGender']")
+	WebElement clickConsultantGenderDropdown;
+	
+	public void setselectConsultantGender(String Gender) throws InterruptedException {
+		TestUtil.click(clickConsultantGenderDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+Gender+"')]")).click();		
+	}
+	
+	//Enter the Email id
+	@FindBy(xpath = "//input[@name='consultantEmail1']")
+	WebElement enterConsultantEmail1;
+
+	public void setEnterConsultantEmail1(String ConsultantEmail1) {
+		enterConsultantEmail1.clear();
+		TestUtil.sendInput(enterConsultantEmail1, ConsultantEmail1);
+	}
+	
+	//Enter the Mobile Number
+	@FindBy(xpath = "//input[@name='consultantMobile']")
+	WebElement enterConsultantMobile;
+
+	public void setEnterConsultantMobile(String consultantMobile) {
+		enterConsultantMobile.clear();
+		TestUtil.sendInput(enterConsultantMobile, consultantMobile);
+	}
+	
+	//Enter Address Line 1
+	@FindBy(xpath = "//input[@name='consultantAddressLine1']")
+	WebElement enterConsultantAddressLine1;
+
+	public void setEnterConsultantAddressLine1(String consultantAddressLine1) {
+		enterConsultantAddressLine1.clear();
+		TestUtil.sendInput(enterConsultantAddressLine1, consultantAddressLine1);
+	}
+	
+
+	//Select Country from Dropdown
+	@FindBy(xpath = "//ng-select[@name='consultantCountries']")
+	WebElement clickConsultantCountriesDropdown;
+	
+	public void setselectConsultantCountries(String consultantCountries) throws InterruptedException {
+		TestUtil.click(clickConsultantCountriesDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][text()='"+consultantCountries+"']")).click();		
+	}
+	
+	//Select State from Dropdown
+	@FindBy(xpath = "//ng-select[@name='consultantState']")
+	WebElement clickConsultantStateDropdown;
+	
+	public void setselectConsultantState(String consultantState) throws InterruptedException {
+		TestUtil.click(clickConsultantStateDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+consultantState+"')]")).click();		
+	}	
+	
+	//Select City from Dropdown
+	@FindBy(xpath = "//ng-select[@name='consultantCity']")
+	WebElement clickConsultantCityDropdown;
+	
+	public void setselectConsultantCity(String consultantCity) throws InterruptedException {
+		TestUtil.click(clickConsultantCityDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+consultantCity+"')]")).click();		
+	}
+
+	//Enter Zip
+	@FindBy(xpath = "//input[@name='consultantZipCode']")
+	WebElement enterConsultantZipCode;
+
+	public void setEnterConsultantZipCode(String consultantZipCode) {
+		enterConsultantZipCode.clear();
+		TestUtil.sendInput(enterConsultantZipCode, consultantZipCode);
+	}
+	
+	//Enter Job Title
+	@FindBy(xpath = "//input[@name='jobTitle']")
+	WebElement enterJobTitle;
+
+	public void setEnterJobTitle(String jobTitle) {
+		enterJobTitle.clear();
+		TestUtil.sendInput(enterJobTitle, jobTitle);
+	}
+	
+	//Enter Skills
+	@FindBy(xpath = "//textarea[@name='consultantSkills']")
+	WebElement enterConsultantSkills;
+
+	public void setEnterConsultantSkills(String consultantSkills) {
+		enterConsultantSkills.clear();
+		TestUtil.sendInput(enterConsultantSkills, consultantSkills);
+	}
+	
+	//Select Candidate Source from Dropdown
+	@FindBy(xpath = "//ng-select[@name='candidateSource']")
+	WebElement clickCandidateSourceDropdown;
+	
+	public void setselectCandidateSource(String candidateSource) throws InterruptedException {
+		TestUtil.click(clickCandidateSourceDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+candidateSource+"')]")).click();		
+	}
+	
+	//Select Employment Type from Dropdown
+	@FindBy(xpath = "//ng-select[@name='employementType']")
+	WebElement clickEmployementTypeDropdown;
+	
+	public void setselectEmployementType(String employementType) throws InterruptedException {
+		TestUtil.click(clickEmployementTypeDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+employementType+"')]")).click();		
+	}
+	
+	//Select Visa Status from Dropdown
+	@FindBy(xpath = "//ng-select[@name='visaStatus']")
+	WebElement clickVisaStatusDropdown;
+	
+	public void setselectVisaStatus(String visaStatus) throws InterruptedException {
+		TestUtil.click(clickVisaStatusDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+visaStatus+"')]")).click();		
+	}	
+	
+	//Select Pay Rate UOM  from Dropdown
+	@FindBy(xpath = "//ng-select[@name='payRateUOM']")
+	WebElement clickPayRateUOMDropdown;
+	
+	public void setselectPayRateUOM(String payRateUOM) throws InterruptedException {
+		TestUtil.click(clickPayRateUOMDropdown);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+payRateUOM+"')]")).click();		
+	}
+	
+	// Enter Pay Rate
+	@FindBy(xpath = "//input[@name='payRate']")
+	WebElement enterPayRate;
+
+	public void setEnterPayRate(String payRate) {
+		enterPayRate.sendKeys(Keys.BACK_SPACE);
+		enterPayRate.sendKeys(Keys.BACK_SPACE);
+		enterPayRate.sendKeys(Keys.BACK_SPACE);
+		enterPayRate.sendKeys(Keys.BACK_SPACE);
+		TestUtil.sendInput(enterPayRate, payRate);
+	}
+
+	// ----------------------------Edit the Gross Margin fields
+	// Click on Gross Margin link
+	@FindBy(xpath = "//div[contains(text(),'Gross Margin')]")
+	WebElement clickGrossMarginLink;
+
+	public void setClickGrossMarginLink() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickGrossMarginLink);
+	}
+	
+	//Get text of Total Loaded Cost
+	@FindBy(xpath = "//div[@class='row no-gutters']//label[contains(text(),'Total Loaded Cost')]//following::span[1]")
+	WebElement getTextOfTotalLoadedCost;
+	
+	public String getValueOfTotalLoadedCost() {
+			
+		String s = getTextOfTotalLoadedCost.getText();
+		String ab = s.replaceAll("[$/Hr]", "");
+		System.out.println("?????????????????????????"+ab);	
+		return s.replaceAll("[$/Hr]", "");		
+	}	
+	
+	//Get text of Bill Rate
+	@FindBy(xpath = "//div[@class='row no-gutters']//label[contains(text(),'Bill Rate')]//following::span[1]")
+	WebElement getTextOfBillRate;
+	
+	public String getValueOfBillRate() {				
+		String s = getTextOfBillRate.getText();
+		String ab = s.replaceAll("[$/Hr]", "");
+		System.out.println("?????????????????????????"+ab);	
+		return s.replaceAll("[$/Hr]", "");
+	}
+
+	//Get text of Xoriant Revenue
+	@FindBy(xpath = "//div[@class='row no-gutters']//label[contains(text(),'Xoriant Revenue')]//following::span[1]")
+	WebElement getTextOfXoriantRevenue;
+	
+	public String getValueOfXoriantRevenue() {	
+		String s = getTextOfXoriantRevenue.getText();
+		String ab = s.replaceAll("[$/Hr]", "");
+		System.out.println("?????????????????????????"+ab);	
+		return s.replaceAll("[$/Hr]", "");
+	}
+	
+	//Enter Discount
+	@FindBy(xpath = "//input[@name='gMDiscAdminFeesAmt']")
+	WebElement enterDiscount;
+
+	public void setEnterDiscount(String discount) {
+		enterDiscount.sendKeys(Keys.BACK_SPACE);
+		enterDiscount.sendKeys(Keys.BACK_SPACE);
+		enterDiscount.sendKeys(Keys.BACK_SPACE);
+		enterDiscount.sendKeys(Keys.BACK_SPACE);
+		TestUtil.sendInput(enterDiscount, discount);
+	}
+	
+	//Get text of Gross Margin
+	@FindBy(xpath = "//div[@class='row no-gutters']//label[contains(text(),'Bill Rate')]//following::span[4]")
+	WebElement getTextOfGrossMargin;
+	
+	public String getValueOfGrossMargin() {
+		getTextOfGrossMargin.click();	
+		String s = getTextOfGrossMargin.getText();
+		String ab = s.replaceAll("[$/Hr]", "");
+		System.out.println("?????????????????????????"+ab);	
+		return s.replaceAll("[%]", "");
+	}
+	
+	//Get text of Gross Margin in $/Hr
+	@FindBy(xpath = "//div[@class='row no-gutters']//label[contains(text(),'Bill Rate')]//following::span[5]")
+	WebElement getTextOfGrossMarginIn$PerHour;
+	
+	public String getValueOfGrossMarginIn$PerHour() {	
+		String s = getTextOfGrossMarginIn$PerHour.getText();
+		String ab = s.replaceAll("[$/Hr]", "");
+		System.out.println("?????????????????????????"+ab);	
+		return s.replaceAll("[$/Hr]", "");
+	}
+	
+	//Click on Cancel button
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickCancelButton;
+
+	public void setClickCancelButton() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickCancelButton);
+	}
+	
+	//Companies Filter---------------------------
+	//Enter text in search text box of Companies search tag
+	@FindBy(xpath = "//input[@placeholder='Companies']")
+	WebElement enterTextInCompaniesSearchTag;
+	
+	public void setEnterTextInCompaniesSearchTag(String companyName) {
+		TestUtil.sendInput(enterTextInCompaniesSearchTag, companyName);
+	}
+	
+	//Select Company 
+	@FindBy(xpath = "//input[@placeholder='Companies']")
+	WebElement selectCompanyCheckBox;
+	
+	public void setSelectCompanyCheckBox(String companyName) {
+		TestUtil.sendInput(enterTextInCompaniesSearchTag, companyName);
+	}
+	
+	// Account Manager Filter---------------------------
+	// Enter text in search text box of Companies search tag
+	@FindBy(xpath = "//input[@placeholder='Account Manager']")
+	WebElement enterTextInAccountManagerSearchTag;
+
+	public void setEnterTextInAccountManagerSearchTag(String accountManager) {
+		TestUtil.sendInput(enterTextInAccountManagerSearchTag, accountManager);
+	}
+
+	//Placement Date Filter
+	//Click on From Date Box
+	@FindBy(xpath = "//input[@name='placementFromDt']")
+	WebElement clickOnFromDate;
+	
+/*	@FindBy(xpath = "//span[@class='owl-dt-control-button-arrow']")
+	WebElement clickOnDropButton;*/
+	
+	public void clickOnFromDateBox() throws InterruptedException {
+		TestUtil.click(clickOnFromDate);
+		Thread.sleep(1000);
+		TestUtil.click(clickOnDropButton);
+	}
+
+	// Click on To Date Box
+	@FindBy(xpath = "//input[@name='placementToDt']")
+	WebElement clickOnToDate;
+	
+	public void clickOnToDateBox() throws InterruptedException {
+	//	TestUtil.click(clickOnToDate);
+		Thread.sleep(1000);
+		TestUtil.click(clickOnDropButton);
+	}
+}
 

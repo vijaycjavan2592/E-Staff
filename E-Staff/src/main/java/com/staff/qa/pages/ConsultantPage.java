@@ -38,8 +38,8 @@ public class ConsultantPage extends BaseClass {
 	@FindBy(xpath = "//label[text()='Add New']")
 	WebElement clickAddNewMenu;
 
-	public void setClickAddNewMenu() {
-
+	public void setClickAddNewMenu() throws InterruptedException {
+		Thread.sleep(5000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(30, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).ignoring(ElementClickInterceptedException.class);
 		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
@@ -237,7 +237,7 @@ public class ConsultantPage extends BaseClass {
 		Thread.sleep(2000);
 		String CountryOption = selectCountry.getText();
 		System.out.println("++++++++++++++++"+CountryOption);
-		driver.findElement(By.xpath("//span[text()='"+Country+"']")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][text()='"+Country+"']")).click();		
 	}
 	
 	
@@ -323,15 +323,16 @@ public class ConsultantPage extends BaseClass {
 			String backyear = "2016";
 			int yb = Integer.parseInt(backyear);
 			int y = Integer.parseInt(year);
-			if(year.equals("2019")) {
-				driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
-			}
+			
 			if(y<yb) {
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//button[@class='owl-dt-control-button owl-dt-control-arrow-button']")).click();
 				Thread.sleep(2000);
 				WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'\"+year+\"')]"));
 				we.click();
+			}
+			else if(y>yb && year.equals("2019")) {
+				driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
 			}
 			
 			else 
@@ -483,7 +484,7 @@ public class ConsultantPage extends BaseClass {
 		}
 	}
 	
-	//Consultant Id
+	//Consultant Id (when edit mode)
 	@FindBy(xpath = "//input[@name='consultantId']")
 	WebElement consultantID;
 	
@@ -493,6 +494,16 @@ public class ConsultantPage extends BaseClass {
 		return consultantID.getAttribute("ng-reflect-model");
 	}
 	
+	//Consultant Id (when edit mode)
+	@FindBy(xpath = "//input[@name='consultantID']")
+	WebElement consultantID_Edit;
+	
+	public String setConsultantId_Edit() throws InterruptedException {
+		Thread.sleep(1000);
+		System.out.println("Consultant id is ::: "+consultantID_Edit.getAttribute("ng-reflect-model"));	
+		return consultantID_Edit.getAttribute("ng-reflect-model");
+	}
+	
 	
 	//Confirmation message 
 	@FindBy(xpath = "//div[@class='col-md-10 msg-content']")
@@ -500,7 +511,6 @@ public class ConsultantPage extends BaseClass {
 	
 	public String setconsultantConfirmationMessage() throws InterruptedException {
 		Thread.sleep(2000);
-		System.out.println(consultantConfirmationMessage.getText());
 		return consultantConfirmationMessage.getText();
 	}
 	
@@ -565,9 +575,10 @@ public class ConsultantPage extends BaseClass {
 	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[3]")
 	WebElement gridsection;
 	
-	public void setClickOnFirstRowConsultant() {
+	public void setClickOnFirstRowConsultant() throws InterruptedException {
+		Thread.sleep(6000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(60, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(3, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -786,7 +797,7 @@ public class ConsultantPage extends BaseClass {
 	public void setSelectRequirement() throws InterruptedException {
 		Thread.sleep(2000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(60, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(ElementClickInterceptedException.class);
@@ -958,7 +969,8 @@ public class ConsultantPage extends BaseClass {
 	@FindBy(xpath = "//label[contains(text(),'Archive')]")
 	WebElement clickOnArchiveLink;
 	
-	public void setClickOnArchiveLink() {
+	public void setClickOnArchiveLink() throws InterruptedException {
+		Thread.sleep(2000);
 		if(clickOnArchiveLink.isDisplayed()) {
 		TestUtil.click(clickOnArchiveLink);
 		}else {
@@ -967,7 +979,7 @@ public class ConsultantPage extends BaseClass {
 	}
 	
 	//Click on Archive Button (From Pop up) 
-	@FindBy(xpath = "//button[contains(text(),'Archive')]")
+	@FindBy(xpath = "//button[contains(text(),'OK')]")
 	WebElement clickOnArchiveButton;
 	
 	public void setClickOnArchiveButton() {
@@ -979,7 +991,8 @@ public class ConsultantPage extends BaseClass {
 	@FindBy(xpath = "//label[contains(text(),'Un-Archive')]")
 	WebElement clickOnUnArchiveLink;
 	
-	public void setClickOnUnArchiveLink() {
+	public void setClickOnUnArchiveLink() throws InterruptedException {
+		Thread.sleep(2000);
 		if(clickOnUnArchiveLink.isDisplayed()) {
 		TestUtil.click(clickOnUnArchiveLink);
 		}else {
@@ -988,7 +1001,7 @@ public class ConsultantPage extends BaseClass {
 	}
 
 	//Click on Un-Archive Button (From Pop up) 
-	@FindBy(xpath = "//button[contains(text(),'Un-Archive')]")
+	@FindBy(xpath = "//button[contains(text(),'OK')]")
 	WebElement clickOnUnArchiveButton;
 	
 	public void setClickOnUnArchiveButton() {
@@ -1024,7 +1037,8 @@ public class ConsultantPage extends BaseClass {
 	@FindBy(xpath = "//button[contains(text(),'Add Note')]")
 	WebElement clickOnAddNoteButton;
 
-	public void setClickOnAddNoteButton() {
+	public void setClickOnAddNoteButton() throws InterruptedException {
+		Thread.sleep(2000);
 		TestUtil.click(clickOnAddNoteButton);
 	}
 	
@@ -1132,7 +1146,7 @@ public class ConsultantPage extends BaseClass {
 			}
 			else 
 			{							
-			WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +year+ "')]"));
+			WebElement we = driver.findElement(By.xpath(" //span[@class='owl-dt-calendar-cell-content'][contains(text(),'" +year+ "')]"));
 			we.click();
 			}		
 		}
@@ -1151,7 +1165,7 @@ public class ConsultantPage extends BaseClass {
 		}
 		else
 		{
-		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +month+ "')]"));
+		WebElement we = driver.findElement(By.xpath(" //span[@class='owl-dt-calendar-cell-content'][contains(text(),'" +month+ "')]"));
 		we.click();
 		}
 	
@@ -1166,7 +1180,7 @@ public class ConsultantPage extends BaseClass {
 		
 		System.out.println("Date is ::-" + alldate.getText());
 		
-		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +date+ "')]"));
+		WebElement we = driver.findElement(By.xpath(" //span[@class='owl-dt-calendar-cell-content'][contains(text(),'" +date+ "')]"));
 		
 		we.click();				
 		}		

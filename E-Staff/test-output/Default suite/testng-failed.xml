@@ -5,13 +5,12 @@
     <classes>
       <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
-          <include name="verifyCandidateEndedFilterData"/>
-          <include name="setupBeforeSuite"/>
-          <include name="setExtentReport"/>
           <include name="getResult"/>
-          <include name="setUp"/>
-          <include name="verifyCandidateOnBillingFilterData"/>
+          <include name="verifyPlacementDateFilterFunOfPlacementForm"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
           <include name="endReport"/>
+          <include name="setUp"/>
           <include name="setupAfterSuite"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.PlacementPageTest -->

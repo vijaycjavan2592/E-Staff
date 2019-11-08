@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Suite]]]">
-  <test thread-count="5" name="Test(failed)(failed)(failed)">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Suite]]]" parallel="classes">
+  <test thread-count="1" name="Test(failed)(failed)(failed)" parallel="classes">
     <classes>
-      <class name="com.staff.qa.testcases.RequirementPageTest">
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
-          <include name="setupBeforeSuite"/>
-          <include name="setExtentReport"/>
+          <include name="verifyUn_ArchiveFunctionality"/>
           <include name="getResult"/>
           <include name="setUp"/>
-          <include name="verifyNavigateToStatusPopUp"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
+          <include name="verifyDuplicateConsultant" invocation-numbers="0"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>
   </test> <!-- Test(failed)(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Failed suite [Suite]]] -->

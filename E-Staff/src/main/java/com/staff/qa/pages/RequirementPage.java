@@ -16,6 +16,7 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -397,7 +398,7 @@ public class RequirementPage extends BaseClass {
 			}
 			else 
 			{							
-			WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +year+ "')]"));
+			WebElement we = driver.findElement(By.xpath(" //span[@class='owl-dt-calendar-cell-content'][contains(text(),'" +year+ "')]"));
 			we.click();
 			}
 		
@@ -417,7 +418,7 @@ public class RequirementPage extends BaseClass {
 		}
 		else
 		{
-		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +month+ "')]"));
+		WebElement we = driver.findElement(By.xpath(" //span[@class='owl-dt-calendar-cell-content'][contains(text(),'" +month+ "')]"));
 		we.click();
 		}
 	
@@ -441,7 +442,7 @@ public class RequirementPage extends BaseClass {
 			driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
 		}
 		else {
-		WebElement we = driver.findElement(By.xpath(" //span[contains(text(),'" +date+ "')]"));		
+		WebElement we = driver.findElement(By.xpath(" //span[@class='owl-dt-calendar-cell-content'][contains(text(),'" +date+ "')]"));		
 		we.click();				
 		}		
 		}
@@ -1056,8 +1057,12 @@ public class RequirementPage extends BaseClass {
 	@FindBy(xpath = "//button[contains(text(),'Shortlist Consultant')]")
 	WebElement clickShortlistConsultantButton;
 
-	public void setClickOnShortlistConsultantOptionButton() {
-		TestUtil.click(clickShortlistConsultantButton);
+	public void setClickOnShortlistConsultantOptionButton() throws InterruptedException {
+		Thread.sleep(1000);
+		Actions ac = new Actions(driver);
+		Thread.sleep(1000);
+		ac.moveToElement(clickShortlistConsultantButton).click().build().perform();
+		//TestUtil.click(clickShortlistConsultantButton);
 	}
 	
 	//click on Cancel button from map consultant page
