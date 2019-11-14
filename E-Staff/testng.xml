@@ -9,17 +9,17 @@
        
        <classes>
    <!--     <class name="com.staff.qa.testcases.ConsultantPageTest"> -->
-       <class name="com.staff.qa.testcases.LoginPageTest"/>
-     <!--       <methods>
+       <class name="com.staff.qa.testcases.ConsultantPageTest">
+           <methods>
         <exclude name="verifyCancelButtonFunOfSetStatusPopUp" />
-        <include name="verifyDuplicateConsultant" />  
+        <include name="verifyUserNavigateToConsultantPage" />  
          
       </methods>  
        </class>
-  
+  <!--
    </classes>  
       
-      
+       
      
       <class name="com.staff.qa.testcases.RequirementPageTest"/>
       <class name="com.staff.qa.testcases.PlacementPageTest"/>   -->    

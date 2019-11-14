@@ -5,8 +5,8 @@
     <classes>
       <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
+          <include name="verifySubmitForApprovalFunctionality_Validations"/>
           <include name="getResult"/>
-          <include name="verifyPlacementDateFilterFunOfPlacementForm"/>
           <include name="setExtentReport"/>
           <include name="setupBeforeSuite"/>
           <include name="endReport"/>

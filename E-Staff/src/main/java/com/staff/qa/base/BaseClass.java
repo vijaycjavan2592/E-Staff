@@ -89,7 +89,7 @@ public class BaseClass {
 
 		String browsername = prop.getProperty("browser");
 		if (browsername.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D://JarFile//chromedriver_76.0.3809.126/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "D://JarFile//ChromeDriver_78/chromedriver.exe");
 			driver = new ChromeDriver();
 		} else {
 			System.out.println("Issue in driver");			

@@ -40,6 +40,8 @@ public class HomePage extends BaseClass{
 		
 	//Click on Placement menu
 	@FindBy(xpath = "//label[contains(text(),'Placements')]")
+//	@FindBy(xpath = "//label[@class='nav-item-label'][contains(text(),'Placements')]")
+//	@FindBy(xpath = "//div[@class='nav-item placements remove-padding-left remove-padding-right']")
 	WebElement clickPlacementOption;
 	
 	public boolean verifyCorrectUserName() {

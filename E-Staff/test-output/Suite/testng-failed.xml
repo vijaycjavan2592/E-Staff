@@ -3,17 +3,17 @@
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
   <test thread-count="1" name="Test(failed)" parallel="classes">
     <classes>
-      <class name="com.staff.qa.testcases.LoginPageTest">
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
           <include name="getResult"/>
-          <include name="validatePasswordMessageForIncorrectPassword"/>
+          <include name="setUp"/>
           <include name="setExtentReport"/>
           <include name="setupBeforeSuite"/>
           <include name="endReport"/>
           <include name="setupAfterSuite"/>
-          <include name="setUp"/>
+          <include name="verifyUserNavigateToConsultantPage"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.LoginPageTest -->
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

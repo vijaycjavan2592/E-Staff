@@ -26,6 +26,8 @@ import com.staff.qa.util.TestUtil;
 
 public class PlacementPage extends BaseClass {
 	
+	String[] startDate = null;
+	
 	public PlacementPage() {
 		PageFactory.initElements(this.driver, this);
 	}
@@ -301,6 +303,22 @@ public class PlacementPage extends BaseClass {
 		return placementConfirmationMessage.getText();
 	}
 	
+	public void setWaitUntilConfirmationMessageAppear() {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class)
+				.ignoring(NoSuchElementException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    	WebElement el = driver.findElement(By.xpath("//div[@class='col-md-10 msg-content']"));
+		return el;
+	    }   
+	});		
+	}
+	
 	//Click on Cancel button of edit placement form
 	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
 	WebElement clickOnCancelButton_EditPlacementForm;
@@ -492,6 +510,7 @@ public class PlacementPage extends BaseClass {
 		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + BillingFrequency + "')]")).click();
 	}
 	
+
 	//Click on Estimated Start Date Box
 	@FindBy(xpath = "//input[@name='estimatedStartDate']")
 	WebElement clickOnEstimatedStartDate;
@@ -564,6 +583,15 @@ public class PlacementPage extends BaseClass {
 		TestUtil.click(clickConsultantDetailsLink);
 	} 
 	
+	// Click on Client & Assignment link
+	@FindBy(xpath = "//div[contains(text(),'Client & Assignment')]")
+	WebElement clickClientAndAssignmentLink;
+
+	public void setClickClientAndAssignmentLink() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickClientAndAssignmentLink);
+	}
+
 	// Enter the First Name
 	@FindBy(xpath = "//input[@name='ConsultantFName']")
 	WebElement enterConsultantFName;
@@ -601,6 +629,14 @@ public class PlacementPage extends BaseClass {
 		TestUtil.sendInput(enterConsultantEmail1, ConsultantEmail1);
 	}
 	
+	//Enter the Email2 id
+	@FindBy(xpath = "//input[@name='consultantEmail2']")
+	WebElement enterConsultantEmail2;
+
+	public void setEnterConsultantEmail2(String ConsultantEmail2) {
+		enterConsultantEmail2.clear();
+		TestUtil.sendInput(enterConsultantEmail2, ConsultantEmail2);
+	}
 	//Enter the Mobile Number
 	@FindBy(xpath = "//input[@name='consultantMobile']")
 	WebElement enterConsultantMobile;
@@ -866,5 +902,124 @@ public class PlacementPage extends BaseClass {
 		Thread.sleep(1000);
 		TestUtil.click(clickOnDropButton);
 	}
+	
+	// Click on To Initiate Offer Link
+	@FindBy(xpath = "//label[contains(text(),'Initiate Offer')]")
+	WebElement clickOnOfferLink;
+	
+	public void clickOnOfferLink() throws InterruptedException {
+		Thread.sleep(1000);
+		TestUtil.click(clickOnOfferLink);
+	}
+	
+	@FindBy(xpath = "//span[@class='ng-arrow-wrapper']")
+	WebElement emailsTextBox;
+	
+	public void setEmailsTextBox(String emailId) throws InterruptedException {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='ng-clear-wrapper ng-star-inserted']")).click();
+		emailsTextBox.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+ emailId +"')]")).click();		
+	}
+	
+	public void setEmailsTextBox2(String emailId2) throws InterruptedException {
+		emailsTextBox.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+ emailId2 +"')]")).click();
+	}
+	
+	
+	@FindBy(xpath = "//div[contains(text(),'Initiate Offer')]")
+	WebElement initiateOfferPopUpTiltle;
+	
+	public String setInitiateOfferPopUpTiltle() throws InterruptedException {
+		Thread.sleep(1000);
+		return initiateOfferPopUpTiltle.getText();
+	}
+	
+	public boolean setInitiateOfferPopUpDisplayed() {
+		 return initiateOfferPopUpTiltle.isDisplayed();
+	}
+	
+	//Click On Initiate Offer Button
+	@FindBy(xpath = "//span[contains(text(),'Initiate Offer')]")
+	WebElement clickOnInitiateOffer;
+	
+	public void setClickOnInitiateOffer() throws InterruptedException {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class)
+				.ignoring(NoSuchElementException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+	    	TestUtil.click(clickOnInitiateOffer);
+		return clickOnInitiateOffer;
+	    }   
+	});		
+		
+	/*	Thread.sleep(2000);
+		TestUtil.click(clickOnInitiateOffer);*/
+	}
+	
+	//Click On Submit For Approval Button
+	@FindBy(xpath = "//button[contains(text(),'Submit For Approval')]")
+	WebElement clickOnSubmitForApproval;
+	
+	public void setClickOnSubmitForApproval() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnSubmitForApproval);
+	}
+	
+	//Click On Cancel button for Approval pop up
+	@FindBy(xpath = "//a[contains(text(),'Cancel')]")
+	WebElement clickOnCancelBtnForInitiateOfferPopUp;
+		
+	public void setClickOnCancelBtnForInitiateOfferPopUp() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnCancelBtnForInitiateOfferPopUp);
+	}
+		
+	
+	//Click On OK button for Submit For Approval Button
+	@FindBy(xpath = "//span[contains(text(),'OK')]")
+	WebElement clickOnOKBtnSubmitForApproval;
+	
+	public void setClickOnOKBtnSubmitForApproval() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnOKBtnSubmitForApproval);
+	}
+	
+	//Click On OK button for Submit For Initiate Offer button
+	@FindBy(xpath = "//span[contains(text(),'OK')]")
+	WebElement clickOnOKBtnForInitiateOffer;
+	
+	public void setClickOnOKBtnForInitiateOffer() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnOKBtnForInitiateOffer);
+	}
+	
+	// Click On Approve button 
+	@FindBy(xpath = "//button[contains(text(),'Approve')]")
+	WebElement clickOnApproveBtn;
+
+	public void setClickOnApproveBtn() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnApproveBtn);
+	}
+		
+	// Click On OK button for Approve pop up
+	@FindBy(xpath = "//span[contains(text(),'OK')]")
+	WebElement clickOnOKBtnForApprovePopUp;
+
+	public void setClickOnOKBtnForApprovePopUp() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnOKBtnForApprovePopUp);
+	}
+
 }
+
 

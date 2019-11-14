@@ -324,6 +324,14 @@ public class ConsultantPage extends BaseClass {
 			int yb = Integer.parseInt(backyear);
 			int y = Integer.parseInt(year);
 			
+		/*	String date = driver.findElement(By.xpath("//input[@name='estimatedStartDate']")).getAttribute("ng-reflect-model");
+			
+			String[] startDate = date.split("\\s");
+			System.out.println("Day is : "+startDate[0]);
+			System.out.println("Month is : "+startDate[1]);
+			System.out.println("Date is : "+startDate[2]);
+			System.out.println("Year is : "+startDate[3]);*/
+			
 			if(y<yb) {
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//button[@class='owl-dt-control-button owl-dt-control-arrow-button']")).click();
@@ -331,10 +339,12 @@ public class ConsultantPage extends BaseClass {
 				WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'\"+year+\"')]"));
 				we.click();
 			}
-			else if(y>yb && year.equals("2019")) {
-				driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
-			}
-			
+			/*else if(y>yb && year.equals(startDate[3])) {
+				driver.findElement(By.xpath("//span[contains(@class,'owl-dt-calendar-cell-content owl-dt-calendar-cell-selected')]")).click();
+			}*/
+			else if(y>yb && year.equals("2019") ) {
+				driver.findElement(By.xpath("//span[starts-with(@class,'owl-dt-calendar-cell-content owl-dt-calendar-cell-today')]")).click();
+			}			
 			else 
 			{							
 			WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'"+year+"')]"));
@@ -355,6 +365,7 @@ public class ConsultantPage extends BaseClass {
 		if(month.equals("Sep")) {
 			driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content owl-dt-calendar-cell-today']")).click();
 		}
+		
 		else
 		{
 		WebElement we = driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][contains(text(),'"+month+"')]"));
@@ -588,6 +599,12 @@ public class ConsultantPage extends BaseClass {
 		return gridsection;
 	}		
 		});		
+	}
+	
+	public void setClickOnRow(int i) throws InterruptedException {
+		WebElement clickOnRow = driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div["+i+"]/div[3]"));
+		Thread.sleep(6000);
+		clickOnRow.click();
 	}
 	
 	public String setConsultantOnGrid_GetText() {		

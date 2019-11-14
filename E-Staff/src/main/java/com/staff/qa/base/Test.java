@@ -1,102 +1,81 @@
 package com.staff.qa.base;
 // A simple Java program to demonstrate the use of reflection 
-import java.lang.reflect.Method; 
+import java.lang.reflect.Method;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.lang.reflect.Field; 
 import java.lang.reflect.Constructor; 
 
 // class whose object is to be created 
-class Test 
-{ 
-	// creating a private field 
-	private String s; 
+class Test {
 
-	// creating a public constructor 
-	public Test() { s = "GeeksforGeeks"; } 
-
-	// Creating a public method with no arguments 
-	public void method1(int a) { 
-		System.out.println("The string is " + s); 
-	} 
-
-	// Creating a public method with int as argument 
-	public void method2(int n) { 
-		System.out.println("The number is " + n); 
-	} 
-
-	// creating a private method 
-	private void method3() { 
-		System.out.println("Private method invoked"); 
-	} 
-} 
-
-class Demo 
-{ 
 	public static void main(String args[]) throws Exception 
 	{ 
-		// Creating object whose property is to be checked 
-		Test obj = new Test(); 
+		
+		Connection conn = null;
+		String obj = "";
+		  try {
+			  
+	            String dbURL = "jdbc:sqlserver://10.20.14.84:1433";
+	            String user = "sa";
+	            String pass = "cbiz123#";
+	            conn = DriverManager.getConnection(dbURL, user, pass);
 
-		// Creating class object from the object using 
-		// getclass method 
-		Class cls = obj.getClass(); 
-		System.out.println("The name of class is " + 
-							cls.getName()); 
+		  if (conn != null) {
+            DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
+            System.out.println("Driver name: " + dm.getDriverName());
+            System.out.println("Driver version: " + dm.getDriverVersion());
+            System.out.println("Product name: " + dm.getDatabaseProductName());
+            System.out.println("Product version: " + dm.getDatabaseProductVersion());
+            System.out.println("Schema is : "+dm.getSchemas());
+            System.out.println("Username is : "+dm.getUserName());
+            
+            Statement s1 = conn.createStatement();
+            ResultSet rs = s1.executeQuery("SELECT Count(*) FROM [cBizOneexternaldb].[dbo].[NewPlacementDetails]");
+            System.out.println("Data is ........"+rs);
+          //  System.out.println(rs.getString(2));
+      
+           /* while(rs.next())
+    		//	System.out.println("*************"+rs.getInt(1)+ " "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));
+            	*/
+            
+            String[] result = new String[2];
+            
+            
+            if(rs!=null){
+                while (rs.next()){
+                    for(int i = 1; i <result.length ;i++)
+                    {
+                        for(int j = 1; j <result.length;j++)
+                        {
+                            result[j]=rs.getString(i);
+                            obj = result[j];
+							System.out.println("MMMMMMMMMMMMM" + result[j]);
+						}System.out.println(obj);
+                    }
+                }
+            }
+        }
 
-		// Getting the constructor of the class through the 
-		// object of the class 
-		Constructor constructor = cls.getConstructor(); 
-		System.out.println("The name of constructor is " + 
-							constructor.getName()); 
-
-		System.out.println("The public methods of class are : "); 
-
-		// Getting methods of the class through the object 
-		// of the class by using getMethods 
-		Method[] methods = cls.getMethods(); 
-
-		// Printing method names 
-		for (Method method:methods) 
-			System.out.println(method.getName()); 
-
-		// creates object of desired method by providing the 
-		// method name and parameter class as arguments to 
-		// the getDeclaredMethod 
-		Method methodcall1 = cls.getDeclaredMethod("method2", 
-												int.class); 
-
-		// invokes the method at runtime 
-		methodcall1.invoke(obj, 19); 
-
-		// creates object of the desired field by providing 
-		// the name of field as argument to the 
-		// getDeclaredField method 
-		Field field = cls.getDeclaredField("s"); 
-
-		// allows the object to access the field irrespective 
-		// of the access specifier used with the field 
-		field.setAccessible(true); 
-
-		// takes object and the new value to be assigned 
-		// to the field as arguments 
-		field.set(obj, "JAVA"); 
-
-		// Creates object of desired method by providing the 
-		// method name as argument to the getDeclaredMethod 
-		Method methodcall2 = cls.getDeclaredMethod("method1"); 
-
-		// invokes the method at runtime 
-		methodcall2.invoke(obj); 
-
-		// Creates object of the desired method by providing 
-		// the name of method as argument to the 
-		// getDeclaredMethod method 
-		Method methodcall3 = cls.getDeclaredMethod("method3"); 
-
-		// allows the object to access the method irrespective 
-		// of the access specifier used with the method 
-		methodcall3.setAccessible(true); 
-
-		// invokes the method at runtime 
-		methodcall3.invoke(obj); 
-	} 
-} 
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+		  finally {
+	            try {
+	                if (conn != null && !conn.isClosed()) {
+	                    conn.close();
+	                }
+	            } catch (SQLException ex) {
+	                ex.printStackTrace();
+	            }
+		  
+		  }
+	
+		
+	}
+}
