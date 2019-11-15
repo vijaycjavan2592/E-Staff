@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes" thread-count="1" >
-  <test name="Test">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
   
+   <groups>
+         <run>
+            <include name = "End to End" />
+         </run>
+   </groups>
   
-  
-       
-       
-       <classes>
-   <!--     <class name="com.staff.qa.testcases.ConsultantPageTest"> -->
-       <class name="com.staff.qa.testcases.ConsultantPageTest">
-           <methods>
-        <exclude name="verifyCancelButtonFunOfSetStatusPopUp" />
-        <include name="verifyUserNavigateToConsultantPage" />  
-         
-      </methods>  
-       </class>
-  <!--
-   </classes>  
-      
-       
-     
+    <classes>
+      <class name="com.staff.qa.testcases.CompaniesPageTest"/>
       <class name="com.staff.qa.testcases.RequirementPageTest"/>
-      <class name="com.staff.qa.testcases.PlacementPageTest"/>   -->    
-        
+      <class name="com.staff.qa.testcases.HomePageTest"/>
+      <class name="com.staff.qa.testcases.PlacementPageTest"/>
+      <class name="com.staff.qa.testcases.LoginPageTest"/>  
+      <class name="com.staff.qa.testcases.ConsultantPageTest"/>
+      
+      
     </classes>
+    
+    
   </test> <!-- Test -->
 </suite> <!-- Suite -->
-
-

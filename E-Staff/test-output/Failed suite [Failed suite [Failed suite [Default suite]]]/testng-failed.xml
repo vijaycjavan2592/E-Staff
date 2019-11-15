@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Failed suite [Default suite]]]]">
+  <test thread-count="5" name="Default test(failed)(failed)(failed)(failed)">
+    <classes>
+      <class name="com.staff.qa.testcases.PlacementPageTest">
+        <methods>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
+          <include name="verifyRejectPlacementFunctionality_Validations"/>
+          <include name="getResult"/>
+          <include name="verifyUserNavigateToConsultantPage"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
+          <include name="endReport"/>
+          <include name="setUp"/>
+          <include name="setupAfterSuite"/>
+          <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromConsultant"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
+    </classes>
+  </test> <!-- Default test(failed)(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [Failed suite [Default suite]]]] -->

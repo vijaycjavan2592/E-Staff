@@ -71,7 +71,7 @@ public class ConsultantPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 2,groups = {"regression"})
+	@Test(priority = 2,groups = {"regression", "End to End"})
 	public void verifyAddNewConsulatantFormDisplayed() throws InterruptedException {
 		String TestCaseName = "Verify Add New Button is Clickable and it Shows the Add New Consultant Form";
 		test = extent.createTest(TestCaseName);
@@ -106,7 +106,7 @@ public class ConsultantPageTest extends BaseClass {
 		return data;
 	}
 	
-	@Test(dataProvider = "getEStaffData",priority = 3,groups = {"regression"})
+	@Test(dataProvider = "getEStaffData",priority = 3,groups = {"End to End"})
 	public void verifyAddNewConsultant(String Firstname, String Lastname, String emailId, String mobileno,String rate,
 			String UOMRate, String Year, String Month, String date, String Availability_Notice, String Can_Relocate_To,
 			String EmploymentType, String CandidateSource, String VisaStatus, String Country, String State, String City,

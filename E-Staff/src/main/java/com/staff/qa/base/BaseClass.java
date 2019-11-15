@@ -164,7 +164,7 @@ public class BaseClass {
 		
 		System.out.println("Browser close");
 		Thread.sleep(1000);
-	//	driver.close();
+		driver.quit();
 		
 	}
 	

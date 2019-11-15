@@ -5,13 +5,20 @@
     <classes>
       <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
-          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
-          <include name="setupBeforeSuite"/>
-          <include name="setExtentReport"/>
-          <include name="getResult"/>
-          <include name="setUp"/>
+          <include name="verifySubmitForApprovalFunctionality_Validations"/>
+          <include name="verifyUserNavigateToConsultantPage"/>
+          <include name="verifyInitiateOfferFunctionality"/>
           <include name="endReport"/>
+          <include name="setUp"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
+          <include name="verifyRejectPlacementFunctionality_Validations"/>
+          <include name="getResult"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
           <include name="setupAfterSuite"/>
+          <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromConsultant"/>
+          <include name="verifyApprovePlacementFunctionality_Validations"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
     </classes>

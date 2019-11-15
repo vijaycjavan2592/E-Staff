@@ -5,13 +5,38 @@
     <classes>
       <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
+          <include name="verifyAddNoteFunctionality"/>
           <include name="verifySubmitForApprovalFunctionality_Validations"/>
+          <include name="verifyCandidateEndedFilterData"/>
+          <include name="verifyEditConsultantDetailsOfPlacementFormFunctionality"/>
+          <include name="verifyUserNavigateToConsultantPage"/>
+          <include name="VerifyCandidateOnBillingPlacementCountInHeaderAndGrid"/>
+          <include name="verifyInitiateOfferFunctionality"/>
+          <include name="verifySubmitForApprovalFunctionality1"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
           <include name="getResult"/>
-          <include name="setExtentReport"/>
-          <include name="setupBeforeSuite"/>
+          <include name="VerifyOpenPlacementCountInHeaderAndGrid"/>
+          <include name="VerifyBackedOutPlacementCountInHeaderAndGrid"/>
+          <include name="verifyPendingApprovalFilterData"/>
+          <include name="verifyBackedOutFilterData"/>
           <include name="endReport"/>
           <include name="setUp"/>
+          <include name="verifyApprovedFilterData"/>
+          <include name="VerifyCandidateEndedPlacementCountInHeaderAndGrid"/>
+          <include name="verifyOpenFilterData"/>
+          <include name="verifyCancelBtnFunOfAddNote"/>
+          <include name="verifyBackedOutConsultantFunctionality"/>
+          <include name="verifyRejectPlacementFunctionality_Validations"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
           <include name="setupAfterSuite"/>
+          <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality"/>
+          <include name="VerifyApprovedPlacementCountInHeaderAndGrid"/>
+          <include name="verifyDownloadPlacementFormFunctionality"/>
+          <include name="VerifyPendingApprovalPlacementCountInHeaderAndGrid"/>
+          <include name="verifyCandidateOnBillingFilterData"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromConsultant"/>
+          <include name="verifyApprovePlacementFunctionality_Validations"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
     </classes>

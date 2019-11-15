@@ -89,7 +89,7 @@ public class PlacementPage extends BaseClass {
 
 	public void setClickOnPendingApprovedTag_Placement() {	
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(60, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -127,7 +127,7 @@ public class PlacementPage extends BaseClass {
 
 	public void setClickOnCandidateOnBillingTag_Placement() {	
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(60, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -418,8 +418,9 @@ public class PlacementPage extends BaseClass {
 	WebElement clickOnBusinessUnitDropDown;
 
 	public void setSelectBusinessUnit(String BusinessUnit) throws InterruptedException {
-		TestUtil.click(clickOnBusinessUnitDropDown);
 		Thread.sleep(2000);
+		TestUtil.click(clickOnBusinessUnitDropDown);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + BusinessUnit + "')]")).click();
 	}
 	
@@ -1020,6 +1021,32 @@ public class PlacementPage extends BaseClass {
 		TestUtil.click(clickOnOKBtnForApprovePopUp);
 	}
 
+	// Click On Reject button 
+	@FindBy(xpath = "//button[contains(text(),'Reject')]")
+	WebElement clickOnRejectBtn;
+
+	public void setClickOnRejectBtn() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnRejectBtn);
+	}
+	
+	//Enter the Reason For Rejection 
+	@FindBy(xpath = "//input[@name='reasonForRejection']")
+	WebElement enterReasonForRejection ;
+
+	public void setEnterReasonForRejection(String reasonForRejection) throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.sendInput(enterReasonForRejection, reasonForRejection);
+	}
+	
+	// Click On Reject button from Reject pop-up
+	@FindBy(xpath = "//span[contains(text(),'Reject')]")
+	WebElement clickOnRejectBtnFromRejectPopUp;
+
+	public void setClickOnRejectBtnFromRejectPopUp() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnRejectBtnFromRejectPopUp);
+	}
 }
 
 

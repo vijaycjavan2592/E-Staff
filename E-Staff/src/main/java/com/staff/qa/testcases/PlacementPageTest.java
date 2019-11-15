@@ -65,13 +65,14 @@ public class PlacementPageTest extends BaseClass {
 		// Thread.sleep(2000);
 	}
 
-	// @Test(priority = 1)
+	
+	@Test(priority = 1)
 	public void verifyUserNavigateToConsultantPage() throws InterruptedException {
 
 		String TestCaseName = "Verify that user can navigate to the Palcement Page";
 		test = extent.createTest(TestCaseName);
 
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		try {
 			Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("placement_page_url"));
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
@@ -86,7 +87,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 2)
+	@Test(priority = 2,groups = {"regression", "End to End"})
 	public void VerifyAllPlacementCountInHeaderAndGrid() throws InterruptedException {
 
 		String TestCaseName = "Verify the Open Placement count in header and grid section";
@@ -108,7 +109,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 3)
+	@Test(priority = 3)
 	public void VerifyOpenPlacementCountInHeaderAndGrid() throws InterruptedException {
 
 		String TestCaseName = "Verify the Open Placement count in header and grid section";
@@ -131,7 +132,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 4)
+	@Test(priority = 4)
 	public void VerifyPendingApprovalPlacementCountInHeaderAndGrid() throws InterruptedException {
 
 		String TestCaseName = "Verify the Pending Approved Placement count in header and grid section";
@@ -155,7 +156,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 5)
+	@Test(priority = 5)
 	public void VerifyApprovedPlacementCountInHeaderAndGrid() throws InterruptedException {
 
 		String TestCaseName = "Verify the Approved Placement count in header and grid section";
@@ -179,7 +180,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 6)
+	@Test(priority = 6)
 	public void VerifyCandidateOnBillingPlacementCountInHeaderAndGrid() throws InterruptedException {
 
 		String TestCaseName = "Verify the Candidate On Billing Placement count in header and grid section";
@@ -203,7 +204,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 7)
+	@Test(priority = 7)
 	public void VerifyBackedOutPlacementCountInHeaderAndGrid() throws InterruptedException {
 
 		String TestCaseName = "Verify the Backed Out Placement count in header and grid section";
@@ -227,7 +228,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 8)
+	@Test(priority = 8)
 	public void VerifyCandidateEndedPlacementCountInHeaderAndGrid() throws InterruptedException {
 
 		String TestCaseName = "Verify the 'Candidate Ended' Placement count in header and grid section";
@@ -252,7 +253,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 9)
+	@Test(priority = 9)
 	public void verifyPlacedConsultantAppearInPlacement_FromRequirement() throws InterruptedException {
 
 		String testCaseName = "To Check the Gridview of Placements after Placing the Consultant from Requirements Module";
@@ -261,6 +262,7 @@ public class PlacementPageTest extends BaseClass {
 		String searchRequirement = RequirementPageTest.requirementId;
 
 		try {
+			Thread.sleep(10000);
 			// click on Requirement option
 			homePage.clickOnRequirementOption();
 			// Thread.sleep(5000);
@@ -349,10 +351,9 @@ public class PlacementPageTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail();
 		}
-
 	}
 
-	// @Test(priority = 10)
+	@Test(priority = 10)
 	public void verifyPlacedConsultantAppearInPlacement_FromConsultant() throws InterruptedException {
 
 		String testCaseName = "To Check the Gridview of Placements after Placing the Consultant from Consultant Module";
@@ -361,6 +362,7 @@ public class PlacementPageTest extends BaseClass {
 		// String searchRequirement = RequirementPageTest.requirementId;
 
 		try {
+			Thread.sleep(10000);
 			// click on Consultant option
 			homePage.clickOnConsultantOption();
 			Thread.sleep(5000);
@@ -450,10 +452,9 @@ public class PlacementPageTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail();
 		}
-
 	}
 
-	// @Test(priority = 11)
+	@Test(priority = 11)
 	public void verifyBackedOutConsultantFunctionality() throws InterruptedException {
 		String TestCaseName = "To Check the Gridview of Placements after Backed Out the Consultant";
 		test = extent.createTest(TestCaseName);
@@ -517,7 +518,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 12)
+	@Test(priority = 12)
 	public void verifyBackedOutFilterData() throws InterruptedException {
 		String TestCaseName = "To Check the Filter by Tags by Clicking on Backed Out";
 		test = extent.createTest(TestCaseName);
@@ -550,7 +551,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 13)
+	@Test(priority = 13)
 	public void verifyOpenFilterData() throws InterruptedException {
 		String TestCaseName = "To Check the Filter by Tags by Clicking on Open";
 		test = extent.createTest(TestCaseName);
@@ -583,7 +584,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 14)
+	@Test(priority = 14)
 	public void verifyPendingApprovalFilterData() throws InterruptedException {
 		String TestCaseName = "To Check the Filter by Tags by Clicking on Pending Approval";
 		test = extent.createTest(TestCaseName);
@@ -616,7 +617,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 15)
+	@Test(priority = 15)
 	public void verifyApprovedFilterData() throws InterruptedException {
 		String TestCaseName = "To Check the Filter by Tags by Clicking on Approved";
 		test = extent.createTest(TestCaseName);
@@ -649,7 +650,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 16)
+    @Test(priority = 16)
 	public void verifyCandidateOnBillingFilterData() throws InterruptedException {
 		String TestCaseName = "To Check the Filter by Tags by Clicking on Candidate On Billing";
 		test = extent.createTest(TestCaseName);
@@ -682,7 +683,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 17)
+	@Test(priority = 17)
 	public void verifyCandidateEndedFilterData() throws InterruptedException {
 		String TestCaseName = "To Check the Filter by Tags by Clicking on Candidate Ended";
 		test = extent.createTest(TestCaseName);
@@ -715,7 +716,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 18)
+	@Test(priority = 18)
 	public void verifyAddNoteFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify the Add Note functionality";
 		test = extent.createTest(TestCaseName);
@@ -752,7 +753,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 19)
+	@Test(priority = 19)
 	public void verifyCancelBtnFunOfAddNote() throws InterruptedException {
 		String TestCaseName = "Verify the Cancel button functionality of Add Note";
 		test = extent.createTest(TestCaseName);
@@ -785,7 +786,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 20)
+	@Test(priority = 20)
 	public void verifyDownloadPlacementFormFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can download the Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -810,9 +811,7 @@ public class PlacementPageTest extends BaseClass {
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("20",
 					new Object[] { 20d, TestCaseName, "User should be able to download the Placement Form.", "Pass" });
-		}
-
-		catch (Exception e) {
+		} catch (Exception e) {
 			testresultdata.put("20",
 					new Object[] { 20d, TestCaseName, "User should be able to download the Placement Form.", "Fail" });
 			e.printStackTrace();
@@ -820,7 +819,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test//(priority = 21)
+	@Test(priority = 21)
 	public void verifyEditClientAssignmentFieldsOfPlacementFormFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can edit the Client & Assignment fields of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -879,28 +878,37 @@ public class PlacementPageTest extends BaseClass {
 
 			// Select Billing Frequency from dropdown
 			placementPage.setSelectBillingFrequency("MONTHLY");
-
+	
 			String startDate = driver.findElement(By.xpath("//input[@name='estimatedStartDate']"))
+					.getAttribute("placeholder");
+
+			System.out.println("Start Date is : " + startDate);
+			
+			String enteredstartdate = driver.findElement(By.xpath("//input[@name='estimatedStartDate']"))
 					.getAttribute("ng-reflect-model");
 
-			if (startDate.isEmpty()) {
+			if (startDate.equals("--Select Estimated StartDate--")) {
 				// Select Estimated Start Date
 				placementPage.clickOnEstimatedStartDateBox();
-				consultantPage.selectAvailabilityDate("2019");
+				consultantPage.selectAvailabilityDate("2020");
 				consultantPage.selectMonth("Jan");
-				consultantPage.setSelectDate("21");
+				consultantPage.setSelectDate("22");
 			}
 
 			String endDate = driver.findElement(By.xpath("//input[@name='estimatedEndDate']"))
+					.getAttribute("placeholder");
+
+			String enteredenddate = driver.findElement(By.xpath("//input[@name='estimatedEndDate']"))
 					.getAttribute("ng-reflect-model");
 
-			if (endDate.isEmpty()) {
+			if (endDate.equalsIgnoreCase("--Select Estimated EndDate--")) {
 				// Select Estimated End Date
 				placementPage.clickOnEstimatedEndDateBox();
 				consultantPage.selectAvailabilityDate("2020");
 				consultantPage.selectMonth("Jan");
 				consultantPage.setSelectDate("22");
 			}
+			
 			// Enter Billing Contact Name
 			placementPage.setEnterBillingContactName("Xoriant Solutions");
 
@@ -931,7 +939,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 22)
+	@Test(priority = 22)
 	public void verifyEditConsultantDetailsOfPlacementFormFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can edit the  Consultant Details fields of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -1021,7 +1029,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 23)
+	@Test(priority = 23)
 	public void verifyEditGrossMarginOfPlacementFormFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can edit the Gross Margin fields of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -1094,7 +1102,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 24)
+	@Test(priority = 24)
 	public void verifyCancelButtonFunGrossMarginOfPlacementForm() throws InterruptedException {
 		String TestCaseName = "Verify cancel button functionality of edit the Gross Margin fields of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -1134,7 +1142,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 25)
+	@Test(priority = 25)
 	public void verifyCancelButtonFunConsultantDetailsOfPlacementForm() throws InterruptedException {
 		String TestCaseName = "Verify cancel button functionality of edit the Consultant Details of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -1174,7 +1182,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 26)
+	@Test(priority = 26)
 	public void verifyCancelButtonFunClientAssignmentOfPlacementForm() throws InterruptedException {
 		String TestCaseName = "Verify cancel button functionality of edit the Client Assignment of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -1212,9 +1220,9 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 27, invocationCount = 1)
+	@Test(priority = 27, invocationCount = 1)
 	public void verifyCompaniesSearchTextBoxFunOfPlacementForm() throws InterruptedException {
-		String TestCaseName = "Verify searched company name can appear based on entered text in search textbox of Companies tag of Placement Form";
+		String TestCaseName = "Verify that company name can appear based on entered company name in textbox of Companies filter tag.";
 		test = extent.createTest(TestCaseName);
 
 		try {
@@ -1240,20 +1248,20 @@ public class PlacementPageTest extends BaseClass {
 
 					test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 					testresultdata.put("27", new Object[] { 27d, TestCaseName,
-							"Searched company name should be appear based on entered text in search textbox of Companies tag of Placement Form",
+							"Company name should be appear based on entered company name in textbox of Companies filter tag.",
 							"Pass" });
 				}
 			}
 		} catch (Exception e) {
 			testresultdata.put("27", new Object[] { 27d, TestCaseName,
-					"Searched company name should be appear based on entered text in search textbox of Companies tag of Placement Form",
+					"Company name should be appear based on entered company name in textbox of Companies filter tag.",
 					"Fail" });
 			e.printStackTrace();
 			Assert.fail();
 		}
 	}
 
-	// @Test(priority = 28, invocationCount = 1)
+	@Test(priority = 28, invocationCount = 1)
 	public void verifyCompaniesFilterFunOfPlacementForm() throws InterruptedException {
 		String TestCaseName = "Verify that user can select the company from list of companies of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -1297,7 +1305,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 29, invocationCount = 1)
+	@Test(priority = 29, invocationCount = 1)
 	public void verifyCompaniesFilterFunOfPlacementForm1() throws InterruptedException {
 		String TestCaseName = "Verify that searched company data appeard in grid with database ";
 		test = extent.createTest(TestCaseName);
@@ -1344,9 +1352,9 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 30, invocationCount = 1)
+	@Test(priority = 30, invocationCount = 1)
 	public void verifyAccountManagerSearchTextBoxFunOfPlacementForm() throws InterruptedException {
-		String TestCaseName = "Verify searched Account Manager name can appear based on entered text in search textbox of Account Manager tag of Placement Form";
+		String TestCaseName = "Verify that Account Manager name can appear based on entered Account Manager in textbox of Account Manager filter tag.";
 		test = extent.createTest(TestCaseName);
 
 		try {
@@ -1372,20 +1380,20 @@ public class PlacementPageTest extends BaseClass {
 
 					test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 					testresultdata.put("30", new Object[] { 30d, TestCaseName,
-							"Searched Account Manager should be appear based on entered text in search textbox of Account Manager tag of Placement Form",
+							"Account Manager name should be appear based on entered Account Manager in textbox of Account Manager filter tag.",
 							"Pass" });
 				}
 			}
 		} catch (Exception e) {
 			testresultdata.put("30", new Object[] { 30d, TestCaseName,
-					"Searched Account Manager name should be appear based on entered text in search textbox of Account Manager tag of Placement Form",
+					"Account Manager name should be appear based on entered Account Manager in textbox of Account Manager filter tag.",
 					"Fail" });
 			e.printStackTrace();
 			Assert.fail();
 		}
 	}
 
-	// @Test(priority = 31, invocationCount = 1)
+	@Test(priority = 31, invocationCount = 1)
 	public void verifyAccountMangerFilterFunOfPlacementForm() throws InterruptedException {
 		String TestCaseName = "Verify that user can select the account manger from list of account manager of Placement Form";
 		test = extent.createTest(TestCaseName);
@@ -1431,7 +1439,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 32, invocationCount = 1)
+	@Test(priority = 32, invocationCount = 1)
 	public void verifyAccountManagerFilterFunOfPlacementForm1() throws InterruptedException {
 		String TestCaseName = "Verify that searched Account Manager data appeard in grid with database ";
 		test = extent.createTest(TestCaseName);
@@ -1477,7 +1485,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 31, invocationCount = 1)
+//	@Test(priority = 31, invocationCount = 1)
 	public void verifyPlacementDateFilterFunOfPlacementForm() throws InterruptedException {
 		String TestCaseName = "Verify that searched Placement Date data appeard in grid with database";
 		test = extent.createTest(TestCaseName);
@@ -1489,11 +1497,19 @@ public class PlacementPageTest extends BaseClass {
 					driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]"))));
 			Thread.sleep(3000);
 
+			String fromYear = "2019";
+			String fromMonth = "Sep";
+			String fromDate = "1";
+			
+			String toYear = "2019";
+			String toMonth = "Nov";
+			String toDate = "14";
+			
 			// Select From Date
 			placementPage.clickOnFromDateBox();
-			consultantPage.selectAvailabilityDate("2019");
-			consultantPage.selectMonth("May");
-			consultantPage.setSelectDate("20");
+			consultantPage.selectAvailabilityDate(fromYear);
+			consultantPage.selectMonth(fromMonth);
+			consultantPage.setSelectDate(fromDate);
 
 			// Select To date
 			placementPage.clickOnToDateBox();
@@ -1507,8 +1523,12 @@ public class PlacementPageTest extends BaseClass {
 			String expecredData = placementPage.setTotalPlacementLabel();
 
 			String DBData = TestUtil
-					.DBConnection_Count("select Count(*) from [cBizOneexternaldb].[dbo].[NewPlacementDetails] "
-							+ "where PlacementDate between CAST('20 May 2019' as datetime) and  CAST('11/22/2019' as datetime)");
+					.DBConnection_Count("SELECT *, CAST(PLACEMENTDATE AS DATE) FROM [FN_ATS_RETREIVE_PLACEMENTS]('', 2) \r\n" + 
+							"WHERE 1 = 1  AND CURRENTSTATE = 'Approved' AND PLACEMENTDATE BETWEEN CONVERT(DATETIME, '01-9-2019', 105) \r\n" + 
+							"AND CONVERT(DATETIME, '14-11-2019', 105)  UNION SELECT * ,CAST(PLACEMENTDATE AS DATE) \r\n" + 
+							"FROM [FN_ATS_RETREIVE_BACKEDOUT_PLACEMENTS]('', 2) WHERE 1 = 1  \r\n" + 
+							"AND CURRENTSTATE = 'Approved' AND PLACEMENTDATE BETWEEN CONVERT(DATETIME, '01-9-2019', 105) \r\n" + 
+							"AND CONVERT(DATETIME, '14-11-2019', 105)  ORDER BY CAST(PLACEMENTDATE AS DATE) DESC");
 
 			Assert.assertEquals(DBData, expecredData);
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
@@ -1522,7 +1542,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	// @Test(priority = 1, invocationCount = 1)
+	@Test(priority = 33, invocationCount = 1)
 	public void verifyInitiateOfferFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can initiate the offer";
 		test = extent.createTest(TestCaseName);
@@ -1714,7 +1734,6 @@ public class PlacementPageTest extends BaseClass {
 									"Offer initiated successfully for consultant : " + consutlatName + "");
 							break;
 						}
-
 					}
 				} catch (NoSuchElementException n) {
 
@@ -1741,7 +1760,6 @@ public class PlacementPageTest extends BaseClass {
 								"Offer initiated successfully for consultant : " + consutlatName + "");
 						break;
 					}
-
 				}
 				test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 				testresultdata.put("32",
@@ -1753,12 +1771,11 @@ public class PlacementPageTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail();
 		}
-
 	}
 
 	// __________________________________________________________________
 
-	// @Test(priority = 1, invocationCount = 1)
+	// @Test(priority = 1, invocationCount = 1)  Not Use
 	public void verifyInitiateOfferFunctionality1() throws InterruptedException {
 		String TestCaseName = "Verify that user can initiate the offer";
 		test = extent.createTest(TestCaseName);
@@ -1923,11 +1940,10 @@ public class PlacementPageTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail();
 		}
-
 	}
 
-	// ________________________________Submit
-	// @Test(priority = 1, invocationCount = 1)
+	// ________________________________initiate the offer
+	@Test(priority = 34, invocationCount = 1)
 	public void verifySubmitForApprovalFunctionality1() throws InterruptedException {
 		String TestCaseName = "Verify that user can initiate the offer";
 		test = extent.createTest(TestCaseName);
@@ -2091,10 +2107,9 @@ public class PlacementPageTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail();
 		}
-
 	}
 
-	// @Test(priority = 1, invocationCount = 1)
+//	@Test(priority = 35, invocationCount = 1) Not Use
 	public void verifySubmitForApprovalFunctionality_Validations() throws InterruptedException {
 		String TestCaseName = "Verify that user can Submit For Approval ";
 		test = extent.createTest(TestCaseName);
@@ -2292,7 +2307,7 @@ public class PlacementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 1, invocationCount = 1)
+	@Test(priority = 36, invocationCount = 1)
 	public void verifyApprovePlacementFunctionality_Validations() throws InterruptedException {
 		String TestCaseName = "Verify that user can approve the pending placement ";
 		test = extent.createTest(TestCaseName);
@@ -2300,48 +2315,107 @@ public class PlacementPageTest extends BaseClass {
 		String consutlatName = null;
 
 		try {
-		placementPage.setClickOnPendingApprovedTag_Placement();
+			placementPage.setClickOnPendingApprovedTag_Placement();
 
-		Thread.sleep(2000);
-		try {
-			consultantPage.setClickOnFirstRowConsultant();
+			Thread.sleep(2000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			// Get the consultant Name
+			consutlatName = placementPage.getConsultantName();
+
+			// Click on Edit button
+			placementPage.setClickOnEditButton();
+			// Get the consultant Name
+			consutlatName = placementPage.getConsultantName();
+			// Select Business Unit from dropdown
+			placementPage.setSelectBusinessUnit("55 - House");
+			// Select Recruiter from dropdown
+			placementPage.setSelectRecruiter("Vijay Chavan");
+			// Select Sales Person from dropdown
+			placementPage.setSelectSalesPerson("Vijay Chavan");
+			// Enter Manager Email
+			placementPage.setEnterManagerEmail("vijay.chavan@xoriant.com");
+			// click on Save Button
+			placementPage.setClickOnSaveButton();
+			driver.navigate().refresh();
+
+			placementPage.setClickOnApproveBtn();
+			placementPage.setClickOnOKBtnForApprovePopUp();
+
+			Assert.assertEquals(placementPage.setPlacementConfirmationMessage(),
+					"Placement approved successfully for consultant : " + consutlatName + "");
+
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("32",
+					new Object[] { 32d, TestCaseName, "User should be able to approve the pending placement", "Pass" });
+
 		} catch (Exception e) {
-			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
-			System.out.println(noData.getText());
-		}
-		// Get the consultant Name
-		consutlatName = placementPage.getConsultantName();
-
-		// Click on Edit button
-		placementPage.setClickOnEditButton();
-		// Get the consultant Name
-		consutlatName = placementPage.getConsultantName();
-		// Select Business Unit from dropdown
-		placementPage.setSelectBusinessUnit("55 - House");
-		// Select Recruiter from dropdown
-		placementPage.setSelectRecruiter("Vijay Chavan");
-		// Select Sales Person from dropdown
-		placementPage.setSelectSalesPerson("Vijay Chavan");
-		// Enter Manager Email
-		placementPage.setEnterManagerEmail("vijay.chavan@xoriant.com");
-		// click on Save Button
-		placementPage.setClickOnSaveButton();
-		driver.navigate().refresh();
-
-		placementPage.setClickOnApproveBtn();
-		placementPage.setClickOnOKBtnForApprovePopUp();
-
-		Assert.assertEquals(placementPage.setPlacementConfirmationMessage(),
-				"Placement approved successfully for consultant : "+consutlatName+"");
-		
-		test.log(Status.PASS,TestCaseName+" is sucessfully pass");testresultdata.put("32",new Object[]{32d,TestCaseName,"User should be able to initiate the offer","Pass"});
-		
-		}catch(Exception e)	{
-			testresultdata.put("32", new Object[] { 32d, TestCaseName,"User should be able to initiate the offer", "Fail" });
+			testresultdata.put("32",
+					new Object[] { 32d, TestCaseName, "User should be able to approve the pending placement", "Fail" });
 			e.printStackTrace();
 			Assert.fail();
-			}
 		}
-	
+	}
 
+	@Test(priority = 37, invocationCount = 1)
+	public void verifyRejectPlacementFunctionality_Validations() throws InterruptedException {
+		String TestCaseName = "Verify that user can Reject the pending placement ";
+		test = extent.createTest(TestCaseName);
+
+		String consutlatName = null;
+
+		try {
+			placementPage.setClickOnPendingApprovedTag_Placement();
+
+			Thread.sleep(2000);
+			try {
+				consultantPage.setClickOnFirstRowConsultant();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}
+			// Get the consultant Name
+			consutlatName = placementPage.getConsultantName();
+
+			// Click on Edit button
+			placementPage.setClickOnEditButton();
+			// Get the consultant Name
+			consutlatName = placementPage.getConsultantName();
+			// Select Business Unit from dropdown
+			placementPage.setSelectBusinessUnit("55 - House");
+			// Select Recruiter from dropdown
+			placementPage.setSelectRecruiter("Vijay Chavan");
+			// Select Sales Person from dropdown
+			placementPage.setSelectSalesPerson("Vijay Chavan");
+			// Enter Manager Email
+			placementPage.setEnterManagerEmail("vijay.chavan@xoriant.com");
+			// click on Save Button
+			placementPage.setClickOnSaveButton();
+			driver.navigate().refresh();
+
+			// Click on Reject button
+			placementPage.setClickOnRejectBtn();
+			// Enter the Reason For Rejection
+			placementPage.setEnterReasonForRejection("Test");
+			// Click On Reject button from Reject pop-up
+			placementPage.setClickOnRejectBtnFromRejectPopUp();
+
+			Assert.assertEquals(placementPage.setPlacementConfirmationMessage(),
+					"Placement rejected successfully for consultant : "+consutlatName+"");
+			              
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("32",
+					new Object[] { 32d, TestCaseName, "User should be able to Reject the pending placement", "Pass" });
+
+		} catch (Exception e) {
+			testresultdata.put("32",
+					new Object[] { 32d, TestCaseName, "User should be able to Reject the pending placement", "Fail" });
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
 }
