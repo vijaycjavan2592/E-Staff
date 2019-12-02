@@ -4,12 +4,14 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -70,6 +72,21 @@ public class ConsultantPage extends BaseClass {
 			;
 		} else {
 			System.out.println("Add Manually option is not available");
+		}
+	}
+	
+	// Click on Upload Resume option
+	@FindBy(xpath = "//label[contains(text(),'Upload Resume(s)')]")
+	WebElement clickOnUploadResume;
+
+	public void setClickOnUploadResume() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(clickOnUploadResume));
+		if (clickOnUploadResume.isEnabled()) {
+			clickOnUploadResume.click();
+			;
+		} else {
+			System.out.println("Upload Resume option is not available");
 		}
 	}
 
@@ -626,9 +643,19 @@ public class ConsultantPage extends BaseClass {
 	WebElement totalConsultantcount;
 	
 	public String setTotalConsultantcountLabel() {
-		System.out.println("Count in grid is : "+totalConsultantcount.getText());
-		return totalConsultantcount.getText();
-	}
+		
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(90, TimeUnit.SECONDS)
+				.pollingEvery(3, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class);
+		
+	//wait.until(ExpectedConditions.visibilityOf(totalConsultantcount));
+	
+	TestUtil.getText(totalConsultantcount, 30);
+	
+	System.out.println("Count in grid is : "+totalConsultantcount.getText());
+	return totalConsultantcount.getText();
+	}		
 	
 	//Search Textbox
 	@FindBy(xpath = "//input[@name='searchValue']")
@@ -825,10 +852,7 @@ public class ConsultantPage extends BaseClass {
 
 				return selectRequirement;
 			}
-		});	
-		if(!clickOnLinkRequirementButton.isDisplayed()) {
-			TestUtil.click(selectRequirement);
-		}
+		});			
 	}
 	
 	//Select the Requirement from 2nd row
@@ -857,7 +881,7 @@ public class ConsultantPage extends BaseClass {
 	WebElement clickOnLinkRequirementButton;
 	
 	public void setClickOnLinkRequirementButton() throws InterruptedException {		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Actions ac = new Actions(driver);
 		Thread.sleep(1000);
 		ac.moveToElement(clickOnLinkRequirementButton).click().build().perform();
@@ -1426,4 +1450,191 @@ public class ConsultantPage extends BaseClass {
 	public String getTextOfJobDescriptionpopuptitle() {
 		return jobDescriptionpopuptitle.getText();
 	}
+	
+	public void setUploadConsultantResume(String path1) throws InterruptedException, AWTException {
+		
+		 // Specify the file location with extension
+		 StringSelection sel1 = new StringSelection(path1);
+		 
+		 
+		 // Copy to clipboard
+		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sel1,null);
+		
+		 System.out.println("selection is : " +sel1);
+		
+		// Create object of Robot class
+		 Robot robot = new Robot();
+		 Thread.sleep(1000);
+		      
+		  // Press Enter
+		 robot.keyPress(KeyEvent.VK_ENTER);
+		 
+		// Release Enter
+		 robot.keyRelease(KeyEvent.VK_ENTER);
+		 
+		  // Press CTRL+V
+		 robot.keyPress(KeyEvent.VK_CONTROL);
+		 robot.keyPress(KeyEvent.VK_V);
+		 
+		// Release CTRL+V
+		 robot.keyRelease(KeyEvent.VK_CONTROL);
+		 robot.keyRelease(KeyEvent.VK_V);
+		        
+		 //Press Enter 		
+		 robot.keyPress(KeyEvent.VK_ENTER);
+		 robot.keyRelease(KeyEvent.VK_ENTER);
+		 	
+		 Thread.sleep(1000);
+		//----------------------------------------- 
+		 
+		 Dimension i = driver.manage().window().getSize(); 
+			
+			System.out.println("Size is : "+i.getWidth()+" "+i.getHeight());
+			
+			int x = (i.getWidth()/4);
+			int y = (i.getHeight()/3);
+			
+			robot.mouseMove(x,y);
+			
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+			
+			Thread.sleep(2000);
+		 
+		/*
+		 
+		 robot.keyPress(KeyEvent.VK_TAB);
+		 robot.keyRelease(KeyEvent.VK_TAB);
+		 
+		 robot.keyPress(KeyEvent.VK_TAB);
+		 robot.keyRelease(KeyEvent.VK_TAB);
+		 
+		 robot.keyPress(KeyEvent.VK_TAB);
+		 robot.keyRelease(KeyEvent.VK_TAB);
+		 
+		 robot.keyPress(KeyEvent.VK_TAB);
+		 robot.keyRelease(KeyEvent.VK_TAB);
+		 
+		 robot.keyPress(KeyEvent.VK_TAB);
+		 robot.keyRelease(KeyEvent.VK_TAB);
+		 
+		 robot.keyPress(KeyEvent.VK_TAB);
+		 robot.keyRelease(KeyEvent.VK_TAB);
+		 
+		 */
+		
+		 robot.keyPress(KeyEvent.VK_CONTROL);
+		 robot.keyPress(KeyEvent.VK_A);
+		 		
+		 robot.keyRelease(KeyEvent.VK_CONTROL);
+		 robot.keyRelease(KeyEvent.VK_A);
+		 
+		 Thread.sleep(2000);
+		 
+		 robot.keyPress(KeyEvent.VK_ENTER);
+		 robot.keyRelease(KeyEvent.VK_ENTER);
+		 
+		 
+		 System.out.println("Enter Releases");
+		 
+		/*driver.switchTo()
+	       .activeElement()
+	       .sendKeys("C:\\Users\\chavan_v\\code3.txt");
+		System.out.println("Attribute is : "+uploadResume.getAttribute("type"));
+		System.out.println("File Uploaded sucessfully");*/
+	}
+
+	//Click on AI Sreach radio button
+	@FindBy(xpath = "//label[contains(text(),'AI')]")
+	WebElement clickOnAIRadioButton;
+	
+	public void setClickOnAIRadioButton() throws InterruptedException {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class);
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+
+				TestUtil.click(clickOnAIRadioButton);
+
+				return clickOnAIRadioButton;
+			}
+		});
+	}
+	
+	//Click on Apply button
+	@FindBy(xpath = "//a[contains(text(),'Apply')]")
+	WebElement clickOnApplyButton;
+	
+	public void setClickOnApplyButton() throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(clickOnApplyButton);
+	}
+
+	//Consultant count_Headng- Label
+	@FindBy(xpath = "//div[@class='content-heading col-md-4']//span")
+	WebElement consultantCount_Heading;
+	
+	public String setConsultantCount_Heading() {
+		
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(90, TimeUnit.SECONDS)
+				.pollingEvery(3, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class);
+		
+	//wait.until(ExpectedConditions.visibilityOf(totalConsultantcount));
+	
+	TestUtil.getText(consultantCount_Heading, 30);
+	
+	System.out.println("Count in grid is : "+consultantCount_Heading.getText());
+	return consultantCount_Heading.getText();
+	}	
+	
+	// Rank column
+	@FindBy(xpath = "//div[contains(text(),'Rank')]")
+	WebElement checkRankColumnIsDisplayed;
+
+	public void setCheckRankColumnIsDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(50, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS).ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class);
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+
+				checkRankColumnIsDisplayed.isDisplayed();
+
+				return checkRankColumnIsDisplayed;
+			}
+		});
+	}
+
+	// Relevance column
+	@FindBy(xpath = "//div[contains(text(),'Rank')]")
+	WebElement clickOnRelevanceColumnForSorting;
+
+	public void setClickOnRelevanceColumnForSorting() throws InterruptedException {
+		Thread.sleep(2000);
+
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(50, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class)
+				.ignoring(StaleElementReferenceException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+
+				clickOnRelevanceColumnForSorting.click();
+
+				return clickOnRelevanceColumnForSorting;
+			}
+		});
+	}
+
+	
 }

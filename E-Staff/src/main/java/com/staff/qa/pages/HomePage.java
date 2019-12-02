@@ -1,6 +1,13 @@
 package com.staff.qa.pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
@@ -56,25 +63,78 @@ public class HomePage extends BaseClass{
 	}
 	
 	
-	public ConsultantPage clickOnConsultantOption() throws InterruptedException {
+	public ConsultantPage clickOnConsultantOption() throws InterruptedException, AWTException {
+		Thread.sleep(2000);		
 		clickOnMenuButton.click();
 		Thread.sleep(1000);
-		clickConsultantOption.click();
+	/*	System.out.println("Text is : "+clickConsultantOption.getText());
+		System.out.println("Size is : "+clickConsultantOption.getSize().getWidth());
+		System.out.println("Size is : "+clickConsultantOption.getSize().getHeight());*/
+		
+		Robot robot = new Robot();
+		int x = 210;
+		int y = 240;
+		
+		
+	/*	int z= clickConsultantOption.getLocation().getX();
+		int z1= clickConsultantOption.getLocation().getY();
+		System.out.println("...."+z+"...."+z1);*/
+		
+		robot.mouseMove(x,y);
+		
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		
+		 
+		//clickConsultantOption.click();
+		
 		return new ConsultantPage();		
 	}
 	
-	public RequirementPage clickOnRequirementOption() throws InterruptedException {
+	public RequirementPage clickOnRequirementOption() throws InterruptedException, AWTException {
+		WebElement el = driver.findElement(By.xpath("//span[@class='MM-modal-close']"));
+		if(el.isDisplayed()) {
+			el.click();			
+		}
 		clickOnMenuButton.click();
 		Thread.sleep(1000);
-		clickRequirementOption.click();
+		
+		Robot robot = new Robot();
+		int x = 100;
+		int y = 360;
+		
+		
+	/*	int z= clickConsultantOption.getLocation().getX();
+		int z1= clickConsultantOption.getLocation().getY();
+		System.out.println("...."+z+"...."+z1);*/
+		
+		robot.mouseMove(x,y);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		//clickRequirementOption.click();
 		return new RequirementPage();		
 	}
 	
 	
-	public PlacementPage clickOnPlacementOption() throws InterruptedException {
+	public PlacementPage clickOnPlacementOption() throws InterruptedException, AWTException {
 		clickOnMenuButton.click();
 		Thread.sleep(1000);
-		clickPlacementOption.click();
+		
+		Robot robot = new Robot();
+		int x = 310;
+		int y = 350;
+		
+		
+	/*	int z= clickConsultantOption.getLocation().getX();
+		int z1= clickConsultantOption.getLocation().getY();
+		System.out.println("...."+z+"...."+z1);*/
+		
+		robot.mouseMove(x,y);
+		
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		
+		//clickPlacementOption.click();
 		return new PlacementPage();		
 	}
 	

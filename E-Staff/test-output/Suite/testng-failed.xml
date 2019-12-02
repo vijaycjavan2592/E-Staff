@@ -2,27 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
-    <groups>
-      <run>
-        <include name="End to End"/>
-      </run>
-    </groups>
     <classes>
       <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
+          <include name="verifyUploadConsultant"/>
+          <include name="getResult"/>
           <include name="setUp"/>
           <include name="setExtentReport"/>
           <include name="setupBeforeSuite"/>
-          <include name="verifyAddNewConsultant" invocation-numbers="0"/>
+          <include name="endReport"/>
+          <include name="setupAfterSuite"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
-      <class name="com.staff.qa.testcases.PlacementPageTest">
-        <methods>
-          <include name="VerifyAllPlacementCountInHeaderAndGrid"/>
-          <include name="setExtentReport"/>
-          <include name="setupBeforeSuite"/>
-        </methods>
-      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

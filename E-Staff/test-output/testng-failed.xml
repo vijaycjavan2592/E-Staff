@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
-    <groups>
-      <run>
-        <include name="End to End"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.ConsultantPageTest">
+      <class name="com.staff.qa.testcases.RequirementPageTest">
         <methods>
+          <include name="getResult"/>
+          <include name="verifyShortlistConsultantFunctionality"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
+          <include name="endReport"/>
           <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="setupBeforeSuite"/>
-          <include name="verifyAddNewConsultant" invocation-numbers="0"/>
+          <include name="setupAfterSuite"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
-      <class name="com.staff.qa.testcases.PlacementPageTest">
-        <methods>
-          <include name="VerifyAllPlacementCountInHeaderAndGrid"/>
-          <include name="setExtentReport"/>
-          <include name="setupBeforeSuite"/>
-        </methods>
-      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

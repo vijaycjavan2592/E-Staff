@@ -3,19 +3,16 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
   
-   <groups>
-         <run>
-            <include name = "End to End" />
-         </run>
-   </groups>
   
     <classes>
-      <class name="com.staff.qa.testcases.CompaniesPageTest"/>
+ <!-- <class name="com.staff.qa.testcases.CompaniesPageTest"/>
       <class name="com.staff.qa.testcases.RequirementPageTest"/>
       <class name="com.staff.qa.testcases.HomePageTest"/>
-      <class name="com.staff.qa.testcases.PlacementPageTest"/>
-      <class name="com.staff.qa.testcases.LoginPageTest"/>  
+      <class name="com.staff.qa.testcases.PlacementPageTest"/>  
       <class name="com.staff.qa.testcases.ConsultantPageTest"/>
+      <class name="com.staff.qa.testcases.LoginPageTest"/>  -->
+      <class name="com.staff.qa.testcases.RequirementPageTest"/>
+      
       
       
     </classes>

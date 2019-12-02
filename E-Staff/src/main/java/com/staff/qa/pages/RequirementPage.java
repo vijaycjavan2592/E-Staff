@@ -19,6 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
@@ -160,7 +161,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String RecruiterOption = selectRecruiter.getText();
 		System.out.println("++++++++++++++++"+RecruiterOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+Recruiter+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+Recruiter+"')]")).click();		
 	}	
 	
 	//Enter No Of Openings
@@ -184,7 +185,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String ContactOption = selectContact.getText();
 		System.out.println("++++++++++++++++"+ContactOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+Contact+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+Contact+"')]")).click();		
 	}	
 	
 	//Select Account Manager
@@ -199,7 +200,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String AccountManagerOption = selectAccountManager.getText();
 		System.out.println("++++++++++++++++"+AccountManagerOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+AccountManager+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+AccountManager+"')]")).click();		
 	}	
 	
 	//Enter Job Title
@@ -223,7 +224,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String JobTypeOption = selectJobType.getText();
 		System.out.println("++++++++++++++++"+JobTypeOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+JobType+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+JobType+"')]")).click();		
 	}	
 	
 	//Select Business Unit
@@ -238,7 +239,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String BusinessUnitOption = selectBusinessUnit.getText();
 		System.out.println("++++++++++++++++"+BusinessUnitOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+BusinessUnit+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+BusinessUnit+"')]")).click();		
 	}	
 	
 	//Select Visa Status
@@ -253,7 +254,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String VisaStatusOption = selectVisaStatus.getText();
 		System.out.println("++++++++++++++++"+VisaStatusOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+VisaStatus+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+VisaStatus+"')]")).click();		
 	}	
 	
 	//Select Priority 
@@ -268,7 +269,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String PriorityOption = selectPriority.getText();
 		System.out.println("++++++++++++++++"+PriorityOption);
-		driver.findElement(By.xpath("//div[contains(text(),'"+Priority+"')]")).click();		
+		driver.findElement(By.xpath("//div[@class='ng-star-inserted'][contains(text(),'"+Priority+"')]")).click();		
 	}	
 	
 	//Select Communication Skills  
@@ -283,7 +284,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String CommunicationSkillsOption = selectCommunicationSkills.getText();
 		System.out.println("++++++++++++++++"+CommunicationSkillsOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+CommunicationSkills+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+CommunicationSkills+"')]")).click();		
 	}	
 	
 	// Select Bill Rate UOM 
@@ -298,7 +299,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String BillRateUOMOption = selectBillRateUOM.getText();
 		System.out.println("++++++++++++++++" + BillRateUOMOption);
-		driver.findElement(By.xpath("//span[contains(text(),'" + BillRateUOM + "')]")).click();
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + BillRateUOM + "')]")).click();
 	}
 
 	// Select Pay Rate UOM
@@ -313,7 +314,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String PayRateUOMOption = selectPayRateUOM.getText();
 		System.out.println("++++++++++++++++" + PayRateUOMOption);
-		driver.findElement(By.xpath("//span[contains(text(),'" + PayRateUOM + "')]")).click();
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'" + PayRateUOM + "')]")).click();
 	}
 	
 	//Country Dropdown
@@ -328,7 +329,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String CountryOption = selectCountry.getText();
 		System.out.println("++++++++++++++++"+CountryOption);
-		driver.findElement(By.xpath("//span[text()='"+Country+"']")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][text()='"+Country+"']")).click();		
 	}	
 	
 	//State Dropdown
@@ -343,7 +344,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String StateOption = selectState.getText();
 		System.out.println("++++++++++++++++"+StateOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+State+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+State+"')]")).click();		
 	}		
 	
 	//City Dropdown
@@ -358,7 +359,7 @@ public class RequirementPage extends BaseClass {
 		Thread.sleep(2000);
 		String CityOption = selectCity.getText();
 		System.out.println("++++++++++++++++"+CityOption);
-		driver.findElement(By.xpath("//span[contains(text(),'"+City+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+City+"')]")).click();		
 	}
 	
 	
@@ -572,6 +573,10 @@ public class RequirementPage extends BaseClass {
 		});		
 	}
 	
+	//Grid 1st Row data
+	@FindBy(xpath = "//div[@class='ag-body-container ag-layout-normal']/div[1]/div[4]")
+	WebElement getRequirementId_gridsection;
+	
 	//Get the requirement id from grid
 	public String getTextOfRequirement_id() throws InterruptedException {
 		Thread.sleep(6000);
@@ -584,8 +589,8 @@ public class RequirementPage extends BaseClass {
 		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
 	    public WebElement apply(WebDriver driver) {
 	    	System.out.println("---Searching data------------");
-	    	requirementId_gridsection.getText();	    	
-		return requirementId_gridsection;
+	    	System.out.println(getRequirementId_gridsection.getText());	    	
+		return getRequirementId_gridsection;
 	}		
 		});		
 		return requirementId_gridsection.getText();
@@ -775,9 +780,10 @@ public class RequirementPage extends BaseClass {
 	WebElement clickOnArchiveOptionDropdown;
 	
 	public void setselectArchiveOption(String archiveOption) throws InterruptedException {
+		Thread.sleep(2000);
 		TestUtil.click(clickOnArchiveOptionDropdown);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'"+archiveOption+"')]")).click();		
+		driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][contains(text(),'"+archiveOption+"')]")).click();		
 	}	
 	
 	//Click on Closure Date

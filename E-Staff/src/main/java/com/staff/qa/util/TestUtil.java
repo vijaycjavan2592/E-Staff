@@ -61,6 +61,25 @@ public class TestUtil extends BaseClass {
 	public static void click(WebElement ele){
 		ele.click();
 	}
+	
+	
+	public static void clickOn(WebElement element, int timeout) {
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+	}
+	
+	public static void getText(WebElement element, int timeout) {
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		element.getText();
+	}
+	
+	
+	public static void pageLoad(WebElement element, int timeout) {
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
 
 	public static Object[][] getData(String sheetName) throws IOException{
 		
@@ -136,7 +155,7 @@ public class TestUtil extends BaseClass {
 		String obj = "";
 		try {
 
-			String dbURL = "jdbc:sqlserver://10.20.14.84:1433";
+			String dbURL ="jdbc:sqlserver://10.20.14.79:1433";                                        //"jdbc:sqlserver://10.20.14.84:1433";
 			String user = "sa";
 			String pass = "cbiz123#";
 			conn = DriverManager.getConnection(dbURL, user, pass);

@@ -61,6 +61,26 @@ public class PlacementPage extends BaseClass {
 		return allPlacement.getAttribute("ng-reflect-total-records");
 	}
 	
+	//Filters --> All Tag - Placement
+	@FindBy(xpath = "//div[@class='filter-tags filter-block']//div[2]")
+	WebElement clickOnAllTag_Placement;
+
+
+	public void setClickOnAllTag_Placement() throws InterruptedException {
+		Thread.sleep(2000);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
+				withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS).
+				ignoring(ElementClickInterceptedException.class);
+		
+		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+	    public WebElement apply(WebDriver driver) {
+		TestUtil.click(clickOnAllTag_Placement);
+		return clickOnAllTag_Placement;
+	}		
+		});
+	}
+
 	
 	//Filters --> Open Tag - Placement
 	@FindBy(xpath = "//div[contains(text(),'Open')]")

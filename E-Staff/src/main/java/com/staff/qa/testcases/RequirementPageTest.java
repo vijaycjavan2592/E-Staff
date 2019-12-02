@@ -2,15 +2,25 @@ package com.staff.qa.testcases;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
+import com.google.common.base.Function;
 import com.staff.qa.base.BaseClass;
 import com.staff.qa.pages.ConsultantPage;
 import com.staff.qa.pages.HomePage;
@@ -23,6 +33,8 @@ public class RequirementPageTest extends BaseClass {
 	RequirementPage requirementPage;
 	LoginPage loginPage;
 	HomePage homePage;
+	ConsultantPage consultantPage;
+	
 
 	String sheetName = "Add_Requirement";
 
@@ -35,17 +47,18 @@ public class RequirementPageTest extends BaseClass {
 	}
 
 	@BeforeMethod
-	public void setUp() throws InterruptedException {
+	public void setUp() throws InterruptedException, AWTException {
 		initialization();
 		requirementPage = new RequirementPage();
 		loginPage = new LoginPage();
 		homePage = new HomePage();
+		consultantPage = new ConsultantPage();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		requirementPage = homePage.clickOnRequirementOption();
 	}
 
-     @Test(priority = 1)
-	public void verifyUserNavigateToConsultantPage() throws InterruptedException {
+ //   @Test(priority = 1)
+	public void verifyUserNavigateToRequirementPage() throws InterruptedException {
 
 		String TestCaseName = "Verify that user can navigate to the Requirement Page";
 		test = extent.createTest(TestCaseName);
@@ -65,7 +78,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void getOpenRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Open Requirement count in header and grid section";
@@ -87,7 +100,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 3)
+//	@Test(priority = 3)
 	public void getAllRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the All Requirement count in header and grid section";
@@ -111,7 +124,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 4)
+//	@Test(priority = 4)
 	public void getArchivedRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Archived Requirement count in header and grid section";
@@ -135,7 +148,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 5)
+//	@Test(priority = 5)
 	public void verifyAddNewRequirementBtnClickable() {
 		String TestCaseName = "Verify Add New Button is Clickable and it Shows the Add New Requirement Form";
 		test = extent.createTest(TestCaseName);
@@ -158,7 +171,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 6)
+//	@Test(priority = 6)
 	public void verifyFunctionalityOfCancelButtonOfAddNewForm() {
 		String TestCaseName = "Verify that functionality of Cancel button of Add New Requirement window";
 		test = extent.createTest(TestCaseName);
@@ -194,7 +207,7 @@ public class RequirementPageTest extends BaseClass {
 		return data;
 	}
 
-	@Test(dataProvider = "getRequirementData", priority = 7)
+//	@Test(dataProvider = "getRequirementData", priority = 7)
 	public void verifyAddRequirementFunctionality(String recruiter, String no_Of_Openings, String contact,
 			String accountManger, String jobTitle, String jobType, String year, String month, String date,
 			String businessUnit, String visaStatus, String priority, String communicationSkills, String billRateUOM,
@@ -275,7 +288,7 @@ public class RequirementPageTest extends BaseClass {
 		return data;
 	}
 
-	@Test(dataProvider = "getRequirementData_edit", priority = 8)
+//	@Test(dataProvider = "getRequirementData_edit", priority = 8)
 	public void verifyEditRequirementFunctionality(String recruiter, String no_Of_Openings, String contact,
 			String accountManger, String jobTitle, String jobType, String year, String month, String date,
 			String businessUnit, String visaStatus, String priority, String communicationSkills, String billRateUOM,
@@ -289,7 +302,13 @@ public class RequirementPageTest extends BaseClass {
 		try {
 			// Click on Add New link
 			Thread.sleep(3000);
+			try {
+			//Search the Requirement id
 			requirementPage.setSearchTextBox(searchRequirement);
+			}
+			catch(Exception e) {
+				requirementPage.setClickOnFirstRowRequirement_id();				
+			}
 			Thread.sleep(2000);
 			requirementPage.setClickOnFirstRowRequirement_id();
 			Thread.sleep(2000);
@@ -353,7 +372,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 9)
+//	@Test(priority = 9)
 	public void verifyUploadDocumentFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can upload the document for particular requirement";
 		test = extent.createTest(TestCaseName);
@@ -396,7 +415,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 10)
+//	@Test(priority = 10)
 	public void verifyUploadDocumentAppearInGrid() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that upload document can appear in grid";
 		test = extent.createTest(TestCaseName);
@@ -440,7 +459,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 11)
+//	@Test(priority = 11)
 	public void verifyDownloadUploadedDocument_requirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can download the uploaded documents";
 		test = extent.createTest(TestCaseName);
@@ -474,7 +493,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 12)
+//	@Test(priority = 12)
 	public void verifyCancelBtnFunOfUploadDocPopUp_requirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that cancel button functionality of Upload Document pop-up";
 		test = extent.createTest(TestCaseName);
@@ -508,7 +527,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 13)
+//	@Test(priority = 13)
 	public void verifyEditJobDescriptionFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can edit the job description of requirement";
 		test = extent.createTest(TestCaseName);
@@ -550,7 +569,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 14)
+//	@Test(priority = 14)
 	public void verifyArchivedRequirementFunctionality() {
 		String TestCaseName = "Verify that user can Archive the requirement";
 		test = extent.createTest(TestCaseName);
@@ -591,7 +610,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 15)
+//	@Test(priority = 15)
 	public void verifyUnArchivedRequirementFunctionality() {
 		String TestCaseName = "Verify that user can Un-Archive the requirement";
 		test = extent.createTest(TestCaseName);
@@ -624,7 +643,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 16)
+//	@Test(priority = 16)
 	public void verifyValidationMessageForClosuredate() {
 		String TestCaseName = "Verify that user can select closure date select as future date while Archive the requirement";
 		test = extent.createTest(TestCaseName);
@@ -662,7 +681,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 17)
+//	@Test(priority = 17)
 	public void verifyValidationMessageForClosureReason() {
 		String TestCaseName = "Verify that user can archive the requirement without selecting closure reason";
 		test = extent.createTest(TestCaseName);
@@ -701,7 +720,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 18)
+//	@Test(priority = 18)
 	public void verifyCancelButtonFunctionalityOfArchiveRequirementPopUp() {
 		String TestCaseName = "Verify the Cancel Button Functionality Of Archive Requirement pop up ";
 		test = extent.createTest(TestCaseName);
@@ -730,7 +749,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 19)
+//	@Test(priority = 19)
 	public void verifyValidationsForAddNewRequirement() {
 		String TestCaseName = "Verify that validation message can appear for mandatory fields";
 		test = extent.createTest(TestCaseName);
@@ -800,7 +819,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 20)
+//	@Test(priority = 20)
 	public void verifyConsultantMapToRequirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can map the consultant to the requirement";
 		String TestCaseName1 = "Verify that mapped consultant can appear in Requirement-Consultant grid section";
@@ -834,7 +853,7 @@ public class RequirementPageTest extends BaseClass {
 
 			requirementPage.setClickOnShortlistConsultantOptionButton();
 			
-             String message1 = "Duplicate status can not be set as Shortlisted status already exists.";
+            String message1 = "Duplicate status can not be set as Shortlisted status already exists.";
 			
 			if(requirementPage.setRequirementConfirmationMessage().equalsIgnoreCase(message1)) {
 				driver.navigate().refresh();
@@ -847,6 +866,7 @@ public class RequirementPageTest extends BaseClass {
 
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
 					"Consultants shortlisted successfully.");
+			driver.navigate().refresh();
 
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("20", new Object[] { 20d, TestCaseName,
@@ -877,7 +897,7 @@ public class RequirementPageTest extends BaseClass {
 
 	}
 
-	@Test(priority = 22)
+//	@Test(priority = 22)
 	public void verifyConsultantMapToRequirement_alreadyExists() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can map the consultant to the requirement which is already linked.";
 		test = extent.createTest(TestCaseName);
@@ -924,7 +944,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 23)
+//	@Test(priority = 23)
 	public void verifyArchivedConsultantMapToRequirement() {
 		String TestCaseName = "Verify that archived consultant can map to the requirement";
 		test = extent.createTest(TestCaseName);
@@ -965,7 +985,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 	
-	@Test(priority = 24)
+//	@Test(priority = 24)
 	public void verifyCancelBtnFunOfMapConsultantWindow() {
 		String TestCaseName = "Verify the Cancel button functionality of map consultant to requirement window";
 		test = extent.createTest(TestCaseName);
@@ -1004,7 +1024,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 	
-	@Test(priority = 25)
+//	@Test(priority = 25)
 	public void verifyAddNoteFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify the Add Note functionality";
 		test = extent.createTest(TestCaseName);
@@ -1040,7 +1060,7 @@ public class RequirementPageTest extends BaseClass {
 	    	}
 	    }
 	
-	@Test(priority = 26)
+//	@Test(priority = 26)
 	public void verifyCancelBtnFunOfAddNote() throws InterruptedException {
 		String TestCaseName = "Verify the Cancel button functionality of Add Note";
 		test = extent.createTest(TestCaseName);
@@ -1120,7 +1140,7 @@ public class RequirementPageTest extends BaseClass {
 		    	}
 		    }
 			
-	@Test(priority = 28)
+//	@Test(priority = 28)
 	public void verifySetTheStatusToConsultant() throws InterruptedException {
 		String TestCaseName = "Verify the user can set the status to the consultant";
 		test = extent.createTest(TestCaseName);
@@ -1167,7 +1187,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 	
-	@Test(priority = 29)
+//	@Test(priority = 29)
 	public void verifyCancelButtonFunOfSetStatusPopUp() throws InterruptedException {
 		String TestCaseName = "Verify that functionality of Cancel button functionality of Set-Status pop up";
 		test = extent.createTest(TestCaseName);
@@ -1214,7 +1234,7 @@ public class RequirementPageTest extends BaseClass {
 	}
 	
 	
-	@Test(priority = 30)
+//	@Test(priority = 30)
 	public void verifyDeleteRecentStatusFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can delete recent status of linked consultant";
 		test = extent.createTest(TestCaseName);
@@ -1255,7 +1275,7 @@ public class RequirementPageTest extends BaseClass {
 	}
 
 
-	@Test(priority = 31)
+//	@Test(priority = 31)
 	public void verifyViewResumeFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can view(download) CV/Resume of linked consultant";
 		test = extent.createTest(TestCaseName);
@@ -1292,5 +1312,223 @@ public class RequirementPageTest extends BaseClass {
 	}
 	
 	
+//	@Test
+	public void verifyCoutOfConsultantAfterAIapplied() throws InterruptedException {
+		String TestCaseName = "Verify that after AI search applied up to 200 consultant can appear in grid";
+		test = extent.createTest(TestCaseName);
 
+		try {
+			//requirementPage.setClickOnAllTag();
+			Thread.sleep(5000);
+			try {
+				requirementPage.setClickOnFirstRowRequirement_id();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}			
+			requirementPage.setClickOnSearchConsultantButton();
+			
+			//Click on AI Sreach radio button
+			consultantPage.setClickOnAIRadioButton();
+			//Click on Apply button
+			consultantPage.setClickOnApplyButton();
+						
+			consultantPage.setCheckRankColumnIsDisplayed();
+			/*//Get Text of Requirement id From grid
+			requirementPage.getTextOfRequirement_id();*/
+			//Get test of label			
+			String consultantNo = consultantPage.setConsultantCount_Heading();
+			String[] s = consultantNo.split(" ");
+			System.out.println("yyyyyyyyyyyyy"+s[0]);
+			System.out.println("sssssssssssssss"+s[1]);
+			System.out.println("sssssssssssssss"+s[2]);
+			
+			String s2 = s[2].replaceAll("\\W+", ""); 
+			System.out.println(s2);
+			int consultantNumber = Integer.parseInt(s2);
+			System.out.println(consultantNumber);
+			
+			if(consultantNumber<=200) {			
+			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
+			testresultdata.put("31", new Object[] { 31d, TestCaseName,
+					"After AI search applied more than 200 consultant should not be appear in grid", "Pass" });
+			}
+			else {
+				System.out.println("Fail");
+				test.log(Status.PASS, TestCaseName + " is Fail");
+				testresultdata.put("31", new Object[] { 31d, TestCaseName,
+						"After AI search applied more than 200 consultant should not be appear in grid", "Fail" });
+			}
+		
+		} catch (Exception e) {
+			testresultdata.put("31", new Object[] { 31d, TestCaseName,
+					"After AI search applied more than 200 consultant should not be appear in grid", "Fail" });
+			e.printStackTrace();
+		}
+		}	
+	
+	
+//	@Test
+	public void verifyRelevanceAIapplied() throws InterruptedException {
+		String TestCaseName = "Verify the relevance (%) of the filtered consultant based on AI search";
+		test = extent.createTest(TestCaseName);
+
+		try {
+			//requirementPage.setClickOnAllTag();
+			Thread.sleep(5000);
+			try {
+				requirementPage.setClickOnFirstRowRequirement_id();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}			
+			requirementPage.setClickOnSearchConsultantButton();
+			
+			//Click on AI Sreach radio button
+			consultantPage.setClickOnAIRadioButton();
+			//Click on Apply button
+			consultantPage.setClickOnApplyButton();
+			
+			consultantPage.setClickOnRelevanceColumnForSorting();
+			
+			consultantPage.setClickOnRelevanceColumnForSorting();
+						
+		/*	Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+					.withTimeout(50, TimeUnit.SECONDS)
+					.pollingEvery(2, TimeUnit.SECONDS)
+					.ignoring(ElementClickInterceptedException.class);
+					.ignoring(StaleElementReferenceException.class);
+			
+			WebElement element = wait.until(new Function<WebDriver, WebElement>() {
+				public WebElement apply(WebDriver driver) {
+
+					WebElement el = driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[1]/div[4]"));
+					System.out.println(el.getText());
+
+					return el;
+				}
+			});
+			*/
+			try {	
+				Thread.sleep(5000);
+				WebElement rel = driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[1]/div[9]"));
+				System.out.println(rel.getText());
+				
+				WebElement rel2 = driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[2]/div[9]"));
+				System.out.println(rel2.getText());
+			for(int i=1 ; i<20 ; i++) {
+				
+				WebElement relvence = driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div["+i+"]/div[9]"));
+			
+				String relvence1 = relvence.getText();
+				int actualRelvence = Integer.parseInt(relvence1);
+				
+				if(actualRelvence<=70 && actualRelvence>=100) {
+					System.out.println("Correct  : " + relvence1);
+					test.log(Status.PASS, TestCaseName + " is Fail");
+					testresultdata.put("31", new Object[] { 31d, TestCaseName,
+							"Relevance (%) should be greater than 70% and less than 100%", "Fail" });							
+				}
+				else {
+					test.log(Status.PASS, TestCaseName + " is Pass");
+					testresultdata.put("31", new Object[] { 31d, TestCaseName,
+							"Relevance (%) should be greater than 70% and less than 100%", "Fail" });
+					}
+				}
+			}
+			catch(StaleElementReferenceException e) {
+				System.out.println("got exception");
+			}
+		} catch (Exception e) {
+			testresultdata.put("31", new Object[] { 31d, TestCaseName,
+					"Relevance (%) should be greater than 70% and less than 100%", "Fail" });
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void verifyShortlistConsultantFunctionality() throws InterruptedException {
+		String TestCaseName = "Verify that user can shortlist the consultant which appear based on AI search";
+		test = extent.createTest(TestCaseName);
+
+	//	try {
+			//requirementPage.setClickOnAllTag();
+			Thread.sleep(5000);
+			try {
+				requirementPage.setClickOnFirstRowRequirement_id();
+			} catch (Exception e) {
+				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
+				System.out.println(noData.getText());
+			}			
+			requirementPage.setClickOnSearchConsultantButton();
+			
+			//Click on AI Sreach radio button
+			consultantPage.setClickOnAIRadioButton();
+			//Click on Apply button
+			consultantPage.setClickOnApplyButton();
+			
+			Thread.sleep(9000);
+			driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]")).click();
+
+			driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[2]/div[2]")).click();
+			
+			driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[3]/div[2]")).click();
+			
+			driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[4]/div[2]")).click();
+			
+			driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[5]/div[2]")).click();
+			
+			driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[6]/div[2]")).click();
+			
+			requirementPage.setClickOnShortlistConsultantOptionButton();		
+			
+			
+            String message1 = "Duplicate status can not be set as Shortlisted status already exists.";
+			
+			if(requirementPage.setRequirementConfirmationMessage().equalsIgnoreCase(message1)) {
+				driver.findElement(By.xpath("//i[@class='fa fa-times close']")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[1]/div[2]")).click();
+
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[2]/div[2]")).click();
+				
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[3]/div[2]")).click();
+				
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[4]/div[2]")).click();
+				
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[5]/div[2]")).click();
+				
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[6]/div[2]")).click();
+				
+				
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[7]/div[2]")).click();
+				Thread.sleep(2000);
+				//Click on Shortlisted Consultant button
+				requirementPage.setClickOnShortlistConsultantOptionButton();
+			}	
+			else if(requirementPage.setRequirementConfirmationMessage().equalsIgnoreCase(message1)){
+				driver.findElement(By.xpath("//i[@class='fa fa-times close']")).click();
+				
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[7]/div[2]")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[8]/div[2]")).click();
+				requirementPage.setClickOnShortlistConsultantOptionButton();
+			}
+			else if(requirementPage.setRequirementConfirmationMessage().equalsIgnoreCase(message1)){
+                driver.findElement(By.xpath("//i[@class='fa fa-times close']")).click();
+				
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[8]/div[2]")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//div[@class='ag-body-container ag-layout-normal']/div[9]/div[2]")).click();
+				requirementPage.setClickOnShortlistConsultantOptionButton();
+			}
+
+			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
+					"Consultants shortlisted successfully.");
+
+			
+			
+	}
+	
+	
 }

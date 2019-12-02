@@ -3,24 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Default suite]]">
   <test thread-count="5" name="Default test(failed)(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.PlacementPageTest">
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
         <methods>
-          <include name="verifySubmitForApprovalFunctionality_Validations"/>
-          <include name="verifyUserNavigateToConsultantPage"/>
-          <include name="verifyInitiateOfferFunctionality"/>
-          <include name="endReport"/>
-          <include name="setUp"/>
-          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
-          <include name="verifyRejectPlacementFunctionality_Validations"/>
           <include name="getResult"/>
+          <include name="setUp"/>
           <include name="setExtentReport"/>
           <include name="setupBeforeSuite"/>
+          <include name="verifyDuplicateConsultant" invocation-numbers="0"/>
+          <include name="endReport"/>
           <include name="setupAfterSuite"/>
-          <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality"/>
-          <include name="verifyPlacedConsultantAppearInPlacement_FromConsultant"/>
-          <include name="verifyApprovePlacementFunctionality_Validations"/>
+          <include name="verifySetTheStatusToConsultant"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
     </classes>
   </test> <!-- Default test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Default suite]] -->

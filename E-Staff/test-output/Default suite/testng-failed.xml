@@ -3,42 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.PlacementPageTest">
+      <class name="com.staff.qa.testcases.RequirementPageTest">
         <methods>
-          <include name="verifyAddNoteFunctionality"/>
-          <include name="verifySubmitForApprovalFunctionality_Validations"/>
-          <include name="verifyCandidateEndedFilterData"/>
-          <include name="verifyEditConsultantDetailsOfPlacementFormFunctionality"/>
-          <include name="verifyUserNavigateToConsultantPage"/>
-          <include name="VerifyCandidateOnBillingPlacementCountInHeaderAndGrid"/>
-          <include name="verifyInitiateOfferFunctionality"/>
-          <include name="verifySubmitForApprovalFunctionality1"/>
-          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
           <include name="getResult"/>
-          <include name="VerifyOpenPlacementCountInHeaderAndGrid"/>
-          <include name="VerifyBackedOutPlacementCountInHeaderAndGrid"/>
-          <include name="verifyPendingApprovalFilterData"/>
-          <include name="verifyBackedOutFilterData"/>
-          <include name="endReport"/>
-          <include name="setUp"/>
-          <include name="verifyApprovedFilterData"/>
-          <include name="VerifyCandidateEndedPlacementCountInHeaderAndGrid"/>
-          <include name="verifyOpenFilterData"/>
-          <include name="verifyCancelBtnFunOfAddNote"/>
-          <include name="verifyBackedOutConsultantFunctionality"/>
-          <include name="verifyRejectPlacementFunctionality_Validations"/>
+          <include name="verifyShortlistConsultantFunctionality"/>
           <include name="setExtentReport"/>
           <include name="setupBeforeSuite"/>
+          <include name="endReport"/>
+          <include name="setUp"/>
           <include name="setupAfterSuite"/>
-          <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality"/>
-          <include name="VerifyApprovedPlacementCountInHeaderAndGrid"/>
-          <include name="verifyDownloadPlacementFormFunctionality"/>
-          <include name="VerifyPendingApprovalPlacementCountInHeaderAndGrid"/>
-          <include name="verifyCandidateOnBillingFilterData"/>
-          <include name="verifyPlacedConsultantAppearInPlacement_FromConsultant"/>
-          <include name="verifyApprovePlacementFunctionality_Validations"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

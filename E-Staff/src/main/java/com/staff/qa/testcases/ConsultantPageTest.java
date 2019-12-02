@@ -6,10 +6,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -17,12 +22,12 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
+import com.google.common.base.Function;
 import com.staff.qa.base.BaseClass;
 import com.staff.qa.pages.ConsultantPage;
 import com.staff.qa.pages.HomePage;
 import com.staff.qa.pages.LoginPage;
 import com.staff.qa.util.TestUtil;
-
 
 
 public class ConsultantPageTest extends BaseClass {
@@ -34,6 +39,8 @@ public class ConsultantPageTest extends BaseClass {
 	String sheetName = "Consultant";
 	String sheetName_EditConsultant = "Edit_Consultant";
 	
+	String path = "ConsultantCVPath";
+	
 	static String consultantID = "Cons-633950";
 
 	public ConsultantPageTest() {
@@ -41,7 +48,7 @@ public class ConsultantPageTest extends BaseClass {
 	}
 
 	@BeforeMethod(alwaysRun=true)
-	public void setUp() throws InterruptedException {
+	public void setUp() throws InterruptedException, AWTException {
 		initialization();
 		consultantPage = new ConsultantPage();
 		loginPage = new LoginPage();
@@ -79,6 +86,8 @@ public class ConsultantPageTest extends BaseClass {
 		try {
 			// driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT,
 			// TimeUnit.SECONDS);
+			
+
 			consultantPage.setClickAddNewMenu();
 			Thread.sleep(1000);
 			consultantPage.setClickAddManuallyOption();
@@ -1564,8 +1573,8 @@ public class ConsultantPageTest extends BaseClass {
 	}
 		
 	}
+	
 
 	
 	
-
 }

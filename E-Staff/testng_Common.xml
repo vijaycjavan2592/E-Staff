@@ -1,18 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes" thread-count="1" >
-  <test name="Test">
-  
-  
-  
-       
-       
-       <classes>
-   <!--     <class name="com.staff.qa.testcases.ConsultantPageTest"> -->
-       <class name="com.staff.qa.testcases.PlacementPageTest">
-          <methods>
-        <exclude name="verifyCancelButtonFunOfSetStatusPopUp" />
-        <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality" />  
+<suite name="Suite"  >
+  <test thread-count="1" name="Test">
+
+	<classes>
+		<!-- <class name="com.staff.qa.testcases.ConsultantPageTest"> -->
+		<class name="com.staff.qa.testcases.ConsultantPageTest">
+			<methods>
+				<exclude name="verifyCancelButtonFunOfSetStatusPopUp" />
+				<include name="verifyUploadConsultant" />
+			<!-- 	
+				<include name="verifyUserNavigateToConsultantPage" />
+				<include name="verifyUserNavigateToConsultantPage__" />
+				<include name="VerifyAllPlacementCountInHeaderAndGrid" />
+				<include name="VerifyOpenPlacementCountInHeaderAndGrid" />
+				<include name="VerifyPendingApprovalPlacementCountInHeaderAndGrid" />
+				<include name="VerifyApprovedPlacementCountInHeaderAndGrid" />
+				<include name="VerifyCandidateOnBillingPlacementCountInHeaderAndGrid" />
+				<include name="VerifyBackedOutPlacementCountInHeaderAndGrid" />
+				
+				<include name="VerifyCandidateEndedPlacementCountInHeaderAndGrid" />
+
+				<include name="verifyPlacedConsultantAppearInPlacement_FromRequirement" />
+				<include name="verifyPlacedConsultantAppearInPlacement_FromConsultant" />
+				<include name="verifyBackedOutConsultantFunctionality" />
+				<include name="verifyBackedOutFilterData" />
+				<include name="verifyOpenFilterData" />
+				<include name="verifyPendingApprovalFilterData" />
+				<include name="verifyApprovedFilterData" />
+				<include name="verifyCandidateOnBillingFilterData" />
+				<include name="verifyCandidateEndedFilterData" />
+				<include name="verifyAddNoteFunctionality" />
+				<include name="verifyCancelBtnFunOfAddNote" />
+				<include name="verifyDownloadPlacementFormFunctionality" />
+				<include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality" />
+
+				<include name="verifyEditConsultantDetailsOfPlacementFormFunctionality" />
+				<include name="verifyEditGrossMarginOfPlacementFormFunctionality" />
+
+				<include name="verifyCancelButtonFunGrossMarginOfPlacementForm" />
+				<include name="verifyCancelButtonFunConsultantDetailsOfPlacementForm" />
+				<include name="verifyCancelButtonFunClientAssignmentOfPlacementForm" />
+				<include name="verifyCompaniesSearchTextBoxFunOfPlacementForm" />
+				<include name="verifyCompaniesFilterFunOfPlacementForm" />
+				<include name="verifyCompaniesFilterFunOfPlacementForm1" />
+				<include name="verifyAccountManagerSearchTextBoxFunOfPlacementForm" />
+
+				<include name="verifyAccountMangerFilterFunOfPlacementForm" />
+				<include name="verifyAccountManagerFilterFunOfPlacementForm1" />
+				<exclude name="verifyPlacementDateFilterFunOfPlacementForm" />
+
+				<include name="verifyInitiateOfferFunctionality" />
+				<include name="verifySubmitForApprovalFunctionality1" />
+
+				<include name="verifyApprovePlacementFunctionality_Validations" />
+				<include name="verifyRejectPlacementFunctionality_Validations" />          -->
          
       </methods>  
        </class>
