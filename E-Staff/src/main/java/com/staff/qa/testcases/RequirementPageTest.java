@@ -1368,7 +1368,7 @@ public class RequirementPageTest extends BaseClass {
 		}	
 	
 	
-//	@Test
+	@Test
 	public void verifyRelevanceAIapplied() throws InterruptedException {
 		String TestCaseName = "Verify the relevance (%) of the filtered consultant based on AI search";
 		test = extent.createTest(TestCaseName);
