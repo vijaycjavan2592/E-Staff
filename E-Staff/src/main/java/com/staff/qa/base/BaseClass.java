@@ -73,7 +73,7 @@ public class BaseClass {
 		try {
 			prop = new Properties();
 			InputStream file = new FileInputStream(
-					"D:\\Personal Docs\\Eclipse\\E-Staff\\src\\main\\java\\com\\staff\\qa\\config\\config.properties");
+					"D:\\Personal Docs\\Eclipse\\New folder\\E-Staff\\src\\main\\java\\com\\staff\\qa\\config\\config.properties");
 			prop.load(file);
 			
 
@@ -164,7 +164,7 @@ public class BaseClass {
 		
 		System.out.println("Browser close");
 		Thread.sleep(1000);
-	//	driver.quit();
+		driver.quit();
 		
 	}
 	

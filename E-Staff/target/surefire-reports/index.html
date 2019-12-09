@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Suite">
+              <span class="suite-name border-failed">Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Suite">
+                    <span>D:\Personal Docs\Eclipse\New folder\E-Staff\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Suite">
+                    <span>2 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">34 methods, 6 failed,  1 skipped,  27 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyAddNewConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)">verifyAddNewConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyDownloadResumeFunctionality">verifyDownloadResumeFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyDuplicateConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)">verifyDuplicateConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyUn_ArchiveFunctionality">verifyUn_ArchiveFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyUploadDocumentAppearInGrid">verifyUploadDocumentAppearInGrid</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyUploadDocumentFunctionality">verifyUploadDocumentFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyEditConsultantFunctionality">verifyEditConsultantFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="getAllCount">getAllCount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="getArchivedCount">getArchivedCount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="getAvailableCount">getAvailableCount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="getQualifiedCount">getQualifiedCount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyAddNewConsulatantFormDisplayed">verifyAddNewConsulatantFormDisplayed</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyAddNoteFunctionality">verifyAddNoteFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyArchiveFunctionality">verifyArchiveFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyArchivedConsultantMapToRequirement">verifyArchivedConsultantMapToRequirement</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyCancelBtnFunOfAddNote">verifyCancelBtnFunOfAddNote</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyCancelBtnFunOfScheduleMeetingPopUp">verifyCancelBtnFunOfScheduleMeetingPopUp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyCancelButtonFunOfSetStatusPopUp">verifyCancelButtonFunOfSetStatusPopUp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyCancelButtonFunctionalityOfEmail">verifyCancelButtonFunctionalityOfEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyCancelFunctionalityOfLinkRequirement">verifyCancelFunctionalityOfLinkRequirement</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyDeleteRecentStatusFunctionality">verifyDeleteRecentStatusFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyDownloadUploadedDocument">verifyDownloadUploadedDocument</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyEmailFunctionality">verifyEmailFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyFunctionalityOfCancelButton">verifyFunctionalityOfCancelButton</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyLinkRequirementToConsultant">verifyLinkRequirementToConsultant</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyLinkRequirementToConsultant_alreadyExists">verifyLinkRequirementToConsultant_alreadyExists</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyNavigateToScheduleMeetingPopUp">verifyNavigateToScheduleMeetingPopUp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyPageLable">verifyPageLable</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyScheduleMeetingFunctionality">verifyScheduleMeetingFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifySetTheStatusToConsultant">verifySetTheStatusToConsultant</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyUserNavigateToConsultantPage">verifyUserNavigateToConsultantPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyValidationForEmailSubject">verifyValidationForEmailSubject</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyValidationsInScheduleMeetingPopUp">verifyValidationsInScheduleMeetingPopUp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.staff.qa.testcases.ConsultantPageTest" hash-for-method="verifyViewResumeFunctionality">verifyViewResumeFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.staff.qa.testcases.ConsultantPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddNewConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)">
+                  </a> <!-- verifyAddNewConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...) -->
+                  <span class="method-name">verifyAddNewConsultant</span>
+                  <span class="parameters">(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area Or North, Hourly W2, EMPLOYEE, H1B, United States, California, Acton, Dummy employee, , , )</span>
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyAddNewConsultant(ConsultantPageTest.java:216)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDownloadResumeFunctionality">
+                  </a> <!-- verifyDownloadResumeFunctionality -->
+                  <span class="method-name">verifyDownloadResumeFunctionality</span>
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyDownloadResumeFunctionality(ConsultantPageTest.java:783)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDuplicateConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)">
+                  </a> <!-- verifyDuplicateConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...) -->
+                  <span class="method-name">verifyDuplicateConsultant</span>
+                  <span class="parameters">(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area Or North, Hourly W2, EMPLOYEE, H1B, United States, California, Acton, Dummy employee, , , )</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Consultant is already exists with same email-id. Duplicate Consultant can not be created.] but found [Consultant (ID:-Cons-669770) Added Successfully]
+	at com.staff.qa.testcases.ConsultantPageTest.verifyDuplicateConsultant(ConsultantPageTest.java:285)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyUn_ArchiveFunctionality">
+                  </a> <!-- verifyUn_ArchiveFunctionality -->
+                  <span class="method-name">verifyUn_ArchiveFunctionality</span>
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyUn_ArchiveFunctionality(ConsultantPageTest.java:1020)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyUploadDocumentAppearInGrid">
+                  </a> <!-- verifyUploadDocumentAppearInGrid -->
+                  <span class="method-name">verifyUploadDocumentAppearInGrid</span>
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyUploadDocumentAppearInGrid(ConsultantPageTest.java:614)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyUploadDocumentFunctionality">
+                  </a> <!-- verifyUploadDocumentFunctionality -->
+                  <span class="method-name">verifyUploadDocumentFunctionality</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Upload Document Record created successfully] but found [Please select file before clicking on upload]
+	at com.staff.qa.testcases.ConsultantPageTest.verifyUploadDocumentFunctionality(ConsultantPageTest.java:559)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.staff.qa.testcases.ConsultantPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEditConsultantFunctionality">
+                  </a> <!-- verifyEditConsultantFunctionality -->
+                  <span class="method-name">verifyEditConsultantFunctionality</span>
+                  <div class="stack-trace">java.lang.Throwable: Method ConsultantPageTest.verifyEditConsultantFunctionality(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] depends on not successfully finished methods
+... Removed 21 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.staff.qa.testcases.ConsultantPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getAllCount">
+                  </a> <!-- getAllCount -->
+                  <span class="method-name">getAllCount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getArchivedCount">
+                  </a> <!-- getArchivedCount -->
+                  <span class="method-name">getArchivedCount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getAvailableCount">
+                  </a> <!-- getAvailableCount -->
+                  <span class="method-name">getAvailableCount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getQualifiedCount">
+                  </a> <!-- getQualifiedCount -->
+                  <span class="method-name">getQualifiedCount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddNewConsulatantFormDisplayed">
+                  </a> <!-- verifyAddNewConsulatantFormDisplayed -->
+                  <span class="method-name">verifyAddNewConsulatantFormDisplayed</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddNoteFunctionality">
+                  </a> <!-- verifyAddNoteFunctionality -->
+                  <span class="method-name">verifyAddNoteFunctionality</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyArchiveFunctionality">
+                  </a> <!-- verifyArchiveFunctionality -->
+                  <span class="method-name">verifyArchiveFunctionality</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyArchivedConsultantMapToRequirement">
+                  </a> <!-- verifyArchivedConsultantMapToRequirement -->
+                  <span class="method-name">verifyArchivedConsultantMapToRequirement</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelBtnFunOfAddNote">
+                  </a> <!-- verifyCancelBtnFunOfAddNote -->
+                  <span class="method-name">verifyCancelBtnFunOfAddNote</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelBtnFunOfScheduleMeetingPopUp">
+                  </a> <!-- verifyCancelBtnFunOfScheduleMeetingPopUp -->
+                  <span class="method-name">verifyCancelBtnFunOfScheduleMeetingPopUp</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelButtonFunOfSetStatusPopUp">
+                  </a> <!-- verifyCancelButtonFunOfSetStatusPopUp -->
+                  <span class="method-name">verifyCancelButtonFunOfSetStatusPopUp</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelButtonFunctionalityOfEmail">
+                  </a> <!-- verifyCancelButtonFunctionalityOfEmail -->
+                  <span class="method-name">verifyCancelButtonFunctionalityOfEmail</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelFunctionalityOfLinkRequirement">
+                  </a> <!-- verifyCancelFunctionalityOfLinkRequirement -->
+                  <span class="method-name">verifyCancelFunctionalityOfLinkRequirement</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDeleteRecentStatusFunctionality">
+                  </a> <!-- verifyDeleteRecentStatusFunctionality -->
+                  <span class="method-name">verifyDeleteRecentStatusFunctionality</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDownloadUploadedDocument">
+                  </a> <!-- verifyDownloadUploadedDocument -->
+                  <span class="method-name">verifyDownloadUploadedDocument</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEmailFunctionality">
+                  </a> <!-- verifyEmailFunctionality -->
+                  <span class="method-name">verifyEmailFunctionality</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFunctionalityOfCancelButton">
+                  </a> <!-- verifyFunctionalityOfCancelButton -->
+                  <span class="method-name">verifyFunctionalityOfCancelButton</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLinkRequirementToConsultant">
+                  </a> <!-- verifyLinkRequirementToConsultant -->
+                  <span class="method-name">verifyLinkRequirementToConsultant</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLinkRequirementToConsultant_alreadyExists">
+                  </a> <!-- verifyLinkRequirementToConsultant_alreadyExists -->
+                  <span class="method-name">verifyLinkRequirementToConsultant_alreadyExists</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyNavigateToScheduleMeetingPopUp">
+                  </a> <!-- verifyNavigateToScheduleMeetingPopUp -->
+                  <span class="method-name">verifyNavigateToScheduleMeetingPopUp</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPageLable">
+                  </a> <!-- verifyPageLable -->
+                  <span class="method-name">verifyPageLable</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyScheduleMeetingFunctionality">
+                  </a> <!-- verifyScheduleMeetingFunctionality -->
+                  <span class="method-name">verifyScheduleMeetingFunctionality</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySetTheStatusToConsultant">
+                  </a> <!-- verifySetTheStatusToConsultant -->
+                  <span class="method-name">verifySetTheStatusToConsultant</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyUserNavigateToConsultantPage">
+                  </a> <!-- verifyUserNavigateToConsultantPage -->
+                  <span class="method-name">verifyUserNavigateToConsultantPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyValidationForEmailSubject">
+                  </a> <!-- verifyValidationForEmailSubject -->
+                  <span class="method-name">verifyValidationForEmailSubject</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyValidationsInScheduleMeetingPopUp">
+                  </a> <!-- verifyValidationsInScheduleMeetingPopUp -->
+                  <span class="method-name">verifyValidationsInScheduleMeetingPopUp</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyViewResumeFunctionality">
+                  </a> <!-- verifyViewResumeFunctionality -->
+                  <span class="method-name">verifyViewResumeFunctionality</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+        </div> <!-- panel Suite -->
+        <div panel-name="test-xml-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\Personal Docs\Eclipse\New folder\E-Staff\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.staff.qa.testcases.ConsultantPageTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">End to End</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyAddNewConsulatantFormDisplayed</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyAddNewConsultant</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">regression</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">getAllCount</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">getArchivedCount</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">getAvailableCount</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">getQualifiedCount</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyAddNewConsulatantFormDisplayed</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyAddNoteFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyArchiveFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyArchivedConsultantMapToRequirement</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyCancelBtnFunOfAddNote</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyCancelBtnFunOfScheduleMeetingPopUp</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyCancelButtonFunctionalityOfEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyCancelFunctionalityOfLinkRequirement</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyDownloadResumeFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyDownloadUploadedDocument</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyDuplicateConsultant</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyEditConsultantFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyEmailFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyFunctionalityOfCancelButton</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyLinkRequirementToConsultant</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyLinkRequirementToConsultant_alreadyExists</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyNavigateToScheduleMeetingPopUp</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyPageLable</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyScheduleMeetingFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyUn_ArchiveFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyUploadDocumentAppearInGrid</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyUploadDocumentFunctionality</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyUserNavigateToConsultantPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyValidationsInScheduleMeetingPopUp</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Suite');
+function tableData_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(34);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifyAddNewConsultant')
+data.setCell(0, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(0, 3, 104927);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyDuplicateConsultant')
+data.setCell(1, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(1, 3, 74704);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifySetTheStatusToConsultant')
+data.setCell(2, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(2, 3, 57101);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyUploadDocumentAppearInGrid')
+data.setCell(3, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(3, 3, 50878);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyScheduleMeetingFunctionality')
+data.setCell(4, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(4, 3, 40770);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyDownloadResumeFunctionality')
+data.setCell(5, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(5, 3, 37622);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyUn_ArchiveFunctionality')
+data.setCell(6, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(6, 3, 34673);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyLinkRequirementToConsultant_alreadyExists')
+data.setCell(7, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(7, 3, 28764);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'verifyUploadDocumentFunctionality')
+data.setCell(8, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(8, 3, 28273);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'verifyArchivedConsultantMapToRequirement')
+data.setCell(9, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(9, 3, 26186);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyLinkRequirementToConsultant')
+data.setCell(10, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(10, 3, 24218);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'verifyCancelButtonFunOfSetStatusPopUp')
+data.setCell(11, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(11, 3, 23199);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'verifyDeleteRecentStatusFunctionality')
+data.setCell(12, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(12, 3, 22857);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'verifyDownloadUploadedDocument')
+data.setCell(13, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(13, 3, 19566);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'verifyCancelFunctionalityOfLinkRequirement')
+data.setCell(14, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(14, 3, 18886);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'verifyFunctionalityOfCancelButton')
+data.setCell(15, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(15, 3, 17909);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'verifyAddNoteFunctionality')
+data.setCell(16, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(16, 3, 17895);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'verifyViewResumeFunctionality')
+data.setCell(17, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(17, 3, 17707);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'verifyEmailFunctionality')
+data.setCell(18, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(18, 3, 17303);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'verifyArchiveFunctionality')
+data.setCell(19, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(19, 3, 15963);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'verifyAddNewConsulatantFormDisplayed')
+data.setCell(20, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(20, 3, 15803);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'verifyValidationForEmailSubject')
+data.setCell(21, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(21, 3, 13488);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'verifyCancelBtnFunOfAddNote')
+data.setCell(22, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(22, 3, 11721);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'verifyNavigateToScheduleMeetingPopUp')
+data.setCell(23, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(23, 3, 11715);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'getAllCount')
+data.setCell(24, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(24, 3, 11627);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'verifyCancelButtonFunctionalityOfEmail')
+data.setCell(25, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(25, 3, 11388);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'verifyValidationsInScheduleMeetingPopUp')
+data.setCell(26, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(26, 3, 10735);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'verifyCancelBtnFunOfScheduleMeetingPopUp')
+data.setCell(27, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(27, 3, 10703);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'getArchivedCount')
+data.setCell(28, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(28, 3, 9347);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'getQualifiedCount')
+data.setCell(29, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(29, 3, 9059);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'getAvailableCount')
+data.setCell(30, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(30, 3, 5239);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'verifyPageLable')
+data.setCell(31, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(31, 3, 4257);
+data.setCell(32, 0, 32)
+data.setCell(32, 1, 'verifyUserNavigateToConsultantPage')
+data.setCell(32, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(32, 3, 2022);
+data.setCell(33, 0, 33)
+data.setCell(33, 1, 'verifyEditConsultantFunctionality')
+data.setCell(33, 2, 'com.staff.qa.testcases.ConsultantPageTest')
+data.setCell(33, 3, 1);
+window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 13 minutes</span>
+              <div id="times-div-Suite">
+              </div> <!-- times-div-Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.staff.qa.testcases.ConsultantPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setExtentReport(org.testng.TestRunner@65852d05)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">setupBeforeSuite(org.testng.TestRunner@65852d05)</span>
+                <span class="method-start">217 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">493 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyUserNavigateToConsultantPage</span>
+                <span class="method-start">9690 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyUserNavigateToConsultantPage status=SUCCESS method=ConsultantPageTest.verifyU...)</span>
+                <span class="method-start">11713 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">13674 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddNewConsulatantFormDisplayed</span>
+                <span class="method-start">21236 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyAddNewConsulatantFormDisplayed status=SUCCESS method=ConsultantPageTest.verif...)</span>
+                <span class="method-start">37040 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">38895 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyAddNewConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)</span>
+                <span class="method-start">47022 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyAddNewConsultant status=FAILURE method=ConsultantPageTest.verifyAddNewConsult...)</span>
+                <span class="method-start">151960 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">154637 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyDuplicateConsultant(Santosh, Gopi Pillai, Santosh0021@gmail.com, , 61.17, Hourly, 2017, Oct, 1, Immediately , Bay Area O...)</span>
+                <span class="method-start">163530 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyDuplicateConsultant status=FAILURE method=ConsultantPageTest.verifyDuplicateC...)</span>
+                <span class="method-start">238234 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">240333 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyFunctionalityOfCancelButton</span>
+                <span class="method-start">247857 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyFunctionalityOfCancelButton status=SUCCESS method=ConsultantPageTest.verifyFu...)</span>
+                <span class="method-start">265766 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">267525 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getAvailableCount</span>
+                <span class="method-start">275375 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=getAvailableCount status=SUCCESS method=ConsultantPageTest.getAvailableCount()[pri:...)</span>
+                <span class="method-start">280615 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">282497 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getAllCount</span>
+                <span class="method-start">290062 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=getAllCount status=SUCCESS method=ConsultantPageTest.getAllCount()[pri:8, instance:...)</span>
+                <span class="method-start">301689 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">303391 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getArchivedCount</span>
+                <span class="method-start">311087 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=getArchivedCount status=SUCCESS method=ConsultantPageTest.getArchivedCount()[pri:9,...)</span>
+                <span class="method-start">320434 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">322187 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getQualifiedCount</span>
+                <span class="method-start">330012 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=getQualifiedCount status=SUCCESS method=ConsultantPageTest.getQualifiedCount()[pri:...)</span>
+                <span class="method-start">339071 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">340809 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyUploadDocumentFunctionality</span>
+                <span class="method-start">348675 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyUploadDocumentFunctionality status=FAILURE method=ConsultantPageTest.verifyUp...)</span>
+                <span class="method-start">376949 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">379503 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyUploadDocumentAppearInGrid</span>
+                <span class="method-start">393255 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyUploadDocumentAppearInGrid status=FAILURE method=ConsultantPageTest.verifyUpl...)</span>
+                <span class="method-start">444134 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">446723 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyDownloadUploadedDocument</span>
+                <span class="method-start">454795 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyDownloadUploadedDocument status=SUCCESS method=ConsultantPageTest.verifyDownl...)</span>
+                <span class="method-start">474361 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">476115 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyLinkRequirementToConsultant</span>
+                <span class="method-start">484542 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyLinkRequirementToConsultant status=SUCCESS method=ConsultantPageTest.verifyLi...)</span>
+                <span class="method-start">508760 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">510532 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyLinkRequirementToConsultant_alreadyExists</span>
+                <span class="method-start">519395 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyLinkRequirementToConsultant_alreadyExists status=SUCCESS method=ConsultantPag...)</span>
+                <span class="method-start">548159 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">549924 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyDownloadResumeFunctionality</span>
+                <span class="method-start">557405 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyDownloadResumeFunctionality status=FAILURE method=ConsultantPageTest.verifyDo...)</span>
+                <span class="method-start">595027 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">597097 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelFunctionalityOfLinkRequirement</span>
+                <span class="method-start">605189 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyCancelFunctionalityOfLinkRequirement status=SUCCESS method=ConsultantPageTest...)</span>
+                <span class="method-start">624075 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">625798 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyEmailFunctionality</span>
+                <span class="method-start">634526 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyEmailFunctionality status=SUCCESS method=ConsultantPageTest.verifyEmailFuncti...)</span>
+                <span class="method-start">651829 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">653576 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelButtonFunctionalityOfEmail</span>
+                <span class="method-start">661681 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyCancelButtonFunctionalityOfEmail status=SUCCESS method=ConsultantPageTest.ver...)</span>
+                <span class="method-start">673069 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">674820 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyValidationForEmailSubject</span>
+                <span class="method-start">683411 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyValidationForEmailSubject status=SUCCESS method=ConsultantPageTest.verifyVali...)</span>
+                <span class="method-start">696899 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">698638 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyArchiveFunctionality</span>
+                <span class="method-start">706822 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyArchiveFunctionality status=SUCCESS method=ConsultantPageTest.verifyArchiveFu...)</span>
+                <span class="method-start">722785 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">724507 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyUn_ArchiveFunctionality</span>
+                <span class="method-start">732878 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyUn_ArchiveFunctionality status=FAILURE method=ConsultantPageTest.verifyUn_Arc...)</span>
+                <span class="method-start">767552 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">769612 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyPageLable</span>
+                <span class="method-start">778357 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyPageLable status=SUCCESS method=ConsultantPageTest.verifyPageLable()[pri:24, ...)</span>
+                <span class="method-start">782614 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">784343 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyArchivedConsultantMapToRequirement</span>
+                <span class="method-start">792677 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyArchivedConsultantMapToRequirement status=SUCCESS method=ConsultantPageTest.v...)</span>
+                <span class="method-start">818863 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">820621 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddNoteFunctionality</span>
+                <span class="method-start">828616 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyAddNoteFunctionality status=SUCCESS method=ConsultantPageTest.verifyAddNoteFu...)</span>
+                <span class="method-start">846511 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">848253 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelBtnFunOfAddNote</span>
+                <span class="method-start">856473 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyCancelBtnFunOfAddNote status=SUCCESS method=ConsultantPageTest.verifyCancelBt...)</span>
+                <span class="method-start">868194 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">869927 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyNavigateToScheduleMeetingPopUp</span>
+                <span class="method-start">883132 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyNavigateToScheduleMeetingPopUp status=SUCCESS method=ConsultantPageTest.verif...)</span>
+                <span class="method-start">894847 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">896584 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyScheduleMeetingFunctionality</span>
+                <span class="method-start">904562 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyScheduleMeetingFunctionality status=SUCCESS method=ConsultantPageTest.verifyS...)</span>
+                <span class="method-start">945332 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">947033 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelBtnFunOfScheduleMeetingPopUp</span>
+                <span class="method-start">954600 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyCancelBtnFunOfScheduleMeetingPopUp status=SUCCESS method=ConsultantPageTest.v...)</span>
+                <span class="method-start">965303 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">967035 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyValidationsInScheduleMeetingPopUp</span>
+                <span class="method-start">974921 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyValidationsInScheduleMeetingPopUp status=SUCCESS method=ConsultantPageTest.ve...)</span>
+                <span class="method-start">985656 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">987406 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifySetTheStatusToConsultant</span>
+                <span class="method-start">995802 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifySetTheStatusToConsultant status=SUCCESS method=ConsultantPageTest.verifySetTh...)</span>
+                <span class="method-start">1052903 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1054635 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelButtonFunOfSetStatusPopUp</span>
+                <span class="method-start">1062438 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyCancelButtonFunOfSetStatusPopUp status=SUCCESS method=ConsultantPageTest.veri...)</span>
+                <span class="method-start">1085638 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1087384 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyDeleteRecentStatusFunctionality</span>
+                <span class="method-start">1095687 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyDeleteRecentStatusFunctionality status=SUCCESS method=ConsultantPageTest.veri...)</span>
+                <span class="method-start">1118544 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1120294 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyViewResumeFunctionality</span>
+                <span class="method-start">1127866 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyViewResumeFunctionality status=SUCCESS method=ConsultantPageTest.verifyViewRe...)</span>
+                <span class="method-start">1145573 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">setupAfterSuite</span>
+                <span class="method-start">1147320 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-test after">
+                <span class="method-name">endReport</span>
+                <span class="method-start">1147514 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

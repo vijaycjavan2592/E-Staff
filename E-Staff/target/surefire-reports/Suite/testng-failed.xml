@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <test thread-count="5" verbose="0" name="Test(failed)">
+    <classes>
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
+        <methods>
+          <include name="verifyUn_ArchiveFunctionality"/>
+          <include name="setUp"/>
+          <include name="verifyUploadDocumentFunctionality"/>
+          <include name="endReport"/>
+          <include name="verifyUploadDocumentAppearInGrid"/>
+          <include name="verifyDownloadResumeFunctionality"/>
+          <include name="getResult"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
+          <include name="verifyDuplicateConsultant" invocation-numbers="0"/>
+          <include name="setupAfterSuite"/>
+          <include name="verifyAddNewConsultant" invocation-numbers="0"/>
+          <include name="verifyEditConsultantFunctionality"/>
+        </methods>
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

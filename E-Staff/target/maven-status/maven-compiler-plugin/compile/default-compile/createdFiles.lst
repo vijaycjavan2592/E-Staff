@@ -23,6 +23,7 @@ com\staff\qa\pages\RequirementPage$5.class
 com\staff\qa\util\TestUtil.class
 com\staff\qa\pages\ConsultantPage$11.class
 com\staff\qa\util\WebEventListener.class
+com\staff\qa\base\TestBase.class
 com\staff\qa\pages\HomePage.class
 com\staff\qa\pages\PlacementPage$14.class
 com\staff\qa\pages\ConsultantPage$6.class

@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 34, Failures: 6, Errors: 0, Skipped: 1, Time elapsed: 1,148.383 sec <<< FAILURE! - in TestSuite
+verifyAddNewConsultant(com.staff.qa.testcases.ConsultantPageTest)  Time elapsed: 104.939 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyAddNewConsultant(ConsultantPageTest.java:216)
+
+verifyDuplicateConsultant(com.staff.qa.testcases.ConsultantPageTest)  Time elapsed: 74.704 sec  <<< FAILURE!
+java.lang.AssertionError: expected [Consultant is already exists with same email-id. Duplicate Consultant can not be created.] but found [Consultant (ID:-Cons-669770) Added Successfully]
+	at com.staff.qa.testcases.ConsultantPageTest.verifyDuplicateConsultant(ConsultantPageTest.java:285)
+
+verifyUploadDocumentFunctionality(com.staff.qa.testcases.ConsultantPageTest)  Time elapsed: 28.274 sec  <<< FAILURE!
+java.lang.AssertionError: expected [Upload Document Record created successfully] but found [Please select file before clicking on upload]
+	at com.staff.qa.testcases.ConsultantPageTest.verifyUploadDocumentFunctionality(ConsultantPageTest.java:559)
+
+verifyUploadDocumentAppearInGrid(com.staff.qa.testcases.ConsultantPageTest)  Time elapsed: 50.883 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyUploadDocumentAppearInGrid(ConsultantPageTest.java:614)
+
+verifyDownloadResumeFunctionality(com.staff.qa.testcases.ConsultantPageTest)  Time elapsed: 37.626 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyDownloadResumeFunctionality(ConsultantPageTest.java:783)
+
+verifyUn_ArchiveFunctionality(com.staff.qa.testcases.ConsultantPageTest)  Time elapsed: 34.673 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at com.staff.qa.testcases.ConsultantPageTest.verifyUn_ArchiveFunctionality(ConsultantPageTest.java:1020)
+

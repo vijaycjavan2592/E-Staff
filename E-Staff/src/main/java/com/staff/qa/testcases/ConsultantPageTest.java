@@ -540,6 +540,7 @@ public class ConsultantPageTest extends BaseClass {
     		WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
     		System.out.println(noData.getText());
     	}
+		Thread.sleep(7000);
 		consultantPage.setClickOnDocumentOption();
 		
 		consultantPage.setClickOnUploadDocumentLink();
@@ -586,7 +587,7 @@ public class ConsultantPageTest extends BaseClass {
 				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
 				System.out.println(noData.getText());
 			}
-			consultantPage.setClickOnDocumentOption();
+			Thread.sleep(7000);
 
 			consultantPage.setClickOnUploadDocumentLink();
 
@@ -632,6 +633,7 @@ public class ConsultantPageTest extends BaseClass {
 			WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
 			System.out.println(noData.getText());
 		}
+		Thread.sleep(7000);
 		consultantPage.setClickOnDocumentOption();
 
 		consultantPage.setDownloadUploadedDocument();
@@ -964,7 +966,7 @@ public class ConsultantPageTest extends BaseClass {
 				WebElement noData = driver.findElement(By.xpath("//span[@class='ag-overlay-no-rows-center']"));
 				System.out.println(noData.getText());
 			}		
-						
+			Thread.sleep(7000);			
 			consultantPage.setClickOnArchiveLink();	
 			
 			consultantPage.setClickOnArchiveButton();			
@@ -1219,7 +1221,7 @@ public class ConsultantPageTest extends BaseClass {
 			// Select Start Date
 			consultantPage.clickOnStartDateBox();
 			consultantPage.selectYear_ScheduleMeeting("2019");
-			consultantPage.selectMonth_ScheduleMeeting("Dec");
+			consultantPage.selectMonth_ScheduleMeeting("Nov");
 			consultantPage.setSelectDate_ScheduleMeeting("25");
 
 			// Enter Start Time
@@ -1228,7 +1230,7 @@ public class ConsultantPageTest extends BaseClass {
 			// Select End Date
 			consultantPage.clickOnEndDateBox();
 			consultantPage.selectYear_ScheduleMeeting("2020");
-			consultantPage.selectMonth_ScheduleMeeting("Nov");
+			consultantPage.selectMonth_ScheduleMeeting("Feb");
 			consultantPage.setSelectDate_ScheduleMeeting("25");
 
 			// Enter End Time

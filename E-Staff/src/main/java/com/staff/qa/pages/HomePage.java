@@ -64,29 +64,35 @@ public class HomePage extends BaseClass{
 	
 	
 	public ConsultantPage clickOnConsultantOption() throws InterruptedException, AWTException {
+		WebElement el = driver.findElement(By.xpath("//span[@class='MM-modal-close']"));
+		if(el.isDisplayed()) {
+			el.click();			
+		}
 		Thread.sleep(2000);		
-		clickOnMenuButton.click();
+/*		clickOnMenuButton.click();
 		Thread.sleep(1000);
-	/*	System.out.println("Text is : "+clickConsultantOption.getText());
+		System.out.println("Text is : "+clickConsultantOption.getText());
 		System.out.println("Size is : "+clickConsultantOption.getSize().getWidth());
-		System.out.println("Size is : "+clickConsultantOption.getSize().getHeight());*/
+		System.out.println("Size is : "+clickConsultantOption.getSize().getHeight());
 		
 		Robot robot = new Robot();
 		int x = 210;
 		int y = 240;
 		
 		
-	/*	int z= clickConsultantOption.getLocation().getX();
+		int z= clickConsultantOption.getLocation().getX();
 		int z1= clickConsultantOption.getLocation().getY();
-		System.out.println("...."+z+"...."+z1);*/
+		System.out.println("...."+z+"...."+z1);
 		
 		robot.mouseMove(x,y);
 		
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		
+		*/
 		 
 		//clickConsultantOption.click();
+		
+		driver.get("http://10.20.14.84:1010/ATS.UI_v1.0/#/consultants");
 		
 		return new ConsultantPage();		
 	}

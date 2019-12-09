@@ -12,6 +12,7 @@
           <include name="endReport"/>
           <include name="setUp"/>
           <include name="setupAfterSuite"/>
+          <include name="verifyRelevanceAIapplied"/>
         </methods>
       </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
     </classes>

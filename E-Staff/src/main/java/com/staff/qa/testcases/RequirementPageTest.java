@@ -57,7 +57,7 @@ public class RequirementPageTest extends BaseClass {
 		requirementPage = homePage.clickOnRequirementOption();
 	}
 
- //   @Test(priority = 1)
+    @Test(priority = 1)
 	public void verifyUserNavigateToRequirementPage() throws InterruptedException {
 
 		String TestCaseName = "Verify that user can navigate to the Requirement Page";
@@ -78,7 +78,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 2)
+	@Test(priority = 2)
 	public void getOpenRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Open Requirement count in header and grid section";
@@ -100,7 +100,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 3)
+	@Test(priority = 3)
 	public void getAllRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the All Requirement count in header and grid section";
@@ -124,7 +124,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 4)
+	@Test(priority = 4)
 	public void getArchivedRequirementCount() throws InterruptedException {
 
 		String TestCaseName = "Verify the Archived Requirement count in header and grid section";
@@ -148,7 +148,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 5)
+	@Test(priority = 5)
 	public void verifyAddNewRequirementBtnClickable() {
 		String TestCaseName = "Verify Add New Button is Clickable and it Shows the Add New Requirement Form";
 		test = extent.createTest(TestCaseName);
@@ -171,7 +171,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 6)
+	@Test(priority = 6)
 	public void verifyFunctionalityOfCancelButtonOfAddNewForm() {
 		String TestCaseName = "Verify that functionality of Cancel button of Add New Requirement window";
 		test = extent.createTest(TestCaseName);
@@ -207,7 +207,7 @@ public class RequirementPageTest extends BaseClass {
 		return data;
 	}
 
-//	@Test(dataProvider = "getRequirementData", priority = 7)
+	@Test(dataProvider = "getRequirementData", priority = 7)
 	public void verifyAddRequirementFunctionality(String recruiter, String no_Of_Openings, String contact,
 			String accountManger, String jobTitle, String jobType, String year, String month, String date,
 			String businessUnit, String visaStatus, String priority, String communicationSkills, String billRateUOM,
@@ -288,7 +288,7 @@ public class RequirementPageTest extends BaseClass {
 		return data;
 	}
 
-//	@Test(dataProvider = "getRequirementData_edit", priority = 8)
+	@Test(dataProvider = "getRequirementData_edit", priority = 8)
 	public void verifyEditRequirementFunctionality(String recruiter, String no_Of_Openings, String contact,
 			String accountManger, String jobTitle, String jobType, String year, String month, String date,
 			String businessUnit, String visaStatus, String priority, String communicationSkills, String billRateUOM,
@@ -372,7 +372,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 9)
+	@Test(priority = 9)
 	public void verifyUploadDocumentFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can upload the document for particular requirement";
 		test = extent.createTest(TestCaseName);
@@ -415,7 +415,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 10)
+	@Test(priority = 10)
 	public void verifyUploadDocumentAppearInGrid() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that upload document can appear in grid";
 		test = extent.createTest(TestCaseName);
@@ -459,7 +459,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 11)
+	@Test(priority = 11)
 	public void verifyDownloadUploadedDocument_requirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can download the uploaded documents";
 		test = extent.createTest(TestCaseName);
@@ -493,7 +493,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 12)
+	@Test(priority = 12)
 	public void verifyCancelBtnFunOfUploadDocPopUp_requirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that cancel button functionality of Upload Document pop-up";
 		test = extent.createTest(TestCaseName);
@@ -527,7 +527,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 13)
+	@Test(priority = 13)
 	public void verifyEditJobDescriptionFunctionality() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can edit the job description of requirement";
 		test = extent.createTest(TestCaseName);
@@ -569,7 +569,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 14)
+	@Test(priority = 14)
 	public void verifyArchivedRequirementFunctionality() {
 		String TestCaseName = "Verify that user can Archive the requirement";
 		test = extent.createTest(TestCaseName);
@@ -610,7 +610,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 15)
+	@Test(priority = 15)
 	public void verifyUnArchivedRequirementFunctionality() {
 		String TestCaseName = "Verify that user can Un-Archive the requirement";
 		test = extent.createTest(TestCaseName);
@@ -643,7 +643,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 16)
+	@Test(priority = 16)
 	public void verifyValidationMessageForClosuredate() {
 		String TestCaseName = "Verify that user can select closure date select as future date while Archive the requirement";
 		test = extent.createTest(TestCaseName);
@@ -681,7 +681,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 17)
+	@Test(priority = 17)
 	public void verifyValidationMessageForClosureReason() {
 		String TestCaseName = "Verify that user can archive the requirement without selecting closure reason";
 		test = extent.createTest(TestCaseName);
@@ -720,7 +720,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 18)
+	@Test(priority = 18)
 	public void verifyCancelButtonFunctionalityOfArchiveRequirementPopUp() {
 		String TestCaseName = "Verify the Cancel Button Functionality Of Archive Requirement pop up ";
 		test = extent.createTest(TestCaseName);
@@ -749,7 +749,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 19)
+	@Test(priority = 19)
 	public void verifyValidationsForAddNewRequirement() {
 		String TestCaseName = "Verify that validation message can appear for mandatory fields";
 		test = extent.createTest(TestCaseName);
@@ -819,7 +819,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 20)
+	@Test(priority = 20)
 	public void verifyConsultantMapToRequirement() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can map the consultant to the requirement";
 		String TestCaseName1 = "Verify that mapped consultant can appear in Requirement-Consultant grid section";
@@ -897,7 +897,7 @@ public class RequirementPageTest extends BaseClass {
 
 	}
 
-//	@Test(priority = 22)
+	@Test(priority = 22)
 	public void verifyConsultantMapToRequirement_alreadyExists() throws InterruptedException, AWTException {
 		String TestCaseName = "Verify that user can map the consultant to the requirement which is already linked.";
 		test = extent.createTest(TestCaseName);
@@ -944,7 +944,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 
-//	@Test(priority = 23)
+	@Test(priority = 23)
 	public void verifyArchivedConsultantMapToRequirement() {
 		String TestCaseName = "Verify that archived consultant can map to the requirement";
 		test = extent.createTest(TestCaseName);
@@ -985,7 +985,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 	
-//	@Test(priority = 24)
+	@Test(priority = 24)
 	public void verifyCancelBtnFunOfMapConsultantWindow() {
 		String TestCaseName = "Verify the Cancel button functionality of map consultant to requirement window";
 		test = extent.createTest(TestCaseName);
@@ -1024,7 +1024,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 	
-//	@Test(priority = 25)
+	@Test(priority = 25)
 	public void verifyAddNoteFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify the Add Note functionality";
 		test = extent.createTest(TestCaseName);
@@ -1060,7 +1060,7 @@ public class RequirementPageTest extends BaseClass {
 	    	}
 	    }
 	
-//	@Test(priority = 26)
+	@Test(priority = 26)
 	public void verifyCancelBtnFunOfAddNote() throws InterruptedException {
 		String TestCaseName = "Verify the Cancel button functionality of Add Note";
 		test = extent.createTest(TestCaseName);
@@ -1093,7 +1093,7 @@ public class RequirementPageTest extends BaseClass {
 	    	}
 	    }
 	
-//	@Test(priority = 27)
+	@Test(priority = 27)
 	public void verifyNavigateToStatusPopUp() throws InterruptedException {
 		String TestCaseName = "Verify the user can naviagte to the status pop up";
 		test = extent.createTest(TestCaseName);
@@ -1140,7 +1140,7 @@ public class RequirementPageTest extends BaseClass {
 		    	}
 		    }
 			
-//	@Test(priority = 28)
+	@Test(priority = 28)
 	public void verifySetTheStatusToConsultant() throws InterruptedException {
 		String TestCaseName = "Verify the user can set the status to the consultant";
 		test = extent.createTest(TestCaseName);
@@ -1187,7 +1187,7 @@ public class RequirementPageTest extends BaseClass {
 		}
 	}
 	
-//	@Test(priority = 29)
+	@Test(priority = 29)
 	public void verifyCancelButtonFunOfSetStatusPopUp() throws InterruptedException {
 		String TestCaseName = "Verify that functionality of Cancel button functionality of Set-Status pop up";
 		test = extent.createTest(TestCaseName);
@@ -1234,7 +1234,7 @@ public class RequirementPageTest extends BaseClass {
 	}
 	
 	
-//	@Test(priority = 30)
+	@Test(priority = 30)
 	public void verifyDeleteRecentStatusFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can delete recent status of linked consultant";
 		test = extent.createTest(TestCaseName);
@@ -1275,7 +1275,7 @@ public class RequirementPageTest extends BaseClass {
 	}
 
 
-//	@Test(priority = 31)
+	@Test(priority = 31)
 	public void verifyViewResumeFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can view(download) CV/Resume of linked consultant";
 		test = extent.createTest(TestCaseName);
@@ -1312,7 +1312,7 @@ public class RequirementPageTest extends BaseClass {
 	}
 	
 	
-//	@Test
+	@Test
 	public void verifyCoutOfConsultantAfterAIapplied() throws InterruptedException {
 		String TestCaseName = "Verify that after AI search applied up to 200 consultant can appear in grid";
 		test = extent.createTest(TestCaseName);
@@ -1525,10 +1525,5 @@ public class RequirementPageTest extends BaseClass {
 
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),
 					"Consultants shortlisted successfully.");
-
-			
-			
+			}
 	}
-	
-	
-}

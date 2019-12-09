@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="6" ignored="0" total="34" passed="27">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="1147866" started-at="2019-12-06T07:34:16Z" finished-at="2019-12-06T07:53:24Z">
+    <groups>
+      <group name="End to End">
+        <method signature="ConsultantPageTest.verifyAddNewConsultant(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyAddNewConsultant" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyAddNewConsulatantFormDisplayed()[pri:2, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyAddNewConsulatantFormDisplayed" class="com.staff.qa.testcases.ConsultantPageTest"/>
+      </group> <!-- End to End -->
+      <group name="regression">
+        <method signature="ConsultantPageTest.getAllCount()[pri:8, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getAllCount" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.getArchivedCount()[pri:9, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getArchivedCount" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.getAvailableCount()[pri:7, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getAvailableCount" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyAddNoteFunctionality()[pri:26, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyAddNoteFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyArchivedConsultantMapToRequirement()[pri:25, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyArchivedConsultantMapToRequirement" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyCancelBtnFunOfAddNote()[pri:27, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelBtnFunOfAddNote" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyCancelBtnFunOfScheduleMeetingPopUp()[pri:30, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelBtnFunOfScheduleMeetingPopUp" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyCancelButtonFunctionalityOfEmail()[pri:20, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelButtonFunctionalityOfEmail" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyDuplicateConsultant(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyDuplicateConsultant" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyEditConsultantFunctionality(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyEditConsultantFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyEmailFunctionality()[pri:19, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyEmailFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyFunctionalityOfCancelButton()[pri:6, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyFunctionalityOfCancelButton" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyLinkRequirementToConsultant()[pri:15, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyLinkRequirementToConsultant" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyNavigateToScheduleMeetingPopUp()[pri:28, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyNavigateToScheduleMeetingPopUp" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyUn_ArchiveFunctionality()[pri:23, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUn_ArchiveFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyUploadDocumentAppearInGrid()[pri:13, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUploadDocumentAppearInGrid" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyUploadDocumentFunctionality()[pri:12, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUploadDocumentFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyUserNavigateToConsultantPage()[pri:1, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUserNavigateToConsultantPage" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.getQualifiedCount()[pri:10, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getQualifiedCount" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyAddNewConsulatantFormDisplayed()[pri:2, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyAddNewConsulatantFormDisplayed" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyArchiveFunctionality()[pri:22, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyArchiveFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyCancelFunctionalityOfLinkRequirement()[pri:18, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelFunctionalityOfLinkRequirement" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyDownloadResumeFunctionality()[pri:17, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyDownloadResumeFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyDownloadUploadedDocument()[pri:14, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyDownloadUploadedDocument" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyLinkRequirementToConsultant_alreadyExists()[pri:16, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyLinkRequirementToConsultant_alreadyExists" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyPageLable()[pri:24, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyPageLable" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyScheduleMeetingFunctionality()[pri:29, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyScheduleMeetingFunctionality" class="com.staff.qa.testcases.ConsultantPageTest"/>
+        <method signature="ConsultantPageTest.verifyValidationsInScheduleMeetingPopUp()[pri:31, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyValidationsInScheduleMeetingPopUp" class="com.staff.qa.testcases.ConsultantPageTest"/>
+      </group> <!-- regression -->
+    </groups>
+    <test name="Test" duration-ms="1147866" started-at="2019-12-06T07:34:16Z" finished-at="2019-12-06T07:53:24Z">
+      <class name="com.staff.qa.testcases.ConsultantPageTest">
+        <test-method status="PASS" signature="setExtentReport(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setExtentReport" is-config="true" duration-ms="207" started-at="2019-12-06T07:34:16Z" finished-at="2019-12-06T07:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@65852d05]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExtentReport -->
+        <test-method status="PASS" signature="setupBeforeSuite(org.testng.ITestContext)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setupBeforeSuite" is-config="true" duration-ms="273" started-at="2019-12-06T07:34:16Z" finished-at="2019-12-06T07:34:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@65852d05]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupBeforeSuite -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="9197" started-at="2019-12-06T07:34:17Z" finished-at="2019-12-06T07:34:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyUserNavigateToConsultantPage()[pri:1, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUserNavigateToConsultantPage" duration-ms="2022" started-at="2019-12-06T07:34:26Z" finished-at="2019-12-06T07:34:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserNavigateToConsultantPage -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1957" started-at="2019-12-06T07:34:28Z" finished-at="2019-12-06T07:34:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserNavigateToConsultantPage status=SUCCESS method=ConsultantPageTest.verifyUserNavigateToConsultantPage()[pri:1, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7562" started-at="2019-12-06T07:34:30Z" finished-at="2019-12-06T07:34:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAddNewConsulatantFormDisplayed()[pri:2, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyAddNewConsulatantFormDisplayed" duration-ms="15803" started-at="2019-12-06T07:34:37Z" finished-at="2019-12-06T07:34:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddNewConsulatantFormDisplayed -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1711" started-at="2019-12-06T07:34:53Z" finished-at="2019-12-06T07:34:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddNewConsulatantFormDisplayed status=SUCCESS method=ConsultantPageTest.verifyAddNewConsulatantFormDisplayed()[pri:2, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8127" started-at="2019-12-06T07:34:55Z" finished-at="2019-12-06T07:35:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyAddNewConsultant(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyAddNewConsultant" duration-ms="104927" started-at="2019-12-06T07:35:03Z" data-provider="getEStaffData" finished-at="2019-12-06T07:36:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Santosh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Gopi Pillai]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Santosh0021@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[61.17]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Hourly]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2017]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Oct]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Immediately ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bay Area Or North]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Hourly W2]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[EMPLOYEE]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[H1B]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[United States]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Acton]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Dummy employee]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at com.staff.qa.testcases.ConsultantPageTest.verifyAddNewConsultant(ConsultantPageTest.java:216)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddNewConsultant -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="2585" started-at="2019-12-06T07:36:48Z" finished-at="2019-12-06T07:36:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddNewConsultant status=FAILURE method=ConsultantPageTest.verifyAddNewConsultant(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8893" started-at="2019-12-06T07:36:51Z" finished-at="2019-12-06T07:37:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyDuplicateConsultant(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyDuplicateConsultant" duration-ms="74704" started-at="2019-12-06T07:37:00Z" data-provider="getEStaffData" finished-at="2019-12-06T07:38:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Santosh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Gopi Pillai]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Santosh0021@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[61.17]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Hourly]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2017]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Oct]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Immediately ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Bay Area Or North]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Hourly W2]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[EMPLOYEE]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[H1B]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[United States]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Acton]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Dummy employee]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Consultant is already exists with same email-id. Duplicate Consultant can not be created.] but found [Consultant (ID:-Cons-669770) Added Successfully]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Consultant is already exists with same email-id. Duplicate Consultant can not be created.] but found [Consultant (ID:-Cons-669770) Added Successfully]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at com.staff.qa.testcases.ConsultantPageTest.verifyDuplicateConsultant(ConsultantPageTest.java:285)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDuplicateConsultant -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="2098" started-at="2019-12-06T07:38:14Z" finished-at="2019-12-06T07:38:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDuplicateConsultant status=FAILURE method=ConsultantPageTest.verifyDuplicateConsultant(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7524" started-at="2019-12-06T07:38:16Z" finished-at="2019-12-06T07:38:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyFunctionalityOfCancelButton()[pri:6, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyFunctionalityOfCancelButton" duration-ms="17909" started-at="2019-12-06T07:38:24Z" finished-at="2019-12-06T07:38:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFunctionalityOfCancelButton -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1759" started-at="2019-12-06T07:38:42Z" finished-at="2019-12-06T07:38:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyFunctionalityOfCancelButton status=SUCCESS method=ConsultantPageTest.verifyFunctionalityOfCancelButton()[pri:6, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7850" started-at="2019-12-06T07:38:44Z" finished-at="2019-12-06T07:38:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getAvailableCount()[pri:7, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getAvailableCount" duration-ms="5239" started-at="2019-12-06T07:38:51Z" finished-at="2019-12-06T07:38:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAvailableCount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1881" started-at="2019-12-06T07:38:57Z" finished-at="2019-12-06T07:38:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getAvailableCount status=SUCCESS method=ConsultantPageTest.getAvailableCount()[pri:7, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7565" started-at="2019-12-06T07:38:59Z" finished-at="2019-12-06T07:39:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getAllCount()[pri:8, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getAllCount" duration-ms="11627" started-at="2019-12-06T07:39:06Z" finished-at="2019-12-06T07:39:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllCount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1701" started-at="2019-12-06T07:39:18Z" finished-at="2019-12-06T07:39:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getAllCount status=SUCCESS method=ConsultantPageTest.getAllCount()[pri:8, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7695" started-at="2019-12-06T07:39:19Z" finished-at="2019-12-06T07:39:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getArchivedCount()[pri:9, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getArchivedCount" duration-ms="9347" started-at="2019-12-06T07:39:27Z" finished-at="2019-12-06T07:39:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getArchivedCount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1752" started-at="2019-12-06T07:39:37Z" finished-at="2019-12-06T07:39:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getArchivedCount status=SUCCESS method=ConsultantPageTest.getArchivedCount()[pri:9, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7825" started-at="2019-12-06T07:39:38Z" finished-at="2019-12-06T07:39:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getQualifiedCount()[pri:10, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getQualifiedCount" duration-ms="9059" started-at="2019-12-06T07:39:46Z" finished-at="2019-12-06T07:39:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getQualifiedCount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1734" started-at="2019-12-06T07:39:55Z" finished-at="2019-12-06T07:39:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getQualifiedCount status=SUCCESS method=ConsultantPageTest.getQualifiedCount()[pri:10, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="SKIP" signature="verifyEditConsultantFunctionality(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyEditConsultantFunctionality" duration-ms="1" started-at="2019-12-06T07:39:57Z" data-provider="getEStaffData_EditConsultant" depends-on-methods="com.staff.qa.testcases.ConsultantPageTest.verifyAddNewConsultant" finished-at="2019-12-06T07:39:57Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ConsultantPageTest.verifyEditConsultantFunctionality(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ConsultantPageTest.verifyEditConsultantFunctionality(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:887)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEditConsultantFunctionality -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7866" started-at="2019-12-06T07:39:57Z" finished-at="2019-12-06T07:40:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyUploadDocumentFunctionality()[pri:12, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUploadDocumentFunctionality" duration-ms="28273" started-at="2019-12-06T07:40:05Z" finished-at="2019-12-06T07:40:33Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Upload Document Record created successfully] but found [Please select file before clicking on upload]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Upload Document Record created successfully] but found [Please select file before clicking on upload]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at com.staff.qa.testcases.ConsultantPageTest.verifyUploadDocumentFunctionality(ConsultantPageTest.java:559)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUploadDocumentFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="2554" started-at="2019-12-06T07:40:33Z" finished-at="2019-12-06T07:40:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUploadDocumentFunctionality status=FAILURE method=ConsultantPageTest.verifyUploadDocumentFunctionality()[pri:12, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="13752" started-at="2019-12-06T07:40:36Z" finished-at="2019-12-06T07:40:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyUploadDocumentAppearInGrid()[pri:13, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUploadDocumentAppearInGrid" duration-ms="50878" started-at="2019-12-06T07:40:49Z" finished-at="2019-12-06T07:41:40Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at com.staff.qa.testcases.ConsultantPageTest.verifyUploadDocumentAppearInGrid(ConsultantPageTest.java:614)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUploadDocumentAppearInGrid -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="2589" started-at="2019-12-06T07:41:40Z" finished-at="2019-12-06T07:41:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUploadDocumentAppearInGrid status=FAILURE method=ConsultantPageTest.verifyUploadDocumentAppearInGrid()[pri:13, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8072" started-at="2019-12-06T07:41:43Z" finished-at="2019-12-06T07:41:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyDownloadUploadedDocument()[pri:14, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyDownloadUploadedDocument" duration-ms="19566" started-at="2019-12-06T07:41:51Z" finished-at="2019-12-06T07:42:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDownloadUploadedDocument -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1753" started-at="2019-12-06T07:42:10Z" finished-at="2019-12-06T07:42:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDownloadUploadedDocument status=SUCCESS method=ConsultantPageTest.verifyDownloadUploadedDocument()[pri:14, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8427" started-at="2019-12-06T07:42:12Z" finished-at="2019-12-06T07:42:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyLinkRequirementToConsultant()[pri:15, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyLinkRequirementToConsultant" duration-ms="24218" started-at="2019-12-06T07:42:21Z" finished-at="2019-12-06T07:42:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLinkRequirementToConsultant -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1772" started-at="2019-12-06T07:42:45Z" finished-at="2019-12-06T07:42:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLinkRequirementToConsultant status=SUCCESS method=ConsultantPageTest.verifyLinkRequirementToConsultant()[pri:15, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8863" started-at="2019-12-06T07:42:47Z" finished-at="2019-12-06T07:42:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyLinkRequirementToConsultant_alreadyExists()[pri:16, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyLinkRequirementToConsultant_alreadyExists" duration-ms="28764" started-at="2019-12-06T07:42:55Z" finished-at="2019-12-06T07:43:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLinkRequirementToConsultant_alreadyExists -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1764" started-at="2019-12-06T07:43:24Z" finished-at="2019-12-06T07:43:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLinkRequirementToConsultant_alreadyExists status=SUCCESS method=ConsultantPageTest.verifyLinkRequirementToConsultant_alreadyExists()[pri:16, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7481" started-at="2019-12-06T07:43:26Z" finished-at="2019-12-06T07:43:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyDownloadResumeFunctionality()[pri:17, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyDownloadResumeFunctionality" duration-ms="37622" started-at="2019-12-06T07:43:34Z" finished-at="2019-12-06T07:44:11Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at com.staff.qa.testcases.ConsultantPageTest.verifyDownloadResumeFunctionality(ConsultantPageTest.java:783)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDownloadResumeFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="2069" started-at="2019-12-06T07:44:11Z" finished-at="2019-12-06T07:44:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDownloadResumeFunctionality status=FAILURE method=ConsultantPageTest.verifyDownloadResumeFunctionality()[pri:17, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8092" started-at="2019-12-06T07:44:13Z" finished-at="2019-12-06T07:44:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyCancelFunctionalityOfLinkRequirement()[pri:18, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelFunctionalityOfLinkRequirement" duration-ms="18886" started-at="2019-12-06T07:44:21Z" finished-at="2019-12-06T07:44:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCancelFunctionalityOfLinkRequirement -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1722" started-at="2019-12-06T07:44:40Z" finished-at="2019-12-06T07:44:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCancelFunctionalityOfLinkRequirement status=SUCCESS method=ConsultantPageTest.verifyCancelFunctionalityOfLinkRequirement()[pri:18, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8727" started-at="2019-12-06T07:44:42Z" finished-at="2019-12-06T07:44:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyEmailFunctionality()[pri:19, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyEmailFunctionality" duration-ms="17303" started-at="2019-12-06T07:44:51Z" finished-at="2019-12-06T07:45:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmailFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1746" started-at="2019-12-06T07:45:08Z" finished-at="2019-12-06T07:45:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyEmailFunctionality status=SUCCESS method=ConsultantPageTest.verifyEmailFunctionality()[pri:19, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8105" started-at="2019-12-06T07:45:10Z" finished-at="2019-12-06T07:45:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyCancelButtonFunctionalityOfEmail()[pri:20, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelButtonFunctionalityOfEmail" duration-ms="11388" started-at="2019-12-06T07:45:18Z" finished-at="2019-12-06T07:45:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCancelButtonFunctionalityOfEmail -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1751" started-at="2019-12-06T07:45:29Z" finished-at="2019-12-06T07:45:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCancelButtonFunctionalityOfEmail status=SUCCESS method=ConsultantPageTest.verifyCancelButtonFunctionalityOfEmail()[pri:20, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8591" started-at="2019-12-06T07:45:31Z" finished-at="2019-12-06T07:45:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyValidationForEmailSubject()[pri:21, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyValidationForEmailSubject" duration-ms="13488" started-at="2019-12-06T07:45:40Z" finished-at="2019-12-06T07:45:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyValidationForEmailSubject -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1738" started-at="2019-12-06T07:45:53Z" finished-at="2019-12-06T07:45:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyValidationForEmailSubject status=SUCCESS method=ConsultantPageTest.verifyValidationForEmailSubject()[pri:21, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8184" started-at="2019-12-06T07:45:55Z" finished-at="2019-12-06T07:46:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyArchiveFunctionality()[pri:22, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyArchiveFunctionality" duration-ms="15963" started-at="2019-12-06T07:46:03Z" finished-at="2019-12-06T07:46:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyArchiveFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1720" started-at="2019-12-06T07:46:19Z" finished-at="2019-12-06T07:46:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyArchiveFunctionality status=SUCCESS method=ConsultantPageTest.verifyArchiveFunctionality()[pri:22, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8371" started-at="2019-12-06T07:46:21Z" finished-at="2019-12-06T07:46:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyUn_ArchiveFunctionality()[pri:23, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyUn_ArchiveFunctionality" duration-ms="34673" started-at="2019-12-06T07:46:29Z" finished-at="2019-12-06T07:47:04Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at com.staff.qa.testcases.ConsultantPageTest.verifyUn_ArchiveFunctionality(ConsultantPageTest.java:1020)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUn_ArchiveFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="2059" started-at="2019-12-06T07:47:04Z" finished-at="2019-12-06T07:47:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUn_ArchiveFunctionality status=FAILURE method=ConsultantPageTest.verifyUn_ArchiveFunctionality()[pri:23, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8745" started-at="2019-12-06T07:47:06Z" finished-at="2019-12-06T07:47:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyPageLable()[pri:24, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyPageLable" duration-ms="4257" started-at="2019-12-06T07:47:14Z" finished-at="2019-12-06T07:47:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPageLable -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1729" started-at="2019-12-06T07:47:19Z" finished-at="2019-12-06T07:47:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPageLable status=SUCCESS method=ConsultantPageTest.verifyPageLable()[pri:24, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8334" started-at="2019-12-06T07:47:20Z" finished-at="2019-12-06T07:47:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyArchivedConsultantMapToRequirement()[pri:25, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyArchivedConsultantMapToRequirement" duration-ms="26186" started-at="2019-12-06T07:47:29Z" finished-at="2019-12-06T07:47:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyArchivedConsultantMapToRequirement -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1757" started-at="2019-12-06T07:47:55Z" finished-at="2019-12-06T07:47:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyArchivedConsultantMapToRequirement status=SUCCESS method=ConsultantPageTest.verifyArchivedConsultantMapToRequirement()[pri:25, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7995" started-at="2019-12-06T07:47:57Z" finished-at="2019-12-06T07:48:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAddNoteFunctionality()[pri:26, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyAddNoteFunctionality" duration-ms="17895" started-at="2019-12-06T07:48:05Z" finished-at="2019-12-06T07:48:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddNoteFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1741" started-at="2019-12-06T07:48:23Z" finished-at="2019-12-06T07:48:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddNoteFunctionality status=SUCCESS method=ConsultantPageTest.verifyAddNoteFunctionality()[pri:26, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8220" started-at="2019-12-06T07:48:24Z" finished-at="2019-12-06T07:48:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyCancelBtnFunOfAddNote()[pri:27, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelBtnFunOfAddNote" duration-ms="11721" started-at="2019-12-06T07:48:33Z" finished-at="2019-12-06T07:48:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCancelBtnFunOfAddNote -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1733" started-at="2019-12-06T07:48:44Z" finished-at="2019-12-06T07:48:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCancelBtnFunOfAddNote status=SUCCESS method=ConsultantPageTest.verifyCancelBtnFunOfAddNote()[pri:27, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="13204" started-at="2019-12-06T07:48:46Z" finished-at="2019-12-06T07:48:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyNavigateToScheduleMeetingPopUp()[pri:28, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyNavigateToScheduleMeetingPopUp" duration-ms="11715" started-at="2019-12-06T07:48:59Z" finished-at="2019-12-06T07:49:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigateToScheduleMeetingPopUp -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1736" started-at="2019-12-06T07:49:11Z" finished-at="2019-12-06T07:49:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyNavigateToScheduleMeetingPopUp status=SUCCESS method=ConsultantPageTest.verifyNavigateToScheduleMeetingPopUp()[pri:28, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7978" started-at="2019-12-06T07:49:13Z" finished-at="2019-12-06T07:49:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyScheduleMeetingFunctionality()[pri:29, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyScheduleMeetingFunctionality" duration-ms="40770" started-at="2019-12-06T07:49:21Z" finished-at="2019-12-06T07:50:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyScheduleMeetingFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1700" started-at="2019-12-06T07:50:01Z" finished-at="2019-12-06T07:50:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyScheduleMeetingFunctionality status=SUCCESS method=ConsultantPageTest.verifyScheduleMeetingFunctionality()[pri:29, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7567" started-at="2019-12-06T07:50:03Z" finished-at="2019-12-06T07:50:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyCancelBtnFunOfScheduleMeetingPopUp()[pri:30, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelBtnFunOfScheduleMeetingPopUp" duration-ms="10703" started-at="2019-12-06T07:50:11Z" finished-at="2019-12-06T07:50:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCancelBtnFunOfScheduleMeetingPopUp -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1731" started-at="2019-12-06T07:50:21Z" finished-at="2019-12-06T07:50:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCancelBtnFunOfScheduleMeetingPopUp status=SUCCESS method=ConsultantPageTest.verifyCancelBtnFunOfScheduleMeetingPopUp()[pri:30, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7886" started-at="2019-12-06T07:50:23Z" finished-at="2019-12-06T07:50:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyValidationsInScheduleMeetingPopUp()[pri:31, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyValidationsInScheduleMeetingPopUp" duration-ms="10735" started-at="2019-12-06T07:50:31Z" finished-at="2019-12-06T07:50:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyValidationsInScheduleMeetingPopUp -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1749" started-at="2019-12-06T07:50:42Z" finished-at="2019-12-06T07:50:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyValidationsInScheduleMeetingPopUp status=SUCCESS method=ConsultantPageTest.verifyValidationsInScheduleMeetingPopUp()[pri:31, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8396" started-at="2019-12-06T07:50:44Z" finished-at="2019-12-06T07:50:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifySetTheStatusToConsultant()[pri:32, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifySetTheStatusToConsultant" duration-ms="57101" started-at="2019-12-06T07:50:52Z" finished-at="2019-12-06T07:51:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySetTheStatusToConsultant -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1731" started-at="2019-12-06T07:51:49Z" finished-at="2019-12-06T07:51:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySetTheStatusToConsultant status=SUCCESS method=ConsultantPageTest.verifySetTheStatusToConsultant()[pri:32, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7803" started-at="2019-12-06T07:51:51Z" finished-at="2019-12-06T07:51:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyCancelButtonFunOfSetStatusPopUp()[pri:33, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyCancelButtonFunOfSetStatusPopUp" duration-ms="23199" started-at="2019-12-06T07:51:59Z" finished-at="2019-12-06T07:52:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCancelButtonFunOfSetStatusPopUp -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1745" started-at="2019-12-06T07:52:22Z" finished-at="2019-12-06T07:52:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCancelButtonFunOfSetStatusPopUp status=SUCCESS method=ConsultantPageTest.verifyCancelButtonFunOfSetStatusPopUp()[pri:33, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="8302" started-at="2019-12-06T07:52:23Z" finished-at="2019-12-06T07:52:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyDeleteRecentStatusFunctionality()[pri:34, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyDeleteRecentStatusFunctionality" duration-ms="22857" started-at="2019-12-06T07:52:32Z" finished-at="2019-12-06T07:52:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteRecentStatusFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1749" started-at="2019-12-06T07:52:55Z" finished-at="2019-12-06T07:52:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDeleteRecentStatusFunctionality status=SUCCESS method=ConsultantPageTest.verifyDeleteRecentStatusFunctionality()[pri:34, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setUp" is-config="true" duration-ms="7572" started-at="2019-12-06T07:52:56Z" finished-at="2019-12-06T07:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyViewResumeFunctionality()[pri:35, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="verifyViewResumeFunctionality" duration-ms="17707" started-at="2019-12-06T07:53:04Z" finished-at="2019-12-06T07:53:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyViewResumeFunctionality -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="getResult" is-config="true" duration-ms="1747" started-at="2019-12-06T07:53:22Z" finished-at="2019-12-06T07:53:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyViewResumeFunctionality status=SUCCESS method=ConsultantPageTest.verifyViewResumeFunctionality()[pri:35, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setupAfterSuite()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="setupAfterSuite" is-config="true" duration-ms="194" started-at="2019-12-06T07:53:23Z" finished-at="2019-12-06T07:53:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupAfterSuite -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.staff.qa.testcases.ConsultantPageTest@68837a77]" name="endReport" is-config="true" duration-ms="352" started-at="2019-12-06T07:53:24Z" finished-at="2019-12-06T07:53:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
