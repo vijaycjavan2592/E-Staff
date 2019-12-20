@@ -102,7 +102,7 @@ public class HomePage extends BaseClass{
 		if(el.isDisplayed()) {
 			el.click();			
 		}
-		clickOnMenuButton.click();
+	/*	clickOnMenuButton.click();
 		Thread.sleep(1000);
 		
 		Robot robot = new Robot();
@@ -110,19 +110,27 @@ public class HomePage extends BaseClass{
 		int y = 360;
 		
 		
-	/*	int z= clickConsultantOption.getLocation().getX();
+		int z= clickConsultantOption.getLocation().getX();
 		int z1= clickConsultantOption.getLocation().getY();
-		System.out.println("...."+z+"...."+z1);*/
+		System.out.println("...."+z+"...."+z1);
 		
 		robot.mouseMove(x,y);
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 		//clickRequirementOption.click();
+*/		
+		driver.get("http://10.20.14.84:1010/ATS.UI_v1.0/#/requirements");
+		
 		return new RequirementPage();		
 	}
 	
 	
 	public PlacementPage clickOnPlacementOption() throws InterruptedException, AWTException {
+		WebElement el = driver.findElement(By.xpath("//span[@class='MM-modal-close']"));
+		if(el.isDisplayed()) {
+			el.click();			
+		}
+	/*	
 		clickOnMenuButton.click();
 		Thread.sleep(1000);
 		
@@ -131,15 +139,17 @@ public class HomePage extends BaseClass{
 		int y = 350;
 		
 		
-	/*	int z= clickConsultantOption.getLocation().getX();
+		int z= clickConsultantOption.getLocation().getX();
 		int z1= clickConsultantOption.getLocation().getY();
-		System.out.println("...."+z+"...."+z1);*/
+		System.out.println("...."+z+"...."+z1);
 		
 		robot.mouseMove(x,y);
 		
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		*/
 		
+		driver.get("http://10.20.14.84:1010/ATS.UI_v1.0/#/placements");
 		//clickPlacementOption.click();
 		return new PlacementPage();		
 	}

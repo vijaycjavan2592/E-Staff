@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Suite]]]" parallel="classes">
-  <test thread-count="1" name="Test(failed)(failed)(failed)" parallel="classes">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Suite]]]">
+  <test thread-count="5" name="Test(failed)(failed)(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.ConsultantPageTest">
+      <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
-          <include name="verifyUn_ArchiveFunctionality"/>
-          <include name="getResult"/>
+          <include name="verifyPlacementDateFilterFunOfPlacementForm"/>
+          <include name="endReport"/>
           <include name="setUp"/>
+          <include name="verifyCompaniesFilterFunOfPlacementForm1"/>
+          <include name="verifySubmitForApprovalFunctionality1"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
+          <include name="verifyRejectPlacementFunctionality_Validations"/>
+          <include name="getResult"/>
           <include name="setExtentReport"/>
           <include name="setupBeforeSuite"/>
-          <include name="verifyDuplicateConsultant" invocation-numbers="0"/>
-          <include name="endReport"/>
           <include name="setupAfterSuite"/>
+          <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromConsultant"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.ConsultantPageTest -->
+      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
     </classes>
   </test> <!-- Test(failed)(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Failed suite [Suite]]] -->

@@ -1119,13 +1119,26 @@ public class RequirementPageTest extends BaseClass {
 			//Click on Shortlist Consultant button
 			requirementPage.setClickOnShortlistConsultantOptionButton();
 			
+			String message = "Duplicate status can not be set as Shortlisted status already exists.";
+			if(requirementPage.setRequirementConfirmationMessage().equalsIgnoreCase(message)) {
+				driver.navigate().refresh();
+				Thread.sleep(3000);
+				consultantPage.setSelectRequirement_2ndRow();
+				Thread.sleep(2000);
+				//Click on Shortlisted Consultant button
+				requirementPage.setClickOnShortlistConsultantOptionButton();
+			}
+			
 			Assert.assertEquals(requirementPage.setRequirementConfirmationMessage(),"Consultants shortlisted successfully.");
 			
 			Thread.sleep(3000);
+			
+			requirementPage.setClickOnConsultantOption();
 			//Select the consultant
 			requirementPage.setSelectConsultant();
 			
 			requirementPage.setClickOnStatusLink();
+			
 			
 			Assert.assertEquals(requirementPage.setStatusPopUpTitle(), "Set Status");
 
@@ -1312,7 +1325,7 @@ public class RequirementPageTest extends BaseClass {
 	}
 	
 	
-	@Test
+	@Test(priority = 32)
 	public void verifyCoutOfConsultantAfterAIapplied() throws InterruptedException {
 		String TestCaseName = "Verify that after AI search applied up to 200 consultant can appear in grid";
 		test = extent.createTest(TestCaseName);
@@ -1356,19 +1369,19 @@ public class RequirementPageTest extends BaseClass {
 			else {
 				System.out.println("Fail");
 				test.log(Status.PASS, TestCaseName + " is Fail");
-				testresultdata.put("31", new Object[] { 31d, TestCaseName,
+				testresultdata.put("32", new Object[] { 32d, TestCaseName,
 						"After AI search applied more than 200 consultant should not be appear in grid", "Fail" });
 			}
 		
 		} catch (Exception e) {
-			testresultdata.put("31", new Object[] { 31d, TestCaseName,
+			testresultdata.put("32", new Object[] { 32d, TestCaseName,
 					"After AI search applied more than 200 consultant should not be appear in grid", "Fail" });
 			e.printStackTrace();
 		}
 		}	
 	
 	
-	@Test
+	@Test(priority = 33)
 	public void verifyRelevanceAIapplied() throws InterruptedException {
 		String TestCaseName = "Verify the relevance (%) of the filtered consultant based on AI search";
 		test = extent.createTest(TestCaseName);
@@ -1431,7 +1444,7 @@ public class RequirementPageTest extends BaseClass {
 				}
 				else {
 					test.log(Status.PASS, TestCaseName + " is Pass");
-					testresultdata.put("31", new Object[] { 31d, TestCaseName,
+					testresultdata.put("33", new Object[] { 33d, TestCaseName,
 							"Relevance (%) should be greater than 70% and less than 100%", "Fail" });
 					}
 				}
@@ -1440,13 +1453,13 @@ public class RequirementPageTest extends BaseClass {
 				System.out.println("got exception");
 			}
 		} catch (Exception e) {
-			testresultdata.put("31", new Object[] { 31d, TestCaseName,
+			testresultdata.put("33", new Object[] { 33d, TestCaseName,
 					"Relevance (%) should be greater than 70% and less than 100%", "Fail" });
 			e.printStackTrace();
 		}
 	}
 	
-	@Test
+	@Test(priority = 34)
 	public void verifyShortlistConsultantFunctionality() throws InterruptedException {
 		String TestCaseName = "Verify that user can shortlist the consultant which appear based on AI search";
 		test = extent.createTest(TestCaseName);

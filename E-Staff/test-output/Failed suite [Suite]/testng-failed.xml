@@ -3,18 +3,28 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Suite]]">
   <test thread-count="5" name="Test(failed)(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.RequirementPageTest">
+      <class name="com.staff.qa.testcases.PlacementPageTest">
         <methods>
-          <include name="getResult"/>
-          <include name="verifyEditRequirementFunctionality" invocation-numbers="0"/>
-          <include name="setExtentReport"/>
-          <include name="setupBeforeSuite"/>
+          <include name="verifyEditConsultantDetailsOfPlacementFormFunctionality"/>
+          <include name="verifyPlacementDateFilterFunOfPlacementForm"/>
           <include name="endReport"/>
           <include name="setUp"/>
+          <include name="verifyCompaniesFilterFunOfPlacementForm1"/>
+          <include name="verifyCancelButtonFunClientAssignmentOfPlacementForm"/>
+          <include name="verifyAccountManagerFilterFunOfPlacementForm1"/>
+          <include name="verifyBackedOutConsultantFunctionality"/>
+          <include name="verifySubmitForApprovalFunctionality1"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromRequirement"/>
+          <include name="verifyRejectPlacementFunctionality_Validations"/>
+          <include name="getResult"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
           <include name="setupAfterSuite"/>
-          <include name="verifyUnArchivedRequirementFunctionality"/>
+          <include name="verifyEditClientAssignmentFieldsOfPlacementFormFunctionality"/>
+          <include name="verifyPlacedConsultantAppearInPlacement_FromConsultant"/>
+          <include name="verifyApprovePlacementFunctionality_Validations"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
+      </class> <!-- com.staff.qa.testcases.PlacementPageTest -->
     </classes>
   </test> <!-- Test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Suite]] -->

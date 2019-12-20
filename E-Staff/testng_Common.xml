@@ -5,10 +5,10 @@
 
 	<classes>
 		<!-- <class name="com.staff.qa.testcases.ConsultantPageTest"> -->
-		<class name="com.staff.qa.testcases.ConsultantPageTest">
+		<class name="com.staff.qa.testcases.RequirementPageTest">
 			<methods>
 				<exclude name="verifyCancelButtonFunOfSetStatusPopUp" />
-				<include name="verifyUploadConsultant" />
+				<include name="verifyNavigateToStatusPopUp" />
 			<!-- 	
 				<include name="verifyUserNavigateToConsultantPage" />
 				<include name="verifyUserNavigateToConsultantPage__" />

@@ -3,17 +3,48 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.staff.qa.testcases.CompaniesPageTest">
+      <class name="com.staff.qa.testcases.RequirementPageTest">
         <methods>
-          <include name="getResult"/>
-          <include name="CompaniesPageURLTest"/>
-          <include name="setExtentReport"/>
+          <include name="verifyFunctionalityOfCancelButtonOfAddNewForm"/>
+          <include name="verifyAddRequirementFunctionality"/>
+          <include name="verifyCancelBtnFunOfAddNote"/>
           <include name="setUp"/>
-          <include name="setupBeforeSuite"/>
+          <include name="verifyDeleteRecentStatusFunctionality"/>
+          <include name="verifyConsultantMapToRequirement_alreadyExists"/>
+          <include name="verifyNavigateToStatusPopUp"/>
+          <include name="verifyValidationMessageForClosureReason"/>
+          <include name="getResult"/>
+          <include name="verifyViewResumeFunctionality"/>
+          <include name="verifyCancelButtonFunctionalityOfArchiveRequirementPopUp"/>
+          <include name="verifyValidationsForAddNewRequirement"/>
+          <include name="verifyArchivedRequirementFunctionality"/>
+          <include name="verifyCancelButtonFunOfSetStatusPopUp"/>
+          <include name="verifyConsultantMapToRequirement"/>
+          <include name="verifyEditRequirementFunctionality"/>
+          <include name="verifyAddNoteFunctionality"/>
           <include name="endReport"/>
+          <include name="verifyUploadDocumentFunctionality"/>
+          <include name="verifyUserNavigateToRequirementPage"/>
+          <include name="verifyAddNewRequirementBtnClickable"/>
+          <include name="verifyCancelBtnFunOfMapConsultantWindow"/>
+          <include name="verifyUnArchivedRequirementFunctionality"/>
+          <include name="verifyValidationMessageForClosuredate"/>
+          <include name="verifyEditJobDescriptionFunctionality"/>
+          <include name="getArchivedRequirementCount"/>
+          <include name="verifyShortlistConsultantFunctionality"/>
+          <include name="getAllRequirementCount"/>
+          <include name="getOpenRequirementCount"/>
+          <include name="verifySetTheStatusToConsultant"/>
+          <include name="setExtentReport"/>
+          <include name="setupBeforeSuite"/>
           <include name="setupAfterSuite"/>
+          <include name="verifyCancelBtnFunOfUploadDocPopUp_requirement"/>
+          <include name="verifyRelevanceAIapplied"/>
+          <include name="verifyUploadDocumentAppearInGrid"/>
+          <include name="verifyDownloadUploadedDocument_requirement"/>
+          <include name="verifyArchivedConsultantMapToRequirement"/>
         </methods>
-      </class> <!-- com.staff.qa.testcases.CompaniesPageTest -->
+      </class> <!-- com.staff.qa.testcases.RequirementPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

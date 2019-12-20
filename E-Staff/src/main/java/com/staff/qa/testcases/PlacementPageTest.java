@@ -266,7 +266,9 @@ public class PlacementPageTest extends BaseClass {
 		try {
 			Thread.sleep(10000);
 			// click on Requirement option
-			homePage.clickOnRequirementOption();
+			//homePage.clickOnRequirementOption();
+			
+			driver.get("http://10.20.14.84:1010/ATS.UI_v1.0/#/requirements");
 			// Thread.sleep(5000);
 			// requirementPage.setSearchTextBox(searchRequirement);
 
@@ -325,7 +327,9 @@ public class PlacementPageTest extends BaseClass {
 			Thread.sleep(3000);
 			driver.navigate().refresh();
 			Thread.sleep(3000);
-			homePage.clickOnPlacementOption();
+		//	homePage.clickOnPlacementOption();
+			
+			driver.get("http://10.20.14.84:1010/ATS.UI_v1.0/#/placements");
 			Thread.sleep(5000);		
 			//Click on All Tag
 			placementPage.setClickOnAllTag_Placement();
@@ -368,7 +372,9 @@ public class PlacementPageTest extends BaseClass {
 		try {
 			Thread.sleep(10000);
 			// click on Consultant option
-			homePage.clickOnConsultantOption();
+		//	homePage.clickOnConsultantOption();
+			
+			driver.get("http://10.20.14.84:1010/ATS.UI_v1.0/#/consultants");
 			Thread.sleep(5000);
 			try {
 				consultantPage.setClickOnFirstRowConsultant();
@@ -428,7 +434,9 @@ public class PlacementPageTest extends BaseClass {
 			Thread.sleep(5000);
 			driver.navigate().refresh();
 			Thread.sleep(3000);
-			homePage.clickOnPlacementOption();
+			//homePage.clickOnPlacementOption();
+			
+			driver.get("http://10.20.14.84:1010/ATS.UI_v1.0/#/placements");
 			Thread.sleep(7000);
 
 			//Click on All Tag
@@ -475,6 +483,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 
 			// get the consultant name
 			String consultantName = placementPage.getConsultantName();
@@ -843,6 +853,8 @@ public class PlacementPageTest extends BaseClass {
 			}
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 
 			// Get the consultant Name
 			String consutlatName = placementPage.getConsultantName();
@@ -857,7 +869,7 @@ public class PlacementPageTest extends BaseClass {
 			placementPage.setSelectSalesPerson("Sawan Muttha");
 
 			// Enter Xoriant-Client
-			placementPage.setEnterXoriantClient("Demo");
+			placementPage.setEnterXoriantClient("8L Design");
 
 			// Enter End Client Name
 			placementPage.setEnterEndClientName("Xoriant");
@@ -966,6 +978,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 
 			// Get the consultant Name
 			String consutlatName = placementPage.getConsultantName();
@@ -1008,7 +1022,7 @@ public class PlacementPageTest extends BaseClass {
 			placementPage.setEnterConsultantSkills("Java SQL");
 
 			// Select Employment Type from Dropdown
-			placementPage.setselectEmployementType("Hourly W2");
+			placementPage.setselectEmployementType("Vendor Employee");
 
 			// Select Visa Status from Dropdown
 			placementPage.setselectVisaStatus("CITIZEN");
@@ -1056,6 +1070,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 
 			// Get the consultant Name
 			String consutlatName = placementPage.getConsultantName();
@@ -1129,6 +1145,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 
 			// Get the consultant Name
 			String consutlatName = placementPage.getConsultantName();
@@ -1169,6 +1187,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 
 			// Get the consultant Name
 			String consutlatName = placementPage.getConsultantName();
@@ -1207,6 +1227,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 
 			// Get the consultant Name
 			String consutlatName = placementPage.getConsultantName();
@@ -1634,9 +1656,10 @@ public class PlacementPageTest extends BaseClass {
 
 			for (int i = 2; i < 25;) {
 
-				if (employmentType.equalsIgnoreCase("1099") || employmentType.equalsIgnoreCase("Vendor Employee")
+				if (employmentType.equalsIgnoreCase("1099") //|| employmentType.equalsIgnoreCase("Vendor Employee")
+						//|| natureOfAssignment.equalsIgnoreCase("Permanent Placement")
 						|| employmentType.equalsIgnoreCase("Independent Contractor")
-						|| natureOfAssignment.equalsIgnoreCase("Permanent Placement")) {
+						) {
 					driver.navigate().back();
 					consultantPage.setClickOnRow(i);
 					placementPage.setClickConsultantDetailsLink();
@@ -1657,6 +1680,8 @@ public class PlacementPageTest extends BaseClass {
 						placementPage.setClickClientAndAssignmentLink();
 						// Click on Edit button
 						placementPage.setClickOnEditButton();
+						
+						Thread.sleep(10000);
 						// Get the consultant Name
 						consutlatName = placementPage.getConsultantName();
 						// Select Business Unit from dropdown
@@ -1666,7 +1691,7 @@ public class PlacementPageTest extends BaseClass {
 						// Select Sales Person from dropdown
 						placementPage.setSelectSalesPerson("Sawan Muttha");
 						// Enter Xoriant-Client
-						placementPage.setEnterXoriantClient("Demo");
+						placementPage.setEnterXoriantClient("8L Design");
 						// Enter End Client Name
 						placementPage.setEnterEndClientName("Xoriant");
 						// Enter Client Name in Offer Letter
@@ -1731,6 +1756,8 @@ public class PlacementPageTest extends BaseClass {
 						placementPage.setClickConsultantDetailsLink();
 						// Click on Edit button
 						placementPage.setClickOnEditButton();
+						
+						Thread.sleep(10000);
 						// Get the consultant Name
 						// String consutlatName = placementPage.getConsultantName();
 						// Enter First Name
@@ -1762,7 +1789,7 @@ public class PlacementPageTest extends BaseClass {
 						// Enter Skills
 						placementPage.setEnterConsultantSkills("Java SQL");
 						// Select Employment Type from Dropdown
-						placementPage.setselectEmployementType("Hourly W2");
+						placementPage.setselectEmployementType("Vendor Employee");
 						// Select Visa Status from Dropdown
 						placementPage.setselectVisaStatus("CITIZEN");
 						// Enter Pay Rate
@@ -1858,6 +1885,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 			// Get the consultant Name
 			consutlatName = placementPage.getConsultantName();
 			// Select Business Unit from dropdown
@@ -1867,7 +1896,7 @@ public class PlacementPageTest extends BaseClass {
 			// Select Sales Person from dropdown
 			placementPage.setSelectSalesPerson("Vijay Chavan");
 			// Enter Xoriant-Client
-			placementPage.setEnterXoriantClient("Demo");
+			placementPage.setEnterXoriantClient("8L Design");
 			// Enter End Client Name
 			placementPage.setEnterEndClientName("Xoriant");
 			// Enter Client Name in Offer Letter
@@ -1939,6 +1968,8 @@ public class PlacementPageTest extends BaseClass {
 			placementPage.setClickConsultantDetailsLink();
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 			// Get the consultant Name
 			// String consutlatName = placementPage.getConsultantName();
 			// Enter First Name
@@ -1970,7 +2001,7 @@ public class PlacementPageTest extends BaseClass {
 			// Enter Skills
 			placementPage.setEnterConsultantSkills("Java SQL");
 			// Select Employment Type from Dropdown
-			placementPage.setselectEmployementType("Hourly W2");
+			placementPage.setselectEmployementType("Vendor Employee");
 			// Select Visa Status from Dropdown
 			placementPage.setselectVisaStatus("CITIZEN");
 			// Enter Pay Rate
@@ -2026,6 +2057,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 			// Get the consultant Name
 			consutlatName = placementPage.getConsultantName();
 			// Select Business Unit from dropdown
@@ -2035,7 +2068,7 @@ public class PlacementPageTest extends BaseClass {
 			// Select Sales Person from dropdown
 			placementPage.setSelectSalesPerson("Sawan Muttha");
 			// Enter Xoriant-Client
-			placementPage.setEnterXoriantClient("Demo");
+			placementPage.setEnterXoriantClient("8L Design");
 			// Enter End Client Name
 			placementPage.setEnterEndClientName("Xoriant");
 			// Enter Client Name in Offer Letter
@@ -2107,6 +2140,8 @@ public class PlacementPageTest extends BaseClass {
 			placementPage.setClickConsultantDetailsLink();
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 			// Get the consultant Name
 			// String consutlatName = placementPage.getConsultantName();
 			// Enter First Name
@@ -2138,7 +2173,7 @@ public class PlacementPageTest extends BaseClass {
 			// Enter Skills
 			placementPage.setEnterConsultantSkills("Java SQL");
 			// Select Employment Type from Dropdown
-			placementPage.setselectEmployementType("Hourly W2");
+			placementPage.setselectEmployementType("Vendor Employee");
 			// Select Visa Status from Dropdown
 			placementPage.setselectVisaStatus("CITIZEN");
 			// Enter Pay Rate
@@ -2199,6 +2234,8 @@ public class PlacementPageTest extends BaseClass {
 					placementPage.setClickClientAndAssignmentLink();
 					// Click on Edit button
 					placementPage.setClickOnEditButton();
+					
+					Thread.sleep(10000);
 					// Get the consultant Name
 					consutlatName = placementPage.getConsultantName();
 					// Select Business Unit from dropdown
@@ -2208,7 +2245,7 @@ public class PlacementPageTest extends BaseClass {
 					// Select Sales Person from dropdown
 					placementPage.setSelectSalesPerson("Vijay Chavan");
 					// Enter Xoriant-Client
-					placementPage.setEnterXoriantClient("Demo");
+					placementPage.setEnterXoriantClient("8L Design");
 					// Enter End Client Name
 					placementPage.setEnterEndClientName("Xoriant");
 					// Enter Client Name in Offer Letter
@@ -2273,6 +2310,8 @@ public class PlacementPageTest extends BaseClass {
 					placementPage.setClickConsultantDetailsLink();
 					// Click on Edit button
 					placementPage.setClickOnEditButton();
+					
+					Thread.sleep(10000);
 					// Get the consultant Name
 					// String consutlatName = placementPage.getConsultantName();
 					// Enter First Name
@@ -2304,7 +2343,7 @@ public class PlacementPageTest extends BaseClass {
 					// Enter Skills
 					placementPage.setEnterConsultantSkills("Java SQL");
 					// Select Employment Type from Dropdown
-					placementPage.setselectEmployementType("Hourly W2");
+					placementPage.setselectEmployementType("Vendor Employee");
 					// Select Visa Status from Dropdown
 					placementPage.setselectVisaStatus("CITIZEN");
 					// Enter Pay Rate
@@ -2331,6 +2370,8 @@ public class PlacementPageTest extends BaseClass {
 				placementPage.setClickOnCancelBtnForInitiateOfferPopUp();
 				// Click on Edit button
 				placementPage.setClickOnEditButton();
+				
+				Thread.sleep(10000);
 				// Get the consultant Name
 				consutlatName = placementPage.getConsultantName();
 				// Select Business Unit from dropdown
@@ -2389,6 +2430,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 			// Get the consultant Name
 			consutlatName = placementPage.getConsultantName();
 			// Select Business Unit from dropdown
@@ -2443,6 +2486,8 @@ public class PlacementPageTest extends BaseClass {
 
 			// Click on Edit button
 			placementPage.setClickOnEditButton();
+			
+			Thread.sleep(10000);
 			// Get the consultant Name
 			consutlatName = placementPage.getConsultantName();
 			// Select Business Unit from dropdown

@@ -181,7 +181,7 @@ public class ConsultantPageTest extends BaseClass {
 		consultantPage.setClickOnContinueButton_Skill();
 
 		Thread.sleep(2000);
-		consultantPage.setUploadResume("C:\\Users\\chavan_v\\Downloads\\Dummy_Resume.docx");
+		consultantPage.setUploadResume(prop.getProperty("Upload_Resume_Path"));
 		
 		Thread.sleep(4000);	
 		consultantPage.setClickOnAddConsultantButton();
@@ -598,8 +598,13 @@ public class ConsultantPageTest extends BaseClass {
 
 			consultantPage.setUploadDocument(prop.getProperty("document_upload_path"));
 
+			//click on Upload button
 			Thread.sleep(3000);
 			consultantPage.setClickOnUploadButton();
+			
+			//Click on Document option
+			Thread.sleep(3000);
+			consultantPage.setClickOnDocumentOption();
 
 			Thread.sleep(2000);
 			Assert.assertEquals(consultantPage.setDocumentNameInGrid(), document_Name);
@@ -856,7 +861,7 @@ public class ConsultantPageTest extends BaseClass {
 			
 			consultantPage.setClickOnSendButtonOfEmail();
 			
-			Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(), "Message sent successfully");
+			Assert.assertEquals(consultantPage.setconsultantConfirmationMessage(), "Sent mails request Initiated");
 			test.log(Status.PASS, TestCaseName + " is sucessfully pass");
 			testresultdata.put("29", new Object[] { 29d, TestCaseName,
 					"User should be able to send the Email to the consultant", "Pass" });
@@ -959,7 +964,7 @@ public class ConsultantPageTest extends BaseClass {
 			//consultantPage.setClickOnAllTag();
 			//consultantPage.setSearchTextBox(searchConsultant);
 
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			try {
 				consultantPage.setSelectConsultantFromGrid_CheckBox();	
 			} catch (Exception e) {

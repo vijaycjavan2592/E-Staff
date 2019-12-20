@@ -47,7 +47,7 @@ public class PlacementPage extends BaseClass {
 	
 	public String setAllPlacementCountInGrid() {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -69,7 +69,7 @@ public class PlacementPage extends BaseClass {
 	public void setClickOnAllTag_Placement() throws InterruptedException {
 		Thread.sleep(2000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -90,7 +90,7 @@ public class PlacementPage extends BaseClass {
 	public void setClickOnOpenTag_Placement() throws InterruptedException {
 		Thread.sleep(2000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -128,7 +128,7 @@ public class PlacementPage extends BaseClass {
 
 	public void setClickOnApprovedTag_Placement() {	
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -147,7 +147,7 @@ public class PlacementPage extends BaseClass {
 
 	public void setClickOnCandidateOnBillingTag_Placement() {	
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(60, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -166,7 +166,7 @@ public class PlacementPage extends BaseClass {
 
 	public void setClickOnBackedOutTag_Placement() {	
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -185,7 +185,7 @@ public class PlacementPage extends BaseClass {
 
 	public void setClickOnCandidateEndedTag_Placement() {	
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(30, TimeUnit.SECONDS)
+				withTimeout(90, TimeUnit.SECONDS)
 				.pollingEvery(2, TimeUnit.SECONDS).
 				ignoring(ElementClickInterceptedException.class);
 		
@@ -205,8 +205,8 @@ public class PlacementPage extends BaseClass {
 	public String setRequirementID_PlacementGrid() throws InterruptedException {
 		Thread.sleep(5000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.SECONDS)
+				withTimeout(180, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(ElementClickInterceptedException.class)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class);
@@ -235,8 +235,8 @@ public class PlacementPage extends BaseClass {
 	public void setClickOnRequirementID_PlacementGrid() throws InterruptedException {
 		Thread.sleep(5000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.SECONDS)
+				withTimeout(180, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(ElementClickInterceptedException.class)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class);
@@ -257,8 +257,8 @@ public class PlacementPage extends BaseClass {
 	public void setClickOnEditButton() throws InterruptedException {
 		Thread.sleep(5000);
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.SECONDS)
+				withTimeout(180, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(ElementClickInterceptedException.class)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class);
@@ -325,8 +325,8 @@ public class PlacementPage extends BaseClass {
 	
 	public void setWaitUntilConfirmationMessageAppear() {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.SECONDS)
+				withTimeout(180, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(ElementClickInterceptedException.class)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class);
@@ -384,8 +384,8 @@ public class PlacementPage extends BaseClass {
 	
 	public void setClickOnStatusColumnFilter() {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.SECONDS)
+				withTimeout(180, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(ElementClickInterceptedException.class)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class);
@@ -445,12 +445,14 @@ public class PlacementPage extends BaseClass {
 	}
 	
 	//Enter Xoriant-Client
-	@FindBy(xpath = "//input[@name='xoriantClient']")
+	@FindBy(xpath = "//ng-select[@name='xoriantClient']")
     WebElement enterXoriantClient;
 	
-	public void setEnterXoriantClient(String XoriantClient) {
-		enterXoriantClient.clear();
-		TestUtil.sendInput(enterXoriantClient, XoriantClient);
+	public void setEnterXoriantClient(String XoriantClient) throws InterruptedException {
+		Thread.sleep(2000);
+		TestUtil.click(enterXoriantClient);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//ng-dropdown-panel[contains(@class,'ng-dropdown-panel ng-star-inserted ng-select')]//div[contains(text(),'"+XoriantClient+"')]")).click();
 	} 
 	
 	//Enter End Client Name
@@ -969,8 +971,8 @@ public class PlacementPage extends BaseClass {
 	
 	public void setClickOnInitiateOffer() throws InterruptedException {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).
-				withTimeout(120, TimeUnit.SECONDS)
-				.pollingEvery(5, TimeUnit.SECONDS)
+				withTimeout(180, TimeUnit.SECONDS)
+				.pollingEvery(2, TimeUnit.SECONDS)
 				.ignoring(ElementClickInterceptedException.class)
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class);
